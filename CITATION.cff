@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Climate RADAR — Reproducible Reference Implementation"
+authors:
+  - family-names: Lim
+    given-names: Geunsik
+date-released: "2025-09-25"
+license: Apache-2.0
+repository-code: "https://github.com/USERNAME/climate-radar"
