@@ -1,5 +1,10 @@
 # Climate Radar
 
+<p align="center">
+  <img src=climate-radar-logo.png" alt="Climate RADAR Logo" width="150" height="150">
+</p>
+
+
 As climate-related hazards intensify worldwide, conventional early warning systems (EWS) remain effective at rapid alert dissemination but often fail to ensure that warnings translate into timely and effective protective actions. This persistent *alert–action gap* continues to drive preventable casualties, inefficient resource allocation, and inequities among vulnerable populations.
 
 We present **Climate RADAR** (*Risk-Aware, Dynamic, and Action-Recommendation system*), a generative AI–driven reliability layer that reimagines disaster communication — shifting the focus from **alerts delivered** to **actions executed**. Climate RADAR integrates meteorological, hydrological, vulnerability, and social indicators into a **composite risk index** with full uncertainty propagation. Built on large language models (LLMs) equipped with robust guardrails — including policy filters, evidence attribution, confidence scoring, and human-in-the-loop escalation — the system personalizes recommendations for diverse stakeholders through multiple interfaces: a citizen mobile app, a volunteer coordination portal, a municipal command dashboard, and an accessibility-optimized chatbot.
