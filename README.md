@@ -1,7 +1,7 @@
-# Climate Radar
+# Climate RADAR
 
 <p align="center">
-  <img src=climate-radar-logo.png" alt="Climate RADAR Logo" width="150" height="150">
+  <img src="climate-radar-logo.png" alt="Climate RADAR Logo" width="150" height="150">
 </p>
 
 
