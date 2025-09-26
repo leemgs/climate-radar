@@ -1,0 +1,10 @@
+{
+  "name": "climate-radar-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "main": "App.js",
+  "scripts": {
+    "start": "echo 'Use Expo to run this sample app' && exit 0"
+  },
+  "dependencies": {}
+}

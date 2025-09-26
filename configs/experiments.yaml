@@ -1,4 +1,0 @@
-seed: 42
-n_regions: 50
-n_timesteps: 96
-subgroups: ["baseline", "elderly", "migrant"]
