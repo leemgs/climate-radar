@@ -1,0 +1,20 @@
+{
+  "rain_flood": {
+    "hazard_type": "flood",
+    "rain_mm_per_hr": 70,
+    "river_level_pct": 90,
+    "lowland": true,
+    "vulnerable_fraction": 0.25,
+    "feels_like_c": 28,
+    "wind_mps": 4
+  },
+  "heat": {
+    "hazard_type": "heat",
+    "feels_like_c": 39,
+    "vulnerable_fraction": 0.3,
+    "lowland": false,
+    "rain_mm_per_hr": 0,
+    "river_level_pct": 0,
+    "wind_mps": 2
+  }
+}

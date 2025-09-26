@@ -1,8 +1,0 @@
-risk_thresholds:
-  low: 0.3
-  medium: 0.6
-  high: 0.8
-safety_budgets:
-  message_blast_radius: 0.2   # share only to first 20% entities in a cycle
-  rollback_window_minutes: 3
-  max_alerts_per_hour_vulnerable: 2

@@ -4,10 +4,7 @@
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-1. Definitions.
-...(omitted for brevity; standard Apache-2.0 text)...
-
-Copyright 2025 Geunsik Lim
+Copyright 2025 Geunsik Lim and Contributors
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

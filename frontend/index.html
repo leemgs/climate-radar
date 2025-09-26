@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Climate RADAR Prototype</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Climate RADAR</h1>
+    <p>From alerts to actions — prototype dashboard</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Compute Risk</h2>
+      <div class="grid">
+        <label>Hazard
+          <select id="hazard">
+            <option value="flood">flood</option>
+            <option value="rain">rain</option>
+            <option value="heat">heat</option>
+            <option value="wind">wind</option>
+            <option value="cold">cold</option>
+          </select>
+        </label>
+        <label>Rain (mm/h) <input id="rain" type="number" value="70" /></label>
+        <label>River level (%) <input id="river" type="number" value="90" /></label>
+        <label>Feels like (°C) <input id="feels" type="number" value="39" /></label>
+        <label>Wind (m/s) <input id="wind" type="number" value="8" /></label>
+        <label>Lowland? <input id="lowland" type="checkbox" checked /></label>
+        <label>Vulnerable fraction <input id="vuln" type="number" min="0" max="1" step="0.05" value="0.25" /></label>
+      </div>
+      <button id="btnRisk">Compute</button>
+      <pre id="riskOut"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Action Cards</h2>
+      <div class="grid">
+        <label>Language
+          <select id="lang">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+        <label>Personas
+          <select id="personas" multiple>
+            <option value="citizen" selected>citizen</option>
+            <option value="senior">senior</option>
+            <option value="volunteer">volunteer</option>
+            <option value="municipality">municipality</option>
+          </select>
+        </label>
+      </div>
+      <button id="btnActions">Recommend</button>
+      <div id="actionsOut"></div>
+    </section>
+
+    <section class="card">
+      <h2>Help Requests</h2>
+      <div class="grid">
+        <input id="rq_name" placeholder="Name" />
+        <input id="rq_lat" type="number" step="0.0001" placeholder="lat" value="37.5665" />
+        <input id="rq_lon" type="number" step="0.0001" placeholder="lon" value="126.9780" />
+        <select id="rq_need">
+          <option value="medical">medical</option>
+          <option value="water">water</option>
+          <option value="evacuation" selected>evacuation</option>
+          <option value="checkin">checkin</option>
+        </select>
+      </div>
+      <button id="btnAddReq">Submit</button>
+      <button id="btnListReq">List</button>
+      <pre id="reqOut"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Volunteers</h2>
+      <div class="grid">
+        <input id="vo_name" placeholder="Name" />
+        <input id="vo_lat" type="number" step="0.0001" placeholder="lat" value="37.57" />
+        <input id="vo_lon" type="number" step="0.0001" placeholder="lon" value="126.99" />
+        <select id="vo_cap">
+          <option value="general">general</option>
+          <option value="medical">medical</option>
+          <option value="logistics">logistics</option>
+          <option value="rescue">rescue</option>
+        </select>
+      </div>
+      <button id="btnAddVol">Register</button>
+      <button id="btnListVol">List</button>
+      <button id="btnAssign">Assign</button>
+      <pre id="volOut"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <small>Apache-2.0 © Geunsik Lim & Contributors</small>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
