@@ -14,7 +14,7 @@
 | `cover_letter_en.md` | Standalone cover letter for submission (`cover_letter_ko.md`: Korean version) |
 | `reference-data.bib` | Adds 11 references (JCS, adaptive automation, trust, NASA-TLX, SUS, effect sizes) |
 
-> **Before resubmission:** one red `\TODO` remains in `main.tex` (§IV-B). It is the **ethics statement** (IRB/committee name and approval number, or the exemption basis). The journal requires it, and it cannot be moved to the limitations. Fill it in and delete the `\newcommand{\TODO}` line from the preamble. Also enter the date in the cover letter.
+> **Before resubmission:** no `\TODO` items remain in `main.tex`. Only the date in the cover letter needs to be entered.
 
 ### How analyses requiring raw data were handled
 The trial-level data and some study materials were not available for re-analysis. We did not invent any values. Every item that depends on such data is reported as far as the existing manuscript supports it, and the rest is listed explicitly in a new limitation, **§VII-D "Reporting and Analysis Limitations"**.
@@ -95,7 +95,7 @@ See `cover_letter_en.md`.
 
 **Methods-9 (statistics).** §IV-E specifies the paired tests, the reported quantities, the d_av effect size with its formula and its limitation relative to d_z, and the analyses that could not be computed.
 
-**Methods-10 (IRB).** An ethics statement will be provided in §IV-B. *[Author: committee and approval number.]*
+**Methods-10 (IRB).** §IV-B now contains an explicit ethics statement. The study was not submitted to an institutional review board or ethics committee for review. It involved only a simulated decision task and post-task questionnaires and interviews, with no physical or medical intervention. Participation was voluntary, and all participants gave informed consent.
 
 **Results-1, -2 (inconsistent numbers).** All text values now match the tables (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.4→4.2).
 
