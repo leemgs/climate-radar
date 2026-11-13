@@ -12,6 +12,7 @@
 | `main_revised.pdf` | Compiled revised version |
 | `main_diff.pdf` | latexdiff of original vs. revised (added text: blue sans-serif; deleted text: small red; tables, figures and Algorithm 1 are shown as whole old/new blocks) |
 | `cover_letter_en.md` | Standalone cover letter for submission (`cover_letter_ko.md`: Korean version) |
+| `cover_letter_en.pdf`, `response_to_reviewers.pdf` | Submission PDFs of the cover letter and this response, without internal repository notes (`*_ko.pdf`: Korean versions). Rebuild with `python3 make_letter_pdfs.py` |
 | `reference-data.bib` | Adds 11 references (JCS, adaptive automation, trust, NASA-TLX, SUS, effect sizes) |
 
 > **Before resubmission:** no `\TODO` items remain in `main.tex`, and the cover letter is dated. The package is ready to submit.

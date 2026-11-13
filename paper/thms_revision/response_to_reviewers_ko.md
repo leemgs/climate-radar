@@ -14,6 +14,7 @@
 | `main_revised.pdf` | 수정본 컴파일 결과 |
 | `main_diff.pdf` | 수정 전후 비교본(latexdiff). 추가: 파란색 산세리프, 삭제: 작은 빨간 글씨. 표·그림·Algorithm 1은 이전/새 블록 전체로 표시 |
 | `cover_letter_en.md` | 커버레터 영문본 (제출용) |
+| `cover_letter_en.pdf`, `response_to_reviewers.pdf` | 커버레터와 응답서의 제출용 PDF (저장소용 내부 메모 제외). `*_ko.pdf`는 한국어본. `python3 make_letter_pdfs.py`로 다시 만들 수 있음 |
 | `cover_letter_ko.md` | 커버레터 한국어본 (검토용) |
 | `reference-data.bib` | 참고문헌 11편 추가 (JCS, 적응형 자동화, 신뢰, NASA-TLX, SUS, 효과크기) |
 
