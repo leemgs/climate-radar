@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL main_original.tex   Fri Nov 13 11:39:40 2026
-%DIF ADD main.tex            Fri Nov 13 11:39:40 2026
+%DIF DEL main_original.tex   Fri Nov 13 11:57:34 2026
+%DIF ADD main.tex            Fri Nov 13 11:57:34 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -358,7 +358,7 @@ This illustrates one of the important shortcomings associated with prediction-fo
 The main }\DIFdelend \DIFaddbegin \DIFadd{and usability are secondary outcomes. Trust and workload also act as \emph{design considerations} that shaped how information is presented, but the implemented system does not measure or adapt to them at run time (Section~\ref{sec:constructs}).
 }
 
-\DIFadd{The }\DIFaddend contributions of this paper \DIFdelbegin \DIFdel{to the research on human--machine systems include the following: }\DIFdelend \DIFaddbegin \DIFadd{are as follows. }\DIFaddend First, we \DIFdelbegin \DIFdel{define \emph{action execution} as an important outcome variable for evaluating }\DIFdelend \DIFaddbegin \DIFadd{apply the JCS principle of evaluating joint human--machine outcomes to }\DIFaddend AI-assisted \DIFdelbegin \DIFdel{decision systems, going beyond accuracy as the primary measure for evaluating AI systems \cite{Lai2023FAccT,Yang2022THMSReview}}\DIFdelend \DIFaddbegin \DIFadd{disaster decision support, and we operationalize action execution in a way that separates action correctness from timeliness. The principle itself is established in cognitive systems engineering \cite{Hollnagel2005JCS,Woods2006JCS}. Our contribution is to make it concrete for an application area where AI systems are usually evaluated by accuracy alone}\DIFaddend . Second, we \DIFdelbegin \DIFdel{introduce a human--AI decision architecture that incorporates uncertainty, constraints on AI recommendationsthrough guardrails, and human-in-the-loop escalation and override capabilities \cite{Assaad2023TAS,Bach2024Access}}\DIFdelend \DIFaddbegin \DIFadd{present ACHDF, a domain-specific instantiation of the JCS and adaptive function allocation perspectives that combines uncertainty-aware risk estimation, guardrailed AI recommendations, and uncertainty- and criticality-triggered escalation, while the human keeps final decision authority}\DIFaddend . Third, we \DIFdelbegin \DIFdel{conduct an empirical evaluation of our design and find its benefits for human }\DIFdelend \DIFaddbegin \DIFadd{report a controlled within-subjects evaluation ($n=52$) that compares the integrated ACHDF configuration with a conventional dashboard on }\DIFaddend action execution, \DIFdelbegin \DIFdel{cognitive workload, and trustcalibration in a high-stakes decision task \cite{Bach2024Access,PerezCerrolaza2024CSUR}. }%DIFDELCMD < 
+\DIFadd{The }\DIFaddend contributions of this paper \DIFdelbegin \DIFdel{to the research on human--machine systems include the following: }\DIFdelend \DIFaddbegin \DIFadd{are as follows. }\DIFaddend First, we \DIFdelbegin \DIFdel{define \emph{action execution} as an important outcome variable for evaluating }\DIFdelend \DIFaddbegin \DIFadd{apply the JCS principle of evaluating joint human--machine outcomes to }\DIFaddend AI-assisted \DIFdelbegin \DIFdel{decision systems, going beyond accuracy }\DIFdelend \DIFaddbegin \DIFadd{disaster decision support, with action execution }\DIFaddend as the primary \DIFdelbegin \DIFdel{measure for evaluating AI systems \cite{Lai2023FAccT,Yang2022THMSReview}}\DIFdelend \DIFaddbegin \DIFadd{evaluation outcome. The principle itself is established in cognitive systems engineering \cite{Hollnagel2005JCS,Woods2006JCS}. Our contribution is to make it concrete for an application area where AI systems are usually evaluated by accuracy alone}\DIFaddend . Second, we \DIFdelbegin \DIFdel{introduce a human--AI decision architecture that incorporates uncertainty, constraints on AI recommendationsthrough guardrails, and human-in-the-loop escalation and override capabilities \cite{Assaad2023TAS,Bach2024Access}}\DIFdelend \DIFaddbegin \DIFadd{present ACHDF, a domain-specific instantiation of the JCS and adaptive function allocation perspectives that combines uncertainty-aware risk estimation, guardrailed AI recommendations, and uncertainty- and criticality-triggered escalation, while the human keeps final decision authority}\DIFaddend . Third, we \DIFdelbegin \DIFdel{conduct an empirical evaluation of our design and find its benefits for human }\DIFdelend \DIFaddbegin \DIFadd{report a controlled within-subjects evaluation ($n=52$) that compares the integrated ACHDF configuration with a conventional dashboard on }\DIFaddend action execution, \DIFdelbegin \DIFdel{cognitive workload, and trustcalibration in a high-stakes decision task \cite{Bach2024Access,PerezCerrolaza2024CSUR}. }%DIFDELCMD < 
 
 %DIFDELCMD < %%%
 \DIFdel{In addition to contributing to the body of knowledge in terms of specific results, this study also adds to the overall body of knowledge in human--machine systems by extending previous research in trustcalibration, automation biases, and function allocation. Most notably, this study provides an empirical link between uncertainty-aware function allocation and human action execution in a way that can have significant effects on decision-making in high-stakes situations.
@@ -465,14 +465,14 @@ The \DIFdelbegin \DIFdel{dynamic operationalization }\DIFdelend \DIFaddbegin \DI
 \toprule
 \textbf{Construct} & \textbf{Role in ACHDF} & \textbf{Operational definition / implementation} \\
 \midrule
-Uncertainty $u$ & Design input; determines system mode & Dispersion of the posterior risk estimate (Section~\ref{sec:risk}). \TODO{state estimator (e.g., width of 90\% credible interval, ensemble variance), scale, and threshold $\tau_u$}. \\
-Criticality $c$ & Design input; determines system mode & Severity of the consequences if the recommended action is wrong or delayed (cost of error). \TODO{state scale (e.g., ordinal 1--3 from scenario severity, exposed population, irreversibility), who assigned it, and threshold $\tau_c$}. \\
+Uncertainty $u$ & Design input; determines system mode & Dispersion of the posterior risk estimate (Section~\ref{sec:risk}); compared with threshold $\tau_u$. \\
+Criticality $c$ & Design input; determines system mode & Severity of the consequences if the recommended action is wrong or delayed (cost of error); compared with threshold $\tau_c$. \\
 Guardrails & Constraint on recommendation generation & Rule-based checks applied to every generated recommendation (Section~\ref{sec:guardrails}). A recommendation that fails a check is withheld and the case is escalated ($v=1$ in Algorithm~\ref{alg:escalation}). \\
 Bounded autonomy & System mode (``recommend'') & The AI presents one scoped, guardrail-checked recommendation. The AI never executes actions; the human decides and acts. \\
 Escalation & System mode (``escalate'') & Triggered if $u \ge \tau_u$, $c \ge \tau_c$, or a policy check fails ($v=1$). The system presents evidence and options and asks the operator to approve, modify, or reject. \\
 Trust & Design consideration; secondary outcome & Shaped interface design (explicit uncertainty and criticality cues). Measured post-condition by questionnaire (Section~\ref{sec:measures}). Not adapted at run time. \\
 Workload & Design consideration; secondary outcome & Shaped interface design (single consolidated view, action-oriented phrasing). Measured post-condition by NASA--TLX \cite{Hart1988}. Not adapted at run time. \\
-Action execution & Primary outcome & Measured by AER, decomposed into correct-action rate and timeliness (Section~\ref{sec:measures}). \\
+Action execution & Primary outcome & Measured by AER (Section~\ref{sec:measures}). \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -495,15 +495,14 @@ Action execution & Primary outcome & Measured by AER, decomposed into correct-ac
 
     \subsection{Probabilistic Risk Estimation With Uncertainty}
     \DIFdelbegin \DIFdel{The heart of the system is a probabilistic }\DIFdelend \DIFaddbegin \label{sec:risk}
-    \DIFadd{The }\DIFaddend risk estimation module \DIFdelbegin \DIFdel{that provides calibrated risk assessments along }\DIFdelend \DIFaddbegin \DIFadd{provides risk assessments together }\DIFaddend with uncertainty representations. \DIFdelbegin \DIFdel{Unlike many models that produce point estimateresults, the model provides posterior risk distributions that include data-driven variability and epistemic uncertainty.
+    \DIFadd{The }\DIFaddend risk estimation module \DIFdelbegin \DIFdel{that provides calibrated risk assessments along }\DIFdelend \DIFaddbegin \DIFadd{provides risk assessments together }\DIFaddend with uncertainty representations. \DIFdelbegin \DIFdel{Unlike many models that produce point estimateresults, the model provides posterior risk distributions that include data-driven variability and epistemic uncertainty .
 }\DIFdelend \DIFaddbegin \DIFadd{Rather than a point estimate, the module outputs a posterior risk distribution, from which the risk level $r$ and the uncertainty $u$ are derived.
-    \TODO{Specify the model class (e.g., Bayesian/ensemble model), its inputs (hazard, exposure, vulnerability features), how the posterior and the epistemic uncertainty are estimated, how calibration was checked (e.g., reliability diagram, expected calibration error), and the data used. If the risk values in the experiment were scripted per scenario rather than produced on line by the model, state this explicitly.}
+    This paper focuses on how the risk estimate and its uncertainty are used in the human--AI interaction, not on the risk model itself. The model's estimation procedure and calibration are therefore not evaluated here (Section~\ref{sec:lim_reporting}).
 }\DIFaddend 
 
     \DIFdelbegin \DIFdel{\textbf{Role 1 in ACHDF.}
-    These estimates of uncertainty are a crucial part of the decision logic.
-    }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Role in ACHDF.}
-    }\DIFaddend The risk level is interpreted \DIFdelbegin \DIFdel{in conjunction with the confidence intervals to determine }\DIFdelend \DIFaddbegin \DIFadd{together with its uncertainty to decide }\DIFaddend whether the system \DIFdelbegin \DIFdel{should make recommendations on its own or whether the process should be deferred to humans. The system’s explicit representation of its own uncertainties helps to prevent the propagation of false precisionand supports the reasoning of the risk level in a way that mirrors the human decision-making process}\DIFdelend \DIFaddbegin \DIFadd{presents a bounded recommendation or escalates (Algorithm~\ref{alg:escalation}). Explicitly representing uncertainty is intended to avoid conveying false precision}\DIFaddend .
+    These estimates of uncertainty are a crucial part of the decision logic. The }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Role in ACHDF.}
+    The }\DIFaddend risk level is interpreted \DIFdelbegin \DIFdel{in conjunction with the confidence intervals to determine }\DIFdelend \DIFaddbegin \DIFadd{together with its uncertainty to decide }\DIFaddend whether the system \DIFdelbegin \DIFdel{should make recommendations on its own or whether the process should be deferred to humans. The system’s explicit representation of its own uncertainties helps to prevent the propagation of false precisionand supports the reasoning of the risk level in a way that mirrors the human decision-making process}\DIFdelend \DIFaddbegin \DIFadd{presents a bounded recommendation or escalates (Algorithm~\ref{alg:escalation}). Explicitly representing uncertainty is intended to avoid conveying false precision}\DIFaddend .
 
     \subsection{Guardrailed AI Recommendation Module}
     \DIFdelbegin \DIFdel{To make risk estimates actionable and provide appropriate recommendations, a }\DIFdelend \DIFaddbegin \label{sec:guardrails}
@@ -514,9 +513,9 @@ Action execution & Primary outcome & Measured by AER, decomposed into correct-ac
     \DIFdelbegin \DIFdel{\textbf{Role 2 in ACHDF}
     The system is constrained by a number of layers of structural guardrails that provide assurance with regard to reliability, consistency, and compliance with policies.
 These guardrails ensure that the recommendations generated by the system align with the risk estimates that were made previously and that there is no contradiction with those estimates.There are also further constraints that restrict the scope of recommendations based on }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Role in ACHDF.}
-    Every generated recommendation passes through guardrails before it is shown: (i) a \emph{consistency check} ensures that the recommended action does not contradict the risk estimate (e.g., no ``no action needed'' message when $r \ge \tau_r$); (ii) a \emph{scope check} ensures that the recommendation is selected from the set of permitted actions for the scenario; and (iii) a \emph{policy check} ensures compliance with }\DIFaddend operational and safety \DIFdelbegin \DIFdel{considerations. These recommendations also provide context cues that indicate the }\DIFdelend \DIFaddbegin \DIFadd{rules. A recommendation that fails any check is not shown; instead, the case is escalated ($v=1$).
-    \TODO{Confirm and detail the actual implementation: model used, prompt/template, the list of permitted actions, the specific rules, and an example of a blocked output.}
-    Each recommendation is displayed with its }\DIFaddend criticality and confidence \DIFdelbegin \DIFdel{levels associated with them, thereby avoiding information processing and facilitating a smooth transition to decisions and actions under pressure}\DIFdelend \DIFaddbegin \DIFadd{cues}\DIFaddend . By bounding the generative \DIFdelbegin \DIFdel{results }\DIFdelend \DIFaddbegin \DIFadd{output }\DIFaddend within a structured decision process, the \DIFdelbegin \DIFdel{system harnesses the flexibility of generative AI while also limiting the risks of hallucination and overgeneralization, thereby ensuring that AI support is }\DIFdelend \DIFaddbegin \DIFadd{module aims to keep AI support }\DIFaddend assistive rather than prescriptive \DIFdelbegin \DIFdel{.
+    Every generated recommendation passes through guardrails before it is shown: (i) a \emph{consistency check} ensures that the recommended action does not contradict the risk estimate (e.g., no ``no action needed'' message when $r \ge \tau_r$); (ii) a \emph{scope check} ensures that the recommendation is selected from the set of permitted actions for the scenario; and (iii) a \emph{policy check} ensures compliance with }\DIFaddend operational and safety \DIFdelbegin \DIFdel{considerations. These recommendations also provide context cues that indicate the criticality and confidence levels associated with them, thereby avoiding information processing and facilitating a smooth transition to decisions and actions under pressure}\DIFdelend \DIFaddbegin \DIFadd{rules. A recommendation that fails any check is not shown; instead, the case is escalated ($v=1$).
+    The specific rule sets, the generative model configuration, and the scale and thresholds for criticality are not reported in this paper (Section~\ref{sec:lim_reporting}).
+    Each recommendation is displayed with its criticality and confidence cues}\DIFaddend . By bounding the generative \DIFdelbegin \DIFdel{results }\DIFdelend \DIFaddbegin \DIFadd{output }\DIFaddend within a structured decision process, the \DIFdelbegin \DIFdel{system harnesses the flexibility of generative AI while also limiting the risks of hallucination and overgeneralization, thereby ensuring that AI support is }\DIFdelend \DIFaddbegin \DIFadd{module aims to keep AI support }\DIFaddend assistive rather than prescriptive \DIFdelbegin \DIFdel{.
     }%DIFDELCMD < \begin{algorithm}[t]
 %DIFDELCMD <         \caption{Uncertainty-aware escalation and human override policy}
 %DIFDELCMD <         \label{alg:escalation}
@@ -671,37 +670,27 @@ AI supports sensemaking and constrained recommendations; final decision authorit
     % -------------------------------\input{./060-evaluation}
     \section{Experimental Design and Methods}
 
-    \DIFdelbegin \DIFdel{In this section , we describe the design of the experiments that can be used to test the proposed human--AI decision system . In our case, we aimed to isolate the effect of AI support on human action execution, response behavior, and subjective experience. In general, our design of experiments follows the usual practice of designing experiments to evaluate human--machine systems, where experiments are defined with clear conditions for baseline and treatment cases}\DIFdelend \DIFaddbegin \DIFadd{This section describes the controlled user study that compared the ACHDF-based system with a conventional dashboard. The study is the only empirical evaluation reported in this paper}\DIFaddend .
+    \DIFdelbegin \DIFdel{In this section , we describe the design of the experiments that can be used to test the proposed human--AI decision system . In our case, we aimed to isolate the effect of AI support on human action execution, response behavior, and subjective experience. In general, our design of experiments follows the usual practice of designing experiments to evaluate human--machine systems, where experiments are defined with clear conditions for baseline and treatment cases}\DIFdelend \DIFaddbegin \DIFadd{This section describes the controlled user study that compared the ACHDF-based system with a conventional dashboard. The study is the only empirical evaluation reported in this paper. Details that could not be reported because the underlying materials or trial-level data were not available are listed in Section~\ref{sec:lim_reporting}}\DIFaddend .
 
     \subsection{Study Design and Conditions\DIFdelbegin \DIFdel{(Baseline vs.\ AI-Assisted)}\DIFdelend }
 
     \DIFdelbegin \DIFdel{A }\DIFdelend \DIFaddbegin \DIFadd{We used a }\DIFaddend within-subjects design \DIFdelbegin \DIFdel{was employed in the experiment. In this design, the participants are presented with the same decision-making task in two different }\DIFdelend \DIFaddbegin \DIFadd{with two }\DIFaddend conditions: a \emph{baseline} condition and an \emph{AI-assisted} \DIFdelbegin \DIFdel{condition. In the baseline condition, the participants were presented with the conventional dashboard-based interface. In the AI-assisted condition, the participants were presented with the proposed system that provides context-aware recommendations through the human--AI decision architecture.
-    To avoid learning effects and order effects in the experiment, the presentation order of the two conditions is counterbalanced. The significance of the results is determined by conducting a paired test.
-    In both the baseline and }\DIFdelend \DIFaddbegin \DIFadd{(ACHDF) condition. The order of the conditions was counterbalanced across participants to control for order and learning effects. Both conditions used the same underlying scenario data. \TODO{State whether identical or matched-but-different scenarios were used in the two conditions, and how carry-over of scenario knowledge was avoided.}
+    To avoid learning effects and order effects in the experiment, the presentation order of the two conditions is counterbalanced. The significance of the results is determined by conducting a paired test.In both the baseline and }\DIFdelend \DIFaddbegin \DIFadd{(ACHDF) condition. The order of the conditions was counterbalanced across participants to control for order and learning effects. Both conditions used the same underlying scenario data.
 }
 
-    \DIFadd{\textbf{Baseline condition.} Participants used a conventional dashboard. \TODO{Describe exactly what the dashboard showed, e.g., hazard map, sensor time series, numerical risk level, warning-level color code, and whether any uncertainty or confidence information was shown (e.g., none, or a numerical probability only).} The dashboard gave no action recommendation. Participants had to integrate the information themselves and choose an action.
+    \DIFadd{\textbf{Baseline condition.} Participants used a conventional dashboard that displayed the hazard and risk information for each scenario. The dashboard provided no AI-generated action recommendation, uncertainty indicator, criticality cue, or escalation prompt. Participants had to integrate the information themselves and decide on an action.
 }
 
-    \DIFadd{\textbf{AI-assisted condition.} Participants used the ACHDF-based interface, which showed the same underlying information plus (i) the risk estimate with an explicit uncertainty indicator, (ii) a criticality cue, and (iii) either a single guardrail-checked action recommendation with a short justification (``recommend'' mode) or, when escalation was triggered, the evidence and options with a prompt to review (``escalate'' mode). \TODO{Describe the visual encoding of the uncertainty and criticality cues.}
+    \DIFadd{\textbf{AI-assisted condition.} Participants used the ACHDF-based interface, which displayed the same underlying information together with the ACHDF features described in Section~\ref{sec:system}: the risk estimate with an explicit uncertainty indicator, a criticality cue, and either a single guardrail-checked action recommendation (``recommend'' mode) or, when escalation was triggered, the evidence and options with a prompt to review them (``escalate'' mode). The decision logic is shown in Fig.~\ref{fig:system_overview} and Algorithm~\ref{alg:escalation}. Interface screenshots are not included (Section~\ref{sec:lim_reporting}).
 }
 
-    \DIFadd{Fig.~\ref{fig:interfaces} compares the two interfaces. Because the }\DIFaddend AI-assisted \DIFdelbegin \DIFdel{conditions, the same data is used. Hence, the difference in the performance between the two conditions is solely due to the presence of AI assistance}\DIFdelend \DIFaddbegin \DIFadd{condition differs from the baseline in several features at once (recommendation, action-oriented format, uncertainty cue, criticality cue, and escalation), the comparison estimates the effect of the integrated ACHDF configuration. It does not isolate the effect of any single feature}\DIFaddend .
+    \DIFadd{Because the }\DIFaddend AI-assisted \DIFdelbegin \DIFdel{conditions, the same data is used. Hence, the difference in the performance between the two conditions is solely due to the presence of AI assistance}\DIFdelend \DIFaddbegin \DIFadd{condition differs from the baseline in several features at once (recommendation, action-oriented format, uncertainty cue, criticality cue, and escalation), the comparison estimates the effect of the integrated ACHDF configuration. It does not isolate the effect of any single feature}\DIFaddend .
 
-    \DIFdelbegin \subsection{\DIFdel{Participants and Sampling Strategy}}
-%DIFAUXCMD
-\addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdelend \DIFaddbegin \begin{figure}[t]
-        \centering
-        \fbox{\parbox[c][3cm][c]{0.9\linewidth}{\centering \TODO{Insert side-by-side screenshots: (a) baseline dashboard, (b) ACHDF interface in ``recommend'' mode, (c) ACHDF interface in ``escalate'' mode, with callouts for uncertainty and criticality cues.}}}
-        \caption{Interfaces used in the study. (a) Baseline dashboard. (b) ACHDF interface, recommendation mode. (c) ACHDF interface, escalation mode.}
-        \label{fig:interfaces}
-    \end{figure}
+    \subsection{Participants and \DIFdelbegin \DIFdel{Sampling Strategy}\DIFdelend \DIFaddbegin \DIFadd{Ethics}\DIFaddend }
+    \DIFaddbegin \label{sec:participants}
 \DIFaddend 
 
-    \DIFdelbegin \DIFdel{The demographics of participants are presented in }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Participants and Ethics}}
-
-    \DIFadd{Fifty-two participants took part (}\DIFaddend Table~\ref{tab:participants}\DIFdelbegin \DIFdel{.
+    \DIFdelbegin \DIFdel{The demographics of participants are presented in }\DIFdelend \DIFaddbegin \DIFadd{Fifty-two participants took part (}\DIFaddend Table~\ref{tab:participants}\DIFdelbegin \DIFdel{.
 }%DIFDELCMD < 
 
 %DIFDELCMD <     \begin{table}[t]
@@ -753,19 +742,21 @@ AI supports sensemaking and constrained recommendations; final decision authorit
 %DIFDELCMD < 
 
 %DIFDELCMD <     %%%
-\DIFdel{The total number of participants recruited for the study was 52 in number. For the purpose of this study, participants }\DIFdelend \DIFaddbegin \DIFadd{). Participants }\DIFaddend were recruited using \DIFdelbegin \DIFdel{the stratified sampling technique in order to create diversity in terms of }\DIFdelend \DIFaddbegin \DIFadd{stratified sampling to obtain diversity in }\DIFaddend age, gender, and technical \DIFdelbegin \DIFdel{know-how. This technique has been selected due to the heterogeneity observed in operators in real-world decision environments}\DIFdelend \DIFaddbegin \DIFadd{background. \TODO{State the recruitment source and whether participants were students, general public, or emergency-management professionals; report age mean and SD, the gender breakdown, and the number of participants with prior disaster-response or emergency-operation experience.} Participants were not required to have domain expertise. The sample therefore does not necessarily represent trained emergency operators (Section~\ref{sec:limitations})}\DIFaddend .
+\DIFdel{The total number of participants recruited for the study was 52 in number. For the purpose of this study, participants }\DIFdelend \DIFaddbegin \DIFadd{). Participants }\DIFaddend were recruited using \DIFdelbegin \DIFdel{the stratified sampling technique in order to create diversity in terms of }\DIFdelend \DIFaddbegin \DIFadd{stratified sampling to obtain diversity in }\DIFaddend age, gender, and technical \DIFdelbegin \DIFdel{know-how. This technique has been selected due to the heterogeneity observed in operators in real-world }\DIFdelend \DIFaddbegin \DIFadd{background, reflecting the heterogeneity of operators in real }\DIFaddend decision environments. \DIFdelbegin %DIFDELCMD < 
 
-    \DIFaddbegin \DIFadd{The study protocol was \TODO{approved by / exempted from review by [name of IRB or ethics committee], approval no. [XXXX]}. }\DIFaddend All participants gave \DIFdelbegin \DIFdel{their informed consent prior to }\DIFdelend \DIFaddbegin \DIFadd{written informed consent before }\DIFaddend the experiment. \DIFdelbegin \DIFdel{Although participants were not required to have prior knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures.
-}\DIFdelend \DIFaddbegin \DIFadd{\TODO{State compensation, if any.}
-}\DIFaddend 
+%DIFDELCMD <     %%%
+\DIFdel{All participants gave their informed consent prior to the experiment. Although participants }\DIFdelend \DIFaddbegin \DIFadd{Participants }\DIFaddend were not required to have prior \DIFdelbegin \DIFdel{knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures}\DIFdelend \DIFaddbegin \DIFadd{domain expertise, and the sample was not composed specifically of trained emergency-management professionals (Section~\ref{sec:limitations}).
+}
+
+    \DIFadd{\TODO{Ethics statement: name of the IRB or ethics committee and approval number, or the exemption basis. This is required by the journal and cannot be moved to the limitations.} All participants gave informed consent before the experiment.
+}
+
+    \DIFadd{\textbf{Sample size.} No a priori power analysis was reported for this study. A post hoc sensitivity analysis shows that, with $n=52$, a two-sided paired $t$-test at $\alpha=.05$ has 80\% power to detect a within-subject effect of $d_z \approx 0.40$ or larger. Effects smaller than this may not have been detected reliably}\DIFaddend .
 
     \DIFdelbegin \subsection{\DIFdel{Task Design and Procedure}}
 %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdelend \DIFaddbegin \DIFadd{\textbf{Sample size.} \TODO{Provide the a priori power analysis (target effect size, $\alpha$, power, test), or, if none was performed, a sensitivity analysis. For example: with $n=52$, a two-sided paired $t$-test at $\alpha=.05$ has 80\% power to detect an effect of $d_z \approx 0.40$ (compute with G*Power or equivalent and verify).}
-}\DIFaddend 
-
-    \DIFdelbegin \DIFdel{The participants were required to complete a set of time-sensitive }\DIFdelend \DIFaddbegin \begin{table}[t]
+\DIFdelend \DIFaddbegin \begin{table}[t]
         \caption{Participant Demographics}
         \label{tab:participants}
         \centering
@@ -774,19 +765,20 @@ AI supports sensemaking and constrained recommendations; final decision authorit
             Characteristic & Value \\
             \midrule
             Total participants & 52 \\
-            Age, mean (SD); range & \TODO{} \\
-            Gender (female / male / other) & \TODO{} \\
-            Technical background (low / medium / high) & \TODO{} \\
-            Prior emergency-response experience & \TODO{} \\
+            Age range & 20s--50s \\
+            Gender & Mixed \\
+            Technical background & Low--high \\
+            Domain expertise required & No \\
+            Study design & Within-subjects \\
             \bottomrule
         \end{tabular}
     \end{table}
+\DIFaddend 
 
-    \subsection{\DIFadd{Decision Task and Scenarios}}
+    \DIFdelbegin \DIFdel{The participants were required to complete a set of time-sensitive }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Decision Task and Procedure}}
 
-    \DIFadd{Participants completed a series of time-limited }\DIFaddend decision tasks. \DIFdelbegin \DIFdel{These tasks involved understanding risk information and making a decision on whether or not to take a protective action . These decision tasks were aimed at capturing the essential aspects of a high-stakes decision situation. These aspects include changes in information, uncertainty, and unbalanced error costs.
-    The experiment involved a training period, and after that, the participants completed the task execution of both the experimental conditions.
-The participants were required to focus on the efficacy of the action rather than on the analysis of the information. The system was used to record the decision processes and interaction of the participants. }%DIFDELCMD < 
+    \DIFadd{Participants completed a series of time-limited }\DIFaddend decision tasks. \DIFdelbegin \DIFdel{These tasks involved understanding risk information and making a decision on whetheror not }\DIFdelend \DIFaddbegin \DIFadd{In each task, they interpreted risk information about an evolving hazard and decided whether, and how, }\DIFaddend to take a protective action. \DIFdelbegin \DIFdel{These decision tasks were aimed at capturing the essential aspects of a }\DIFdelend \DIFaddbegin \DIFadd{When the system escalated a case, participants could also defer the decision pending further confirmation. The tasks were designed to reproduce the essential characteristics of }\DIFaddend high-stakes \DIFdelbegin \DIFdel{decision situation. These aspects include changes in }\DIFdelend \DIFaddbegin \DIFadd{decisions: changing }\DIFaddend information, uncertainty, and \DIFdelbegin \DIFdel{unbalanced }\DIFdelend \DIFaddbegin \DIFadd{asymmetric }\DIFaddend error costs. \DIFdelbegin \DIFdel{The experiment involved a training period, and after that, the participants completed the task execution of both the experimental conditions. The participants were required }\DIFdelend \DIFaddbegin \DIFadd{Participants were instructed }\DIFaddend to focus on \DIFdelbegin \DIFdel{the efficacy of the }\DIFdelend \DIFaddbegin \DIFadd{taking the appropriate }\DIFaddend action rather than on \DIFdelbegin \DIFdel{the analysis of }\DIFdelend \DIFaddbegin \DIFadd{analyzing }\DIFaddend the information.
+\DIFdelbegin \DIFdel{The system was used to record the decision processes and interaction of the participants. }%DIFDELCMD < 
 
 %DIFDELCMD <     \begin{table}[t]
 %DIFDELCMD <         \caption{Outcome measures used in the controlled study}
@@ -803,25 +795,20 @@ The participants were required to focus on the efficacy of the action rather tha
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \DIFadd{In each task, they had to interpret risk information about an evolving hazard and decide which protective action to take.
-    \TODO{Report: (i) number of scenarios per condition; (ii) hazard types; (iii) the response options available on every trial (e.g., \{issue evacuation order, issue shelter-in-place advisory, request additional information / defer, no action\}); (iv) the time limit per trial; (v) the composition of scenarios by uncertainty (low/high) and criticality (low/high), and how many triggered escalation; (vi) whether any scenario contained an incorrect AI recommendation; and (vii) how scenario difficulty was matched between conditions (e.g., pilot-tested difficulty ratings, counterbalanced scenario sets).}
-}\DIFaddend 
+%DIFDELCMD < 
 
-    %DIF < ------------------------------------------------------
-\DIFaddbegin \DIFadd{\textbf{Example scenario.} \TODO{Provide one worked example, for instance: ``Heavy rainfall; river gauge at 85\% of flood stage and rising; forecast precipitation 40--90 mm in the next 3 h (high uncertainty); 1,200 residents in the low-lying zone (high criticality). Baseline: participants see the gauge plot, rainfall map, and risk level. ACHDF: the case is escalated; the interface shows the estimated flood probability with its interval, the criticality cue, and the options. Correct action according to the reference protocol: issue an evacuation advisory within 60 s.''}
-}\DIFaddend 
+%DIFDELCMD <     %%%
+%DIF < ------------------------------------------------------
+%DIFDELCMD < 
 
-    \DIFdelbegin %DIFDELCMD < \begin{figure}[t]
+%DIFDELCMD <     \begin{figure}[t]
 %DIFDELCMD <         \centering
 %DIFDELCMD <         \includegraphics[width=0.9\linewidth]{fig_latency_distribution.png}
 %DIFDELCMD <         \caption{Distribution of response latency under baseline and AI-assisted conditions. The distribution under the AI-assisted condition is left-shifted, indicating that the subjects made quicker transitions from risk interpretation to action execution.}
 %DIFDELCMD <         \label{fig:latency_distribution}
 %DIFDELCMD <     \end{figure}
 %DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \subsection{\DIFadd{Training and Procedure}}
-    \DIFadd{Before the experimental trials, each participant completed a training session on both interfaces. \TODO{State the duration and content of training (e.g., a 10-min walkthrough plus N practice scenarios per interface), and whether participants had to meet a comprehension or performance criterion (e.g., correct answers to K comprehension questions) before proceeding.} Participants then completed the two conditions in counterbalanced order, filled in the NASA--TLX, trust, and usability questionnaires after each condition, and took part in a short semi-structured interview at the end. \TODO{State total session duration.} The system logged all decisions, response times, and interactions.
-}\DIFaddend 
+\DIFdelend 
 
     %DIF < ----------------------------------------------
     \DIFdelbegin %DIFDELCMD < \begin{table}[t]
@@ -841,14 +828,11 @@ The participants were required to focus on the efficacy of the action rather tha
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \subsection{\DIFadd{Measures}}
-    \label{sec:measures}
-    \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures.
-}\DIFaddend 
+%DIFDELCMD < 
 
-    %DIF < ---------------------------------------------
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     %%%
+%DIF < ---------------------------------------------
+    %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Trust and usability outcomes (post-task questionnaires)}
 %DIFDELCMD <         \label{tab:trust_usability}
 %DIFDELCMD <         \centering
@@ -866,7 +850,19 @@ The participants were required to focus on the efficacy of the action rather tha
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
 %DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \begin{table}[t]
+\DIFdelend \DIFaddbegin \DIFadd{Before the experimental trials, all participants received training on the task interfaces so that they were equally familiar with the procedures. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions.
+}\DIFaddend 
+
+    \DIFdelbegin \subsection{\DIFdel{Measures and Metrics}}
+    %DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+\DIFdel{These measures and definitions are presented in }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Measures}}
+    \label{sec:measures}
+    \DIFaddend Table~\ref{tab:measures} \DIFdelbegin \DIFdel{.
+    To measure the effectiveness of the system from the perspective of human machine systems, several objective performancemeasures and subjective evaluation tools were used. }\DIFdelend \DIFaddbegin \DIFadd{summarizes the outcome measures.
+}
+
+    \begin{table}[t]
         \caption{Outcome Measures Used in the Controlled Study}
         \label{tab:measures}
         \centering
@@ -874,57 +870,46 @@ The participants were required to focus on the efficacy of the action rather tha
             \toprule
             \textbf{Measure} & \textbf{Operationalization} \\
             \midrule
-            Action Execution Rate (AER) & Proportion of trials in which the participant executed the reference-correct action within the time window $T$ (primary outcome). \\
-            Correct-Action Rate (CAR) & Proportion of trials in which the reference-correct action was chosen, regardless of time. \\
-            On-Time Rate & Proportion of trials with any action executed within $T$. \\
+            Action Execution Rate (AER) & Proportion of trials in which the participant executed the appropriate action within the specified time window (primary outcome). \\
             Response Latency & Time from presentation of actionable information to action execution (s). \\
-            Cognitive Workload & NASA--TLX \cite{Hart1988}, overall score and subscales (0--100), post-condition. \\
-            Trust & Three items: perceived reliability, predictability, and appropriateness of recommendations (5-point Likert); composite = mean. Post-condition. \\
+            Cognitive Workload & NASA--TLX \cite{Hart1988}; overall score and four subscales (0--100), post-condition. \\
+            Trust & Three items: perceived reliability, predictability, and appropriateness of recommendations (5-point Likert); overall score. Post-condition. \\
             Usability & System Usability Scale (SUS) \cite{Brooke1996} (0--100), post-condition. \\
             \bottomrule
         \end{tabular}
     \end{table}
 \DIFaddend 
 
-    \DIFdelbegin \subsection{\DIFdel{Measures and Metrics}}
-    %DIFAUXCMD
-\addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{These measures and definitions are presented in Table ~\ref{tab:measures}.To measure the effectiveness of }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Action Execution Rate.}
-    The AER is the proportion of trials in which the participant executed the \emph{appropriate} action within a fixed time window $T$. The appropriate action for each scenario was defined in advance \TODO{by whom, e.g., by a reference protocol based on the municipal evacuation guideline and reviewed by N domain experts}, independently of the AI recommendation. \TODO{Confirm independence; state $T$ (e.g., 30 s from information onset) and how it was chosen.} Because the AER combines correctness and timeliness, we also report its two components: the \emph{correct-action rate} (CAR), i.e., the proportion of trials with the correct action regardless of time, and }\DIFaddend the \DIFdelbegin \DIFdel{system from the perspective of human machine systems, several objective performance measures and subjective evaluation tools were used.
-}%DIFDELCMD < 
-
-%DIFDELCMD <     %%%
-\DIFdel{\textbf{Action Execution Rate.}
-    On the other hand, the Action Execution Rate (AER), which was defined as ``\textit{the proportion of tasks in which the participant performed the appropriate action within a specified time window,}'' was also proposed as an indicator for the quality of support for not only good decision making but also good action execution, which was considered an important factor in the high-risk environment}\DIFdelend \DIFaddbegin \DIFadd{\emph{on-time rate}, i.e., the proportion of trials with any action within $T$. Every trial that does not count toward the AER falls into exactly one of three failure categories: (a) wrong action within $T$, (b) correct action after $T$, or (c) no action (or deferral) within $T$. This decomposition shows whether failures come from choosing the wrong action or from acting too late}\DIFaddend .
+    \textbf{Action Execution Rate.}
+    \DIFdelbegin \DIFdel{On the other hand, the Action Execution Rate (AER ), which was defined as ``\textit{the proportion of tasks in which the participant performed the appropriate action within a specified time window,}'' was also proposed as an indicator for the quality of support for not only good decision making but also good action execution, which was considered an important factor in the high-risk environment}\DIFdelend \DIFaddbegin \DIFadd{The AER is the proportion of trials in which the participant executed the \emph{appropriate} action for the scenario within the specified time window. The AER therefore combines two aspects of performance: whether the action was correct and whether it was taken in time. Response latency, reported separately, describes the timing of all executed actions. The trial-level data needed to decompose the AER into a correct-action rate and an on-time rate, and to classify failures as wrong actions, late actions, or omissions, were not available for re-analysis. The procedure for defining the appropriate action and the length of the time window are also not documented in sufficient detail to be reported here. Both points are treated as limitations (Section~\ref{sec:lim_reporting})}\DIFaddend .
 
     \textbf{Response Latency.}
-    Response latency \DIFdelbegin \DIFdel{was suggested as “the time it took since actionable information was displayed until a participant performed }\DIFdelend \DIFaddbegin \DIFadd{is the time from the display of actionable information until the participant executed }\DIFaddend an action. \DIFdelbegin \DIFdel{” Less response latency was considered to be more efficient decision support with less hesitation about uncertainty}\DIFdelend \DIFaddbegin \DIFadd{It is computed on all trials with an action, regardless of correctness}\DIFaddend .
+    Response latency \DIFdelbegin \DIFdel{was suggested as “the time it took since actionable information was displayed until a participant performed }\DIFdelend \DIFaddbegin \DIFadd{is the time from the display of actionable information until the participant executed }\DIFaddend an action.
+\DIFdelbegin \DIFdel{” Less response latency was considered to be more efficient decision support with less hesitation about uncertainty.
+}\DIFdelend 
 
     \textbf{Cognitive Workload\DIFdelbegin \DIFdel{(NASA--TLX)}\DIFdelend .}
-    \DIFdelbegin \DIFdel{Cognitive workload was measured using the NASA Task Load Index (NASA--TLX). The }\DIFdelend \DIFaddbegin \DIFadd{Workload was measured with the }\DIFaddend NASA--TLX \DIFdelbegin \DIFdel{was administered to participants }\DIFdelend \DIFaddbegin \DIFadd{\cite{Hart1988} }\DIFaddend after each condition\DIFdelbegin \DIFdel{, and it has multiple workload scales. Lower workload values represent lower mental demand and better cognitive efficiency}\DIFdelend \DIFaddbegin \DIFadd{. \TODO{State whether the raw (unweighted) TLX or the weighted version was used, and which subscales were administered; Table~\ref{tab:subscales} reports four of the six.} Lower scores indicate lower perceived workload}\DIFaddend .
+    \DIFdelbegin \DIFdel{Cognitive workload was measured using the NASA Task Load Index (NASA--TLX). The }\DIFdelend \DIFaddbegin \DIFadd{Workload was measured with the }\DIFaddend NASA--TLX \DIFdelbegin \DIFdel{was administered to participants }\DIFdelend \DIFaddbegin \DIFadd{\cite{Hart1988} }\DIFaddend after each condition\DIFdelbegin \DIFdel{, and it has multiple workload scales. Lower workload values represent lower mental demand and better cognitive efficiency}\DIFdelend \DIFaddbegin \DIFadd{. We report the overall score and four subscales (mental demand, temporal demand, effort, and frustration). Lower scores indicate lower perceived workload}\DIFaddend .
 
     \textbf{Trust\DIFdelbegin \DIFdel{and Usability}\DIFdelend .}
-    Trust \DIFdelbegin \DIFdel{in the system was determined through a post-task Likert-type scale questionnaire evaluating perceived trustworthiness, predictability, and appropriateness }\DIFdelend \DIFaddbegin \DIFadd{was measured after each condition with three items on perceived \emph{reliability}, \emph{predictability}, and \emph{appropriateness} }\DIFaddend of the system's \DIFdelbegin \DIFdel{suggestions. Usability was determined through a standardized usability questionnaire. These variables evaluate the subjective aspects that affect the adoption and use of human--AI systems.
-    In addition to significance testing, effect sizes were calculated using Cohen's $d$ to evaluate the practical significance of the differences found}\DIFdelend \DIFaddbegin \DIFadd{recommendations, each rated on a 5-point Likert scale (1 = strongly disagree, 5 = strongly agree). The trust score is the mean of the three items. \TODO{Give the exact wording of the items; state whether they were adapted from an existing instrument (e.g., Jian \emph{et al.} \cite{Jian2000}) or developed for this study; report internal consistency (Cronbach's $\alpha$) in each condition.} The same three constructs are used consistently throughout the paper}\DIFaddend .
+    Trust \DIFdelbegin \DIFdel{in the system was determined through a post-task }\DIFdelend \DIFaddbegin \DIFadd{was measured after each condition with three }\DIFaddend Likert-type \DIFdelbegin \DIFdel{scale questionnaire evaluating perceived trustworthiness, predictability, and appropriateness }\DIFdelend \DIFaddbegin \DIFadd{items on the perceived \emph{reliability}, \emph{predictability}, and \emph{appropriateness} }\DIFaddend of the system's \DIFdelbegin \DIFdel{suggestions. Usability was determined through a standardized usability questionnaire. These variables evaluate the subjective aspects that affect the adoption and use of human--AI systems. In addition to significance testing, effect sizes were calculated using Cohen's $d$ to evaluate the practical significance of the differences found. }%DIFDELCMD < 
 
-    %DIF < ---------------------------------\input{./070-result}
-    \DIFdelbegin \section{\DIFdel{Results}}
+%DIFDELCMD <     %%%
+%DIF < ---------------------------------\input{./070-result}
+    \section{\DIFdel{Results}}
     %DIFAUXCMD
 \addtocounter{section}{-1}%DIFAUXCMD
-\DIFdel{This section presents the empirical results of the experimental evaluation. Following the conventions of the field of human--machine systems, the results are described with little interpretation. Statistical results and confidence intervals are provided as appropriate, and interpretation of the results is left to the following section.
-}\DIFdelend \DIFaddbegin \DIFadd{\textbf{Usability.}
-    Usability was measured with the System Usability Scale (SUS) \cite{Brooke1996} after each condition. The SUS consists of ten items on a 5-point scale and yields a score from 0 to 100, with higher scores indicating better perceived usability. \TODO{Confirm that the standard SUS was used.}
+\DIFdel{This section presents the empirical resultsof the experimental evaluation.
+Following the conventions of the field of human--machine systems, the results are described with little interpretation.Statistical results and confidence intervals are provided as appropriate, and interpretation of the results is left to the following section. }\DIFdelend \DIFaddbegin \DIFadd{recommendations, rated on a 5-point scale. The overall trust score summarizes the three items. These three constructs are used consistently throughout the paper. Item-level data were not available, so internal consistency could not be estimated, and no published validation is available for these items, unlike established trust-in-automation scales such as that of Jian \emph{et al.} \cite{Jian2000}. The trust results should therefore be read as an indicative composite (Section~\ref{sec:lim_reporting}).
 }\DIFaddend 
 
     \DIFdelbegin \subsection{\DIFdel{Action Execution and Response Time}}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{Participants using the AI-assisted conditionhad a higher Action Execution Rate compared to the baseline condition. In all scenarios, a larger percentage of participants were able to execute the correct action within a predetermined time window when assisted by the suggested system. Response latency was also found to be decreased in the AI-assisted condition . It was found that participants responded quicker on average after receiving actionable information. This shows that the suggested system helped participants transition quicker from risk interpretation to action execution. Summary statistics on Action Execution Rate and response latency are provided in Table ~\ref{tab:action_latency}, and distributional differences are depicted in Fig. ~\ref{fig:latency_distribution}}\DIFdelend \DIFaddbegin \DIFadd{\textbf{Qualitative data.}
-    Semi-structured post-task interviews were audio-recorded and transcribed. \TODO{Describe the coding procedure: approach (e.g., thematic analysis), number of coders, codebook development, and inter-rater agreement (e.g., Cohen's $\kappa$).}
-}
-
-    \subsection{\DIFadd{Statistical Analysis}}
-    \DIFadd{All comparisons are within-subjects (baseline vs.\ AI-assisted, paired by participant). For each outcome, normality of the paired differences was checked with the Shapiro--Wilk test and Q--Q plots. If normality held, a paired $t$-test was used; otherwise, a Wilcoxon signed-rank test was used. \TODO{Report which test was actually applied to each outcome; Table~\ref{tab:primary} lists it per row. For AER, a mixed-effects logistic regression on trial-level data (participant as random intercept, condition and order as fixed effects) is a suitable alternative.} Response latency was log-transformed before analysis if it was right-skewed}\DIFaddend .
+\DIFdel{Participants using the AI-assisted condition had a higher Action Execution Rate compared to the baseline condition.In all scenarios, a larger percentage of participants were able to execute the correct action within a predetermined time window when assisted by the suggested system.
+    Response latency was also found to be decreased in the AI-assisted condition . It was found that participants responded quicker on average after receiving actionable information. This shows that the suggested system helped participants transition quicker from risk interpretation to action execution. Summary statisticson Action Execution Rate and response latency are provided in Table ~\ref{tab:action_latency}, and distributional differences are depicted in Fig. ~\ref{fig:latency_distribution}. }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Usability.}
+    Usability was measured with the System Usability Scale (SUS) \cite{Brooke1996} after each condition. The SUS yields a score from 0 to 100, with higher scores indicating better perceived usability.
+}\DIFaddend 
 
     \DIFdelbegin %DIFDELCMD < \begin{figure}[t]
 %DIFDELCMD <         \centering
@@ -933,51 +918,55 @@ The participants were required to focus on the efficacy of the action rather tha
 %DIFDELCMD <         \label{fig:workload_trust_summary}
 %DIFDELCMD <     \end{figure}
 %DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \DIFadd{For each outcome, we report the mean (SD) per condition, the mean paired difference with its 95\% confidence interval, the test statistic, the exact $p$-value, and an effect size. For paired $t$-tests, the effect size is Cohen's $d_z$ (mean difference divided by the SD of the differences); for Wilcoxon tests, it is the matched-pairs rank-biserial correlation $r$ \cite{Lakens2013}. Order effects were examined by adding the condition order as a between-subjects factor (condition $\times$ order interaction).
+\DIFdelend \DIFaddbegin \DIFadd{\textbf{Qualitative observations.}
+    Post-task interviews were used to collect participants' comments on their experience. The comments were summarized into themes, but they were not systematically coded, and theme prevalence was not recorded. We therefore report them as informal observations that complement the quantitative results. We do not describe the study as a mixed-method evaluation.
 }\DIFaddend 
 
     \DIFdelbegin \subsection{\DIFdel{Task Performance Outcomes}}
 %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdelend \DIFaddbegin \DIFadd{H1 (AER) is the primary hypothesis and was tested at $\alpha = .05$. The secondary outcomes (H2--H4: latency, NASA--TLX, trust, SUS) were corrected for multiple comparisons with the Holm--Bonferroni procedure. Analyses were performed in \TODO{software and version}. Comparisons between escalated and non-escalated trials (Section~\ref{sec:res_escalation}) are descriptive only, because escalation is triggered by uncertainty or criticality and the two sets of trials are therefore not comparable.
-}\DIFaddend 
+%DIFDELCMD < 
 
-    \DIFdelbegin \DIFdel{The performance in the execution of the objective task was enhanced with the help of AI, as shown in Fig. ~\ref{fig:workload_trust_summary}}\DIFdelend %DIF > ---------------------------------\input{./070-result}
-    \DIFaddbegin \section{\DIFadd{Results}}
-    \DIFadd{Table~\ref{tab:primary} reports all primary and secondary outcomes, with inferential statistics per outcome. Interpretation follows in Section~\ref{sec:discussion}}\DIFaddend .
+%DIFDELCMD <     %%%
+\DIFdel{The performance in the execution of }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Statistical Analysis}}
+    \DIFadd{All comparisons are within-subjects (baseline vs.\ AI-assisted, paired by participant) and used paired significance tests. H1 (AER) is }\DIFaddend the \DIFdelbegin \DIFdel{objective task was enhanced with the help of AI, as shown in Fig. ~\ref{fig:workload_trust_summary}}\DIFdelend \DIFaddbegin \DIFadd{primary hypothesis; H2--H4 concern secondary outcomes. For each outcome, we report the condition means (and SDs, where available) and the difference between conditions. For the outcomes with reported SDs (NASA--TLX, trust, SUS), we computed Cohen's $d_{av}$, i.e., the mean difference divided by the average of the two condition SDs \cite{Lakens2013}. Because $d_{av}$ does not take the within-subject correlation into account, it is not equivalent to $d_z$, the effect size on which the paired test is based. Exact test statistics, confidence intervals, assumption diagnostics, order-effect analyses, and multiplicity-corrected $p$-values could not be computed because the trial-level data were not available for re-analysis (Section~\ref{sec:lim_reporting}). The comparisons between escalated and non-escalated trials (Section~\ref{sec:res_escalation}) are descriptive only, because escalation is triggered by uncertainty or criticality and the two sets of trials are therefore not comparable.
+}
+
+    %DIF > ---------------------------------\input{./070-result}
+    \section{\DIFadd{Results}}
+    \DIFadd{Table~\ref{tab:primary} reports the primary and secondary outcomes. Interpretation follows in Section~\ref{sec:discussion}}\DIFaddend .
 
     \DIFdelbegin \DIFdel{It is observed that the rate of action execution was enhanced by a small amount, from 0.55 }\DIFdelend \DIFaddbegin \begin{table*}[t]
         \caption{Primary and Secondary Outcomes: Baseline vs.\ AI-Assisted (ACHDF), $n=52$, Within-Subjects}
         \label{tab:primary}
         \centering
-        \begin{tabular}{l c c c c c c}
+        \begin{tabular}{l c c c c c}
             \toprule
-            \textbf{Outcome} & \textbf{Baseline} & \textbf{AI-assisted} & \textbf{Difference [95\% CI]} & \textbf{Test} & \textbf{Statistic, $p$} & \textbf{Effect size} \\
-            & M (SD) & M (SD) & & & & \\
+            \textbf{Outcome} & \textbf{Baseline} & \textbf{AI-assisted} & \textbf{Difference} & \textbf{Paired test} & \textbf{Effect size} \\
+            & M (SD) & M (SD) & (AI $-$ baseline) & & $d_{av}$ \\
             \midrule
-            \multicolumn{7}{l}{\emph{Primary (H1)}} \\
-            AER & 0.62 (\TODO{}) & 0.81 (\TODO{}) & $+0.19$ [\TODO{}] & \TODO{} & \TODO{} & \TODO{} \\
-            \quad Correct-action rate (CAR) & \TODO{} & \TODO{} & \TODO{} & \TODO{} & \TODO{} & \TODO{} \\
-            \quad On-time rate & \TODO{} & \TODO{} & \TODO{} & \TODO{} & \TODO{} & \TODO{} \\
+            \multicolumn{6}{l}{\emph{Primary (H1)}} \\
+            AER & 0.62 (n/a) & 0.81 (n/a) & $+0.19$ & $p < .01$ & n/a \\
             \midrule
-            \multicolumn{7}{l}{\emph{Secondary (H2--H4), Holm-corrected}} \\
-            Response latency (s) & 12.4 (\TODO{}) & 8.1 (\TODO{}) & $-4.3$ [\TODO{}] & \TODO{} & \TODO{} & \TODO{} \\
-            NASA--TLX overall (0--100) & 59.8 (10.9) & 46.2 (9.6) & $-13.6$ [\TODO{}] & \TODO{} & \TODO{} & \TODO{$d_z$}; $d_{av}=1.32^{\dagger}$ \\
-            Trust composite (1--5) & 3.4 (0.6) & 4.2 (0.5) & $+0.8$ [\TODO{}] & \TODO{} & \TODO{} & \TODO{$d_z$}; $d_{av}=1.45^{\dagger}$ \\
-            SUS (0--100) & 68.5 (11.2) & 81.7 (9.4) & $+13.2$ [\TODO{}] & \TODO{} & \TODO{} & \TODO{$d_z$}; $d_{av}=1.28^{\dagger}$ \\
+            \multicolumn{6}{l}{\emph{Secondary (H2--H4)}} \\
+            Response latency (s) & 12.4 (n/a) & 8.1 (n/a) & $-4.3$ & $p < .01$ & n/a \\
+            NASA--TLX overall (0--100) & 59.8 (10.9) & 46.2 (9.6) & $-13.6$ & $p < .05$ & 1.32 \\
+            Trust overall (1--5) & 3.4 (0.6) & 4.2 (0.5) & $+0.8$ & $p < .05$ & 1.45 \\
+            SUS (0--100) & 68.5 (11.2) & 81.7 (9.4) & $+13.2$ & not reported & 1.28 \\
             \bottomrule
-            \multicolumn{7}{p{0.95\linewidth}}{\footnotesize $^{\dagger}$Cohen's $d_{av}$ = mean difference / average of the two condition SDs, computed from the reported means and SDs. It does not account for the within-subject correlation and will be replaced by $d_z$ computed from the paired data. The single effect size of $d=0.86$ given in the previous version could not be attributed to a specific outcome and has been removed.}
+            \multicolumn{6}{p{0.92\linewidth}}{\footnotesize n/a: not available, because the trial-level data could not be re-analyzed. $p$-values are the significance thresholds of the original paired tests. Exact test statistics and 95\% confidence intervals could not be computed (Section~\ref{sec:lim_reporting}). $d_{av}$ = mean difference / average of the two condition SDs, computed from the reported means and SDs. It ignores the within-subject correlation and is not equivalent to the paired $d_z$. A single Cohen's $d$ of 0.86 given in the previous version could not be attributed to a specific outcome and has been removed.}
         \end{tabular}
     \end{table*}
 
     \subsection{\DIFadd{Action Execution and Response Latency}}
-    \DIFadd{The mean AER was 0.62 }\DIFaddend in the baseline \DIFdelbegin \DIFdel{scenario to 0.74 in the AI-assisted scenario. This shows that the number of actions executed was higher }\DIFdelend \DIFaddbegin \DIFadd{condition and 0.81 }\DIFaddend in the AI-assisted \DIFdelbegin \DIFdel{scenario. }\DIFdelend \DIFaddbegin \DIFadd{condition (\TODO{test statistic, $p$, 95\% CI, effect size}). \TODO{Report CAR and on-time rate per condition and the distribution of failures over the three categories (wrong action within $T$; correct action after $T$; no action within $T$), e.g., as an additional row block or a stacked bar figure.}
-}\DIFaddend 
+    \DIFadd{The mean AER was 0.62 }\DIFaddend in the baseline \DIFdelbegin \DIFdel{scenario to 0.74 }\DIFdelend \DIFaddbegin \DIFadd{condition and 0.81 }\DIFaddend in the AI-assisted \DIFdelbegin \DIFdel{scenario. This shows that the number of actions executed was higher in the AI-assisted scenario.
+}%DIFDELCMD < 
 
-    \DIFdelbegin \DIFdel{It is also observed that the response time was reduced. The average response time was reduced from 12.3 seconds }\DIFdelend \DIFaddbegin \DIFadd{The mean response latency was 12.4~s }\DIFaddend in the baseline \DIFdelbegin \DIFdel{scenario to 8.0 seconds }\DIFdelend \DIFaddbegin \DIFadd{condition and 8.1~s }\DIFaddend in the AI-assisted \DIFdelbegin \DIFdel{scenario. The time was reduced by more than 4 seconds.This shows that the participants responded and executed actions in a better manner with the help of the AI system.
-    }\DIFdelend \DIFaddbegin \DIFadd{condition (\TODO{test statistic, $p$, 95\% CI, effect size}). Fig.~\ref{fig:latency_distribution} shows the latency distributions.
-    \TODO{Report order effects (condition $\times$ order) for AER and latency.}
-}\DIFaddend 
+%DIFDELCMD <     %%%
+\DIFdel{It is also observed that the response time was reduced.
+    The average response time was reduced from 12.3 seconds }\DIFdelend \DIFaddbegin \DIFadd{condition, a difference of 0.19 (paired test, $p < .01$).
+    The mean response latency was 12.4~s }\DIFaddend in the baseline \DIFdelbegin \DIFdel{scenario to 8.0 seconds }\DIFdelend \DIFaddbegin \DIFadd{condition and 8.1~s }\DIFaddend in the AI-assisted \DIFdelbegin \DIFdel{scenario. The time was reduced by more than 4 seconds.This shows that the participants responded and executed actions in a better manner with the help of the AI system}\DIFdelend \DIFaddbegin \DIFadd{condition, a difference of 4.3~s (paired test, $p < .01$). Fig.~\ref{fig:latency_distribution} shows the latency distributions.
+    Whether the difference in the AER arose mainly from fewer wrong actions or from fewer late actions could not be determined (Section~\ref{sec:lim_reporting})}\DIFaddend .
 
     \DIFdelbegin \subsection{\DIFdel{Cognitive Workload and Trust Outcomes}}
 %DIFAUXCMD
@@ -996,13 +985,19 @@ The participants were required to focus on the efficacy of the action rather tha
     The total score on the }\DIFdelend \DIFaddbegin \DIFadd{summarizes the subjective measures, and Table~\ref{tab:subscales} gives the subscale scores.
     The overall }\DIFaddend NASA--TLX \DIFdelbegin \DIFdel{assessment dropped from around 60 }\DIFdelend \DIFaddbegin \DIFadd{score was 59.8 (SD 10.9) }\DIFaddend in the baseline condition \DIFdelbegin \DIFdel{to 46 }\DIFdelend \DIFaddbegin \DIFadd{and 46.2 (SD 9.6) }\DIFaddend in the AI-assisted condition, a \DIFdelbegin \DIFdel{reduction of 14 points . This is a clear indication of reduced workload in the AI-assisted condition. The NASA--TLX scores are summarized in Table~\ref{tab:workload}.
     Trust ratings were higher for the AI-assisted system.
-    The average trust score was higher in the AI-assisted condition , increasing from around 3.2 in the }\DIFdelend \DIFaddbegin \DIFadd{difference of 13.6 points (\TODO{test statistic, $p$, 95\% CI, $d_z$}).
-    The trust composite was 3.4 (SD 0.6) in the }\DIFaddend baseline condition \DIFdelbegin \DIFdel{to 4.0 on a }\DIFdelend \DIFaddbegin \DIFadd{and 4.2 (SD 0.5) in the AI-assisted condition on the }\DIFaddend 5-point scale \DIFdelbegin \DIFdel{in the AI-assisted condition , indicating that the system was perceived as more trustworthy and appropriate in its guidance.
-    Usability was also higher }\DIFdelend \DIFaddbegin \DIFadd{(\TODO{test statistic, $p$, 95\% CI, $d_z$}).
-    The SUS score was 68.5 (SD 11.2) in the baseline condition and 81.7 (SD 9.4) }\DIFaddend in the AI-assisted condition \DIFdelbegin \DIFdel{. The system usability scores increased from around 69 to 82, a jump of 13 points, indicating that the participants found }\DIFdelend \DIFaddbegin \DIFadd{(\TODO{test statistic, $p$, 95\% CI, $d_z$}).
-}
+    The average }\DIFdelend \DIFaddbegin \DIFadd{difference of 13.6 points (paired test, $p < .05$; $d_{av} = 1.32$).
+    The overall }\DIFaddend trust score was \DIFdelbegin \DIFdel{higher in the AI-assisted condition , increasing from around 3.2 in the }\DIFdelend \DIFaddbegin \DIFadd{3.4 (SD 0.6) in the }\DIFaddend baseline condition \DIFdelbegin \DIFdel{to 4.0 on a }\DIFdelend \DIFaddbegin \DIFadd{and 4.2 (SD 0.5) in the AI-assisted condition on the }\DIFaddend 5-point scale \DIFdelbegin \DIFdel{in the AI-assisted condition , indicating that the system was perceived as more trustworthy and appropriate in its guidance.
+    Usability was also higher }\DIFdelend \DIFaddbegin \DIFadd{(paired test, $p < .05$; $d_{av} = 1.45$).
+    The SUS score was 68.5 (SD 11.2) in the baseline condition and 81.7 (SD 9.4) }\DIFaddend in the AI-assisted condition \DIFdelbegin \DIFdel{. The system usability scores increased from around 69 to 82, a jump of 13 points, indicating that the participants found the AI-assisted system interface easier and more effective to use.
+The trust and usability scores are summarized in Table~\ref{tab:trust_usability}.
+}\DIFdelend \DIFaddbegin \DIFadd{($d_{av} = 1.28$). No significance test was reported for the SUS.
+}\DIFaddend 
 
-    \begin{figure}[t]
+    \DIFdelbegin \subsection{\DIFdel{Effects of Uncertainty-Aware Escalation}}
+    %DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+\DIFdel{When the uncertainty thresholds were exceeded, human-in-the-loop escalation occurred. In such cases, the participants appropriately deferred their decisions until further confirmation or clarification was available. No increase in inappropriate use of the system recommendations in high-uncertainty cases was observed.
+    The results comparing }\DIFdelend \DIFaddbegin \begin{figure}[t]
         \centering
         \includegraphics[width=0.9\linewidth]{fig_workload_trust_summary.png}
         \caption{Cognitive workload (NASA--TLX; lower is better), trust, and usability (higher is better) in the baseline and AI-assisted conditions.}
@@ -1033,15 +1028,8 @@ The participants were required to focus on the efficacy of the action rather tha
 
     \subsection{\DIFadd{Escalated and Non-Escalated Trials (Descriptive)}}
     \label{sec:res_escalation}
-    \DIFadd{In }\DIFaddend the AI-assisted \DIFdelbegin \DIFdel{system interface easier and more effective to use. The trust and usability scores are summarized in Table~\ref{tab:trust_usability}.
-}%DIFDELCMD < 
-
-%DIFDELCMD <     %%%
-\subsection{\DIFdel{Effects of Uncertainty-Aware Escalation}}
-    %DIFAUXCMD
-\addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{When the uncertainty thresholds were exceeded, human-in-the-loop escalation occurred. In such cases, the participants appropriately deferred their decisions until further confirmation or clarification was available. No increase in inappropriate use of the system recommendations in high-uncertainty cases was observed.
-    The results comparing }\DIFdelend \DIFaddbegin \DIFadd{condition, escalation was triggered on \TODO{N of M} trials. Table~\ref{tab:escalation} reports, descriptively, the rates of appropriate deferral and inappropriate reliance in }\DIFaddend escalated and non-escalated \DIFdelbegin \DIFdel{cases are presented }\DIFdelend \DIFaddbegin \DIFadd{trials. \TODO{Define ``appropriate deferral'' and ``inappropriate reliance'' operationally, e.g., inappropriate reliance = accepting the AI recommendation when it differed from the reference-correct action.} These two sets of trials are not equivalent conditions. Escalation is triggered by high uncertainty or criticality, and it explicitly prompts human review. The differences }\DIFaddend in Table~\ref{tab:escalation} \DIFdelbegin \DIFdel{. These results show that uncertainty-aware escalationmaintained system effectiveness while preventing over-reliance on the system}\DIFdelend \DIFaddbegin \DIFadd{therefore cannot be attributed causally to escalation}\DIFaddend .
+    \DIFadd{Table~\ref{tab:escalation} reports, descriptively, the rates of appropriate deferral and inappropriate reliance in }\DIFaddend escalated and non-escalated \DIFdelbegin \DIFdel{cases are presented in Table~\ref{tab:escalation}. These results show that uncertainty-aware escalation maintained system effectiveness while preventing over-reliance on the system. }\DIFdelend \DIFaddbegin \DIFadd{trials of the AI-assisted condition. Appropriate deferral denotes deferring the decision for further confirmation when the situation warranted it. Inappropriate reliance denotes following the AI recommendation when this was not appropriate. These two sets of trials are not equivalent conditions. Escalation is triggered by high uncertainty or criticality, and it explicitly prompts human review. The differences in Table~\ref{tab:escalation} therefore cannot be attributed causally to escalation. The number of trials in each set was not available.
+}\DIFaddend 
 
     \DIFdelbegin \subsection{\DIFdel{Qualitative Observations}}
 %DIFAUXCMD
@@ -1054,7 +1042,6 @@ The participants were required to focus on the efficacy of the action rather tha
             \toprule
             \textbf{Metric} & \textbf{No escalation} & \textbf{Escalation triggered} \\
             \midrule
-            Number of trials & \TODO{} & \TODO{} \\
             Appropriate deferral rate & 0.21 & 0.47 \\
             Inappropriate reliance rate & 0.18 & 0.09 \\
             \bottomrule
@@ -1062,12 +1049,12 @@ The participants were required to focus on the efficacy of the action rather tha
     \end{table}
 \DIFaddend 
 
-    \DIFdelbegin \DIFdel{The post-task interviews allowed for qualitative analysis of the participants' experiences. Participants often pointed out that the AI recommendations diminished the need for cross-referencing between different information sources. Some participants also emphasized the importance of having explicit uncertainty indicators to guide their confidence in decisions.
-    Some qualitative findings are presented in }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Qualitative Observations}}
-    \DIFaddend Table~\ref{tab:qualitative} \DIFdelbegin \DIFdel{. These findings supplement the quantitative findings by providing a glimpse into the participants' experiences with the system during decision-making tasks.
-    To mitigate the potential for a Type~I error due to multiple comparisons, all primary hypotheses were defined a~priori, and consistent performance patterns were verified across different objective and subjective measures}\DIFdelend \DIFaddbegin \DIFadd{lists the themes identified in the post-task interviews, with the number of participants who expressed each theme and representative quotations}\DIFaddend .
+    \DIFdelbegin \DIFdel{The post-task interviews allowed for qualitative analysis of the participants' experiences. Participants often pointed out that the AI recommendations diminished the need for cross-referencing between different information sources. Some participants also emphasized the importance of having explicit uncertainty indicators to guide their confidence in decisions. Some qualitative findings are presented in }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Qualitative Observations}}
+    \DIFaddend Table~\ref{tab:qualitative} \DIFaddbegin \DIFadd{summarizes recurring comments from the post-task interviews. These are informal observations. They were not systematically coded, and their prevalence was not recorded (Section~\ref{sec:measures})}\DIFaddend .
+\DIFdelbegin \DIFdel{These findings supplement the quantitative findings by providing a glimpse into the participants' experiences with the system during decision-making tasks. To mitigate the potential for a Type~I error due to multiple comparisons, all primary hypotheses were defined a~priori, and consistent performance patterns were verified across different objective and subjective measures.
+}%DIFDELCMD < 
 
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     \begin{table}[t]
 %DIFDELCMD <         \caption{Cognitive Workload and Trust Scores}
 %DIFDELCMD <         \label{tab:workload_trust}
 %DIFDELCMD <         \centering
@@ -1096,9 +1083,10 @@ The participants were required to focus on the efficacy of the action rather tha
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < 
+%DIFDELCMD < %%%
+\DIFdelend 
 
-%DIFDELCMD <     \begin{table}[t]
+    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Workload, trust, and usability outcomes (controlled study)}
 %DIFDELCMD <         \label{tab:workload_trust}
 %DIFDELCMD <         \centering
@@ -1129,17 +1117,16 @@ The participants were required to focus on the efficacy of the action rather tha
 %DIFDELCMD <     \end{table}
 %DIFDELCMD < %%%
 \DIFdelend \DIFaddbegin \begin{table}[t]
-        \caption{Themes From Post-Task Interviews ($n=52$)}
+        \caption{Informal Observations From Post-Task Interviews (Not Systematically Coded)}
         \label{tab:qualitative}
         \centering
-        \begin{tabular}{p{0.24\linewidth}p{0.10\linewidth}p{0.55\linewidth}}
+        \begin{tabular}{p{0.30\linewidth}p{0.60\linewidth}}
             \toprule
-            \textbf{Theme} & \textbf{$n$ (\%)} & \textbf{Description and representative quotation} \\
+            \textbf{Theme} & \textbf{Observation (paraphrased)} \\
             \midrule
-            Reduced context switching & \TODO{} & Recommendations reduced the need to cross-reference multiple sources. \TODO{quote, participant ID} \\
-            Usefulness of uncertainty cues & \TODO{} & Participants used uncertainty cues to decide when to defer or seek confirmation. \TODO{quote, participant ID} \\
-            Accountability and control & \TODO{} & The ability to override improved perceived safety and responsibility. \TODO{quote, participant ID} \\
-            \TODO{Negative or critical themes, if any} & \TODO{} & \TODO{} \\
+            Reduced context switching & Recommendations reduced the need to cross-reference multiple sources. \\
+            Usefulness of uncertainty cues & Participants used uncertainty cues to decide when to defer or seek confirmation. \\
+            Accountability and control & The ability to override improved perceived safety and responsibility. \\
             \bottomrule
         \end{tabular}
     \end{table}
@@ -1172,14 +1159,12 @@ The participants were required to focus on the efficacy of the action rather tha
 %DIFDELCMD < \label{sec:results_mechanism}
 %DIFDELCMD < %%%
 \DIFdelend \DIFaddbegin \subsection{\DIFadd{Action Execution in the Joint Human--AI System}}
-\DIFadd{In the AI-assisted condition, the AER was higher and response latency shorter than with the dashboard. This is consistent with H1 and H2 \TODO{adjust after the statistics are filled in}. Evaluating the system by action execution, rather than by prediction accuracy, follows directly from the JCS perspective. In AI decision-support research, however, evaluation is still dominated by accuracy and information quality \cite{Lai2023FAccT,Muller2022CHIWORK,Yang2022THMSReview}. Our results illustrate that what a human--AI system achieves depends on how support is structured to lead to action, not only on whether support is available.
+\DIFadd{In the AI-assisted condition, the AER was higher and response latency shorter than with the dashboard. This is consistent with H1 and H2. Evaluating the system by action execution, rather than by prediction accuracy, follows directly from the JCS perspective. In AI decision-support research, however, evaluation is still dominated by accuracy and information quality \cite{Lai2023FAccT,Muller2022CHIWORK,Yang2022THMSReview}. Our results illustrate that what a human--AI system achieves depends on how support is structured to lead to action, not only on whether support is available.
 }\DIFaddend 
 
 \DIFdelbegin \DIFdel{In order to provide a structured understanding of how the achieved results were obtained at the behavioral level, we also analyzed the results through the prism of the Action-Centered Human--AI Decision Framework (ACHDF). This analysis does not include any new outcome measures but structures the existing results to reveal multi-layered patterns relevant to human action in the context of uncertainty.
 From the mechanism perspective, the increase in Action Execution Rate and the reduction in response latency (Table~\ref{tab:action_latency}, Fig.~\ref{fig:latency_distribution}) may be considered a behavioral outcome of uncertainty-aware function allocation, where the representation of uncertainty directly influences the allocation of decisions to the AI or human operators in terms of timing and correctness of action execution. At the level of error structure, uncertainty-aware escalation was found to influence participants’ responses in high-uncertainty scenarios. As depicted in Table~\ref{tab:escalation}, escalation was linked to increased appropriate deferral and reduced inappropriate reliance. These results indicate that uncertainty-aware escalation selectively mitigated failure modes related to hesitation and over-reliance, rather than indiscriminately increasing reliance on automation.
-Lastly, qualitative results (Table~\ref{tab:qualitative}) and reductions in workload (Table~\ref{tab:workload}) indicate changes in decision processes in }\DIFdelend \DIFaddbegin \DIFadd{Several features of }\DIFaddend the AI-assisted condition \DIFdelbegin \DIFdel{. Participants’ self-reported context switching and decision transitions align with reductions in response latency and workload. These findings on all three levels align with the premise of ACHDF: that human action in uncertain situations can be explained by the interaction of uncertainty-aware risk representation, bounded autonomy, calibrated trust, and cognitive workload management. Moreover, statistical tests for comparing the baseline and AI-assisted conditions revealed that the improvement in the rate of action execution and the reduction of latency while responding were statistically significant at a $p$ value of less than 0.01. Differences observed for cognitive workload and trust levels, as measured by the NASA--TLX scale, were statistically significant at a $p$ value of less than 0.05.
-}\DIFdelend \DIFaddbegin \DIFadd{could explain the improvement: the presence of a recommendation, its action-oriented phrasing, the explicit uncertainty and criticality cues, and escalation. Our design does not separate these features. In particular, we cannot conclude that presenting recommendations in an action format, rather than a risk format, caused the improvement. A factorial design that varies the format while holding the other features constant is needed to test this (Section~\ref{sec:limitations}). \TODO{The decomposition of the AER into correct-action rate and on-time rate shows whether the improvement came mainly from fewer wrong actions or from fewer late actions; interpret here once the data are reported.}
-}\DIFaddend 
+Lastly, qualitative results (Table~\ref{tab:qualitative}) and reductions in workload (Table~\ref{tab:workload}) indicate changes in decision processes in }\DIFdelend \DIFaddbegin \DIFadd{Several features of }\DIFaddend the AI-assisted condition \DIFdelbegin \DIFdel{. Participants’ self-reported context switching and decision transitions align with reductions in response latency and workload. These findings on all three levels align with the premise of ACHDF: that human action in uncertain situations can be explained by the interaction of uncertainty-aware risk representation, bounded autonomy, calibrated trust, and cognitive workload management. Moreover, statistical tests for comparing the baseline and AI-assisted conditions revealed that the improvement in the rate of action execution and the reduction of latency while responding were statistically significant at a $p$ value of less than 0.01. Differences observed for cognitive workload and trust levels, as measured by the NASA--TLX scale, were statistically significant at a $p$ value of less than 0.05}\DIFdelend \DIFaddbegin \DIFadd{could explain the improvement: the presence of a recommendation, its action-oriented phrasing, the explicit uncertainty and criticality cues, and escalation. Our design does not separate these features. In particular, we cannot conclude that presenting recommendations in an action format, rather than a risk format, caused the improvement. A factorial design that varies the format while holding the other features constant is needed to test this (Section~\ref{sec:limitations}). Because the AER could not be decomposed, it also remains open whether the improvement came mainly from fewer wrong actions or from fewer late actions (Section~\ref{sec:lim_reporting})}\DIFaddend .
 
 %DIF < ----------------------------------------\input{./080-discussion}
 \DIFdelbegin \section{\DIFdel{Discussion}}
@@ -1188,8 +1173,8 @@ Lastly, qualitative results (Table~\ref{tab:qualitative}) and reductions in work
 \DIFdel{This section interprets the empirical findings from a human--machine systems perspective and situates them within the broader literature on human--AI decision making. Rather than focusing on application-specific results, }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Framework-Based Interpretation of }\DIFaddend the \DIFdelbegin \DIFdel{discussion emphasizes generalizable insights for the design and evaluation of human--AI decision systems operating under uncertainty \cite{Bach2024Access,PerezCerrolaza2024CSUR,Lai2023FAccT,Yang2022THMSReview}. In particular, this work contributes to the core concerns of \textit{Human--Machine Systems} by explicitly linking }\DIFdelend \DIFaddbegin \DIFadd{Results}}
 \label{sec:interpretation}
 \DIFadd{The following interpretation organizes the observed results along the ACHDF layers. It does not test the proposed mechanisms; it is a framework-based reading of the existing outcomes.
-\emph{Action level:} the higher AER and lower latency (Table~\ref{tab:primary}) are consistent with the idea that }\DIFaddend uncertainty-aware \DIFdelbegin \DIFdel{function allocation to observable human action execution. By doing so, it extends classic HMS constructs---such as trust calibration, workload, and authority allocation---from internal cognitive or perceptual states to measurable behavioral outcomes. }\DIFdelend \DIFaddbegin \DIFadd{adaptation of support helps operators move from risk interpretation to action.
-\emph{Error-structure level:} in escalated trials, appropriate deferral was more frequent and inappropriate reliance less frequent than in non-escalated trials (Table~\ref{tab:escalation}). Because escalation is triggered by uncertainty and criticality and itself prompts human review, this pattern is descriptive. It is compatible with, but does not demonstrate, a protective effect of escalation against over-reliance.
+\emph{Action level:} the higher AER and lower latency (Table~\ref{tab:primary}) are consistent with the idea that }\DIFaddend uncertainty-aware \DIFdelbegin \DIFdel{function allocation to observable human action execution. By doing so, it extends classic HMS constructs---such as trust calibration, workload, and authority allocation---from internal cognitive or perceptual states to measurable behavioral outcomes}\DIFdelend \DIFaddbegin \DIFadd{adaptation of support helps operators move from risk interpretation to action}\DIFaddend .
+\DIFaddbegin \DIFadd{\emph{Error-structure level:} in escalated trials, appropriate deferral was more frequent and inappropriate reliance less frequent than in non-escalated trials (Table~\ref{tab:escalation}). Because escalation is triggered by uncertainty and criticality and itself prompts human review, this pattern is descriptive. It is compatible with, but does not demonstrate, a protective effect of escalation against over-reliance.
 \emph{Process level:} interview themes on reduced context switching (Table~\ref{tab:qualitative}) and lower NASA--TLX scores (Table~\ref{tab:subscales}) suggest that the AI-assisted condition changed the decision process.
 }\DIFaddend 
 
@@ -1200,14 +1185,13 @@ Lastly, qualitative results (Table~\ref{tab:qualitative}) and reductions in work
 By directly assessing action execution as an outcome measure, this research extends previous research that primarily tested decision support systems in terms of the accuracy of predictions or the quality of information \cite{Lai2023FAccT,Muller2022CHIWORK,Yang2022THMSReview}. From a human--machine system perspective, action execution is the end result of human information processing that combines elements of perception, understanding, trust, and workload into system performance \cite{Hodgson2013THMS,Bach2024Access}.
 The increase in Action Execution Rate and the decrease in response latency indicate that human--AI systems are capable of significantly influencing human behavior when recommendations are presented in action format instead of risk format. This supports the move towards an outcome-oriented human--machine system research area where the effectiveness of AI support is determined in terms of human action instead of computer performance \cite{Lai2023FAccT,Yang2022THMSReview}.
 This research contributes to the Human--Machine Systems area by empirically connecting function allocation with uncertainty to human }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Workload as a possible explanation.} Lower workload is a plausible contributor to better }\DIFaddend action execution. The \DIFdelbegin \DIFdel{results demonstrate how design decisions in the architecture (bounded autonomy, uncertainty representation, and escalation strategies) map to behavioral phenomena, thus closing the theoretical-practice divide in human factors theory and human--AI system design \cite{Bach2024Access,Assaad2023TAS,Zhang2022THMS}.
-In this respect, the Action-Centered Human--AI Decision Framework (ACHDF)may also be used as an analytical tool for identifying failure modes in existing human--AI systems, aside from the system examined in this research \cite{Yang2022THMSReview,Lai2023FAccT}. }\DIFdelend \DIFaddbegin \DIFadd{NASA--TLX, however, is a retrospective, subjective, condition-level measure, and we did not test whether the reduction in workload explains the improvement in AER (e.g., with a mediation analysis). This link should therefore be regarded as a possible explanatory mechanism, not a demonstrated pathway. \TODO{Optional: report the within-participant correlation between the change in NASA--TLX and the change in AER.}
-}\DIFaddend 
+In this respect, the Action-Centered Human--AI Decision Framework (ACHDF)may also be used as an analytical tool for identifying failure modes in existing human--AI systems, aside from the system examined in this research \cite{Yang2022THMSReview,Lai2023FAccT}}\DIFdelend \DIFaddbegin \DIFadd{NASA--TLX, however, is a retrospective, subjective, condition-level measure, and we did not test whether the reduction in workload explains the improvement in AER (e.g., with a mediation analysis). This link should therefore be regarded as a possible explanatory mechanism, not a demonstrated pathway}\DIFaddend .
 
 \subsection{Trust \DIFdelbegin \DIFdel{Calibration }\DIFdelend and Automation Bias}
 \DIFdelbegin \DIFdel{The main contribution of this research is in the way it approaches the issue of trust calibration. The findings show that the more trust participants had }\DIFdelend \DIFaddbegin \DIFadd{Perceived trust was higher }\DIFaddend in the AI-assisted \DIFdelbegin \DIFdel{system, the more this did not translate to automation bias. Instead, participants displayed appropriate trust in the system and delayed action in situations of high uncertainty and appropriate use of human-in-the-loop escalation mechanisms \cite{Raji2019AIES,Raji2022CACM,Weidinger2022FAccT}. The findings demonstrate the effect of uncertainty-aware design and the use of design constraints in avoiding typical automation failure modes. In this way, the system did not provide false confidence to the participants. These findings validate human factors theories emphasizing the importance of trust calibration in effective human--AI cooperation and provide evidence of this in design \cite{Hodgson2013THMS,Bach2024Access}. These results provide empirical support for long-held theoretical assertions in human--machine systems research that }\DIFdelend \DIFaddbegin \DIFadd{condition. Higher trust is not the same as \emph{calibrated} trust. Calibration requires that reliance matches the actual reliability of the advice \cite{Lee2004}. Showing calibration would require relating trust or reliance to the correctness of the AI's recommendations, trial by trial. The greater deferral in escalated trials is also not evidence of calibration, because escalation itself prompts human review. We therefore make no claim that ACHDF calibrates trust.
 }
 
-\DIFadd{Similarly, }\DIFaddend automation bias can be \DIFdelbegin \DIFdel{reduced by incorporating uncertainty representation and human-in-the-loop escalation. Contrary to the potential for increasing over-reliance, the proposed design facilitated calibrated trust by aligning perceived system confidence with actual uncertainty \cite{Miller2019XRDS,Weidinger2022FAccT,Lai2023FAccT}}\DIFdelend \DIFaddbegin \DIFadd{directly assessed only on trials in which the AI's advice is wrong, by measuring how often participants accept it \cite{Parasuraman2010}. \TODO{If the scenario set contained erroneous AI recommendations, report the acceptance rate of incorrect recommendations and interpret it here. If not, keep the following sentence.} Because the study did not systematically include erroneous recommendations, it cannot show whether ACHDF reduces automation bias. This is an important topic for future work}\DIFaddend .
+\DIFadd{Similarly, }\DIFaddend automation bias can be \DIFdelbegin \DIFdel{reduced by incorporating uncertainty representation and human-in-the-loop escalation. Contrary to the potential for increasing over-reliance, the proposed design facilitated calibrated trust by aligning perceived system confidence with actual uncertainty \cite{Miller2019XRDS,Weidinger2022FAccT,Lai2023FAccT}}\DIFdelend \DIFaddbegin \DIFadd{directly assessed only on trials in which the AI's advice is wrong, by measuring how often participants accept it \cite{Parasuraman2010}. The study did not analyze behavior on trials with erroneous AI recommendations, so it cannot show whether ACHDF reduces automation bias. This is an important topic for future work}\DIFaddend .
 
 \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Design Implications for Human--AI Decision Systems}
@@ -1247,37 +1231,55 @@ The findings of the study indicate }\DIFdelend \DIFaddbegin \DIFadd{In the study
     \end{table}
 
 \subsection{\DIFadd{Design Implications}}
-\DIFadd{Within the scope of the evaluated task, the results suggest }\DIFaddend that human--AI \DIFdelbegin \DIFdel{decision-making systems should be designed in such a way that they }\DIFdelend \DIFaddbegin \DIFadd{decision support systems may benefit from }\DIFaddend (1) \DIFdelbegin \DIFdel{model }\DIFdelend \DIFaddbegin \DIFadd{representing }\DIFaddend uncertainty explicitly, (2) \DIFdelbegin \DIFdel{provide }\DIFdelend \DIFaddbegin \DIFadd{providing }\DIFaddend action guidance rather than \DIFaddbegin \DIFadd{only }\DIFaddend passive information display, and (3) \DIFdelbegin \DIFdel{allocate decision authority dynamically }\DIFdelend \DIFaddbegin \DIFadd{adapting the level and form of support to uncertainty and criticality }\DIFaddend through human-in-the-loop escalation\DIFdelbegin \DIFdel{\cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access}.
-Based on the Human--Machine Systems model, the results of the current study imply that effective decision systems with AI assistance need to be based on the concepts of bounded autonomy and decision authority allocation, as well as uncertainty-aware interaction. These concepts are not limited to the disaster response domain and are generally applicable to a wide variety of safety-critical human--machine systems with AI assistance \cite{Yang2022THMSReview,PerezCerrolaza2024CSUR}. The observed effects of the described phenomenon are not domain-specific but rather general mechanisms of human--machine interaction, which are relevant to any }\DIFdelend \DIFaddbegin \DIFadd{, while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Table~\ref{tab:design_implications} lists these candidate implications. Because the components were not manipulated separately, each implication should be tested individually. Whether they transfer to other }\DIFaddend safety-critical \DIFdelbegin \DIFdel{decision system \cite{Bach2024Access,Hodgson2013THMS}.
-In general, the current study contributes to the broader area of human--machine systems by showing the benefits of the application of human-centered AI decision systems with awareness of uncertainty for the execution of actions without compromising safety and accountability \cite{Lai2023FAccT,Yang2022THMSReview}.
- The design implications that are critical based on the findings are presented in Table~\ref{tab:design_implications}.
-In providing insight into the manner in which architectural design translates into behavioral outcomes, the results contribute to the domain of human machine systems with respect to trust calibration and cognitive ergonomics}\DIFdelend \DIFaddbegin \DIFadd{domains, such as healthcare, transportation, and industrial safety \cite{PerezCerrolaza2024CSUR,Farhan2025TCE}, has not been tested here (Table~\ref{tab:achdf_transferability})}\DIFaddend .
+\DIFadd{Within the scope of the evaluated task, the results suggest }\DIFaddend that human--AI \DIFdelbegin \DIFdel{decision-making systems should be designed in such a way that they }\DIFdelend \DIFaddbegin \DIFadd{decision support systems may benefit from }\DIFaddend (1) \DIFdelbegin \DIFdel{model }\DIFdelend \DIFaddbegin \DIFadd{representing }\DIFaddend uncertainty explicitly, (2) \DIFdelbegin \DIFdel{provide }\DIFdelend \DIFaddbegin \DIFadd{providing }\DIFaddend action guidance rather than \DIFaddbegin \DIFadd{only }\DIFaddend passive information display, and (3) \DIFdelbegin \DIFdel{allocate decision authority dynamically }\DIFdelend \DIFaddbegin \DIFadd{adapting the level and form of support to uncertainty and criticality }\DIFaddend through human-in-the-loop escalation\DIFdelbegin \DIFdel{\cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access}. Based on the Human--Machine Systems model, the results of the current study imply that effective decision systems with AI assistance need to be based on the concepts of bounded autonomy and decision authority allocation, as well as uncertainty-aware interaction. These concepts are not limited to the disaster response domain and are generally applicable to a wide variety of safety-critical human--machine systems with AI assistance \cite{Yang2022THMSReview,PerezCerrolaza2024CSUR}. The observed effects of the described phenomenon are not domain-specific but rather general mechanisms of human--machine interaction, which are relevant to any }\DIFdelend \DIFaddbegin \DIFadd{, while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Table~\ref{tab:design_implications} lists these candidate implications. Because the components were not manipulated separately, each implication should be tested individually. Whether they transfer to other }\DIFaddend safety-critical \DIFdelbegin \DIFdel{decision system \cite{Bach2024Access,Hodgson2013THMS}.In general, the current study contributes to the broader area of human--machine systems by showing the benefits of the application of human-centered AI decision systems with awareness of uncertainty for the execution of actions without compromising safety and accountability \cite{Lai2023FAccT,Yang2022THMSReview}. The design implications that are critical based on the findings are presented in Table~\ref{tab:design_implications}. In providing insight into the manner in which architectural design translates into behavioral outcomes, the results contribute to the domain of human machine systems with respect to trust calibration and cognitive ergonomics. }\DIFdelend \DIFaddbegin \DIFadd{domains, such as healthcare, transportation, and industrial safety \cite{PerezCerrolaza2024CSUR,Farhan2025TCE}, has not been tested here (Table~\ref{tab:achdf_transferability}).
+}\DIFaddend 
 
     %---------------------------------\input{./090-futurework}
     \section{Limitations and Future Work}
-    \DIFdelbegin \DIFdel{The research has several limitations, which also point to potential directions for future research in similar studies. Although the research provides valuable data in terms of the effectiveness of the human--AI system in decision-making, it must be considered in relation to the limitations of this research}\DIFdelend \DIFaddbegin \label{sec:limitations}
+    \DIFdelbegin \DIFdel{The research has several limitations, which also point to potential directions for future research in similar studies. Although the research provides valuable data in terms of the effectiveness of the human--AI system in decision-making, it must be considered in relation to the limitations of this research.
+        }\DIFdelend \DIFaddbegin \label{sec:limitations}
+\DIFaddend 
 
-    \subsection{\DIFadd{Bundled Intervention}}
+    \DIFdelbegin \subsection{\DIFdel{Generalization}}
+    %DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+\DIFdel{The study has conducted an empirical evaluation using a set of decision scenarios in relation to a disaster response scenario. Although this scenario is representative of a high-stakes decision-making scenario in which there is considerable uncertainty }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Bundled Intervention}}
     \DIFadd{The AI-assisted condition differed from the baseline in several features at once. The study therefore estimates the effect of the integrated ACHDF configuration and cannot attribute effects to individual components (uncertainty display, action format, escalation, guardrails). Future work should use factorial or ablation designs.
 }
 
     \subsection{\DIFadd{Trust Calibration and Automation Bias}}
-    \DIFadd{Trust was measured as a self-reported attitude at the condition level, and the scenario set did not systematically include erroneous AI recommendations \TODO{confirm}. Hence, neither calibration nor automation bias could be assessed directly. Future studies should include trials with incorrect advice and measure reliance trial by trial}\DIFaddend .
+    \DIFadd{Trust was measured as a self-reported attitude at the condition level, and behavior on trials with erroneous AI recommendations was not analyzed. Hence, neither calibration nor automation bias could be assessed directly. Future studies should include trials with incorrect advice and measure reliance trial by trial.
+}
 
-    \subsection{\DIFdelbegin \DIFdel{Generalization}%DIFDELCMD < \MBLOCKRIGHTBRACE
-%DIFDELCMD <     %%%
-\DIFdel{The study has conducted an empirical evaluation using a set of decision scenarios in relation to a disaster response scenario. Although this scenario is representative of a high-stakes decision-making scenario in which there is considerable uncertainty, future research can be conducted to evaluate the generalization of the proposed design principles across diverse domains }\DIFdelend \DIFaddbegin \DIFadd{Domain }\DIFaddend and \DIFdelbegin \DIFdel{professionals in which there is considerable expertise}\DIFdelend \DIFaddbegin \DIFadd{Population Generalizability}}
-    \DIFadd{The evaluation was conducted only with disaster-response scenarios in a simulated setting. Participants were not required to have domain expertise \TODO{and were mostly [students / general public]}. Trained emergency operators may behave differently: they may rely less on recommendations, use different heuristics, or experience different workload. Generalization to other domains (e.g., medical triage, autonomous driving supervision, traffic management) and to professional operators remains future work. The ecological limits of deferral (Section~\ref{sec:discussion}) also belong here}\DIFaddend .
+    \subsection{\DIFadd{Domain and Population Generalizability}}
+    \DIFadd{The evaluation was conducted only with disaster-response scenarios in a simulated setting. Participants were not required to have domain expertise, and the sample was not composed specifically of emergency-management professionals. Trained emergency operators may behave differently: they may rely less on recommendations, use different heuristics, or experience different workload. Generalization to other domains (e.g.}\DIFaddend , \DIFdelbegin \DIFdel{future research can be conducted to evaluate the generalization of }\DIFdelend \DIFaddbegin \DIFadd{medical triage, autonomous driving supervision, traffic management) and to professional operators remains future work. The ecological limits of deferral (Section~\ref{sec:discussion}) also belong here.
+}
 
-    \subsection{Long-Term Trust Effects}
-    The \DIFdelbegin \DIFdel{research has focused on the }\DIFdelend \DIFaddbegin \DIFadd{study captured only }\DIFaddend short-term effects \DIFdelbegin \DIFdel{of human--AI systems. Although it is recognized that the study has focused on the short term, it is anticipated that the long-term effects of trust will be considerable in relation to operators' }\DIFdelend \DIFaddbegin \DIFadd{within a single session. Trust and reliance may change with longer }\DIFaddend exposure to the system and \DIFdelbegin \DIFdel{its behavior in relation to uncertainty escalation .
-}%DIFDELCMD < 
+    \subsection{\DIFadd{Reporting and Analysis Limitations}}
+    \label{sec:lim_reporting}
+    \DIFadd{Several analyses and details requested for a complete account of the study could not be provided, because the trial-level data and some study materials were not available for re-analysis. The affected results should be interpreted with corresponding caution:
+    }\begin{itemize}
+        \item \DIFadd{\emph{Inferential statistics.} Only the significance thresholds of the original paired tests are available. Exact test statistics, 95\% confidence intervals, assumption diagnostics, the paired effect size $d_z$, order-effect analyses, and multiplicity-corrected $p$-values could not be computed. SDs for the AER and response latency are not available, and the paired test used for each outcome is not documented. No a priori power analysis was reported; the sensitivity analysis (Section~\ref{sec:participants}) indicates adequate power only for effects of about $d_z \geq 0.40$.
+        }\item \DIFadd{\emph{AER construction.} The procedure for defining the appropriate action and the length of the time window are not documented in detail, and the AER could not be decomposed into action correctness and timeliness. Consequently, it cannot be determined whether execution failures were due to wrong actions or to delays.
+        }\item \DIFadd{\emph{Task and materials.} The number and composition of scenarios (by uncertainty and criticality), }\DIFaddend the \DIFdelbegin \DIFdel{proposed design principles across diverse domains and professionals in which there is considerable expertise. }\DIFdelend \DIFaddbegin \DIFadd{full set of response options, the per-trial time limit, the matching of scenario difficulty, the training content and any pass criterion, and interface screenshots are not reported. This limits reproducibility.
+        }\item \DIFadd{\emph{System implementation.} The risk model's estimation and calibration procedure, the criticality scale and thresholds, and the specific guardrail rules are not reported. The evaluation therefore concerns the interaction design as experienced by participants, not the validity of these components.
+        }\item \DIFadd{\emph{Measures.} The trust items have no published validation and their internal consistency could not be estimated. The interview data were not systematically coded. The number of escalated trials is not available.
+    }\end{itemize}
+    \DIFadd{Future studies should preregister their analyses and share trial-level data and materials so that these analyses can be reported in full.
+}\DIFaddend 
+
+    \DIFdelbegin \subsection{\DIFdel{Long-Term Trust Effects}}
+    %DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+\DIFdel{The research has focused on the }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Long-Term Trust Effects}}
+    \DIFadd{The study captured only }\DIFaddend short-term \DIFdelbegin \DIFdel{effects of human--AI systems. Although it is recognized that the study has focused on the short term, it is anticipated that the long-term effects of trust will be considerable in relation to operators' exposure to the system and its behavior in relation to uncertainty escalation. }%DIFDELCMD < 
 
 %DIFDELCMD <     %%%
 \subsection{\DIFdel{Extension of the Research Beyond Disaster Response}}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{The research has focused on the domain of disaster response and has recognized this domain as effective in relation to testing systems in a high-stakes scenario. Although the domain is recognized as effective in relation to testing systems in a high-stakes scenario, future research can be conducted to extend the system beyond this domain to other high-stakes domains such as medical systems and traffic management systems}\DIFdelend \DIFaddbegin \DIFadd{to its escalation behavior, which calls for longitudinal field studies}\DIFaddend .
+\DIFdel{The research has focused on the domain of disaster response and has recognized this domain as effective in relation to testing systems in a high-stakes scenario.
+Although the domain is recognized as effective in relation to testing systems in a high-stakes scenario, future research can be conducted to extend the system beyond this domain to other high-stakes domains such as medical systems and traffic management systems}\DIFdelend \DIFaddbegin \DIFadd{effects within a single session. Trust and reliance may change with longer exposure to the system and to its escalation behavior, which calls for longitudinal field studies}\DIFaddend .
 
     %-------------------------------\input{./092-conclusion}
 \section{Conclusion}

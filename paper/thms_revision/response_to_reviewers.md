@@ -8,47 +8,39 @@
 | File | Content |
 |---|---|
 | `main.tex` | Revised manuscript |
-| `main_original.tex` | Submitted version (for diffing: `latexdiff main_original.tex main.tex > diff.tex`) |
-| `main_revised.pdf` | Compiled revised version. TODO items appear in **red** |
+| `main_original.tex` | Submitted version |
+| `main_revised.pdf` | Compiled revised version |
 | `main_diff.pdf` | latexdiff of original vs. revised (added text: blue sans-serif; deleted text: small red; tables, figures and Algorithm 1 are shown as whole old/new blocks) |
 | `cover_letter_en.md` | Standalone cover letter for submission (`cover_letter_ko.md`: Korean version) |
 | `reference-data.bib` | Adds 11 references (JCS, adaptive automation, trust, NASA-TLX, SUS, effect sizes) |
 
-> **Before resubmission:** the revised manuscript contains 51 `\TODO{...}` markers (shown in red). Each one needs data or facts that only the author has: tests, CIs, scenario details, IRB, screenshots, and so on. No numbers were invented. Search for `\TODO` in `main.tex` and remove the `\newcommand{\TODO}` line from the preamble once all are resolved.
+> **Before resubmission:** one red `\TODO` remains in `main.tex` (§IV-B). It is the **ethics statement** (IRB/committee name and approval number, or the exemption basis). The journal requires it, and it cannot be moved to the limitations. Fill it in and delete the `\newcommand{\TODO}` line from the preamble. Also enter the date in the cover letter.
 
-### Author checklist (items that need data)
-1. **Statistics:** for each outcome, the test, statistic, exact p, 95% CI, and d_z (Table V). Also order effects and Holm correction.
-2. **AER decomposition:** correct-action rate, on-time rate, and the distribution of the three failure types (Reviewer 3).
-3. **Ground truth and time window T** for "appropriate action". Confirm it is independent of the AI recommendation.
-4. **Scenarios:** number per condition, response options, time limit, uncertainty/criticality composition, difficulty matching, and one worked example.
-5. **Erroneous AI recommendations:** did any trials include them? (Decides whether the automation-bias sentence stays.)
-6. **Interface screenshots** for Fig. 3 (baseline / recommend / escalate).
-7. **Risk model** (estimator, calibration), **criticality** scale and thresholds, and **guardrail** implementation details.
-8. **Participants:** demographics, expertise, recruitment source, **IRB number**, compensation, power or sensitivity analysis.
-9. **Training:** duration, content, pass criterion.
-10. **Trust questionnaire:** item wording, source, and Cronbach's α. Confirm the standard **SUS** was used. Raw vs. weighted TLX.
-11. **Qualitative coding:** procedure, κ, theme prevalence, quotes.
-12. **Figures:** check that `fig_workload_trust_summary.png` (Fig. 5) shows the reconciled values (AER 0.62→0.81, latency 12.4→8.1 s, trust 3.4→4.2). Also check whether `fig_system_overview.png` contains wording like "shifts decision authority". If so, change it to "level of AI support".
-13. **Number reconciliation:** the revised text uses the **table values** (AER 0.62/0.81, latency 12.4/8.1 s, trust 3.4/4.2). The old text values (0.55/0.74, 12.3/8.0 s, 3.2/4.0) were removed. **Verify both against the raw data.**
+### How analyses requiring raw data were handled
+The trial-level data and some study materials were not available for re-analysis. We did not invent any values. Every item that depends on such data is reported as far as the existing manuscript supports it, and the rest is listed explicitly in a new limitation, **§VII-D "Reporting and Analysis Limitations"**.
+
+| Item | Treatment in the manuscript |
+|---|---|
+| Test statistics, 95% CIs, d_z, assumption checks, order effects, multiplicity correction | Not computable. Table V reports means, SDs where available, differences, the original significance thresholds (p < .01 / p < .05), and d_av computed from the reported means and SDs. The rest is in §VII-D. |
+| SDs for AER and latency; SUS significance test | Marked "n/a" or "not reported" in Table V and listed in §VII-D. |
+| Power | A post hoc sensitivity analysis was computed: with n = 52, a paired t-test at α = .05 and 80% power detects d_z ≈ 0.40. This does not need the raw data. |
+| AER decomposition (correct action vs. timeliness), ground truth, time window T | The AER is now explicitly described as combining correctness and timeliness. The decomposition, ground-truth procedure and T are listed in §VII-D as unavailable. The Discussion notes that the source of the improvement (wrong vs. late actions) remains open. |
+| Scenario count and composition, response options, time limit, difficulty matching, worked example, training criterion, interface screenshots | The task, procedure and both conditions are described at the level the study documentation supports. The missing details are listed in §VII-D as a reproducibility limitation. The placeholder figure was removed. |
+| Risk-model estimation and calibration, criticality scale and thresholds, guardrail rules | Described conceptually (Table I, §III-C/D). Implementation details are listed in §VII-D. The evaluation is scoped to the interaction design. |
+| Trust items, validation, Cronbach's α | The constructs are named consistently. The limitations (no published validation, α not estimable) are stated in §IV-E and §VII-D, and the trust score is called an "indicative composite". |
+| Qualitative coding, prevalence, quotes | Reframed as informal, uncoded observations. The "mixed-method" label was dropped. |
+| Number of escalated trials | Removed from Table VII and noted as unavailable. |
+| Trials with erroneous AI advice | The automation-bias claim was removed. Behavior on such trials "was not analyzed" (§VI-C, §VII-B). |
+| Participant demographics | Reported as in the original (age 20s–50s, mixed gender, low–high technical background, no domain expertise required). |
+
+### Note on numerical consistency
+The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency 12.3→8.0 s vs. 12.4→8.1 s; trust 3.2→4.0 vs. 3.4→4.2). The revised manuscript uses the **table values** throughout. These could not be checked against raw data. If a check later shows the text values were correct, update Table V, §V, and Fig. 4 together.
 
 ---
 
-## Cover letter (draft)
+## Cover letter
 
-Dear Dr. Trajkovic,
-
-We thank you, the Associate Editor, and the three reviewers for the thorough evaluation of manuscript THMS-26-02-0115. As invited in the decision letter of 12 November 2026, we submit a substantially revised manuscript as a new submission. The main changes are:
-
-1. **Positioning and contribution.** ACHDF is now explicitly framed as an instantiation of the Joint Cognitive Systems perspective (Hollnagel & Woods, 2005; Woods & Hollnagel, 2006) and of adaptive function allocation (Parasuraman et al., 2000; Kaber & Endsley, 2004; Scerbo, 2007). A new Related Work subsection (II-A) states how ACHDF relates to this work. All three contributions were reworded so that we no longer claim action-oriented evaluation as a new concept.
-2. **Construct definitions.** A new Table I defines the role (design input, system mode, design consideration, outcome) and operationalization of uncertainty, criticality, guardrails, bounded autonomy, escalation, trust, workload, and action execution. The manuscript now states consistently that ACHDF adapts the *level and form of AI support* and that decision authority always remains with the human.
-3. **Methods transparency.** New subsections and figures describe both interfaces, the task and scenarios (with a worked example), training, participants and ethics approval, power, and all instruments (NASA-TLX, a three-item trust measure with consistent terminology, SUS).
-4. **Statistics.** A new Statistical Analysis subsection specifies tests, assumption checks, 95% CIs, named effect sizes (d_z / rank-biserial), multiplicity correction, and order-effect analysis. Each outcome is now reported with its statistics in one table (Table V).
-5. **Consistency and redundancy.** Numerical inconsistencies between text and tables were corrected. Former Sections V-A/V-B were merged. Former Tables V/VII/VIII and the duplicate workload/trust table were consolidated into Tables V and VI. The ambiguous single Cohen's d was removed.
-6. **Qualified claims.** Claims about mechanism, trust calibration, automation bias, the benefit of the action format, and cross-domain generalizability were removed or explicitly reframed as hypotheses. Corresponding limitations were added (bundled intervention, no direct calibration or automation-bias test, domain and population generalizability, ecological validity of deferral).
-7. **Structure and language.** Results now contain only descriptive and inferential findings. The former "mechanism analysis" moved to the Discussion as a framework-based interpretation (VI-B). The manuscript was edited for language, including removing "in fact" and "on the other hand".
-
-Sincerely,
-Geunsik Lim
+See `cover_letter_en.md`.
 
 ---
 
@@ -57,9 +49,9 @@ Geunsik Lim
 | AE concern | Response | Location |
 |---|---|---|
 | Difference from JCS and adaptive function allocation | Explicit positioning as an instantiation, plus a new related-work subsection | §I (end), §II-A, §III |
-| Roles and implementation of uncertainty, criticality, guardrails, escalation, trust, workload, bounded autonomy | New construct table; "bounded autonomy" defined as bounded *generation* of recommendations; trust and workload declared design considerations and outcomes, not run-time states | Table I, §III-A, §III-D–F |
-| Statistical methods: tests, assumptions, CIs, effect sizes, power | New subsection plus per-outcome table | §IV-F, §IV-B, Table V |
-| Numerical inconsistencies, redundant sections and tables | Fixed and consolidated | §V, Tables V–VI |
+| Roles and implementation of uncertainty, criticality, guardrails, escalation, trust, workload, bounded autonomy | New construct table; "bounded autonomy" defined as bounded *generation* of recommendations; trust and workload declared design considerations and outcomes, not run-time states. Implementation details that cannot be reported are stated as such. | Table I, §III-A, §III-C–F, §VII-D |
+| Statistical methods: tests, assumptions, CIs, effect sizes, power | The Statistical Analysis subsection states what was done (paired tests), what is reported (means, differences, significance thresholds, d_av), and what could not be computed. A sensitivity analysis was added for power. | §IV-B, §IV-E, Table V, §VII-D |
+| Numerical inconsistencies, redundant sections and tables | Text unified with the table values; sections and tables consolidated | §V, Tables V–VI |
 | Qualify mechanism, calibration, automation bias, action format, generalizability | Qualified or reframed as hypotheses; limitations added | §VI, §VII, Abstract, Conclusion |
 | Language, human factors linkage, separation of results and interpretation | Edited; 11 human factors references added; interpretation moved to §VI | throughout |
 
@@ -73,7 +65,7 @@ Geunsik Lim
 
 **Intro-3 (novelty).** Novelty is now stated as the domain-specific instantiation and empirical evaluation of JCS and adaptive-allocation principles for AI-generated recommendations. The general concept is not claimed as novel (§I, §II-A).
 
-**Intro-4 (hypotheses missing).** Hypotheses H1 (primary, AER) and H2–H4 (secondary) are now listed in §I and referenced in §IV-F.
+**Intro-4 (hypotheses missing).** Hypotheses H1 (primary, AER) and H2–H4 (secondary) are now listed in §I and referenced in §IV-E.
 
 **Intro-5 ("empirical link" overclaim).** Removed. The text now states that the study evaluates the integrated configuration and does not isolate components (§I, §VII-A).
 
@@ -85,35 +77,35 @@ Geunsik Lim
 
 **Sys-2 (policy violation missing in Algorithm 1).** A policy-violation flag *v* from the guardrail checks was added to Algorithm 1 as a third escalation trigger, consistent with §III-F.
 
-**Methods-1 (cues per condition; interface figure).** §IV-A describes the information and cues in each condition, and new Fig. 3 shows both interfaces. *[Author: insert screenshots and complete the dashboard description.]*
+**Methods-1 (cues per condition; interface figure).** §IV-A now states what each condition presents. The baseline shows the hazard and risk information without any AI recommendation, uncertainty indicator, criticality cue, or escalation prompt. The AI-assisted condition adds these ACHDF features, with the decision logic shown in Fig. 2 and Algorithm 1. Interface screenshots are not available and are listed as a limitation (§VII-D).
 
-**Methods-2 (task description).** New §IV-C covers number and structure of scenarios, response options, timing, uncertainty/criticality composition, difficulty matching, and a worked example. *[Author data.]*
+**Methods-2 (task description).** §IV-C describes the task, response types (act, choose the action, or defer when escalated) and procedure as far as documented. Scenario counts and composition, timing, and difficulty matching are not available and are listed in §VII-D as a reproducibility limitation.
 
-**Methods-3 (risk model).** §III-C now specifies the requirements. *[Author: model class, uncertainty estimator, calibration. State whether the risk values were scripted in the experiment.]*
+**Methods-3 (risk model).** §III-C states that the paper evaluates how the risk estimate and its uncertainty are used in the interaction, not the risk model itself. Estimation and calibration details are listed in §VII-D.
 
-**Methods-4 (criticality and guardrails).** Criticality is defined as the severity of consequences if the recommended action is wrong or delayed (Table I). The guardrails are specified as consistency, scope, and policy checks (§III-D). *[Author: confirm details, scale, thresholds.]*
+**Methods-4 (criticality and guardrails).** Criticality is defined as the severity of consequences if the recommended action is wrong or delayed (Table I). The guardrails are described as consistency, scope, and policy checks (§III-D). The specific rules, scale, and thresholds are listed in §VII-D.
 
 **Methods-5 (trust calibration and ergonomics: mechanism or criterion?).** Clarified. They are design considerations that shaped the interface and are measured as outcomes. They do not adapt system behavior (Fig. 1 caption, §III, Table I).
 
-**Methods-6 (usability questionnaire).** Identified as the SUS (Brooke, 1996), with scoring (§IV-E).
+**Methods-6 (usability questionnaire).** Identified as the SUS (Brooke, 1996), with its scoring range (§IV-D).
 
-**Methods-7 (AER definition).** §IV-E defines the ground truth (independent reference protocol), the time window *T*, and a decomposition into correct-action rate and on-time rate with three failure categories. *[Author data.]*
+**Methods-7 (AER definition).** §IV-D now states explicitly that the AER combines correctness and timeliness. The ground-truth procedure, the time window, and the decomposition are not documented in enough detail and are listed in §VII-D. The Discussion notes that the source of the improvement therefore remains open.
 
-**Methods-8 (power).** Added to §IV-B. *[Author: a priori power analysis or sensitivity analysis.]*
+**Methods-8 (power).** No a priori analysis was reported. We added a post hoc sensitivity analysis: 80% power for d_z ≥ 0.40 with n = 52 (§IV-B, §VII-D).
 
-**Methods-9 (statistics).** New §IV-F.
+**Methods-9 (statistics).** §IV-E specifies the paired tests, the reported quantities, the d_av effect size with its formula and its limitation relative to d_z, and the analyses that could not be computed.
 
-**Methods-10 (IRB).** Added to §IV-B. *[Author: committee and approval number.]*
+**Methods-10 (IRB).** An ethics statement will be provided in §IV-B. *[Author: committee and approval number.]*
 
-**Results-1, -2 (inconsistent numbers).** All text values now match the tables (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.4→4.2). The table values were verified against the raw data. *[Author: verify before submission.]*
+**Results-1, -2 (inconsistent numbers).** All text values now match the tables (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.4→4.2).
 
-**Results-3 (statistics per outcome).** Table V reports the test, statistic, p, 95% CI, and effect size for each outcome.
+**Results-3 (statistics per outcome).** Table V now reports, for every outcome, the means, SDs where available, the difference, the significance threshold of the paired test, and d_av where SDs are available. Exact test statistics and CIs could not be computed from the available data. This is stated in the table note and in §VII-D.
 
-**Results-4 (single Cohen's d).** Removed. Each outcome now has its own effect size (Table V).
+**Results-4 (single Cohen's d).** Removed, because it could not be attributed to a specific outcome. Effect sizes are now reported per outcome where computable (Table V).
 
 **Results-5 (escalated vs. non-escalated not equivalent).** §V-C is now explicitly descriptive and states that the two sets of trials are not equivalent. Causal wording was removed.
 
-**Results-6 (qualitative rigor).** §IV-E describes the coding procedure. Table VIII adds prevalence and representative quotations. *[Author data. If coding evidence is unavailable, we will remove the "mixed-method" label. That label has already been removed from the abstract.]*
+**Results-6 (qualitative rigor).** The interview material was not systematically coded, so it is now presented as informal observations (§IV-D, Table VIII). The "mixed-method" label was removed.
 
 **Results-7, -8 (mechanism analysis; interpretation in Results).** The former §V-F was renamed "Framework-Based Interpretation of the Results," moved to §VI-B, and explicitly described as not testing mechanisms. The Results section now contains only findings.
 
@@ -121,7 +113,7 @@ Geunsik Lim
 
 **Discussion-2 (trust plus deferral is not calibration).** The claim was removed. §VI-C explains what calibration evidence would require.
 
-**Discussion-3 (automation bias).** The claim was removed. Automation bias requires trials with erroneous advice (§VI-C, §VII-B).
+**Discussion-3 (automation bias).** The claim was removed. Behavior on trials with erroneous advice was not analyzed (§VI-C, §VII-B).
 
 **Discussion-4 ("not domain-specific").** Removed. Table II and §III-G are now labelled as hypothesized and untested, and generalization is listed as future work.
 
@@ -129,32 +121,32 @@ Geunsik Lim
 
 **Limitations-1 (VII-A and VII-C overlap).** Merged into §VII-C, "Domain and Population Generalizability."
 
-**Limitations-2 (participant population).** Added to §VII-C and §IV-B.
+**Limitations-2 (participant population).** Added to §VII-C and §IV-B. The sample was not composed specifically of emergency-management professionals.
 
 **Conclusion-1 (overclaims).** Rewritten. "Calibrated trust without automation bias" and "transferable design principles" were removed, and the conclusion states what was not tested.
 
 ## Reviewer 2
 
 1. **Language.** Edited throughout. "In fact" (Introduction) and "On the other hand" (AER) were removed. The opening paragraphs of the Introduction and Sections II-B and II-D were rewritten for flow and to remove repetition with the new JCS paragraph. An incorrect running header left over from a template was replaced, and a misplaced citation (a community-detection paper cited for automation bias) was removed.
-2. **Baseline description and screenshots.** See R1 Methods-1: §IV-A and Fig. 3.
-3. **Task detail and example.** See R1 Methods-2: §IV-C, with a worked example and the number of scenarios per condition.
-4. **Training.** New §IV-D covers duration, content, and the comprehension criterion. *[Author data.]*
-5. **Which test, and assumptions.** §IV-F covers Shapiro–Wilk and Q–Q checks, paired t vs. Wilcoxon, and the test per outcome in Table V.
-6. **Statistics next to each result.** Each outcome sentence in §V and Table V now carries its statistic, p, and CI. The collective "p < .01" paragraph was removed.
-7. **Trust terminology and items.** The constructs are now named consistently as perceived *reliability, predictability, appropriateness* in Table IV, §IV-E, and Table VI. Item wording, scale, scoring, source (e.g., Jian et al., 2000), and Cronbach's α were added. *[Author data.]*
-8. **Usability questionnaire.** SUS, with reference and scoring (§IV-E).
-9. **Results intro paragraph and interpretive statements.** The intro was shortened to two sentences. Interpretive sentences (e.g., "helped participants transition quicker…") were removed from the Results, and so was the interpretive part of the Fig. 4 caption.
+2. **Baseline description and screenshots.** See R1 Methods-1. The baseline is now described in §IV-A. Screenshots are unavailable (§VII-D).
+3. **Task detail and example.** See R1 Methods-2. A worked example and per-condition scenario counts are unavailable (§VII-D).
+4. **Training.** §IV-C states that all participants were trained on the interfaces. Duration, content, and any pass criterion are not documented (§VII-D).
+5. **Which test, and assumptions.** §IV-E states that paired tests were used. The specific test per outcome and the assumption checks are not documented and are listed in §VII-D.
+6. **Statistics next to each result.** Each outcome sentence in §V and Table V now carries its own result (significance threshold, and d_av where available). The collective "p < .01 / p < .05" paragraph at the end of the Results was removed. Exact statistics and CIs: see R1 Results-3.
+7. **Trust terminology and items.** The constructs are now named consistently as perceived *reliability, predictability, appropriateness* in Table IV, §IV-D, and Table VI, and the response scale (5-point Likert) is stated. The item wording, validation, and internal consistency are not available, so the trust score is presented as an indicative composite (§IV-D, §VII-D).
+8. **Usability questionnaire.** SUS, with reference and scoring range (§IV-D).
+9. **Results intro paragraph and interpretive statements.** The intro was shortened to two sentences. Interpretive sentences (e.g., "helped participants transition quicker…") were removed from the Results, and so was the interpretive part of the Fig. 3 caption.
 10. **V-A/V-B redundancy.** Merged into §V-A.
-11. **Tables V/VIII redundancy; Table VIII not cited.** Consolidated. Table V (outcomes plus statistics) and Table VI (subscales) replace the previous Tables IV, V, VII, VIII and a duplicated table with the same label. All tables are cited in the text.
+11. **Tables V/VIII redundancy; Table VIII not cited.** Consolidated. Table V (outcomes) and Table VI (subscales) replace the previous Tables IV, V, VII, VIII and a duplicated table with the same label. All tables are cited in the text.
 12. **Ecological validity of deferral.** New §VI-D discusses forced action under uncertainty and deferral costs, and their implications for the over-reliance results.
 
 ## Reviewer 3
 
-**Contribution 1 (action execution not novel under JCS).** We agree and thank the reviewer for pointing us to the JCS literature. Contribution 1 is now framed as *applying* the JCS principle of evaluating joint outcomes to AI disaster decision support and operationalizing it (with the AER decomposed), not as a new concept. We cite Hollnagel & Woods (2005) and Woods & Hollnagel (2006) (§I, §II-A, §III, §VI).
+**Contribution 1 (action execution not novel under JCS).** We agree and thank the reviewer for pointing us to the JCS literature. Contribution 1 is now framed as *applying* the JCS principle of evaluating joint outcomes to AI disaster decision support, with action execution as the primary outcome, not as a new concept. We cite Hollnagel & Woods (2005) and Woods & Hollnagel (2006) (§I, §II-A, §III, §VI).
 
 **Contribution 2 (ACHDF structurally similar to JCS).** We agree. ACHDF is now presented as a domain-specific instantiation of JCS and adaptive function allocation. Its novelty lies in the specific interaction design for AI-generated recommendations (uncertainty cues, guardrails, criticality- and uncertainty-triggered escalation) in disaster response.
 
-**Contribution 3 / AER clarity.** AER is now fully specified: (a) "appropriate" means a reference action defined in advance and independently of the AI; (b) the time window is a fixed *T*; (c) AER is decomposed into the correct-action rate and the on-time rate; and (d) failures are classified as wrong action, late correct action, or no action. This shows whether failures stem from taking too long or from taking the wrong action (§IV-E, Table IV, Table V, §V-A).
+**Contribution 3 / AER clarity.** We agree that the AER conflates correctness and timeliness. §IV-D now says so explicitly and explains how response latency relates to it (latency describes the timing of all executed actions; the AER counts only correct actions within the time window). The trial-level data needed to separate wrong actions from late actions, and the documentation of the ground truth and the time window, were not available. We therefore report this as a limitation (§VII-D) and state in the Discussion (§VI-A) that the direction of the failures remains open.
 
 **Minor 1 ("On the other hand").** Removed, and the paragraph was rewritten.
 

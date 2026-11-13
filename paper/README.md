@@ -57,7 +57,7 @@ By combining **predictive analytics, behavioral science, and responsible AI**, C
 
 ## 🔁 IEEE THMS Revision (THMS-26-02-0115, Reject & Resubmit)
 - Revised LaTeX source: [`thms_revision/main.tex`](./thms_revision/main.tex) (original: `thms_revision/main_original.tex`)
-- Compiled draft: [`thms_revision/main_revised.pdf`](./thms_revision/main_revised.pdf). Items that still need the author's data are highlighted in red as `[TODO: ...]`.
+- Compiled draft: [`thms_revision/main_revised.pdf`](./thms_revision/main_revised.pdf). Only the ethics statement remains as a red `[TODO]`; analyses that need raw data are listed as limitations (§VII-D).
 - Before/after comparison (latexdiff): [`thms_revision/main_diff.pdf`](./thms_revision/main_diff.pdf)
 - Point-by-point response and cover letter draft: [`thms_revision/response_to_reviewers.md`](./thms_revision/response_to_reviewers.md)
 - Cover letter (English, for submission): [`thms_revision/cover_letter_en.md`](./thms_revision/cover_letter_en.md)
