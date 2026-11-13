@@ -52,3 +52,10 @@ By combining **predictive analytics, behavioral science, and responsible AI**, C
   keywords  = {Generative AI, Disaster Resilience, Responsible AI, Early Warning Systems, Composite Risk Index},
   url       = {./ijdrs_sn_jnl_climate_radar_20251016_1610.pdf}
 }
+
+---
+
+## 🔁 IEEE THMS Revision (THMS-26-02-0115, Reject & Resubmit)
+- Revised LaTeX source: [`thms_revision/main.tex`](./thms_revision/main.tex) (original: `thms_revision/main_original.tex`)
+- Compiled draft: [`thms_revision/main_revised.pdf`](./thms_revision/main_revised.pdf). Items that still need the author's data are highlighted in red as `[TODO: ...]`.
+- Point-by-point response and cover letter draft: [`thms_revision/response_to_reviewers.md`](./thms_revision/response_to_reviewers.md)
