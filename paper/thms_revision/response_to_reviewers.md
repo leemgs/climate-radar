@@ -133,7 +133,7 @@ Geunsik Lim
 
 ## Reviewer 2
 
-1. **Language.** Edited throughout. "In fact" (Introduction) and "On the other hand" (AER) were removed.
+1. **Language.** Edited throughout. "In fact" (Introduction) and "On the other hand" (AER) were removed. The opening paragraphs of the Introduction and Sections II-B and II-D were rewritten for flow and to remove repetition with the new JCS paragraph. An incorrect running header left over from a template was replaced, and a misplaced citation (a community-detection paper cited for automation bias) was removed.
 2. **Baseline description and screenshots.** See R1 Methods-1: §IV-A and Fig. 3.
 3. **Task detail and example.** See R1 Methods-2: §IV-C, with a worked example and the number of scenarios per condition.
 4. **Training.** New §IV-D covers duration, content, and the comprehension criterion. *[Author data.]*
