@@ -13,6 +13,7 @@
 | `main_original.tex` | 제출했던 원고 (비교용: `latexdiff main_original.tex main.tex > diff.tex`) |
 | `main_revised.pdf` | 수정본 컴파일 결과. TODO 항목은 **빨간색**으로 표시됨 |
 | `main_diff.pdf` | 수정 전후 비교본(latexdiff). 추가: 파란색 산세리프, 삭제: 작은 빨간 글씨. 표·그림·Algorithm 1은 이전/새 블록 전체로 표시 |
+| `cover_letter_ko.md` | 커버레터 한국어본 (제출용 서신 형식) |
 | `reference-data.bib` | 참고문헌 11편 추가 (JCS, 적응형 자동화, 신뢰, NASA-TLX, SUS, 효과크기) |
 
 > **재제출 전 필수:** 수정본에는 `\TODO{...}` 표시가 51곳 있습니다(빨간색). 모두 저자만 가진 데이터나 사실이 필요한 항목입니다. 검정 결과, 신뢰구간, 시나리오 세부 사항, IRB, 스크린샷 등이 해당합니다. 수치는 하나도 지어내지 않았습니다. `main.tex`에서 `\TODO`를 검색해 채우고, 모두 해결한 뒤에는 프리앰블의 `\newcommand{\TODO}` 줄을 삭제하세요.
