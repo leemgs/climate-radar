@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL main_original.tex   Fri Nov 13 12:15:19 2026
-%DIF ADD main.tex            Fri Nov 13 12:15:19 2026
+%DIF DEL main_original.tex   Fri Nov 13 12:27:41 2026
+%DIF ADD main.tex            Fri Nov 13 12:27:41 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -419,9 +419,31 @@ Automation bias \DIFdelbegin \DIFdel{has been demonstrated to result when decisi
 %DIFDELCMD < %%%
 \DIFdelend \DIFaddbegin \begin{figure}[t]
         \centering
-        \includegraphics[width=0.60\linewidth]{fig_achdf_concept.png}
+        \begin{tikzpicture}[
+            font=\scriptsize, node distance=2.2mm,
+            layer/.style={draw, rounded corners=1.5pt, fill=gray!10, text width=6.6cm, align=left, inner sep=3pt},
+            cross/.style={draw, rounded corners=1.5pt, fill=white, text width=3.05cm, align=left, inner sep=3pt, minimum height=1.25cm, anchor=north},
+            ln/.style={thick}]
+            \node[layer] (l1) {\textbf{Environment \& Uncertainty Context}\\[1pt]
+                $\bullet$ Incomplete and noisy information\\ $\bullet$ Time pressure and asymmetric risk};
+            \node[layer, below=of l1] (l2) {\textbf{Uncertainty-Aware Risk Modeling}\\[1pt]
+                $\bullet$ Probabilistic risk estimation\\ $\bullet$ Explicit uncertainty $u$};
+            \node[layer, below=of l2] (l3) {\textbf{Guardrailed AI Decision Support}\\[1pt]
+                $\bullet$ Constrained recommendations\\ $\bullet$ Policy and safety checks\\
+                $\bullet$ Bounded autonomy (scoped recommendation generation)};
+            \node[layer, below=of l3] (l4) {\textbf{Human Authority \& Accountability}\\[1pt]
+                $\bullet$ Final decision and execution by the human\\ $\bullet$ Override and escalation};
+            \draw[ln] (l1) -- (l2); \draw[ln] (l2) -- (l3); \draw[ln] (l3) -- (l4);
+            \node[cross, anchor=north west] (ce) at ($(l4.south west)+(0,-0.45)$) {\textbf{Cognitive Ergonomics}\\[1pt]
+                $\bullet$ Workload management\\ $\bullet$ Information structuring};
+            \node[cross, anchor=north east] (at) at ($(l4.south east)+(0,-0.45)$) {\textbf{Appropriate Trust}\\[1pt]
+                $\bullet$ Transparency of uncertainty\\ $\bullet$ Guidance on when to rely};
+            \draw[ln, dashed] (ce.north) -- (ce.north |- l4.south);
+            \draw[ln, dashed] (at.north) -- (at.north |- l4.south);
+            \node[font=\tiny\itshape, anchor=north] at ($(ce.south)!0.5!(at.south)+(0,-0.12)$) {cross-cutting design considerations (not adapted at run time)};
+        \end{tikzpicture}
         \caption{Conceptual design layers of the Action-Centered Human--AI Decision Framework (ACHDF).
-The framework structures human--AI decision support into four layered components: environment and uncertainty context, uncertainty-aware risk modeling, guardrailed AI decision support, and preserved human authority and accountability. Trust and cognitive workload are design considerations that guided interface design and are measured as evaluation outcomes. They are not adapted at run time (Table~\ref{tab:constructs}).}
+The framework structures human--AI decision support into four layered components: environment and uncertainty context, uncertainty-aware risk modeling, guardrailed AI decision support, and preserved human authority and accountability. Appropriate trust \cite{Lee2004} and cognitive ergonomics are cross-cutting design considerations that guided interface design. Trust and workload are also measured as evaluation outcomes. They are not adapted at run time (Table~\ref{tab:constructs}).}
         \label{fig:achdf_concept}
     \end{figure}
 \DIFaddend 
@@ -469,7 +491,7 @@ The escalation test follows Algorithm~\ref{alg:escalation}. Depending on the est
     \DIFadd{This section introduces }\DIFaddend the proposed human--AI decision system \DIFdelbegin \DIFdel{. In addition, it is intended to introduce the architectural elementsof the proposed human--AI decision system. The proposed human--AI decision system is intended to be }\DIFdelend \DIFaddbegin \DIFadd{and its architectural elements. The system is }\DIFaddend non-autonomous and human-centric\DIFdelbegin \DIFdel{. It is intended to have a balanced approach to human and algorithmic decision-making. The architectural elements of the proposed human--AI decision system are based on }\DIFdelend \DIFaddbegin \DIFadd{: the AI analyzes information and proposes options, and the human decides and acts. The architecture follows }\DIFaddend the \textbf{Action-Centered Human--AI Decision Framework (ACHDF)}\DIFdelbegin \DIFdel{. In the proposed framework, there is a significant emphasis on human action execution as the primary goal of the system}\DIFdelend \DIFaddbegin \DIFadd{, which, following the joint cognitive systems perspective \cite{Hollnagel2005JCS,Woods2006JCS}, treats the human operator and the AI as one decision system and takes appropriate human action as the system's goal}\DIFaddend .
 
     A conceptual overview of the proposed action-centered architecture is illustrated in Fig.~\ref{fig:achdf_concept}.
-As shown in the figure, ACHDF is organized into four primary design layers. The \emph{environment and uncertainty context} layer captures incomplete, time-pressured, and asymmetric risk conditions that characterize high-stakes decision ecologies. Built on top of this, the \emph{uncertainty-aware risk modeling} layer produces probabilistic risk estimates together with explicit confidence and uncertainty bounds. These estimates are then translated into constrained, policy-aligned options within the \emph{guardrailed AI decision support} layer, which ensures that generated recommendations remain consistent with operational and safety constraints. Finally, the \emph{human authority and accountability} layer preserves human control through oversight, override, and responsibility mechanisms. The two cross-cutting elements \DIFdelbegin \DIFdel{shown }\DIFdelend at the bottom of the figure\DIFdelbegin \DIFdel{—trust calibration }\DIFdelend \DIFaddbegin \DIFadd{, trust }\DIFaddend and cognitive ergonomics\DIFdelbegin \DIFdel{—continuously shape how information is presented so that operators can act reliably under uncertainty}\DIFdelend \DIFaddbegin \DIFadd{, are design considerations. They determined which cues are shown (e.g., explicit uncertainty indicators) and how much information is shown at once. The implemented system does not measure them or adapt to them at run time}\DIFaddend .
+As shown in the figure, ACHDF is organized into four primary design layers. The \emph{environment and uncertainty context} layer captures incomplete, time-pressured, and asymmetric risk conditions that characterize high-stakes decision ecologies. Built on top of this, the \emph{uncertainty-aware risk modeling} layer produces probabilistic risk estimates together with explicit confidence and uncertainty bounds. These estimates are then translated into constrained, policy-aligned options within the \emph{guardrailed AI decision support} layer, which ensures that generated recommendations remain consistent with operational and safety constraints. Finally, the \emph{human authority and accountability} layer preserves human control through oversight, override, and responsibility mechanisms. The two cross-cutting elements \DIFdelbegin \DIFdel{shown }\DIFdelend at the bottom of the figure\DIFdelbegin \DIFdel{—trust calibration }\DIFdelend \DIFaddbegin \DIFadd{, appropriate trust }\DIFaddend and cognitive ergonomics\DIFdelbegin \DIFdel{—continuously shape how information is presented so that operators can act reliably under uncertainty}\DIFdelend \DIFaddbegin \DIFadd{, are design considerations. They determined which cues are shown (e.g., explicit uncertainty indicators) and how much information is shown at once. The implemented system does not measure them or adapt to them at run time}\DIFaddend .
 
 The \DIFdelbegin \DIFdel{dynamic operationalization }\DIFdelend \DIFaddbegin \DIFadd{run-time behavior }\DIFaddend of these layers \DIFdelbegin \DIFdel{in real-time decision making }\DIFdelend is depicted in Fig.~\ref{fig:system_overview}.
 \DIFdelbegin \DIFdel{This workflow view emphasizes how uncertainty-aware function allocation governs the interaction loop between AI and the human operator. When model confidence is high and risk is bounded}\DIFdelend \DIFaddbegin \DIFadd{When model uncertainty is low and the action is not critical}\DIFaddend , the system \DIFdelbegin \DIFdel{can provide }\DIFdelend \DIFaddbegin \DIFadd{presents a }\DIFaddend tightly scoped, action-oriented \DIFdelbegin \DIFdel{recommendations under bounded autonomy. As uncertaintyor potential impact increases, the escalation logic routes decisions to a human-in-the-loop review process, where }\DIFdelend \DIFaddbegin \DIFadd{recommendation. We call this mode \emph{bounded autonomy}. The term refers only to the AI's freedom in \emph{generating} a recommendation, which is bounded by guardrails. It does not mean that the AI executes actions or holds decision authority. When uncertainty, criticality, or a policy check exceeds its threshold, the system switches to \emph{escalation}: instead of a single recommendation, it presents the evidence and the available options and explicitly asks the operator to review them, and }\DIFaddend the operator can approve, modify, or reject the suggested action. \DIFdelbegin \DIFdel{The feedback paths shown in the figure highlight how action outcomes and operator responses contribute to ongoing trust calibration and workload management, forming a closed human--AI decision loop oriented toward reliable action execution rather than mere prediction display}\DIFdelend \DIFaddbegin \DIFadd{Thus, what varies between the two modes is the \emph{level and form of AI support}. Final decision and execution authority stays with the human in both modes. Operator responses and outcomes are logged for audit and for offline recalibration of the thresholds.
@@ -591,8 +613,7 @@ These guardrails ensure that the recommendations generated by the system align w
 \DIFaddend 
 
 \subsection{Human Override and Escalation Mechanisms}
-\DIFdelbegin \DIFdel{The escalation process, as described }\DIFdelend \DIFaddbegin \DIFadd{Escalation follows the policy }\DIFaddend in Algorithm~\ref{alg:escalation}\DIFdelbegin \DIFdel{, is linked to an uncertainty-aware policy that is used to dynamically allocate authority depending on the level of uncertainty and the criticality of the actions taken. The human override and escalation mechanism is an important part of the overall system architecture.
-The system automatically escalates decisions to human operators if the level of uncertainty is above certain thresholds, the potential impact of the recommendation is high, and if certain policy constraints are violated. In fact, escalation }\DIFdelend \DIFaddbegin \DIFadd{. The system escalates a case to the operator if \emph{any} of three conditions holds: the uncertainty exceeds $\tau_u$, the criticality of the action exceeds $\tau_c$, or a guardrail policy check fails ($v=1$). Escalation }\DIFaddend is not a failure mode\DIFdelbegin \DIFdel{but a decision to escalate to ensure accountability under uncertain conditions.
+\DIFdelbegin \DIFdel{The escalation process, as described }\DIFdelend \DIFaddbegin \DIFadd{Escalation follows the policy }\DIFaddend in Algorithm~\ref{alg:escalation}\DIFdelbegin \DIFdel{, is linked to an uncertainty-aware policy that is used to dynamically allocate authority depending on the level of uncertainty and the criticality of the actions taken. The human override and escalation mechanism is an important part of the overall system architecture}\DIFdelend . The system \DIFdelbegin \DIFdel{automatically escalates decisions to human operators if the level of uncertainty is above certain thresholds, the potential impact of the recommendation is high, and if certain policy constraints are violated. In fact, escalation }\DIFdelend \DIFaddbegin \DIFadd{escalates a case to the operator if \emph{any} of three conditions holds: the uncertainty exceeds $\tau_u$, the criticality of the action exceeds $\tau_c$, or a guardrail policy check fails ($v=1$). Escalation }\DIFaddend is not a failure mode\DIFdelbegin \DIFdel{but a decision to escalate to ensure accountability under uncertain conditions.
 The operators are free to either }\DIFdelend \DIFaddbegin \DIFadd{. It is a deliberate change in the form of support that keeps the operator accountable under uncertainty.
 In every mode, operators can }\DIFaddend accept, modify, or reject the \DIFdelbegin \DIFdel{decision recommended by the AIsystem}\DIFdelend \DIFaddbegin \DIFadd{AI's recommendation}\DIFaddend , and all of these operations are \DIFdelbegin \DIFdel{recorded for accountabilitypurposes. This minimization of processing of superfluous information is also beneficial for the management of cognitive workload for }\DIFdelend \DIFaddbegin \DIFadd{logged for accountability. Showing a single consolidated recommendation in routine cases is intended to reduce the amount of information operators must process in }\DIFaddend time-critical situations.
 This \DIFdelbegin \DIFdel{dynamic allocation of autonomy allows the system to offer effective assistance in regular situationsand, at the same time, allow human control }\DIFdelend \DIFaddbegin \DIFadd{adaptation of the level of support (a scoped recommendation in routine situations, a full review }\DIFaddend in uncertain or \DIFdelbegin \DIFdel{risky situations, thus striking a proper balance between performance and safety, as per the existing design principles for human--machine systems, which provides a platform for the ACHDF design principles proposed later in the paper}\DIFdelend \DIFaddbegin \DIFadd{critical ones) follows established principles of adaptive automation \cite{Parasuraman2000LOA,Scerbo2007} and does not transfer decision authority to the AI}\DIFaddend .
@@ -801,9 +822,9 @@ AI supports sensemaking and constrained recommendations; final decision authorit
     \DIFdelbegin \DIFdel{The participants were required to complete a set of time-sensitive }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Decision Task and Procedure}}
 
     \DIFadd{Participants completed a series of time-limited }\DIFaddend decision tasks. \DIFdelbegin \DIFdel{These tasks involved understanding risk information and making a decision on whetheror not }\DIFdelend \DIFaddbegin \DIFadd{In each task, they interpreted risk information about an evolving hazard and decided whether, and how, }\DIFaddend to take a protective action. \DIFdelbegin \DIFdel{These decision tasks were aimed at capturing the essential aspects of a }\DIFdelend \DIFaddbegin \DIFadd{When the system escalated a case, participants could also defer the decision pending further confirmation. The tasks were designed to reproduce the essential characteristics of }\DIFaddend high-stakes \DIFdelbegin \DIFdel{decision situation. These aspects include changes in }\DIFdelend \DIFaddbegin \DIFadd{decisions: changing }\DIFaddend information, uncertainty, and \DIFdelbegin \DIFdel{unbalanced }\DIFdelend \DIFaddbegin \DIFadd{asymmetric }\DIFaddend error costs. \DIFdelbegin \DIFdel{The experiment involved a training period, and after that, the participants completed the task execution of both the experimental conditions. The participants were required }\DIFdelend \DIFaddbegin \DIFadd{Participants were instructed }\DIFaddend to focus on \DIFdelbegin \DIFdel{the efficacy of the }\DIFdelend \DIFaddbegin \DIFadd{taking the appropriate }\DIFaddend action rather than on \DIFdelbegin \DIFdel{the analysis of }\DIFdelend \DIFaddbegin \DIFadd{analyzing }\DIFaddend the information.
-\DIFdelbegin \DIFdel{The system was used to record the decision processes and interaction of the participants. }\DIFdelend 
+\DIFdelbegin \DIFdel{The system was used to record the decision processes and interaction of the participants. }%DIFDELCMD < 
 
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     \begin{table}[t]
 %DIFDELCMD <         \caption{Outcome measures used in the controlled study}
 %DIFDELCMD <         \label{tab:measures}
 %DIFDELCMD <         \centering
@@ -818,11 +839,11 @@ AI supports sensemaking and constrained recommendations; final decision authorit
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < 
+%DIFDELCMD < %%%
+\DIFdelend 
 
-%DIFDELCMD <     %%%
-%DIF < ------------------------------------------------------
-%DIFDELCMD < 
+    %DIF < ------------------------------------------------------
+\DIFdelbegin %DIFDELCMD < 
 
 %DIFDELCMD <     \begin{figure}[t]
 %DIFDELCMD <         \centering
@@ -1090,9 +1111,10 @@ The trust and usability scores are summarized in Table~\ref{tab:trust_usability}
 %DIFDELCMD <             \hline
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < 
+%DIFDELCMD < %%%
+\DIFdelend 
 
-%DIFDELCMD <     \begin{table}[t]
+    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Action execution and response latency (controlled study)}
 %DIFDELCMD <         \label{tab:action_latency}
 %DIFDELCMD <         \centering
@@ -1122,10 +1144,9 @@ The trust and usability scores are summarized in Table~\ref{tab:trust_usability}
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < %%%
-\DIFdelend 
+%DIFDELCMD < 
 
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     \begin{table}[t]
 %DIFDELCMD <         \caption{Outcomes by uncertainty-aware escalation status}
 %DIFDELCMD <         \label{tab:escalation}
 %DIFDELCMD <         \centering

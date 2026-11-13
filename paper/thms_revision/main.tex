@@ -289,9 +289,31 @@ In disaster response, the input to the risk-modeling layer of ACHDF (Section~\re
 
     \begin{figure}[t]
         \centering
-        \includegraphics[width=0.60\linewidth]{fig_achdf_concept.png}
+        \begin{tikzpicture}[
+            font=\scriptsize, node distance=2.2mm,
+            layer/.style={draw, rounded corners=1.5pt, fill=gray!10, text width=6.6cm, align=left, inner sep=3pt},
+            cross/.style={draw, rounded corners=1.5pt, fill=white, text width=3.05cm, align=left, inner sep=3pt, minimum height=1.25cm, anchor=north},
+            ln/.style={thick}]
+            \node[layer] (l1) {\textbf{Environment \& Uncertainty Context}\\[1pt]
+                $\bullet$ Incomplete and noisy information\\ $\bullet$ Time pressure and asymmetric risk};
+            \node[layer, below=of l1] (l2) {\textbf{Uncertainty-Aware Risk Modeling}\\[1pt]
+                $\bullet$ Probabilistic risk estimation\\ $\bullet$ Explicit uncertainty $u$};
+            \node[layer, below=of l2] (l3) {\textbf{Guardrailed AI Decision Support}\\[1pt]
+                $\bullet$ Constrained recommendations\\ $\bullet$ Policy and safety checks\\
+                $\bullet$ Bounded autonomy (scoped recommendation generation)};
+            \node[layer, below=of l3] (l4) {\textbf{Human Authority \& Accountability}\\[1pt]
+                $\bullet$ Final decision and execution by the human\\ $\bullet$ Override and escalation};
+            \draw[ln] (l1) -- (l2); \draw[ln] (l2) -- (l3); \draw[ln] (l3) -- (l4);
+            \node[cross, anchor=north west] (ce) at ($(l4.south west)+(0,-0.45)$) {\textbf{Cognitive Ergonomics}\\[1pt]
+                $\bullet$ Workload management\\ $\bullet$ Information structuring};
+            \node[cross, anchor=north east] (at) at ($(l4.south east)+(0,-0.45)$) {\textbf{Appropriate Trust}\\[1pt]
+                $\bullet$ Transparency of uncertainty\\ $\bullet$ Guidance on when to rely};
+            \draw[ln, dashed] (ce.north) -- (ce.north |- l4.south);
+            \draw[ln, dashed] (at.north) -- (at.north |- l4.south);
+            \node[font=\tiny\itshape, anchor=north] at ($(ce.south)!0.5!(at.south)+(0,-0.12)$) {cross-cutting design considerations (not adapted at run time)};
+        \end{tikzpicture}
         \caption{Conceptual design layers of the Action-Centered Human--AI Decision Framework (ACHDF).
-The framework structures human--AI decision support into four layered components: environment and uncertainty context, uncertainty-aware risk modeling, guardrailed AI decision support, and preserved human authority and accountability. Trust and cognitive workload are design considerations that guided interface design and are measured as evaluation outcomes. They are not adapted at run time (Table~\ref{tab:constructs}).}
+The framework structures human--AI decision support into four layered components: environment and uncertainty context, uncertainty-aware risk modeling, guardrailed AI decision support, and preserved human authority and accountability. Appropriate trust \cite{Lee2004} and cognitive ergonomics are cross-cutting design considerations that guided interface design. Trust and workload are also measured as evaluation outcomes. They are not adapted at run time (Table~\ref{tab:constructs}).}
         \label{fig:achdf_concept}
     \end{figure}
 
@@ -329,7 +351,7 @@ The escalation test follows Algorithm~\ref{alg:escalation}. Depending on the est
     This section introduces the proposed human--AI decision system and its architectural elements. The system is non-autonomous and human-centric: the AI analyzes information and proposes options, and the human decides and acts. The architecture follows the \textbf{Action-Centered Human--AI Decision Framework (ACHDF)}, which, following the joint cognitive systems perspective \cite{Hollnagel2005JCS,Woods2006JCS}, treats the human operator and the AI as one decision system and takes appropriate human action as the system's goal.
 
     A conceptual overview of the proposed action-centered architecture is illustrated in Fig.~\ref{fig:achdf_concept}.
-As shown in the figure, ACHDF is organized into four primary design layers. The \emph{environment and uncertainty context} layer captures incomplete, time-pressured, and asymmetric risk conditions that characterize high-stakes decision ecologies. Built on top of this, the \emph{uncertainty-aware risk modeling} layer produces probabilistic risk estimates together with explicit confidence and uncertainty bounds. These estimates are then translated into constrained, policy-aligned options within the \emph{guardrailed AI decision support} layer, which ensures that generated recommendations remain consistent with operational and safety constraints. Finally, the \emph{human authority and accountability} layer preserves human control through oversight, override, and responsibility mechanisms. The two cross-cutting elements at the bottom of the figure, trust and cognitive ergonomics, are design considerations. They determined which cues are shown (e.g., explicit uncertainty indicators) and how much information is shown at once. The implemented system does not measure them or adapt to them at run time.
+As shown in the figure, ACHDF is organized into four primary design layers. The \emph{environment and uncertainty context} layer captures incomplete, time-pressured, and asymmetric risk conditions that characterize high-stakes decision ecologies. Built on top of this, the \emph{uncertainty-aware risk modeling} layer produces probabilistic risk estimates together with explicit confidence and uncertainty bounds. These estimates are then translated into constrained, policy-aligned options within the \emph{guardrailed AI decision support} layer, which ensures that generated recommendations remain consistent with operational and safety constraints. Finally, the \emph{human authority and accountability} layer preserves human control through oversight, override, and responsibility mechanisms. The two cross-cutting elements at the bottom of the figure, appropriate trust and cognitive ergonomics, are design considerations. They determined which cues are shown (e.g., explicit uncertainty indicators) and how much information is shown at once. The implemented system does not measure them or adapt to them at run time.
 
 The run-time behavior of these layers is depicted in Fig.~\ref{fig:system_overview}.
 When model uncertainty is low and the action is not critical, the system presents a tightly scoped, action-oriented recommendation. We call this mode \emph{bounded autonomy}. The term refers only to the AI's freedom in \emph{generating} a recommendation, which is bounded by guardrails. It does not mean that the AI executes actions or holds decision authority. When uncertainty, criticality, or a policy check exceeds its threshold, the system switches to \emph{escalation}: instead of a single recommendation, it presents the evidence and the available options and explicitly asks the operator to review them, and the operator can approve, modify, or reject the suggested action. Thus, what varies between the two modes is the \emph{level and form of AI support}. Final decision and execution authority stays with the human in both modes. Operator responses and outcomes are logged for audit and for offline recalibration of the thresholds.

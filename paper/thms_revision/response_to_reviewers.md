@@ -85,7 +85,7 @@ See `cover_letter_en.md`.
 
 **Methods-4 (criticality and guardrails).** Criticality is defined as the severity of consequences if the recommended action is wrong or delayed (Table I). The guardrails are described as consistency, scope, and policy checks (§III-D). The specific rules, scale, and thresholds are listed in §VII-D.
 
-**Methods-5 (trust calibration and ergonomics: mechanism or criterion?).** Clarified. They are design considerations that shaped the interface and are measured as outcomes. They do not adapt system behavior (Fig. 1 caption, §III, Table I). The redrawn Fig. 2 no longer shows a run-time trust/workload feedback loop. The audit log is shown as being used only offline. The index terms now read "trust in automation" instead of "trust calibration".
+**Methods-5 (trust calibration and ergonomics: mechanism or criterion?).** Clarified. They are design considerations that shaped the interface and are measured as outcomes. They do not adapt system behavior (Fig. 1 caption, §III, Table I). The redrawn Fig. 2 no longer shows a run-time trust/workload feedback loop. The audit log is shown as being used only offline. The index terms now read "trust in automation" instead of "trust calibration". Fig. 1 was also redrawn: the cross-cutting element formerly labelled "Trust Calibration" is now "Appropriate Trust" (Lee & See, 2004), consistent with Goal 2, and both cross-cutting elements are marked as design considerations that are not adapted at run time.
 
 **Methods-6 (usability questionnaire).** Identified as the SUS (Brooke, 1996), with its scoring range (§IV-D).
 
