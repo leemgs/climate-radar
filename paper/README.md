@@ -60,5 +60,6 @@ By combining **predictive analytics, behavioral science, and responsible AI**, C
 - Compiled draft: [`thms_revision/main_revised.pdf`](./thms_revision/main_revised.pdf). Items that still need the author's data are highlighted in red as `[TODO: ...]`.
 - Before/after comparison (latexdiff): [`thms_revision/main_diff.pdf`](./thms_revision/main_diff.pdf)
 - Point-by-point response and cover letter draft: [`thms_revision/response_to_reviewers.md`](./thms_revision/response_to_reviewers.md)
+- Cover letter (English, for submission): [`thms_revision/cover_letter_en.md`](./thms_revision/cover_letter_en.md)
 - Cover letter (Korean): [`thms_revision/cover_letter_ko.md`](./thms_revision/cover_letter_ko.md)
 - Korean translation: [`thms_revision/response_to_reviewers_ko.md`](./thms_revision/response_to_reviewers_ko.md)

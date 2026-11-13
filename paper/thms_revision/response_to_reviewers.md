@@ -11,6 +11,7 @@
 | `main_original.tex` | Submitted version (for diffing: `latexdiff main_original.tex main.tex > diff.tex`) |
 | `main_revised.pdf` | Compiled revised version. TODO items appear in **red** |
 | `main_diff.pdf` | latexdiff of original vs. revised (added text: blue sans-serif; deleted text: small red; tables, figures and Algorithm 1 are shown as whole old/new blocks) |
+| `cover_letter_en.md` | Standalone cover letter for submission (`cover_letter_ko.md`: Korean version) |
 | `reference-data.bib` | Adds 11 references (JCS, adaptive automation, trust, NASA-TLX, SUS, effect sizes) |
 
 > **Before resubmission:** the revised manuscript contains 51 `\TODO{...}` markers (shown in red). Each one needs data or facts that only the author has: tests, CIs, scenario details, IRB, screenshots, and so on. No numbers were invented. Search for `\TODO` in `main.tex` and remove the `\newcommand{\TODO}` line from the preamble once all are resolved.
