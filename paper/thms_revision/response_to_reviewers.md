@@ -50,7 +50,7 @@ See `cover_letter_en.md`.
 | AE concern | Response | Location |
 |---|---|---|
 | Difference from JCS and adaptive function allocation | Explicit positioning as an instantiation, plus a new related-work subsection | §I (end), §II-A, §III |
-| Roles and implementation of uncertainty, criticality, guardrails, escalation, trust, workload, bounded autonomy | New construct table; "bounded autonomy" defined as bounded *generation* of recommendations; trust and workload declared design considerations and outcomes, not run-time states. Implementation details that cannot be reported are stated as such. | Table I, §III-A, §III-C–F, §VII-D |
+| Roles and implementation of uncertainty, criticality, guardrails, escalation, trust, workload, bounded autonomy | New construct table; "bounded autonomy" defined as bounded *generation* of recommendations; trust and workload declared design considerations and outcomes, not run-time states. Implementation details that cannot be reported are stated as such. | Table I, §III-A, §III-C–E, §VII-D |
 | Statistical methods: tests, assumptions, CIs, effect sizes, power | The Statistical Analysis subsection states what was done (paired tests), what is reported (means, differences, significance thresholds, d_av), and what could not be computed. A sensitivity analysis was added for power. | §IV-B, §IV-E, Table V, §VII-D |
 | Numerical inconsistencies, redundant sections and tables | Text unified with the table values; sections and tables consolidated | §V, Tables V–VI |
 | Qualify mechanism, calibration, automation bias, action format, generalizability | Qualified or reframed as hypotheses; limitations added | §VI, §VII, Abstract, Conclusion |
@@ -74,9 +74,9 @@ See `cover_letter_en.md`.
 
 **RW-2 (adaptive automation comparison).** New §II-A covers levels and types of automation, adaptive automation, and the specific ways ACHDF relates to them: no automation of action implementation, event-triggered adaptation, and adaptation of support rather than of authority.
 
-**Sys-1 (bounded autonomy vs. escalation).** Clarified throughout. Decision authority is *not* reallocated. Only the level and form of AI support varies. §III intro, Goal 3, §III-F, and Table I were revised. Fig. 2 was redrawn so that it matches Algorithm 1 exactly: all three escalation triggers are shown, the human holds final authority in both modes, and the former "trust calibration and cognitive workload loop", which suggested run-time adaptation, was removed.
+**Sys-1 (bounded autonomy vs. escalation).** Clarified throughout. Decision authority is *not* reallocated. Only the level and form of AI support varies. §III intro, Goal 3, §III-E, and Table I were revised. Fig. 2 was redrawn so that it matches Algorithm 1 exactly: all three escalation triggers are shown, the human holds final authority in both modes, and the former "trust calibration and cognitive workload loop", which suggested run-time adaptation, was removed.
 
-**Sys-2 (policy violation missing in Algorithm 1).** A policy-violation flag *v* from the guardrail checks was added to Algorithm 1 as a third escalation trigger, consistent with §III-F.
+**Sys-2 (policy violation missing in Algorithm 1).** A policy-violation flag *v* from the guardrail checks was added to Algorithm 1 as a third escalation trigger, consistent with §III-E.
 
 **Methods-1 (cues per condition; interface figure).** §IV-A now states what each condition presents. The baseline shows the hazard and risk information without any AI recommendation, uncertainty indicator, criticality cue, or escalation prompt. The AI-assisted condition adds these ACHDF features, with the decision logic shown in Fig. 2 and Algorithm 1. Interface screenshots are not available and are listed as a limitation (§VII-D).
 
@@ -116,7 +116,7 @@ See `cover_letter_en.md`.
 
 **Discussion-3 (automation bias).** The claim was removed. Behavior on trials with erroneous advice was not analyzed (§VI-C, §VII-B).
 
-**Discussion-4 ("not domain-specific").** Removed. Table II and §III-G are now labelled as hypothesized and untested, and generalization is listed as future work.
+**Discussion-4 ("not domain-specific").** Removed. Table II and §III-F are now labelled as hypothesized and untested, and generalization is listed as future work.
 
 **Discussion-5 (workload→action pathway).** Reframed as a possible explanatory mechanism, noting the limitations of NASA-TLX (§VI-B).
 
