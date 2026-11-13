@@ -78,7 +78,7 @@
 
 \usepackage{scalerel}
 \usepackage{tikz}
-\usetikzlibrary{svg.path}
+\usetikzlibrary{svg.path,positioning,arrows.meta,shapes.geometric,calc}
 
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 \tikzset{
@@ -227,7 +227,7 @@ literate=
     \end{abstract}
 
     \begin{IEEEkeywords}
-        Human--AI decision systems, human-in-the-loop, trust calibration, cognitive workload, action execution
+        Human--AI decision systems, joint cognitive systems, adaptive automation, human-in-the-loop, trust in automation, cognitive workload, action execution
     \end{IEEEkeywords}
 
     %--------------------------------------- \input{./010-introduction}
@@ -297,9 +297,30 @@ The framework structures human--AI decision support into four layered components
 
     \begin{figure}[t]
         \centering
-        \includegraphics[width=0.95\linewidth]{fig_system_overview.png}
+        \begin{tikzpicture}[
+            font=\scriptsize, node distance=3mm,
+            box/.style={draw, rounded corners=1pt, align=center, fill=gray!8, text width=#1, inner sep=2pt},
+            box/.default=6.2cm,
+            dec/.style={draw, diamond, aspect=3.2, align=center, fill=white, inner sep=0pt},
+            arr/.style={-{Stealth[length=1.6mm]}, thick}]
+            \node[box] (env) {Environmental signals (sensors, reports, data)};
+            \node[box, below=of env] (risk) {\textbf{Uncertainty-aware risk estimator}: risk $r$, uncertainty $u$\\(action criticality $c$ assigned per action)};
+            \node[box, below=of risk] (gen) {\textbf{Guardrailed recommendation generator}\\consistency, scope, policy checks $\rightarrow$ violation flag $v$};
+            \node[dec, below=4mm of gen] (pol) {Escalate if\\$u \ge \tau_u$ or $c \ge \tau_c$ or $v = 1$};
+            \node[box=2.7cm, anchor=north] (rec) at ($(pol.south)+(-2.3,-0.45)$) {\textbf{Recommend} (bounded autonomy)\\one guardrail-checked action with uncertainty and criticality cues ($r \ge \tau_r$; otherwise monitor)};
+            \node[box=2.7cm, anchor=north] (esc) at ($(pol.south)+(2.3,-0.45)$) {\textbf{Escalate}\\evidence and options with an explicit prompt to review};
+            \node[box, anchor=north] (hum) at ($(rec.south -| pol.south)+(0,-0.45)$) {\textbf{Human operator holds final decision authority}\\approve / modify / reject, or defer};
+            \node[box, below=of hum] (act) {\textbf{Action executed by the human}};
+            \node[box, below=of act, fill=white, dashed] (log) {Audit log of decision context and outcome\\(used only offline to recalibrate thresholds)};
+            \draw[arr] (env) -- (risk); \draw[arr] (risk) -- (gen); \draw[arr] (gen) -- (pol);
+            \draw[arr] (pol.west) -| node[above, pos=0.3] {no} (rec.north);
+            \draw[arr] (pol.east) -| node[above, pos=0.3] {yes} (esc.north);
+            \draw[arr] (rec.south) -- (rec.south |- hum.north);
+            \draw[arr] (esc.south) -- (esc.south |- hum.north);
+            \draw[arr] (hum) -- (act); \draw[arr] (act) -- (log);
+        \end{tikzpicture}
         \caption{Operational workflow of the proposed human--AI decision system.
-Depending on estimated uncertainty, action criticality, and policy checks, the system either presents a bounded recommendation or escalates the case for human review with evidence and options. In both modes, the human operator holds final decision and execution authority.}
+The escalation test follows Algorithm~\ref{alg:escalation}. Depending on the estimated uncertainty, the action criticality, and the guardrail policy checks, the system either presents a bounded recommendation or escalates the case for human review with evidence and options (when $r < \tau_r$ and no trigger fires, the system only monitors). In both modes, the human operator holds final decision and execution authority. Trust and workload are not adapted at run time. The audit log is used only offline.}
         \label{fig:system_overview}
     \end{figure}
 
@@ -576,12 +597,12 @@ The architecture was instantiated and evaluated only in disaster response. The d
     The overall trust score was 3.4 (SD 0.6) in the baseline condition and 4.2 (SD 0.5) in the AI-assisted condition on the 5-point scale (paired test, $p < .05$; $d_{av} = 1.45$).
     The SUS score was 68.5 (SD 11.2) in the baseline condition and 81.7 (SD 9.4) in the AI-assisted condition ($d_{av} = 1.28$). No significance test was reported for the SUS.
 
-    \begin{figure}[t]
+    \begin{figure*}[t]
         \centering
-        \includegraphics[width=0.9\linewidth]{fig_workload_trust_summary.png}
-        \caption{Cognitive workload (NASA--TLX; lower is better), trust, and usability (higher is better) in the baseline and AI-assisted conditions.}
+        \includegraphics[width=0.95\linewidth]{fig_outcomes_summary.png}
+        \caption{Primary and secondary outcomes in the baseline and AI-assisted conditions (values from Table~\ref{tab:primary}). Each outcome is shown on its own scale. Error bars show $\pm 1$ SD where SDs are available (not available for AER and response latency).}
         \label{fig:workload_trust_summary}
-    \end{figure}
+    \end{figure*}
 
     \begin{table}[t]
         \caption{Subscale Scores, M (SD)}

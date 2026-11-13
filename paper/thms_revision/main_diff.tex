@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL main_original.tex   Fri Nov 13 12:10:08 2026
-%DIF ADD main.tex            Fri Nov 13 12:10:08 2026
+%DIF DEL main_original.tex   Fri Nov 13 12:15:19 2026
+%DIF ADD main.tex            Fri Nov 13 12:15:19 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -81,7 +81,11 @@
 
 \usepackage{scalerel}
 \usepackage{tikz}
-\usetikzlibrary{svg.path}
+%DIF 81c81
+%DIF < \usetikzlibrary{svg.path}
+%DIF -------
+\usetikzlibrary{svg.path,positioning,arrows.meta,shapes.geometric,calc} %DIF > 
+%DIF -------
 
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 \tikzset{
@@ -316,7 +320,7 @@ literate=
     \end{abstract}
 
     \begin{IEEEkeywords}
-        Human--AI decision systems, human-in-the-loop, trust calibration, cognitive workload, action execution
+        Human--AI decision systems, \DIFaddbegin \DIFadd{joint cognitive systems, adaptive automation, }\DIFaddend human-in-the-loop, trust \DIFdelbegin \DIFdel{calibration}\DIFdelend \DIFaddbegin \DIFadd{in automation}\DIFaddend , cognitive workload, action execution
     \end{IEEEkeywords}
 
     %--------------------------------------- \input{./010-introduction}
@@ -432,9 +436,30 @@ The framework structures human--AI decision support into four layered components
 %DIFDELCMD < %%%
 \DIFdelend \DIFaddbegin \begin{figure}[t]
         \centering
-        \includegraphics[width=0.95\linewidth]{fig_system_overview.png}
+        \begin{tikzpicture}[
+            font=\scriptsize, node distance=3mm,
+            box/.style={draw, rounded corners=1pt, align=center, fill=gray!8, text width=#1, inner sep=2pt},
+            box/.default=6.2cm,
+            dec/.style={draw, diamond, aspect=3.2, align=center, fill=white, inner sep=0pt},
+            arr/.style={-{Stealth[length=1.6mm]}, thick}]
+            \node[box] (env) {Environmental signals (sensors, reports, data)};
+            \node[box, below=of env] (risk) {\textbf{Uncertainty-aware risk estimator}: risk $r$, uncertainty $u$\\(action criticality $c$ assigned per action)};
+            \node[box, below=of risk] (gen) {\textbf{Guardrailed recommendation generator}\\consistency, scope, policy checks $\rightarrow$ violation flag $v$};
+            \node[dec, below=4mm of gen] (pol) {Escalate if\\$u \ge \tau_u$ or $c \ge \tau_c$ or $v = 1$};
+            \node[box=2.7cm, anchor=north] (rec) at ($(pol.south)+(-2.3,-0.45)$) {\textbf{Recommend} (bounded autonomy)\\one guardrail-checked action with uncertainty and criticality cues ($r \ge \tau_r$; otherwise monitor)};
+            \node[box=2.7cm, anchor=north] (esc) at ($(pol.south)+(2.3,-0.45)$) {\textbf{Escalate}\\evidence and options with an explicit prompt to review};
+            \node[box, anchor=north] (hum) at ($(rec.south -| pol.south)+(0,-0.45)$) {\textbf{Human operator holds final decision authority}\\approve / modify / reject, or defer};
+            \node[box, below=of hum] (act) {\textbf{Action executed by the human}};
+            \node[box, below=of act, fill=white, dashed] (log) {Audit log of decision context and outcome\\(used only offline to recalibrate thresholds)};
+            \draw[arr] (env) -- (risk); \draw[arr] (risk) -- (gen); \draw[arr] (gen) -- (pol);
+            \draw[arr] (pol.west) -| node[above, pos=0.3] {no} (rec.north);
+            \draw[arr] (pol.east) -| node[above, pos=0.3] {yes} (esc.north);
+            \draw[arr] (rec.south) -- (rec.south |- hum.north);
+            \draw[arr] (esc.south) -- (esc.south |- hum.north);
+            \draw[arr] (hum) -- (act); \draw[arr] (act) -- (log);
+        \end{tikzpicture}
         \caption{Operational workflow of the proposed human--AI decision system.
-Depending on estimated uncertainty, action criticality, and policy checks, the system either presents a bounded recommendation or escalates the case for human review with evidence and options. In both modes, the human operator holds final decision and execution authority.}
+The escalation test follows Algorithm~\ref{alg:escalation}. Depending on the estimated uncertainty, the action criticality, and the guardrail policy checks, the system either presents a bounded recommendation or escalates the case for human review with evidence and options (when $r < \tau_r$ and no trigger fires, the system only monitors). In both modes, the human operator holds final decision and execution authority. Trust and workload are not adapted at run time. The audit log is used only offline.}
         \label{fig:system_overview}
     \end{figure}
 \DIFaddend 
@@ -498,9 +523,8 @@ Action execution & Primary outcome & Measured by AER (Section~\ref{sec:measures}
 }\DIFaddend 
 
     \DIFdelbegin \DIFdel{\textbf{Role 1 in ACHDF.}
-    These estimates of uncertainty are a crucial part of the decision logic.
-}\DIFdelend \DIFaddbegin \DIFadd{\textbf{Role in ACHDF.}
-    }\DIFaddend The risk level is interpreted \DIFdelbegin \DIFdel{in conjunction with the confidence intervals to determine }\DIFdelend \DIFaddbegin \DIFadd{together with its uncertainty to decide }\DIFaddend whether the system \DIFdelbegin \DIFdel{should make recommendations on its own or whether the process should be deferred to humans. The system’s explicit representation of its own uncertainties helps to prevent the propagation of false precisionand supports the reasoning of the risk level in a way that mirrors the human decision-making process}\DIFdelend \DIFaddbegin \DIFadd{presents a bounded recommendation or escalates (Algorithm~\ref{alg:escalation}). Explicitly representing uncertainty is intended to avoid conveying false precision}\DIFaddend .
+    These estimates of uncertainty are a crucial part of the decision logic. The }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Role in ACHDF.}
+    The }\DIFaddend risk level is interpreted \DIFdelbegin \DIFdel{in conjunction with the confidence intervals to determine }\DIFdelend \DIFaddbegin \DIFadd{together with its uncertainty to decide }\DIFaddend whether the system \DIFdelbegin \DIFdel{should make recommendations on its own or whether the process should be deferred to humans. The system’s explicit representation of its own uncertainties helps to prevent the propagation of false precisionand supports the reasoning of the risk level in a way that mirrors the human decision-making process}\DIFdelend \DIFaddbegin \DIFadd{presents a bounded recommendation or escalates (Algorithm~\ref{alg:escalation}). Explicitly representing uncertainty is intended to avoid conveying false precision}\DIFaddend .
 
     \subsection{Guardrailed AI Recommendation Module}
     \DIFdelbegin \DIFdel{To make risk estimates actionable and provide appropriate recommendations, a }\DIFdelend \DIFaddbegin \label{sec:guardrails}
@@ -777,9 +801,9 @@ AI supports sensemaking and constrained recommendations; final decision authorit
     \DIFdelbegin \DIFdel{The participants were required to complete a set of time-sensitive }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Decision Task and Procedure}}
 
     \DIFadd{Participants completed a series of time-limited }\DIFaddend decision tasks. \DIFdelbegin \DIFdel{These tasks involved understanding risk information and making a decision on whetheror not }\DIFdelend \DIFaddbegin \DIFadd{In each task, they interpreted risk information about an evolving hazard and decided whether, and how, }\DIFaddend to take a protective action. \DIFdelbegin \DIFdel{These decision tasks were aimed at capturing the essential aspects of a }\DIFdelend \DIFaddbegin \DIFadd{When the system escalated a case, participants could also defer the decision pending further confirmation. The tasks were designed to reproduce the essential characteristics of }\DIFaddend high-stakes \DIFdelbegin \DIFdel{decision situation. These aspects include changes in }\DIFdelend \DIFaddbegin \DIFadd{decisions: changing }\DIFaddend information, uncertainty, and \DIFdelbegin \DIFdel{unbalanced }\DIFdelend \DIFaddbegin \DIFadd{asymmetric }\DIFaddend error costs. \DIFdelbegin \DIFdel{The experiment involved a training period, and after that, the participants completed the task execution of both the experimental conditions. The participants were required }\DIFdelend \DIFaddbegin \DIFadd{Participants were instructed }\DIFaddend to focus on \DIFdelbegin \DIFdel{the efficacy of the }\DIFdelend \DIFaddbegin \DIFadd{taking the appropriate }\DIFaddend action rather than on \DIFdelbegin \DIFdel{the analysis of }\DIFdelend \DIFaddbegin \DIFadd{analyzing }\DIFaddend the information.
-\DIFdelbegin \DIFdel{The system was used to record the decision processes and interaction of the participants. }%DIFDELCMD < 
+\DIFdelbegin \DIFdel{The system was used to record the decision processes and interaction of the participants. }\DIFdelend 
 
-%DIFDELCMD <     \begin{table}[t]
+    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Outcome measures used in the controlled study}
 %DIFDELCMD <         \label{tab:measures}
 %DIFDELCMD <         \centering
@@ -827,11 +851,11 @@ AI supports sensemaking and constrained recommendations; final decision authorit
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < %%%
-\DIFdelend 
+%DIFDELCMD < 
 
-    %DIF < ---------------------------------------------
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     %%%
+%DIF < ---------------------------------------------
+    %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Trust and usability outcomes (post-task questionnaires)}
 %DIFDELCMD <         \label{tab:trust_usability}
 %DIFDELCMD <         \centering
@@ -996,12 +1020,12 @@ The trust and usability scores are summarized in Table~\ref{tab:trust_usability}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
 \DIFdel{When the uncertainty thresholds were exceeded, human-in-the-loop escalation occurred. In such cases, the participants appropriately deferred their decisions until further confirmation or clarification was available. No increase in inappropriate use of the system recommendations in high-uncertainty cases was observed.
-    The results comparing }\DIFdelend \DIFaddbegin \begin{figure}[t]
+    The results comparing }\DIFdelend \DIFaddbegin \begin{figure*}[t]
         \centering
-        \includegraphics[width=0.9\linewidth]{fig_workload_trust_summary.png}
-        \caption{Cognitive workload (NASA--TLX; lower is better), trust, and usability (higher is better) in the baseline and AI-assisted conditions.}
+        \includegraphics[width=0.95\linewidth]{fig_outcomes_summary.png}
+        \caption{Primary and secondary outcomes in the baseline and AI-assisted conditions (values from Table~\ref{tab:primary}). Each outcome is shown on its own scale. Error bars show $\pm 1$ SD where SDs are available (not available for AER and response latency).}
         \label{fig:workload_trust_summary}
-    \end{figure}
+    \end{figure*}
 
     \begin{table}[t]
         \caption{Subscale Scores, M (SD)}
@@ -1066,10 +1090,9 @@ The trust and usability scores are summarized in Table~\ref{tab:trust_usability}
 %DIFDELCMD <             \hline
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < %%%
-\DIFdelend 
+%DIFDELCMD < 
 
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     \begin{table}[t]
 %DIFDELCMD <         \caption{Action execution and response latency (controlled study)}
 %DIFDELCMD <         \label{tab:action_latency}
 %DIFDELCMD <         \centering
@@ -1099,9 +1122,10 @@ The trust and usability scores are summarized in Table~\ref{tab:trust_usability}
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < 
+%DIFDELCMD < %%%
+\DIFdelend 
 
-%DIFDELCMD <     \begin{table}[t]
+    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Outcomes by uncertainty-aware escalation status}
 %DIFDELCMD <         \label{tab:escalation}
 %DIFDELCMD <         \centering
@@ -1230,7 +1254,8 @@ The findings of the study indicate }\DIFdelend \DIFaddbegin \DIFadd{In the study
     \end{table}
 
 \subsection{\DIFadd{Design Implications}}
-\DIFadd{Within the scope of the evaluated task, the results suggest }\DIFaddend that human--AI \DIFdelbegin \DIFdel{decision-making systems should be designed in such a way that they }\DIFdelend \DIFaddbegin \DIFadd{decision support systems may benefit from }\DIFaddend (1) \DIFdelbegin \DIFdel{model }\DIFdelend \DIFaddbegin \DIFadd{representing }\DIFaddend uncertainty explicitly, (2) \DIFdelbegin \DIFdel{provide }\DIFdelend \DIFaddbegin \DIFadd{providing }\DIFaddend action guidance rather than \DIFaddbegin \DIFadd{only }\DIFaddend passive information display, and (3) \DIFdelbegin \DIFdel{allocate decision authority dynamically }\DIFdelend \DIFaddbegin \DIFadd{adapting the level and form of support to uncertainty and criticality }\DIFaddend through human-in-the-loop escalation\DIFdelbegin \DIFdel{\cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access}. Based on the Human--Machine Systems model, the results of the current study imply that effective decision systems with AI assistance need to be based on the concepts of bounded autonomy and decision authority allocation, as well as uncertainty-aware interaction. These concepts are not limited to the disaster response domain and are generally applicable to a wide variety of safety-critical human--machine systems with AI assistance \cite{Yang2022THMSReview,PerezCerrolaza2024CSUR}. The observed effects of the described phenomenon are not domain-specific but rather general mechanisms of human--machine interaction, which are relevant to any }\DIFdelend \DIFaddbegin \DIFadd{, while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Table~\ref{tab:design_implications} lists these candidate implications. Because the components were not manipulated separately, each implication should be tested individually. Whether they transfer to other }\DIFaddend safety-critical \DIFdelbegin \DIFdel{decision system \cite{Bach2024Access,Hodgson2013THMS}.In general, the current study contributes to the broader area of human--machine systems by showing the benefits of the application of human-centered AI decision systems with awareness of uncertainty for the execution of actions without compromising safety and accountability \cite{Lai2023FAccT,Yang2022THMSReview}. The design implications that are critical based on the findings are presented in Table~\ref{tab:design_implications}. In providing insight into the manner in which architectural design translates into behavioral outcomes, the results contribute to the domain of human machine systems with respect to trust calibration and cognitive ergonomics. }\DIFdelend \DIFaddbegin \DIFadd{domains, such as healthcare, transportation, and industrial safety \cite{PerezCerrolaza2024CSUR,Farhan2025TCE}, has not been tested here (Table~\ref{tab:achdf_transferability}).
+\DIFadd{Within the scope of the evaluated task, the results suggest }\DIFaddend that human--AI \DIFdelbegin \DIFdel{decision-making systems should be designed in such a way that they }\DIFdelend \DIFaddbegin \DIFadd{decision support systems may benefit from }\DIFaddend (1) \DIFdelbegin \DIFdel{model }\DIFdelend \DIFaddbegin \DIFadd{representing }\DIFaddend uncertainty explicitly, (2) \DIFdelbegin \DIFdel{provide }\DIFdelend \DIFaddbegin \DIFadd{providing }\DIFaddend action guidance rather than \DIFaddbegin \DIFadd{only }\DIFaddend passive information display, and (3) \DIFdelbegin \DIFdel{allocate decision authority dynamically }\DIFdelend \DIFaddbegin \DIFadd{adapting the level and form of support to uncertainty and criticality }\DIFaddend through human-in-the-loop escalation\DIFdelbegin \DIFdel{\cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access}. Based on the Human--Machine Systems model, the results of the current study imply that effective decision systems with AI assistance need to be based on the concepts of bounded autonomy and decision authority allocation, as well as uncertainty-aware interaction. These concepts are not limited to the disaster response domain and are generally applicable to a wide variety of safety-critical human--machine systems with AI assistance \cite{Yang2022THMSReview,PerezCerrolaza2024CSUR}.
+The observed effects of the described phenomenon are not domain-specific but rather general mechanisms of human--machine interaction, which are relevant to any }\DIFdelend \DIFaddbegin \DIFadd{, while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Table~\ref{tab:design_implications} lists these candidate implications. Because the components were not manipulated separately, each implication should be tested individually. Whether they transfer to other }\DIFaddend safety-critical \DIFdelbegin \DIFdel{decision system \cite{Bach2024Access,Hodgson2013THMS}.In general, the current study contributes to the broader area of human--machine systems by showing the benefits of the application of human-centered AI decision systems with awareness of uncertainty for the execution of actions without compromising safety and accountability \cite{Lai2023FAccT,Yang2022THMSReview}. The design implications that are critical based on the findings are presented in Table~\ref{tab:design_implications}. In providing insight into the manner in which architectural design translates into behavioral outcomes, the results contribute to the domain of human machine systems with respect to trust calibration and cognitive ergonomics. }\DIFdelend \DIFaddbegin \DIFadd{domains, such as healthcare, transportation, and industrial safety \cite{PerezCerrolaza2024CSUR,Farhan2025TCE}, has not been tested here (Table~\ref{tab:achdf_transferability}).
 }\DIFaddend 
 
     %---------------------------------\input{./090-futurework}

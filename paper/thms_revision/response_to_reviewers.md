@@ -73,7 +73,7 @@ See `cover_letter_en.md`.
 
 **RW-2 (adaptive automation comparison).** New §II-A covers levels and types of automation, adaptive automation, and the specific ways ACHDF relates to them: no automation of action implementation, event-triggered adaptation, and adaptation of support rather than of authority.
 
-**Sys-1 (bounded autonomy vs. escalation).** Clarified throughout. Decision authority is *not* reallocated. Only the level and form of AI support varies. The Fig. 2 caption, §III intro, Goal 3, §III-F, and Table I were revised.
+**Sys-1 (bounded autonomy vs. escalation).** Clarified throughout. Decision authority is *not* reallocated. Only the level and form of AI support varies. §III intro, Goal 3, §III-F, and Table I were revised. Fig. 2 was redrawn so that it matches Algorithm 1 exactly: all three escalation triggers are shown, the human holds final authority in both modes, and the former "trust calibration and cognitive workload loop", which suggested run-time adaptation, was removed.
 
 **Sys-2 (policy violation missing in Algorithm 1).** A policy-violation flag *v* from the guardrail checks was added to Algorithm 1 as a third escalation trigger, consistent with §III-F.
 
@@ -85,7 +85,7 @@ See `cover_letter_en.md`.
 
 **Methods-4 (criticality and guardrails).** Criticality is defined as the severity of consequences if the recommended action is wrong or delayed (Table I). The guardrails are described as consistency, scope, and policy checks (§III-D). The specific rules, scale, and thresholds are listed in §VII-D.
 
-**Methods-5 (trust calibration and ergonomics: mechanism or criterion?).** Clarified. They are design considerations that shaped the interface and are measured as outcomes. They do not adapt system behavior (Fig. 1 caption, §III, Table I).
+**Methods-5 (trust calibration and ergonomics: mechanism or criterion?).** Clarified. They are design considerations that shaped the interface and are measured as outcomes. They do not adapt system behavior (Fig. 1 caption, §III, Table I). The redrawn Fig. 2 no longer shows a run-time trust/workload feedback loop. The audit log is shown as being used only offline. The index terms now read "trust in automation" instead of "trust calibration".
 
 **Methods-6 (usability questionnaire).** Identified as the SUS (Brooke, 1996), with its scoring range (§IV-D).
 
@@ -97,7 +97,7 @@ See `cover_letter_en.md`.
 
 **Methods-10 (IRB).** §IV-B now contains an explicit ethics statement. The study was not submitted to an institutional review board or ethics committee for review. It involved only a simulated decision task and post-task questionnaires and interviews, with no physical or medical intervention. Participation was voluntary, and all participants gave informed consent.
 
-**Results-1, -2 (inconsistent numbers).** All text values now match the tables (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.4→4.2).
+**Results-1, -2 (inconsistent numbers).** All text values now match the tables (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.4→4.2). The summary figure (Fig. 4) was regenerated from the Table V values, with one panel and scale per outcome (the former single-axis chart made the AER invisible and showed rounded differences).
 
 **Results-3 (statistics per outcome).** Table V now reports, for every outcome, the means, SDs where available, the difference, the significance threshold of the paired test, and d_av where SDs are available. Exact test statistics and CIs could not be computed from the available data. This is stated in the table note and in §VII-D.
 
