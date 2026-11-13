@@ -1,10 +1,10 @@
 # 커버레터 (한국어본)
 
-> 영문 커버레터(`cover_letter_en.md`)를 바탕으로 정리한 검토용 한국어본입니다. 실제 제출에는 영문본을 사용하세요. 제출 전에 `[ ]` 안의 항목을 채우세요.
+> 영문 커버레터(`cover_letter_en.md`)를 바탕으로 정리한 검토용 한국어본입니다. 실제 제출에는 영문본을 사용하세요.
 
 ---
 
-[제출일: 2026년 __월 __일]
+2026년 11월 13일
 
 **받는 분:** Ljiljana Trajkovic 박사, 편집위원장
 IEEE Transactions on Human-Machine Systems

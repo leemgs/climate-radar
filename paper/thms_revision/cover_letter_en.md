@@ -1,10 +1,10 @@
 # Cover Letter (English)
 
-> Submission version of the cover letter. Fill in the items in `[ ]` before submitting. A Korean version for review is in `cover_letter_ko.md`.
+> Submission version of the cover letter. A Korean version for review is in `cover_letter_ko.md`.
 
 ---
 
-[Date: ________ __, 2026]
+November 13, 2026
 
 **To:** Dr. Ljiljana Trajkovic, Editor-in-Chief
 IEEE Transactions on Human-Machine Systems

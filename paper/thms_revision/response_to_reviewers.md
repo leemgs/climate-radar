@@ -14,7 +14,7 @@
 | `cover_letter_en.md` | Standalone cover letter for submission (`cover_letter_ko.md`: Korean version) |
 | `reference-data.bib` | Adds 11 references (JCS, adaptive automation, trust, NASA-TLX, SUS, effect sizes) |
 
-> **Before resubmission:** no `\TODO` items remain in `main.tex`. Only the date in the cover letter needs to be entered.
+> **Before resubmission:** no `\TODO` items remain in `main.tex`, and the cover letter is dated. The package is ready to submit.
 
 ### How analyses requiring raw data were handled
 The trial-level data and some study materials were not available for re-analysis. We did not invent any values. Every item that depends on such data is reported as far as the existing manuscript supports it, and the rest is listed explicitly in a new limitation, **§VII-D "Reporting and Analysis Limitations"**.
