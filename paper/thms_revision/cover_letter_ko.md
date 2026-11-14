@@ -4,7 +4,7 @@
 
 ---
 
-2026년 11월 13일
+2026년 11월 14일
 
 **받는 분:** Ljiljana Trajkovic 박사, 편집위원장
 IEEE Transactions on Human-Machine Systems
