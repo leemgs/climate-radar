@@ -9,7 +9,8 @@
 **받는 분:** Ljiljana Trajkovic 박사, 편집위원장
 IEEE Transactions on Human-Machine Systems
 
-**제목:** 새 원고 제출 — "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk"
+**제목:** 새 원고 제출 — "From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response"
+**이전 제목:** "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk"
 **이전 원고 번호:** THMS-26-02-0115 (2026년 11월 12일 결정: Reject and Resubmit)
 
 ---
@@ -32,7 +33,7 @@ AE께서는 크게 세 가지 문제를 지적하셨습니다. 기여의 새로�
 
 5. **일관성과 중복 정리.** 본문과 표 사이의 수치 불일치를 바로잡았습니다. 내용이 겹치던 결과 절(V-A/V-B)을 합치고, 중복되던 표들을 Table V와 VI로 통합했습니다. 어느 비교에 해당하는지 불분명했던 Cohen's d 값은 삭제했습니다. 또한 원고의 내부 일관성을 자체적으로 다시 점검했습니다. 확보한 자료로 검증할 수 없는 반응 지연 분포 그림은 삭제했고, 남은 불일치(예: NASA-TLX 산출 방식)는 명시적으로 밝혔습니다.
 
-6. **주장의 한정.** 메커니즘, 신뢰 보정, 자동화 편향, 행동 형식(action format)의 이점, 다른 영역으로의 일반화에 관한 주장을 삭제하거나 가설로 낮췄습니다. 이에 맞춰 한계 절에 네 가지를 추가했습니다. 여러 요소가 함께 바뀐 처치였다는 점, 신뢰 보정과 자동화 편향을 직접 검증하지 않았다는 점, 영역과 참가자 집단의 일반화 가능성, 결정 유보의 생태학적 타당성입니다.
+6. **주장의 한정.** 메커니즘, 신뢰 보정, 자동화 편향, 행동 형식(action format)의 이점, 다른 영역으로의 일반화에 관한 주장을 삭제하거나 가설로 낮췄습니다. 이에 맞춰 한계 절에 네 가지를 추가했습니다. 여러 요소가 함께 바뀐 처치였다는 점, 신뢰 보정과 자동화 편향을 직접 검증하지 않았다는 점, 영역과 참가자 집단의 일반화 가능성, 결정 유보의 생태학적 타당성입니다. 본 연구는 행동 수행의 신뢰성(reliability)을 측정하지 않았기 때문에, 제목에서 "Reliable"을 빼고 제목을 바꿨습니다.
 
 7. **구성과 문장.** 결과 절에는 기술 통계와 추론 통계 결과만 남겼습니다. 기존 "메커니즘 분석"은 Discussion으로 옮겨, 프레임워크에 근거한 해석(VI-B)으로 성격을 바꿨습니다. 원고 전체의 문장을 다듬었고, 부적절한 연결어("in fact", "on the other hand")를 없앴습니다. 인간공학 분야 참고문헌 11편을 추가했습니다.
 

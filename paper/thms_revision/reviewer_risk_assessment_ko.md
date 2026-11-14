@@ -77,7 +77,7 @@
 
 ### 낮음
 
-- **L1.** 제목의 "Reliable Action Execution"은 신뢰성을 측정하지 않은 연구에 비해 강한 표현입니다. 제목 변경을 검토해 보세요(아래 5절).
+- **L1.** ~~제목의 "Reliable Action Execution"이 신뢰성을 측정하지 않은 연구에 비해 강한 표현~~ → **해결:** 제목을 *"From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response"*로 변경(2026-11-14)
 - **L2.** 사전 등록(preregistration)과 데이터 공개 진술(data availability statement)이 없습니다.
 
 ---
@@ -117,5 +117,5 @@
 
 1. **원자료나 실험 자료(로그, 시나리오 파일, 프로토타입)의 존재 여부.** 이것이 재제출 전략을 결정합니다.
 2. **IRB 면제 판정 문의 여부.**
-3. **제목 변경 여부.** 예시로 *"From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response"*를 제안합니다. 새 원고로 제출하므로 제목을 바꿀 수 있습니다. 바꾸면 커버레터에서 원래 제목과의 관계를 밝혀야 합니다.
+3. ~~제목 변경 여부~~ → **결정됨:** "Reliable"을 빼고 제안한 제목으로 변경했습니다. 커버레터와 응답서에 이전 제목과 변경 이유를 함께 적었습니다.
 4. **제출 시점.** 현재 원고로 바로 제출할지, 4절 A나 B를 마친 뒤 제출할지 정해야 합니다.

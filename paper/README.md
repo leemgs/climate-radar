@@ -56,6 +56,8 @@ By combining **predictive analytics, behavioral science, and responsible AI**, C
 ---
 
 ## 🔁 IEEE THMS Revision (THMS-26-02-0115, Reject & Resubmit)
+Revised title: *From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response* (previously "...A Human–AI Decision System for Reliable Action Execution Under Disaster Risk")
+
 - Revised LaTeX source: [`thms_revision/main.tex`](./thms_revision/main.tex) (original: `thms_revision/main_original.tex`)
 - Compiled draft: [`thms_revision/main_revised.pdf`](./thms_revision/main_revised.pdf). No TODO items remain; analyses that need raw data are listed as limitations (§VII-D).
 - Before/after comparison (latexdiff): [`thms_revision/main_diff.pdf`](./thms_revision/main_diff.pdf)

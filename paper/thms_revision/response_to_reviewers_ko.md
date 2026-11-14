@@ -3,6 +3,7 @@
 > 이 문서는 `response_to_reviewers.md`(영문)의 한국어 번역본입니다. 저널 제출에는 영문본을 사용하세요.
 
 **원 원고:** "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk," THMS-26-02-0115
+**수정 제목:** "From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response" (행동 수행의 신뢰성을 측정하지 않았으므로 "Reliable"을 삭제)
 **결정 통보:** 2026년 11월 12일, 게재 불가 후 재제출 권고 (Dr. L. Trajkovic, 편집위원장)
 
 ## 이 폴더의 파일

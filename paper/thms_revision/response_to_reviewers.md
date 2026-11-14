@@ -1,6 +1,7 @@
 # Response to Reviewers: THMS-26-02-0115 (Resubmission)
 
 **Original manuscript:** "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk," THMS-26-02-0115
+**Revised title:** "From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response" (the word "Reliable" was removed because reliability of action execution was not measured)
 **Decision letter:** 12-Nov-2026, Reject and Resubmit (Dr. L. Trajkovic, Editor-in-Chief)
 
 ## Files in this folder

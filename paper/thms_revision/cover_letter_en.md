@@ -9,7 +9,8 @@ November 13, 2026
 **To:** Dr. Ljiljana Trajkovic, Editor-in-Chief
 IEEE Transactions on Human-Machine Systems
 
-**Subject:** New submission: "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk"
+**Subject:** New submission: "From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response"
+**Previous title:** "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk"
 **Previous manuscript number:** THMS-26-02-0115 (decision of 12 November 2026: Reject and Resubmit)
 
 ---
@@ -32,7 +33,7 @@ The main changes are as follows.
 
 5. **Consistency and redundancy.** Numerical inconsistencies between the text and the tables have been corrected. Overlapping Results subsections (former V-A/V-B) were merged, redundant tables were consolidated into Tables V and VI, and the single Cohen's d whose comparison was unclear has been removed. We also re-examined the manuscript for internal consistency on our own initiative. A latency-distribution figure that could not be verified against the available data was removed, and the remaining inconsistencies (e.g., in the NASA-TLX scoring) are now stated explicitly.
 
-6. **Qualified claims.** Claims regarding mechanism, trust calibration, automation bias, the benefit of the action format, and cross-domain generalizability have been removed or reframed as hypotheses. Correspondingly, the Limitations section now addresses four points: the bundled nature of the intervention, the absence of a direct test of calibration and automation bias, domain and population generalizability, and the ecological validity of deferral.
+6. **Qualified claims.** Claims regarding mechanism, trust calibration, automation bias, the benefit of the action format, and cross-domain generalizability have been removed or reframed as hypotheses. Correspondingly, the Limitations section now addresses four points: the bundled nature of the intervention, the absence of a direct test of calibration and automation bias, domain and population generalizability, and the ecological validity of deferral. We also changed the title and removed the word "Reliable", because the study does not measure the reliability of action execution.
 
 7. **Structure and language.** The Results section now reports only descriptive and inferential findings. The former "mechanism analysis" has been moved to the Discussion and recast as a framework-based interpretation (Section VI-B). The manuscript has been edited for clarity and flow, inappropriate transitions ("in fact", "on the other hand") have been removed, and eleven references from the human factors literature have been added.
 
