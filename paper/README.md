@@ -63,4 +63,5 @@ By combining **predictive analytics, behavioral science, and responsible AI**, C
 - Cover letter (English, for submission): [`thms_revision/cover_letter_en.md`](./thms_revision/cover_letter_en.md)
 - Submission PDFs: [`cover_letter_en.pdf`](./thms_revision/cover_letter_en.pdf), [`response_to_reviewers.pdf`](./thms_revision/response_to_reviewers.pdf) (Korean: [`cover_letter_ko.pdf`](./thms_revision/cover_letter_ko.pdf), [`response_to_reviewers_ko.pdf`](./thms_revision/response_to_reviewers_ko.pdf))
 - Cover letter (Korean): [`thms_revision/cover_letter_ko.md`](./thms_revision/cover_letter_ko.md)
+- Reviewer-perspective risk assessment (Korean): [`thms_revision/reviewer_risk_assessment_ko.md`](./thms_revision/reviewer_risk_assessment_ko.md)
 - Korean translation: [`thms_revision/response_to_reviewers_ko.md`](./thms_revision/response_to_reviewers_ko.md)

@@ -45,6 +45,17 @@ See `cover_letter_en.md`.
 
 ---
 
+## Additional corrections from our own re-examination
+
+Besides the reviewers' points, we re-examined the manuscript for internal consistency and over-claiming and made the following changes:
+
+1. **Latency-distribution figure removed.** It could not be reproduced or verified from the available data, and showing a trial-level distribution was inconsistent with reporting that trial-level data were unavailable.
+2. **Deferral clarified.** The Methods now state that participants could defer in either condition. This is consistent with Table VII, which reports deferral in non-escalated trials. Algorithm 1 now lists "defer" as an operator option, matching Fig. 2, and its unused initial assignment was removed.
+3. **Carry-over acknowledged.** Both conditions used the same scenarios, so carry-over from the first condition cannot be ruled out despite counterbalancing (§IV-A, §VII-D).
+4. **NASA-TLX scoring.** Only four of the six subscales are reported, and the overall score matches their mean in the baseline condition but not in the AI-assisted condition (46.2 vs. 46.0). This is now stated as a limitation (§IV-D, §VII-D).
+5. **Abstract and Conclusion.** These now give the main values (AER 0.62→0.81, latency 12.4→8.1 s). They state that usability was compared only descriptively and that only significance thresholds are available.
+6. **Over-interpretation removed.** Because the baseline had no AI support, §VI-A no longer claims that the *structure* of support, rather than its availability, explains the improvement.
+
 ## Associate Editor
 
 | AE concern | Response | Location |
@@ -70,7 +81,7 @@ See `cover_letter_en.md`.
 
 **Intro-5 ("empirical link" overclaim).** Removed. The text now states that the study evaluates the integrated configuration and does not isolate components (§I, §VII-A).
 
-**RW-1 (Section II-A weakly linked).** The former II-A (information fusion and community detection) was condensed into one paragraph (§II-E) and linked explicitly to the input of the risk layer.
+**RW-1 (Section II-A weakly linked).** The former II-A (information fusion and community detection) was condensed into one paragraph (§II-E) and linked explicitly to the input of the risk layer. The long list of community-detection references was reduced to two representative citations.
 
 **RW-2 (adaptive automation comparison).** New §II-A covers levels and types of automation, adaptive automation, and the specific ways ACHDF relates to them: no automation of action implementation, event-triggered adaptation, and adaptation of support rather than of authority.
 
@@ -98,7 +109,7 @@ See `cover_letter_en.md`.
 
 **Methods-10 (IRB).** §IV-B now contains an explicit ethics statement. The study was not submitted to an institutional review board or ethics committee for review. It involved only a simulated decision task and post-task questionnaires and interviews, with no physical or medical intervention. Participation was voluntary, and all participants gave informed consent.
 
-**Results-1, -2 (inconsistent numbers).** All text values now match the tables (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.4→4.2). The summary figure (Fig. 4) was regenerated from the Table V values, with one panel and scale per outcome (the former single-axis chart made the AER invisible and showed rounded differences).
+**Results-1, -2 (inconsistent numbers).** All text values now match the tables (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.4→4.2). The summary figure (Fig. 3) was regenerated from the Table V values, with one panel and scale per outcome (the former single-axis chart made the AER invisible and showed rounded differences).
 
 **Results-3 (statistics per outcome).** Table V now reports, for every outcome, the means, SDs where available, the difference, the significance threshold of the paired test, and d_av where SDs are available. Exact test statistics and CIs could not be computed from the available data. This is stated in the table note and in §VII-D.
 
@@ -136,7 +147,7 @@ See `cover_letter_en.md`.
 6. **Statistics next to each result.** Each outcome sentence in §V and Table V now carries its own result (significance threshold, and d_av where available). The collective "p < .01 / p < .05" paragraph at the end of the Results was removed. Exact statistics and CIs: see R1 Results-3.
 7. **Trust terminology and items.** The constructs are now named consistently as perceived *reliability, predictability, appropriateness* in Table IV, §IV-D, and Table VI, and the response scale (5-point Likert) is stated. The item wording, validation, and internal consistency are not available, so the trust score is presented as an indicative composite (§IV-D, §VII-D).
 8. **Usability questionnaire.** SUS, with reference and scoring range (§IV-D).
-9. **Results intro paragraph and interpretive statements.** The intro was shortened to two sentences. Interpretive sentences (e.g., "helped participants transition quicker…") were removed from the Results, and so was the interpretive part of the Fig. 3 caption.
+9. **Results intro paragraph and interpretive statements.** The intro was shortened to two sentences. Interpretive sentences (e.g., "helped participants transition quicker…") were removed from the Results. The former latency-distribution figure, whose caption contained an interpretive statement, was removed entirely, because it could not be verified against trial-level data.
 10. **V-A/V-B redundancy.** Merged into §V-A.
 11. **Tables V/VIII redundancy; Table VIII not cited.** Consolidated. Table V (outcomes) and Table VI (subscales) replace the previous Tables IV, V, VII, VIII and a duplicated table with the same label. All tables are cited in the text.
 12. **Ecological validity of deferral.** New §VI-D discusses forced action under uncertainty and deferral costs, and their implications for the over-reliance results.

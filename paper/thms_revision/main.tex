@@ -223,7 +223,7 @@ literate=
 
     % -----------------------------\input{./005-abstract}
     \begin{abstract}
-        Human--AI decision systems are increasingly used in situations where an inappropriate or delayed human action can have serious consequences. Improvements in the predictive accuracy of AI do not, by themselves, translate into appropriate human action. Drawing on the joint cognitive systems perspective, which evaluates the human and the machine as a single system, we present the \emph{Action-Centered Human--AI Decision Framework (ACHDF)}. ACHDF instantiates uncertainty-aware risk estimation, guardrailed AI recommendations, and human-in-the-loop escalation for disaster-response decision support, and it treats human action execution as the primary evaluation outcome. In a counterbalanced within-subjects study ($n=52$), we compared an ACHDF-based prototype with a conventional dashboard in a simulated disaster-response decision task. Compared with the dashboard, the ACHDF condition was associated with a higher action execution rate, shorter response latency, lower self-reported workload (NASA--TLX), and higher perceived trust and usability. Because the two conditions differed in several features at once, the results describe the effect of the integrated ACHDF configuration rather than of individual components. We discuss implications for the design of human--AI decision support under uncertainty. Validation in other domains and with professional operators remains future work.
+        Human--AI decision systems are increasingly used in situations where an inappropriate or delayed human action can have serious consequences. Improvements in the predictive accuracy of AI do not, by themselves, translate into appropriate human action. Drawing on the joint cognitive systems perspective, which evaluates the human and the machine as a single system, we present the \emph{Action-Centered Human--AI Decision Framework (ACHDF)}. ACHDF instantiates uncertainty-aware risk estimation, guardrailed AI recommendations, and human-in-the-loop escalation for disaster-response decision support, and it treats human action execution as the primary evaluation outcome. In a counterbalanced within-subjects study ($n=52$), we compared an ACHDF-based prototype with a conventional dashboard in a simulated disaster-response decision task. Compared with the dashboard, the ACHDF condition was associated with a higher action execution rate (0.81 vs.\ 0.62), shorter response latency (8.1 vs.\ 12.4~s), lower self-reported workload (NASA--TLX), and higher perceived trust; usability scores were also higher, although no significance test was reported for them. Only the significance thresholds of the original analysis are available, so effect estimates should be interpreted with caution. Because the two conditions differed in several features at once, the results describe the effect of the integrated ACHDF configuration rather than of individual components. We discuss implications for the design of human--AI decision support under uncertainty. Validation in other domains and with professional operators remains future work.
     \end{abstract}
 
     \begin{IEEEkeywords}
@@ -244,7 +244,7 @@ We address the following, deliberately scoped research question:
 \begin{quote}
     \emph{Compared with a conventional dashboard, is an ACHDF-based decision support system associated with better action execution in a simulated, high-uncertainty disaster-response task, and how does it relate to response latency, workload, and trust?}
 \end{quote}
-We specified the following hypotheses before data collection:
+The study tested the following hypotheses, which were defined before data collection:
 \begin{itemize}
     \item \textbf{H1 (primary):} The Action Execution Rate (AER) is higher in the AI-assisted (ACHDF) condition than in the baseline condition.
     \item \textbf{H2 (secondary):} Response latency is shorter in the AI-assisted condition.
@@ -282,7 +282,7 @@ AI-assisted decision systems are increasingly used for time-critical decisions i
 Work on responsible and explainable AI stresses human-in-the-loop controls and governance, particularly in safety-critical applications \cite{Weidinger2022FAccT,Assaad2023TAS,Miller2019XRDS,PerezCerrolaza2024CSUR}. Most of this work, however, is conceptual or algorithm-centric and does not measure human behavior. Few studies have examined empirically how specific design features, such as uncertainty-aware escalation and guardrails, affect the actions humans take \cite{Bach2024Access,Lai2023FAccT}.
 
 \subsection{Information Sources for Disaster Decision Support}
-In disaster response, the input to the risk-modeling layer of ACHDF (Section~\ref{sec:system}) comes from heterogeneous sensor networks, ad hoc communications, and community reporting, whose robustness affects the quality of the signal available for decision making \cite{Yang2005MobiHoc,Longo2025PMC,Stephens2022SIGDOC}. Network-analytic methods such as community detection have been used to structure such large and noisy information environments \cite{Wakita2007WWW,Prokhorenkova2019WWW,Xian2025WWW,Slota2019SC,Sun2014FSKD,Rezaei2015ASONAM,Akhter2022ICCA,Sun2011InformationSciences,Havens2013TFUZZ,Vehlow2013TVCG,Zhang2012KDD,Cao2020ICIIP,Li2022AppliedIntelligence,Duan2014KDD}. These upstream methods are outside the scope of this paper. They are mentioned only because the uncertainty that ACHDF must represent originates in them.
+In disaster response, the input to the risk-modeling layer of ACHDF (Section~\ref{sec:system}) comes from heterogeneous sensor networks, ad hoc communications, and community reporting, whose robustness affects the quality of the signal available for decision making \cite{Yang2005MobiHoc,Longo2025PMC,Stephens2022SIGDOC}. Network-analytic methods such as community detection have been used to structure such large and noisy information environments (e.g., \cite{Wakita2007WWW,Havens2013TFUZZ}). These upstream methods are outside the scope of this paper. They are mentioned only because the uncertainty that ACHDF must represent originates in them.
 
 
 %-----------------------------input{./050-design}
@@ -387,7 +387,7 @@ Action execution & Primary outcome & Measured by AER (Section~\ref{sec:measures}
     The system should support \emph{human action execution} effectively, as opposed to only improving situational awareness and prediction accuracy.
 
     \textbf{Goal 2 --- Supporting Appropriate Trust.}
-    The system should support appropriate trust \cite{Lee2004} by making its uncertainty, model limitations, and potential failure modes explicit, so that users can judge when to rely on its outputs and when to rely on their own judgment.
+    The system should support appropriate trust \cite{Lee2004} by making its uncertainty explicit, so that users can judge when to rely on its outputs and when to rely on their own judgment.
 
     \textbf{Goal 3 --- Preserving Human Authority.}
     The system should preserve human authority in high-risk decisions. Human operators always hold the final decision-making and execution authority.
@@ -417,7 +417,6 @@ Action execution & Primary outcome & Measured by AER (Section~\ref{sec:measures}
             \Require risk estimate $r$, uncertainty $u$, action criticality $c$
             \Require policy-violation flag $v \in \{0,1\}$ from guardrail checks
             \Require thresholds $\tau_r, \tau_u, \tau_c$
-            \State $\textsc{mode} \leftarrow \text{``assist''}$
             \If{$u \ge \tau_u$ \textbf{or} $c \ge \tau_c$ \textbf{or} $v = 1$}
             \State $\textsc{mode} \leftarrow \text{``escalate''}$ \Comment{route to human review}
             \ElsIf{$r \ge \tau_r$}
@@ -427,10 +426,10 @@ Action execution & Primary outcome & Measured by AER (Section~\ref{sec:measures}
             \EndIf
             \If{$\textsc{mode} = \text{``escalate''}$}
             \State Present evidence and options to operator
-            \State Operator selects: approve / modify / reject
+            \State Operator selects: approve / modify / reject / defer
             \ElsIf{$\textsc{mode} = \text{``recommend''}$}
             \State Present guardrail-checked recommendation
-            \State Operator decides and executes (or overrides)
+            \State Operator decides and executes, overrides, or defers
             \EndIf
             \State Log decision context and outcome for audit and calibration
         \end{algorithmic}
@@ -492,7 +491,7 @@ The architecture was instantiated and evaluated only in disaster response. The d
 
     \subsection{Study Design and Conditions}
 
-    We used a within-subjects design with two conditions: a \emph{baseline} condition and an \emph{AI-assisted} (ACHDF) condition. The order of the conditions was counterbalanced across participants to control for order and learning effects. Both conditions used the same underlying scenario data.
+    We used a within-subjects design with two conditions: a \emph{baseline} condition and an \emph{AI-assisted} (ACHDF) condition. The order of the conditions was counterbalanced across participants to control for order and learning effects. Both conditions used the same underlying scenario data. Counterbalancing balances order effects across participants, but it does not remove carry-over: in the second condition, participants may have remembered scenarios from the first. Because order effects could not be analyzed, the size of this carry-over is unknown (Section~\ref{sec:lim_reporting}).
 
     \textbf{Baseline condition.} Participants used a conventional dashboard that displayed the hazard and risk information for each scenario. The dashboard provided no AI-generated action recommendation, uncertainty indicator, criticality cue, or escalation prompt. Participants had to integrate the information themselves and decide on an action.
 
@@ -529,7 +528,7 @@ The architecture was instantiated and evaluated only in disaster response. The d
 
     \subsection{Decision Task and Procedure}
 
-    Participants completed a series of time-limited decision tasks. In each task, they interpreted risk information about an evolving hazard and decided whether, and how, to take a protective action. When the system escalated a case, participants could also defer the decision pending further confirmation. The tasks were designed to reproduce the essential characteristics of high-stakes decisions: changing information, uncertainty, and asymmetric error costs. Participants were instructed to focus on taking the appropriate action rather than on analyzing the information.
+    Participants completed a series of time-limited decision tasks. In each task, they interpreted risk information about an evolving hazard and decided whether, and how, to take a protective action. Participants could also defer the decision pending further confirmation; in the AI-assisted condition, escalation explicitly prompted such a review (deferral rates in both modes are reported in Table~\ref{tab:escalation}). The tasks were designed to reproduce the essential characteristics of high-stakes decisions: changing information, uncertainty, and asymmetric error costs. Participants were instructed to focus on taking the appropriate action rather than on analyzing the information.
 
     Before the experimental trials, all participants received training on the task interfaces so that they were equally familiar with the procedures. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions.
 
@@ -561,7 +560,7 @@ The architecture was instantiated and evaluated only in disaster response. The d
     Response latency is the time from the display of actionable information until the participant executed an action.
 
     \textbf{Cognitive Workload.}
-    Workload was measured with the NASA--TLX \cite{Hart1988} after each condition. We report the overall score and four subscales (mental demand, temporal demand, effort, and frustration). Lower scores indicate lower perceived workload.
+    Workload was measured with the NASA--TLX \cite{Hart1988} after each condition. We report the overall score and four of the six subscales (mental demand, temporal demand, effort, and frustration); physical demand and performance were not reported. Lower scores indicate lower perceived workload. Whether the overall score is the raw (unweighted) or weighted TLX, and which subscales it includes, could not be verified (Section~\ref{sec:lim_reporting}).
 
     \textbf{Trust.}
     Trust was measured after each condition with three Likert-type items on the perceived \emph{reliability}, \emph{predictability}, and \emph{appropriateness} of the system's recommendations, rated on a 5-point scale. The overall trust score summarizes the three items. These three constructs are used consistently throughout the paper. Item-level data were not available, so internal consistency could not be estimated, and no published validation is available for these items, unlike established trust-in-automation scales such as that of Jian \emph{et al.} \cite{Jian2000}. The trust results should therefore be read as an indicative composite (Section~\ref{sec:lim_reporting}).
@@ -603,15 +602,8 @@ The architecture was instantiated and evaluated only in disaster response. The d
 
     \subsection{Action Execution and Response Latency}
     The mean AER was 0.62 in the baseline condition and 0.81 in the AI-assisted condition, a difference of 0.19 (paired test, $p < .01$).
-    The mean response latency was 12.4~s in the baseline condition and 8.1~s in the AI-assisted condition, a difference of 4.3~s (paired test, $p < .01$). Fig.~\ref{fig:latency_distribution} shows the latency distributions.
+    The mean response latency was 12.4~s in the baseline condition and 8.1~s in the AI-assisted condition, a difference of 4.3~s (paired test, $p < .01$). Latency distributions are not reported, because the trial-level data were not available (Section~\ref{sec:lim_reporting}).
     Whether the difference in the AER arose mainly from fewer wrong actions or from fewer late actions could not be determined (Section~\ref{sec:lim_reporting}).
-
-    \begin{figure}[t]
-        \centering
-        \includegraphics[width=0.9\linewidth]{fig_latency_distribution.png}
-        \caption{Distribution of response latency under the baseline and AI-assisted conditions.}
-        \label{fig:latency_distribution}
-    \end{figure}
 
     \subsection{Workload, Trust, and Usability}
     Fig.~\ref{fig:workload_trust_summary} summarizes the subjective measures, and Table~\ref{tab:subscales} gives the subscale scores.
@@ -690,7 +682,7 @@ The architecture was instantiated and evaluated only in disaster response. The d
 This section interprets the results from a human--machine systems perspective. In line with the JCS view \cite{Hollnagel2005JCS,Woods2006JCS}, we interpret the results at the level of the joint human--AI system. Because the AI-assisted condition differed from the baseline in several features at once, the interpretations below about \emph{which} features produced the effects are hypotheses, not demonstrated causal pathways.
 
 \subsection{Action Execution in the Joint Human--AI System}
-In the AI-assisted condition, the AER was higher and response latency shorter than with the dashboard. This is consistent with H1 and H2. Evaluating the system by action execution, rather than by prediction accuracy, follows directly from the JCS perspective. In AI decision-support research, however, evaluation is still dominated by accuracy and information quality \cite{Lai2023FAccT,Muller2022CHIWORK,Yang2022THMSReview}. Our results illustrate that what a human--AI system achieves depends on how support is structured to lead to action, not only on whether support is available.
+In the AI-assisted condition, the AER was higher and response latency shorter than with the dashboard. This is consistent with H1 and H2. Evaluating the system by action execution, rather than by prediction accuracy, follows directly from the JCS perspective. In AI decision-support research, however, evaluation is still dominated by accuracy and information quality \cite{Lai2023FAccT,Muller2022CHIWORK,Yang2022THMSReview}. Because the baseline offered no AI support at all, the comparison shows the benefit of the integrated ACHDF support over a dashboard. It does not show how much of this benefit is due to the way support was structured rather than to the availability of AI support as such; separating the two requires an additional condition with unstructured AI recommendations.
 
 Several features of the AI-assisted condition could explain the improvement: the presence of a recommendation, its action-oriented phrasing, the explicit uncertainty and criticality cues, and escalation. Our design does not separate these features. In particular, we cannot conclude that presenting recommendations in an action format, rather than a risk format, caused the improvement. A factorial design that varies the format while holding the other features constant is needed to test this (Section~\ref{sec:limitations}). Because the AER could not be decomposed, it also remains open whether the improvement came mainly from fewer wrong actions or from fewer late actions (Section~\ref{sec:lim_reporting}).
 
@@ -746,11 +738,11 @@ Within the scope of the evaluated task, the results suggest that human--AI decis
     \label{sec:lim_reporting}
     Several analyses and details requested for a complete account of the study could not be provided, because the trial-level data and some study materials were not available for re-analysis. The affected results should be interpreted with corresponding caution:
     \begin{itemize}
-        \item \emph{Inferential statistics.} Only the significance thresholds of the original paired tests are available. Exact test statistics, 95\% confidence intervals, assumption diagnostics, the paired effect size $d_z$, order-effect analyses, and multiplicity-corrected $p$-values could not be computed. SDs for the AER and response latency are not available, and the paired test used for each outcome is not documented. No a priori power analysis was reported; the sensitivity analysis (Section~\ref{sec:participants}) indicates adequate power only for effects of about $d_z \geq 0.40$.
+        \item \emph{Inferential statistics.} Only the significance thresholds of the original paired tests are available. Exact test statistics, 95\% confidence intervals, assumption diagnostics, the paired effect size $d_z$, order-effect analyses, and multiplicity-corrected $p$-values could not be computed. SDs and distributions for the AER and response latency are not available, and the paired test used for each outcome is not documented. Because both conditions used the same scenarios, carry-over from the first to the second condition cannot be ruled out, and its size could not be estimated without order-effect analyses. No a priori power analysis was reported; the sensitivity analysis (Section~\ref{sec:participants}) indicates adequate power only for effects of about $d_z \geq 0.40$.
         \item \emph{AER construction.} The procedure for defining the appropriate action and the length of the time window are not documented in detail, and the AER could not be decomposed into action correctness and timeliness. Consequently, it cannot be determined whether execution failures were due to wrong actions or to delays.
         \item \emph{Task and materials.} The number and composition of scenarios (by uncertainty and criticality), the full set of response options, the per-trial time limit, the matching of scenario difficulty, the training content and any pass criterion, and interface screenshots are not reported. This limits reproducibility.
         \item \emph{System implementation.} The risk model's estimation and calibration procedure, the criticality scale and thresholds, and the specific guardrail rules are not reported. The evaluation therefore concerns the interaction design as experienced by participants, not the validity of these components.
-        \item \emph{Measures.} The trust items have no published validation and their internal consistency could not be estimated. The interview data were not systematically coded. The number of escalated trials is not available.
+        \item \emph{Measures.} The trust items have no published validation and their internal consistency could not be estimated. Only four of the six NASA--TLX subscales are reported, and the overall score cannot be fully reconciled with them: it equals the mean of the four subscales in the baseline condition (59.8) but not in the AI-assisted condition (46.2 vs.\ 46.0), so the scoring procedure could not be verified. The interview data were not systematically coded. The number of escalated trials is not available.
     \end{itemize}
     Future studies should preregister their analyses and share trial-level data and materials so that these analyses can be reported in full.
 
@@ -759,7 +751,7 @@ Within the scope of the evaluated task, the results suggest that human--AI decis
 
     %-------------------------------\input{./092-conclusion}
 \section{Conclusion}
-This paper presented ACHDF, an action-centered human--AI decision framework that instantiates the joint cognitive systems perspective for disaster-response decision support. ACHDF combines uncertainty-aware risk estimation, guardrailed recommendations, and uncertainty- and criticality-triggered escalation, while the human keeps final decision authority. In a within-subjects study with 52 participants, the integrated ACHDF configuration, compared with a conventional dashboard, was associated with a higher action execution rate, shorter response latency, lower self-reported workload, and higher perceived trust and usability. The study did not isolate individual components, assess trust calibration or automation bias directly, or test other domains or professional operators. These questions define the next steps toward validated design principles for human--AI decision support under uncertainty.
+This paper presented ACHDF, an action-centered human--AI decision framework that instantiates the joint cognitive systems perspective for disaster-response decision support. ACHDF combines uncertainty-aware risk estimation, guardrailed recommendations, and uncertainty- and criticality-triggered escalation, while the human keeps final decision authority. In a within-subjects study with 52 participants, the integrated ACHDF configuration, compared with a conventional dashboard, was associated with a higher action execution rate, shorter response latency, lower self-reported workload, and higher perceived trust; usability scores were also higher, but without a reported significance test. Only significance thresholds were available for the inferential results. The study did not isolate individual components, assess trust calibration or automation bias directly, or test other domains or professional operators. These questions define the next steps toward validated design principles for human--AI decision support under uncertainty.
 
 \section*{Acknowledgment}
 The author thanks the study participants for their time and insights, and colleagues in human--machine systems and human-centered AI research for valuable discussions.
