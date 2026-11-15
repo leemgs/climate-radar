@@ -43,7 +43,7 @@ Recomputing from the logs changed some values that appeared in the previous vers
 - **Subscales:** the previous values for four NASA-TLX subscales and three trust items do not agree with the logs and were replaced by log-based values (Table VIII).
 - **Escalation table:** the previous "appropriate deferral" and "inappropriate reliance" rates cannot be derived from the logs (no AI recommendation or correctness field) and were removed; observed deferral, AER and latency by escalation status are reported instead.
 - **NASA-TLX overall:** in the logs it equals the mean of all six subscales (the earlier four-subscale inconsistency is resolved).
-- **SUS:** the logged overall score is 2.8–4.7 points above the score recomputed from the ten items; both are reported (§IV-D, §V-B).
+- **SUS:** the logged overall score is a constant 2.8 (baseline) or 4.7 (AI-assisted) points above the score recomputed from the ten items in every record; how it was obtained is not documented, so both are reported (§IV-D, §IV-F, §V-B).
 
 ### Note on numerical consistency
 The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency 12.3→8.0 s vs. 12.4→8.1 s; trust 3.2→4.0 vs. 3.4→4.2). The logs reproduce the **table values** (0.62/0.81; 12.4/8.1; 3.4/4.2), which are used throughout.
@@ -169,7 +169,7 @@ Besides the reviewers' points, we re-examined the manuscript for internal consis
 5. **Which test, and assumptions.** §IV-E: two-sided paired t-test for every outcome; Shapiro–Wilk on the paired differences (rejected only for the trust items), with Wilcoxon signed-rank confirmation for all outcomes.
 6. **Statistics next to each result.** Each outcome in §V-A/B carries its t statistic, p (Holm-adjusted for secondary outcomes), 95% CI and d_z, and Table VI collects them. The collective "p < .01" paragraph was removed.
 7. **Trust terminology and items.** Constructs are named consistently (perceived reliability, predictability, appropriateness; 5-point Likert; overall = mean of three items). Cronbach's α is .61 (baseline) and .46 (AI-assisted); there is no published validation, and the exact wording is not documented, so the score is presented as an indicative composite (§IV-D, §VII-D).
-8. **Usability questionnaire.** SUS (Brooke, 1996), ten items, 0–100 scoring; the logged overall score is 2.8–4.7 points above the recomputed score, and both are reported (§IV-D, §V-B).
+8. **Usability questionnaire.** SUS (Brooke, 1996), ten items, 0–100 scoring; the logged overall score is a constant 2.8/4.7 points above the recomputed score in the baseline/AI-assisted condition, and both are reported (§IV-D, §V-B).
 9. **Results intro paragraph and interpretive statements.** The intro was shortened to two sentences. Interpretive sentences (e.g., "helped participants transition quicker…") were removed from the Results. The former latency-distribution figure, whose caption contained an interpretive statement, was removed entirely, because it could not be verified against trial-level data.
 10. **V-A/V-B redundancy.** Merged into §V-A.
 11. **Table redundancy; Table VIII not cited.** Consolidated into Table VI (all outcomes) and Table VIII (subscales and items); all tables are cited in the text.
