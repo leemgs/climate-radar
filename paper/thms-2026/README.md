@@ -8,7 +8,7 @@
 
 | File | Upload as |
 |---|---|
-| [`submission/main_revised.pdf`](./submission/main_revised.pdf) | Manuscript (11 pages) |
+| [`submission/main_revised.pdf`](./submission/main_revised.pdf) | Manuscript (13 pages) |
 | [`submission/cover_letter_en.pdf`](./submission/cover_letter_en.pdf) | Cover letter (references the decision letter) |
 | [`submission/response_to_reviewers.pdf`](./submission/response_to_reviewers.pdf) | Point-by-point response to the AE and reviewers |
 | [`submission/main_diff.pdf`](./submission/main_diff.pdf) | Marked-up comparison with the previous submission (supplementary) |
