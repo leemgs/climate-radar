@@ -19,7 +19,7 @@
 > **Before resubmission:** no `\TODO` items remain in `main.tex`, and the cover letter is dated. The package is ready to submit.
 
 ### How analyses requiring raw data were handled
-The trial-level data and some study materials were not available for re-analysis. We did not invent any values. Every item that depends on such data is reported as far as the existing manuscript supports it, and the rest is listed explicitly in a new limitation, **§VII-D "Reporting and Analysis Limitations"**.
+The trial-level data and some study materials were not available for re-analysis. No values were imputed or estimated beyond those of the original analysis, except for effect sizes (d_av) and a sensitivity analysis computed from reported summary statistics. Every item that depends on such data is reported as far as the existing manuscript supports it, and the rest is listed explicitly in a new limitation, **§VII-D "Reporting and Analysis Limitations"**.
 
 | Item | Treatment in the manuscript |
 |---|---|
@@ -27,16 +27,16 @@ The trial-level data and some study materials were not available for re-analysis
 | SDs for AER and latency; SUS significance test | Marked "n/a" or "not reported" in Table V and listed in §VII-D. |
 | Power | A post hoc sensitivity analysis was computed: with n = 52, a paired t-test at α = .05 and 80% power detects d_z ≈ 0.40. This does not need the raw data. |
 | AER decomposition (correct action vs. timeliness), ground truth, time window T | The AER is now explicitly described as combining correctness and timeliness. The decomposition, ground-truth procedure and T are listed in §VII-D as unavailable. The Discussion notes that the source of the improvement (wrong vs. late actions) remains open. |
-| Scenario count and composition, response options, time limit, difficulty matching, worked example, training criterion, interface screenshots | The task, procedure and both conditions are described at the level the study documentation supports. The missing details are listed in §VII-D as a reproducibility limitation. The placeholder figure was removed. |
+| Scenario count and composition, response options, time limit, difficulty matching, worked example, training criterion, interface screenshots | The task, procedure and both conditions are described at the level the study documentation supports. The missing details are listed in §VII-D as a reproducibility limitation. |
 | Risk-model estimation and calibration, criticality scale and thresholds, guardrail rules | Described conceptually (Table I, §III-C/D). Implementation details are listed in §VII-D. The evaluation is scoped to the interaction design. |
-| Trust items, validation, Cronbach's α | The constructs are named consistently. The limitations (no published validation, α not estimable) are stated in §IV-E and §VII-D, and the trust score is called an "indicative composite". |
+| Trust items, validation, Cronbach's α | The constructs are named consistently. The limitations (no published validation, α not estimable) are stated in §IV-D and §VII-D, and the trust score is called an "indicative composite". |
 | Qualitative coding, prevalence, quotes | Reframed as informal, uncoded observations. The "mixed-method" label was dropped. |
 | Number of escalated trials | Removed from Table VII and noted as unavailable. |
 | Trials with erroneous AI advice | The automation-bias claim was removed. Behavior on such trials "was not analyzed" (§VI-C, §VII-B). |
 | Participant demographics | Reported as in the original (age 20s–50s, mixed gender, low–high technical background, no domain expertise required). |
 
 ### Note on numerical consistency
-The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency 12.3→8.0 s vs. 12.4→8.1 s; trust 3.2→4.0 vs. 3.4→4.2). The revised manuscript uses the **table values** throughout. These could not be checked against raw data. If a check later shows the text values were correct, update Table V, §V, and Fig. 4 together.
+The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency 12.3→8.0 s vs. 12.4→8.1 s; trust 3.2→4.0 vs. 3.4→4.2). The revised manuscript uses the **table values** throughout. These could not be checked against raw data. If a check later shows the text values were correct, update Table V, §V, and Fig. 3 together.
 
 ---
 
@@ -45,6 +45,18 @@ The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency
 See `cover_letter_en.md`.
 
 ---
+
+## Requests we could only partially address
+
+We want to be transparent about the requests that the revised manuscript does not fully meet. For each, the manuscript now states the gap explicitly and limits its conclusions accordingly.
+
+- **Inferential statistics (AE; R1 Methods-9, Results-3; R2-5, R2-6).** Exact test statistics, 95% CIs, d_z, assumption diagnostics, and order-effect analyses could not be computed, because the trial-level data were not available for re-analysis. We report the original significance thresholds, d_av computed from reported means and SDs, and a sensitivity analysis.
+- **AER decomposition (R3; R1 Methods-7).** The decomposition into correctness and timeliness, the ground-truth procedure, and the time window could not be reported. We state that the source of the improvement therefore remains open.
+- **Reproducibility details (R1 Methods-1–4; R2-2–R2-4).** Interface screenshots, scenario composition, a worked example, training details, and implementation details of the risk model and guardrails are not reported.
+- **Trust measure and qualitative data (R2-7; R1 Results-6).** Item wording, validation, and internal consistency are unavailable. The interview data were not coded, so the mixed-method label was withdrawn.
+- **Ethics (R1 Methods-10).** The study did not undergo ethics-committee review. This is stated as fact in §IV-B.
+
+We regard these as genuine limitations of the evidence, not as points of disagreement with the reviewers, and the conclusions of the revised manuscript are restricted accordingly.
 
 ## Additional corrections from our own re-examination
 
@@ -92,7 +104,7 @@ Besides the reviewers' points, we re-examined the manuscript for internal consis
 
 **Methods-1 (cues per condition; interface figure).** §IV-A now states what each condition presents. The baseline shows the hazard and risk information without any AI recommendation, uncertainty indicator, criticality cue, or escalation prompt. The AI-assisted condition adds these ACHDF features, with the decision logic shown in Fig. 2 and Algorithm 1. Interface screenshots are not available and are listed as a limitation (§VII-D).
 
-**Methods-2 (task description).** §IV-C describes the task, response types (act, choose the action, or defer when escalated) and procedure as far as documented. Scenario counts and composition, timing, and difficulty matching are not available and are listed in §VII-D as a reproducibility limitation.
+**Methods-2 (task description).** §IV-C describes the task, response types (act, choose the action, or defer; deferral was possible in both conditions) and procedure as far as documented. Scenario counts and composition, timing, and difficulty matching are not available and are listed in §VII-D as a reproducibility limitation.
 
 **Methods-3 (risk model).** §III-C states that the paper evaluates how the risk estimate and its uncertainty are used in the interaction, not the risk model itself. Estimation and calibration details are listed in §VII-D.
 
