@@ -10,6 +10,7 @@ Outputs of the reference implementation in [`../code/`](../code/), plus project 
 | `audit/sample_log.jsonl` | Accountability log of emitted recommendations | yes |
 | `audit/audit_log_schema.json` | JSON schema of the audit log | no |
 | `model_cards/model_card.md` | Model card of the reference risk model | no |
+| `user-study/` | Anonymized user-study data (zip and extracted CSVs) behind the THMS manuscript | no |
 | `climate-radar-logo.png` | Project logo | no |
 
-These results come from **synthetic data** and are not the user-study results reported in the papers in [`../paper/`](../paper/).
+The files in `results/` and `audit/` come from **synthetic data** and are not the user-study results reported in the papers in [`../paper/`](../paper/). The user-study data are in `user-study/`.
