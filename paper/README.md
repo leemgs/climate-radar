@@ -1,69 +1,13 @@
-# From Alerts to Actions: Climate RADAR as a Generative AI–Driven Reliability Layer for Disaster Resilience
+# Papers
 
-## 📘 Journal Submission
-**Submitted to:** *International Journal of Disaster Risk Science (IJDRS, SCIE)*  
-**Status:** Under Peer Review  
-**Submission Date:** 2025-10-16  
-**Category:** Generative AI / Disaster Resilience / Responsible AI Systems  
+Manuscripts related to Climate RADAR and action-centered human–AI decision support. Each paper has its own folder.
 
----
+| Folder | Paper | Venue | Status |
+|---|---|---|---|
+| [`thms-2026/`](./thms-2026/) | *From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response* | IEEE Transactions on Human-Machine Systems | Resubmission in preparation (previous: THMS-26-02-0115, Reject & Resubmit) |
+| [`ijdrs-2025/`](./ijdrs-2025/) | *From Alerts to Actions: Climate RADAR as a Generative AI–Driven Reliability Layer for Disaster Resilience* | International Journal of Disaster Risk Science | Under review (submitted 2025-10-16) |
 
-## 📄 PDF Download
-📥 [Download Full Paper (ijdrs_sn_jnl_climate_radar_20251016_1610.pdf)](./ijdrs_sn_jnl_climate_radar_20251016_1610.pdf)
-
-> *Note: This version is a preprint submitted for peer review. Final publication details may differ.*
-
----
-
-## 🔑 Keywords
-- Early Warning Systems (EWS)  
-- Disaster Resilience  
-- Generative AI  
-- Responsible AI  
-- Composite Risk Index  
-- Human-Centered Response  
-
----
-
-## 🧩 Abstract
-As climate-related hazards intensify, conventional early warning systems (EWS) disseminate alerts rapidly but often fail to trigger timely protective actions, leading to preventable losses and inequities.  
-We introduce **Climate RADAR (Risk-Aware, Dynamic, and Action Recommendation system)** — a **generative AI–based reliability layer** that reframes disaster communication from alerts delivered to actions executed.  
-
-The system integrates meteorological, hydrological, vulnerability, and social data into a **composite risk index** and employs **guardrail-embedded large language models (LLMs)** to deliver personalized recommendations across citizen, volunteer, and municipal interfaces.  
-
-Evaluation through simulations, user studies, and a municipal pilot demonstrates improved outcomes, including higher protective action execution, reduced response latency, and increased usability and trust.  
-By combining **predictive analytics, behavioral science, and responsible AI**, Climate RADAR advances **people-centered, transparent, and equitable early warning systems**, offering practical pathways toward compliance-ready disaster resilience infrastructures.
-
----
-
-## 🧠 Research Focus
-> Bridging the gap between **climate alerts** and **real-world protective actions** through generative AI.
-
----
-
-## 🧾 Citation (BibTeX)
-```bibtex
-@article{lim2025climateradar,
-  title     = {From Alerts to Actions: Climate RADAR as a Generative AI–Driven Reliability Layer for Disaster Resilience},
-  author    = {Lim, Geunsik},
-  journal   = {International Journal of Disaster Risk Science},
-  year      = {2025},
-  note      = {Under peer review, submitted October 16, 2025},
-  keywords  = {Generative AI, Disaster Resilience, Responsible AI, Early Warning Systems, Composite Risk Index},
-  url       = {./ijdrs_sn_jnl_climate_radar_20251016_1610.pdf}
-}
-
----
-
-## 🔁 IEEE THMS Revision (THMS-26-02-0115, Reject & Resubmit)
-Revised title: *From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response* (previously "...A Human–AI Decision System for Reliable Action Execution Under Disaster Risk")
-
-- Revised LaTeX source: [`thms_revision/main.tex`](./thms_revision/main.tex) (original: `thms_revision/main_original.tex`)
-- Compiled draft: [`thms_revision/main_revised.pdf`](./thms_revision/main_revised.pdf). No TODO items remain; analyses that need raw data are listed as limitations (§VII-D).
-- Before/after comparison (latexdiff): [`thms_revision/main_diff.pdf`](./thms_revision/main_diff.pdf)
-- Point-by-point response and cover letter draft: [`thms_revision/response_to_reviewers.md`](./thms_revision/response_to_reviewers.md)
-- Cover letter (English, for submission): [`thms_revision/cover_letter_en.md`](./thms_revision/cover_letter_en.md)
-- Submission PDFs: [`cover_letter_en.pdf`](./thms_revision/cover_letter_en.pdf), [`response_to_reviewers.pdf`](./thms_revision/response_to_reviewers.pdf) (Korean: [`cover_letter_ko.pdf`](./thms_revision/cover_letter_ko.pdf), [`response_to_reviewers_ko.pdf`](./thms_revision/response_to_reviewers_ko.pdf))
-- Cover letter (Korean): [`thms_revision/cover_letter_ko.md`](./thms_revision/cover_letter_ko.md)
-- Reviewer-perspective risk assessment (Korean): [`thms_revision/reviewer_risk_assessment_ko.md`](./thms_revision/reviewer_risk_assessment_ko.md)
-- Korean translation: [`thms_revision/response_to_reviewers_ko.md`](./thms_revision/response_to_reviewers_ko.md)
+Conventions for new papers:
+- One folder per paper, named `<venue>-<year>/`.
+- Inside: `manuscript/` (LaTeX source), `submission/` (PDFs to upload), `letters/` (cover letters, responses), `notes/` (internal notes), plus a `README.md` and, if useful, a `Makefile`.
+- Code and generated results belong in [`../code/`](../code/) and [`../artifact/`](../artifact/), not here.
