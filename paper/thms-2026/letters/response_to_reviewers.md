@@ -100,7 +100,7 @@ Besides the reviewers' points, we re-examined the manuscript for internal consis
 
 **Intro-3 (novelty).** Novelty is now stated as the domain-specific instantiation and empirical evaluation of JCS and adaptive-allocation principles for AI-generated recommendations. The general concept is not claimed as novel (§I, §II-A).
 
-**Intro-4 (hypotheses missing).** Hypotheses H1 (primary, AER) and H2–H4 (secondary) are now listed in §I and referenced in §IV-E.
+**Intro-4 (hypotheses missing).** Hypotheses H1 (primary, AER) and H2–H4 (secondary) are now listed in §I and referenced in §IV-E. We state them explicitly and designate the primary outcome; we do not claim that they were preregistered, and the earlier wording that they had been "defined before data collection" was removed.
 
 **Intro-5 ("empirical link" overclaim).** Removed. The text now states that the study evaluates the integrated configuration and does not isolate components (§I, §VII-A).
 
@@ -164,7 +164,7 @@ Besides the reviewers' points, we re-examined the manuscript for internal consis
 
 1. **Language.** Edited throughout. "In fact" (Introduction) and "On the other hand" (AER) were removed. The opening paragraphs of the Introduction and Sections II-B and II-D were rewritten for flow and to remove repetition with the new JCS paragraph. An incorrect running header left over from a template was replaced, and a misplaced citation (a community-detection paper cited for automation bias) was removed.
 2. **Baseline description and screenshots.** See R1 Methods-1. The baseline is now described in §IV-A. Screenshots are unavailable (§VII-D).
-3. **Task detail and example.** See R1 Methods-2. A worked example and per-condition scenario counts are unavailable (§VII-D).
+3. **Task detail and example.** See R1 Methods-2. Per-condition scenario counts (10 per condition) and an example logged trial record (fields, response options) are now given in §IV-C; the stimulus content of the scenarios is not stored in the records, so a full worked example is not available (§VII-D).
 4. **Training.** §IV-C states that all participants were trained on the interfaces. Duration, content and any pass criterion are not documented (§VII-D).
 5. **Which test, and assumptions.** §IV-E: two-sided paired t-test for every outcome; Shapiro–Wilk on the paired differences (rejected only for the trust items), with Wilcoxon signed-rank confirmation for all outcomes.
 6. **Statistics next to each result.** Each outcome in §V-A/B carries its t statistic, p (Holm-adjusted for secondary outcomes), 95% CI and d_z, and Table VI collects them. The collective "p < .01" paragraph was removed.
