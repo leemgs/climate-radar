@@ -223,7 +223,7 @@ literate=
 
     % -----------------------------\input{./005-abstract}
     \begin{abstract}
-        Human--AI decision systems are increasingly used in situations where an inappropriate or delayed human action can have serious consequences. Improvements in the predictive accuracy of AI do not, by themselves, translate into appropriate human action. Drawing on the joint cognitive systems perspective, which evaluates the human and the machine as a single system, we present the \emph{Action-Centered Human--AI Decision Framework (ACHDF)}. ACHDF instantiates uncertainty-aware risk estimation, guardrailed AI recommendations, and human-in-the-loop escalation for disaster-response decision support, and it treats human action execution as the primary evaluation outcome. In a counterbalanced within-subjects study ($n=52$), we compared an ACHDF-based prototype with a conventional dashboard in a simulated disaster-response decision task. Compared with the dashboard, the ACHDF condition was associated with a higher action execution rate (0.81 vs.\ 0.62), shorter response latency (8.1 vs.\ 12.4~s), lower self-reported workload (NASA--TLX), and higher perceived trust; usability scores were also higher, although no significance test was reported for them. Only the significance thresholds of the original analysis are available, so effect estimates should be interpreted with caution. Because the two conditions differed in several features at once, the results describe the effect of the integrated ACHDF configuration rather than of individual components. We discuss implications for the design of human--AI decision support under uncertainty. Validation in other domains and with professional operators remains future work.
+        Human--AI decision systems are increasingly used in situations where an inappropriate or delayed human action can have serious consequences. Improvements in the predictive accuracy of AI do not, by themselves, translate into appropriate human action. Drawing on the joint cognitive systems perspective, which evaluates the human and the machine as a single system, we present the \emph{Action-Centered Human--AI Decision Framework (ACHDF)}. ACHDF instantiates uncertainty-aware risk estimation, guardrailed AI recommendations, and human-in-the-loop escalation for disaster-response decision support, and it treats human action execution as the primary evaluation outcome. In a counterbalanced within-subjects study ($n=52$, 20 trials per participant), we compared an ACHDF-based prototype with a conventional dashboard in a simulated disaster-response decision task. Compared with the dashboard, the ACHDF condition was associated with a higher action execution rate (0.81 vs.\ 0.62; paired difference $+0.19$, 95\% CI [0.14, 0.25], $d_z = 0.96$), shorter response latency (8.1 vs.\ 12.4~s), lower self-reported workload (NASA--TLX), and higher perceived trust and usability (all Holm-adjusted $p < .001$). Failed trials were wrong actions rather than slow responses, and no order or carry-over effect was detected. Because the two conditions differed in several features at once, the results describe the effect of the integrated ACHDF configuration rather than of individual components, and the study cannot assess trust calibration or automation bias. Validation in other domains and with professional operators remains future work.
     \end{abstract}
 
     \begin{IEEEkeywords}
@@ -487,27 +487,45 @@ The architecture was instantiated and evaluated only in disaster response. The d
     % -------------------------------\input{./060-evaluation}
     \section{Experimental Design and Methods}
 
-    This section describes the controlled user study that compared the ACHDF-based system with a conventional dashboard. The study is the only empirical evaluation reported in this paper. Details that could not be reported because the underlying materials or trial-level data were not available are listed in Section~\ref{sec:lim_reporting}.
+    This section describes the controlled user study that compared the ACHDF-based system with a conventional dashboard. The study is the only empirical evaluation reported in this paper. All statistics were recomputed from the anonymized trial-level logs (1,040 trials) and questionnaire records of the study; the data and analysis scripts are provided with the paper (Section~\ref{sec:data}). Details that remain undocumented are listed in Section~\ref{sec:lim_reporting}.
 
     \subsection{Study Design and Conditions}
 
-    We used a within-subjects design with two conditions: a \emph{baseline} condition and an \emph{AI-assisted} (ACHDF) condition. The order of the conditions was counterbalanced across participants to control for order and learning effects. Both conditions used the same underlying scenario data. Counterbalancing balances order effects across participants, but it does not remove carry-over: in the second condition, participants may have remembered scenarios from the first. Because order effects could not be analyzed, the size of this carry-over is unknown (Section~\ref{sec:lim_reporting}).
+    We used a within-subjects design with two conditions: a \emph{baseline} condition and an \emph{AI-assisted} (ACHDF) condition. The order of the conditions was counterbalanced across participants to control for order and learning effects. Both conditions were designed to present comparable scenario sets. Counterbalancing balances order effects across participants, but it does not remove carry-over: in the second condition, participants may have remembered scenarios from the first. We therefore tested for order and carry-over effects (Section~\ref{sec:res_order}). Twenty-eight participants completed the AI-assisted condition first and 24 completed the baseline condition first.
 
     \textbf{Baseline condition.} Participants used a conventional dashboard that displayed the hazard and risk information for each scenario. The dashboard provided no AI-generated action recommendation, uncertainty indicator, criticality cue, or escalation prompt. Participants had to integrate the information themselves and decide on an action.
 
-    \textbf{AI-assisted condition.} Participants used the ACHDF-based interface, which displayed the same underlying information together with the ACHDF features described in Section~\ref{sec:system}: the risk estimate with an explicit uncertainty indicator, a criticality cue, and either a single guardrail-checked action recommendation (``recommend'' mode) or, when escalation was triggered, the evidence and options with a prompt to review them (``escalate'' mode). The decision logic is shown in Fig.~\ref{fig:system_overview} and Algorithm~\ref{alg:escalation}. Interface screenshots are not included (Section~\ref{sec:lim_reporting}).
+    \textbf{AI-assisted condition.} Participants used the ACHDF-based interface, which displayed the same underlying information together with the ACHDF features described in Section~\ref{sec:system}: the risk estimate with an explicit uncertainty indicator, a criticality cue, and either a single guardrail-checked action recommendation (``recommend'' mode) or, when escalation was triggered, the evidence and options with a prompt to review them (``escalate'' mode). The decision logic is shown in Fig.~\ref{fig:system_overview} and Algorithm~\ref{alg:escalation}. Table~\ref{tab:conditions} contrasts what the two interfaces presented. Interface screenshots are not included (Section~\ref{sec:lim_reporting}).
+
+    \begin{table}[t]
+        \caption{Information and Features Presented in Each Condition}
+        \label{tab:conditions}
+        \centering
+        \begin{tabular}{p{0.40\linewidth}cc}
+            \toprule
+            \textbf{Element} & \textbf{Baseline} & \textbf{AI-assisted} \\
+            \midrule
+            Hazard and risk information & \cmark & \cmark \\
+            Explicit uncertainty indicator & \xmark & \cmark \\
+            Criticality cue & \xmark & \cmark \\
+            Guardrail-checked action recommendation & \xmark & \cmark$^{a}$ \\
+            Escalation prompt with evidence and options & \xmark & \cmark$^{b}$ \\
+            Human decides and executes & \cmark & \cmark \\
+            \bottomrule
+            \multicolumn{3}{p{0.93\linewidth}}{\footnotesize $^{a}$ In ``recommend'' mode. $^{b}$ In ``escalate'' mode, which replaced the single recommendation in 150 of the 520 AI-assisted trials (28.8\%).}
+        \end{tabular}
+    \end{table}
 
     Because the AI-assisted condition differs from the baseline in several features at once (recommendation, action-oriented format, uncertainty cue, criticality cue, and escalation), the comparison estimates the effect of the integrated ACHDF configuration. It does not isolate the effect of any single feature.
 
     \subsection{Participants and Ethics}
     \label{sec:participants}
 
-    Fifty-two participants took part (Table~\ref{tab:participants}). Participants were recruited using stratified sampling to obtain diversity in age, gender, and technical background, reflecting the heterogeneity of operators in real decision environments. Participants were not required to have prior domain expertise, and the sample was not composed specifically of trained emergency-management professionals (Section~\ref{sec:limitations}).
+    Fifty-two participants took part (Table~\ref{tab:participants}). Participants were recruited using stratified sampling to obtain diversity in age, gender, and technical background, reflecting the heterogeneity of operators in real decision environments. Participants were not required to have prior domain expertise. None reported high prior disaster-response experience (23 none, 21 low, 8 medium), so the sample was not composed of trained emergency-management professionals (Section~\ref{sec:limitations}).
 
     The study was not submitted to an institutional review board or ethics committee for review. It involved only a simulated decision task and post-task questionnaires and interviews, with no physical or medical intervention. Participation was voluntary, and all participants gave informed consent before the experiment.
 
-    \textbf{Sample size.} No a priori power analysis was reported for this study. A post hoc sensitivity analysis shows that, with $n=52$, a two-sided paired $t$-test at $\alpha=.05$ has 80\% power to detect a within-subject effect of $d_z \approx 0.40$ or larger. Effects smaller than this may not have been detected reliably.
-
+    \textbf{Sample size.} No a priori power analysis was conducted; the sample size of 52 was not derived from an expected effect size. A sensitivity analysis shows that, with $n=52$, a two-sided paired $t$-test at $\alpha=.05$ has 80\% power to detect $d_z \geq 0.40$. The observed effects on the primary outcome ($d_z = 0.96$) and on the secondary outcomes (smallest $|d_z| = 0.91$) are well above this value. Effects smaller than $d_z \approx 0.40$, such as some subscale differences, may not have been detected reliably.
     \begin{table}[t]
         \caption{Participant Demographics}
         \label{tab:participants}
@@ -517,9 +535,11 @@ The architecture was instantiated and evaluated only in disaster response. The d
             Characteristic & Value \\
             \midrule
             Total participants & 52 \\
-            Age range & 20s--50s \\
-            Gender & Mixed \\
-            Technical background & Low--high \\
+            Age, years: mean (SD), range & 37.2 (9.3), 23--54 \\
+            Gender: male / female / other & 28 / 23 / 1 \\
+            Technical background: low / medium / high & 19 / 16 / 17 \\
+            Disaster experience: none / low / medium / high & 23 / 21 / 8 / 0 \\
+            Condition order: AI first / baseline first & 28 / 24 \\
             Domain expertise required & No \\
             Study design & Within-subjects \\
             \bottomrule
@@ -528,7 +548,7 @@ The architecture was instantiated and evaluated only in disaster response. The d
 
     \subsection{Decision Task and Procedure}
 
-    Participants completed a series of time-limited decision tasks. In each task, they interpreted risk information about an evolving hazard and decided whether, and how, to take a protective action. Participants could also defer the decision pending further confirmation; in the AI-assisted condition, escalation explicitly prompted such a review (deferral rates in both modes are reported in Table~\ref{tab:escalation}). The tasks were designed to reproduce the essential characteristics of high-stakes decisions: changing information, uncertainty, and asymmetric error costs. Participants were instructed to focus on taking the appropriate action rather than on analyzing the information.
+    Each participant completed 10 decision trials in each condition (20 trials; 1,040 trials in total). The trials are identified in the logs by the labels S01--S10. In each trial, participants interpreted risk information about an evolving hazard and selected one of five response options: \emph{monitor}, \emph{standby}, \emph{issue alert}, \emph{shelter in place}, or \emph{recommend evacuation}. The reference (correct) action of each trial is recorded in the log. Trial latency was recorded by the system; the longest recorded latency was 20.3~s. Participants could also flag a trial as deferred pending further confirmation (the log records the deferral flag together with the action finally selected); in the AI-assisted condition, escalation explicitly prompted such a review (Table~\ref{tab:escalation}). The tasks were designed to reproduce the essential characteristics of high-stakes decisions: changing information, uncertainty, and asymmetric error costs. Participants were instructed to focus on taking the appropriate action rather than on analyzing the information.
 
     Before the experimental trials, all participants received training on the task interfaces so that they were equally familiar with the procedures. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions.
 
@@ -544,116 +564,149 @@ The architecture was instantiated and evaluated only in disaster response. The d
             \toprule
             \textbf{Measure} & \textbf{Operationalization} \\
             \midrule
-            Action Execution Rate (AER) & Proportion of trials in which the participant executed the appropriate action within the specified time window (primary outcome). \\
-            Response Latency & Time from presentation of actionable information to action execution (s). \\
-            Cognitive Workload & NASA--TLX \cite{Hart1988}; overall score and four subscales (0--100), post-condition. \\
-            Trust & Three items: perceived reliability, predictability, and appropriateness of recommendations (5-point Likert); overall score. Post-condition. \\
-            Usability & System Usability Scale (SUS) \cite{Brooke1996} (0--100), post-condition. \\
+            Action Execution Rate (AER) & Proportion of a participant's 10 trials per condition in which the selected action equals the reference action (primary outcome). \\
+            Response Latency & Time from presentation of actionable information to the selected action (s), averaged over a participant's 10 trials. \\
+            Cognitive Workload & NASA--TLX \cite{Hart1988}; overall score (mean of the six subscales) and the six subscales (0--100), post-condition. \\
+            Trust & Three items: perceived reliability, predictability, and appropriateness of recommendations (5-point Likert); overall score = mean of the three items. Post-condition. \\
+            Usability & System Usability Scale (SUS) \cite{Brooke1996}: ten items (5-point Likert), overall score 0--100, post-condition. \\
             \bottomrule
         \end{tabular}
     \end{table}
 
     \textbf{Action Execution Rate.}
-    The AER is the proportion of trials in which the participant executed the \emph{appropriate} action for the scenario within the specified time window. The AER therefore combines two aspects of performance: whether the action was correct and whether it was taken in time. Response latency, reported separately, describes the timing of all executed actions. The trial-level data needed to decompose the AER into a correct-action rate and an on-time rate, and to classify failures as wrong actions, late actions, or omissions, were not available for re-analysis. The procedure for defining the appropriate action and the length of the time window are also not documented in sufficient detail to be reported here. Both points are treated as limitations (Section~\ref{sec:lim_reporting}).
-
+    The AER is the proportion of a participant's trials in a condition in which the selected action equals the reference action for that trial. In the trial logs, this definition reproduces the AER values reported in the original submission exactly (0.62 and 0.81) without any additional time criterion. The logs contain no time-out or late-response flag, and all recorded latencies are at most 20.3~s. Hence, in these data, AER is a correct-action rate, and every unsuccessful trial is a \emph{wrong-action} trial (198 of 520 baseline trials and 99 of 520 AI-assisted trials). Response latency is reported separately and is analyzed as a distinct outcome. To address the question of whether failures arise from wrong or from late actions, Section~\ref{sec:res_aer} also reports the latency of correct and wrong trials and a sensitivity analysis in which a trial counts as a success only if it is correct \emph{and} completed within a hypothetical cutoff. How the reference action was derived, in particular whether it was fixed independently of the AI recommendation, and whether a time window was applied during the original scoring, is not documented in the study records (Section~\ref{sec:lim_reporting}).
     \textbf{Response Latency.}
-    Response latency is the time from the display of actionable information until the participant executed an action.
+    Response latency is the time from the display of actionable information until the participant selected an action. Participant-level latency is the mean over the participant's 10 trials in a condition.
 
     \textbf{Cognitive Workload.}
-    Workload was measured with the NASA--TLX \cite{Hart1988} after each condition. We report the overall score and four of the six subscales (mental demand, temporal demand, effort, and frustration); physical demand and performance were not reported. Lower scores indicate lower perceived workload. Whether the overall score is the raw (unweighted) or weighted TLX, and which subscales it includes, could not be verified (Section~\ref{sec:lim_reporting}).
-
+    Workload was measured with the NASA--TLX \cite{Hart1988} after each condition. We report the overall score and all six subscales (mental demand, physical demand, temporal demand, performance, effort, and frustration). In the data, the overall score equals the unweighted mean of the six subscales (maximum deviation 0.3 points, i.e., rounding), so it is the raw (unweighted) TLX. Lower scores indicate lower perceived workload; for the performance subscale, a lower score indicates better perceived performance.
     \textbf{Trust.}
-    Trust was measured after each condition with three Likert-type items on the perceived \emph{reliability}, \emph{predictability}, and \emph{appropriateness} of the system's recommendations, rated on a 5-point scale. The overall trust score summarizes the three items. These three constructs are used consistently throughout the paper. Item-level data were not available, so internal consistency could not be estimated, and no published validation is available for these items, unlike established trust-in-automation scales such as that of Jian \emph{et al.} \cite{Jian2000}. The trust results should therefore be read as an indicative composite (Section~\ref{sec:lim_reporting}).
-
+    Trust was measured after each condition with three Likert-type items on the perceived \emph{reliability}, \emph{predictability}, and \emph{appropriateness} of the system's recommendations, rated on a 5-point scale (1 = lowest, 5 = highest). The overall trust score is the mean of the three items. These three constructs are used consistently throughout the paper. No published validation is available for these three items, unlike established trust-in-automation scales such as that of Jian \emph{et al.} \cite{Jian2000}. Their internal consistency was low (Cronbach's $\alpha = .61$ in the baseline condition and $.46$ in the AI-assisted condition), so the overall trust score should be read as an indicative composite, and the item-level results (Table~\ref{tab:subscales}) are reported alongside it. The exact item wording is not documented in the study records (Section~\ref{sec:lim_reporting}).
     \textbf{Usability.}
-    Usability was measured with the System Usability Scale (SUS) \cite{Brooke1996} after each condition. The SUS yields a score from 0 to 100, with higher scores indicating better perceived usability.
-
+    Usability was measured with the System Usability Scale (SUS) \cite{Brooke1996}, ten items rated on a 5-point scale, after each condition. Standard scoring converts the items to a 0--100 score, with higher scores indicating better perceived usability. The overall SUS scores in the study records (used in Table~\ref{tab:primary}) are higher than the scores recomputed from the item responses with the standard formula by 2.8--4.7 points in every record (recomputed means: 65.7 baseline and 77.0 AI-assisted). We therefore report the logged overall score as the primary SUS result, as in the original submission, and the recomputed score as a robustness check (Section~\ref{sec:res_sub}). The internal consistency of the ten items was low in both conditions ($\alpha = .49$ and $.44$).
     \textbf{Qualitative observations.}
     Post-task interviews were used to collect participants' comments on their experience. The comments were summarized into themes, but they were not systematically coded, and theme prevalence was not recorded. We therefore report them as informal observations that complement the quantitative results. We do not describe the study as a mixed-method evaluation.
 
     \subsection{Statistical Analysis}
-    All comparisons are within-subjects (baseline vs.\ AI-assisted, paired by participant) and used paired significance tests. H1 (AER) is the primary hypothesis; H2--H4 concern secondary outcomes. For each outcome, we report the condition means (and SDs, where available) and the difference between conditions. For the outcomes with reported SDs (NASA--TLX, trust, SUS), we computed Cohen's $d_{av}$, i.e., the mean difference divided by the average of the two condition SDs \cite{Lakens2013}. Because $d_{av}$ does not take the within-subject correlation into account, it is not equivalent to $d_z$, the effect size on which the paired test is based. Exact test statistics, confidence intervals, assumption diagnostics, order-effect analyses, and multiplicity-corrected $p$-values could not be computed because the trial-level data were not available for re-analysis (Section~\ref{sec:lim_reporting}). The comparisons between escalated and non-escalated trials (Section~\ref{sec:res_escalation}) are descriptive only, because escalation is triggered by uncertainty or criticality and the two sets of trials are therefore not comparable.
+    All analyses used the participant as the unit of analysis (paired design, $n=52$). Trial-level outcomes were first aggregated to one value per participant and condition: AER is the proportion of correct trials and response latency is the mean latency over the 10 trials. H1 (AER) is the primary hypothesis. H2--H4 (latency, NASA--TLX, trust, SUS) form the secondary family. For every outcome, we report the condition means and SDs, the mean paired difference (AI-assisted minus baseline) with its 95\% confidence interval (Student's $t$), the two-sided paired $t$-test ($df=51$), and the standardized paired effect size $d_z$ (mean difference divided by the SD of the differences) with a 95\% percentile-bootstrap CI (10{,}000 resamples). The unadjusted $p$ for H1 is reported as is; the four secondary tests are adjusted with the Holm procedure, and the reported $p$ values are Holm-adjusted. Subscale and item analyses are exploratory and Holm-adjusted across the nine tests. Normality of the paired differences was checked with the Shapiro--Wilk test; where it was rejected (trust items, $p<.01$), the Wilcoxon signed-rank test gave the same conclusions, as it did for all other outcomes (Section~\ref{sec:res_aer}). Because AER is bounded and based on 10 binary trials, we confirmed the result with a trial-level logistic model estimated by generalized estimating equations (exchangeable working correlation, clustered by participant). Because latency is right-skewed at the trial level, we confirmed it with a linear mixed model on log-latency with a participant random intercept. Order effects were tested with the standard two-sequence crossover approach: the treatment-by-order interaction compares the paired differences of the two sequence groups (Welch $t$), and carry-over compares the participant sums of the two conditions between sequence groups. The comparison between escalated and non-escalated trials (Section~\ref{sec:res_escalation}) is descriptive only, because escalation is triggered by uncertainty or criticality and the two sets of trials are therefore not comparable. All analyses were run with the script provided with the paper (Section~\ref{sec:data}); the data are described in Section~\ref{sec:data}.
+    \subsection{Data and Code Availability}
+    \label{sec:data}
+    The anonymized participant, questionnaire, and trial-level records used here (52 participants $\times$ 2 conditions $\times$ 10 trials) and the analysis scripts that produce every number, table, and figure in Section~\ref{sec:results} are distributed with the paper (folders \texttt{data/} and \texttt{analysis/}). The data are anonymized and restricted to the reproduction of this study.
 
     %---------------------------------\input{./070-result}
     \section{Results}
-    Table~\ref{tab:primary} reports the primary and secondary outcomes. Interpretation follows in Section~\ref{sec:discussion}.
+    \label{sec:results}
+    Table~\ref{tab:primary} reports all primary and secondary outcomes. The sections below report each result with its statistics; interpretation is in Section~\ref{sec:discussion}.
 
     \begin{table*}[t]
         \caption{Primary and Secondary Outcomes: Baseline vs.\ AI-Assisted (ACHDF), $n=52$, Within-Subjects}
         \label{tab:primary}
         \centering
-        \begin{tabular}{l c c c c c}
+        \begin{tabular}{l c c c c c c}
             \toprule
-            \textbf{Outcome} & \textbf{Baseline} & \textbf{AI-assisted} & \textbf{Difference} & \textbf{Paired test} & \textbf{Effect size} \\
-            & M (SD) & M (SD) & (AI $-$ baseline) & & $d_{av}$ \\
+            \textbf{Outcome} & \textbf{Baseline} & \textbf{AI-assisted} & \textbf{Difference [95\% CI]} & \textbf{$t(51)$} & \textbf{$p$} & \textbf{$d_z$ [95\% CI]} \\
+            & M (SD) & M (SD) & (AI $-$ baseline) & & & \\
             \midrule
-            \multicolumn{6}{l}{\emph{Primary (H1)}} \\
-            AER & 0.62 (n/a) & 0.81 (n/a) & $+0.19$ & $p < .01$ & n/a \\
+            \multicolumn{7}{l}{\emph{Primary (H1)}} \\
+            AER (proportion) & 0.62 (0.19) & 0.81 (0.15) & 0.19 [0.14, 0.25] & 6.96 & $<.001$ & 0.96 [0.67, 1.36] \\
             \midrule
-            \multicolumn{6}{l}{\emph{Secondary (H2--H4)}} \\
-            Response latency (s) & 12.4 (n/a) & 8.1 (n/a) & $-4.3$ & $p < .01$ & n/a \\
-            NASA--TLX overall (0--100) & 59.8 (10.9) & 46.2 (9.6) & $-13.6$ & $p < .05$ & 1.32 \\
-            Trust overall (1--5) & 3.4 (0.6) & 4.2 (0.5) & $+0.8$ & $p < .05$ & 1.45 \\
-            SUS (0--100) & 68.5 (11.2) & 81.7 (9.4) & $+13.2$ & not reported & 1.28 \\
+            \multicolumn{7}{l}{\emph{Secondary (H2--H4), Holm-adjusted}} \\
+            Response latency (s) & 12.4 (0.8) & 8.1 (0.8) & $-$4.31 [$-$4.64, $-$3.97] & $-$25.98 & $<.001$ & $-$3.60 [$-$4.75, $-$2.90] \\
+            NASA--TLX overall (0--100) & 59.8 (11.5) & 46.2 (9.3) & $-$13.6 [$-$17.8, $-$9.4] & $-$6.56 & $<.001$ & $-$0.91 [$-$1.30, $-$0.63] \\
+            Trust overall (1--5) & 3.40 (0.57) & 4.20 (0.45) & 0.79 [0.61, 0.98] & 8.49 & $<.001$ & 1.18 [0.96, 1.53] \\
+            SUS, as logged (0--100) & 68.5 (10.5) & 81.7 (8.6) & 13.2 [9.4, 16.9] & 7.08 & $<.001$ & 0.98 [0.74, 1.31] \\
             \bottomrule
-            \multicolumn{6}{p{0.92\linewidth}}{\footnotesize n/a: not available, because the trial-level data could not be re-analyzed. $p$-values are the significance thresholds of the original paired tests. Exact test statistics and 95\% confidence intervals could not be computed (Section~\ref{sec:lim_reporting}). $d_{av}$ = mean difference / average of the two condition SDs, computed from the reported means and SDs. It ignores the within-subject correlation and is not equivalent to the paired $d_z$. A single Cohen's $d$ of 0.86 given in the previous version could not be attributed to a specific outcome and has been removed.}
+            \multicolumn{7}{p{0.95\linewidth}}{\footnotesize M and SD are computed across the 52 participant-level values. Paired $t$-test, two-sided; $p$ for AER is unadjusted, $p$ for the four secondary outcomes is Holm-adjusted. $d_z$ = mean difference / SD of the differences; CIs by percentile bootstrap. Wilcoxon signed-rank tests gave $p<.001$ for every outcome. The SDs of latency are between-participant SDs of 10-trial means. The effect size reported for the previous version ($d=0.86$) could not be attributed to a specific comparison and has been removed.}
         \end{tabular}
     \end{table*}
 
     \subsection{Action Execution and Response Latency}
-    The mean AER was 0.62 in the baseline condition and 0.81 in the AI-assisted condition, a difference of 0.19 (paired test, $p < .01$).
-    The mean response latency was 12.4~s in the baseline condition and 8.1~s in the AI-assisted condition, a difference of 4.3~s (paired test, $p < .01$). Latency distributions are not reported, because the trial-level data were not available (Section~\ref{sec:lim_reporting}).
-    Whether the difference in the AER arose mainly from fewer wrong actions or from fewer late actions could not be determined (Section~\ref{sec:lim_reporting}).
+    \label{sec:res_aer}
+    \textbf{H1.} The mean AER was 0.62 (SD 0.19) in the baseline condition and 0.81 (SD 0.15) in the AI-assisted condition. The mean paired difference was $+0.19$ (95\% CI [0.14, 0.25]), $t(51)=6.96$, $p<.001$, $d_z=0.96$ (95\% CI [0.67, 1.36]). The result was confirmed by the Wilcoxon signed-rank test ($p<.001$) and by a trial-level logistic GEE model (odds ratio 2.61, 95\% CI [1.98, 3.45], $p<.001$).
+
+    \textbf{H2.} The mean response latency was 12.4~s (SD 0.8) in the baseline condition and 8.1~s (SD 0.8) in the AI-assisted condition, a difference of $-4.31$~s (95\% CI [$-4.64$, $-3.97$]), $t(51)=-25.98$, Holm-adjusted $p<.001$, $d_z=-3.60$ (95\% CI [$-4.75$, $-2.90$]). At the trial level, the median latency was 12.4~s (IQR 10.4--14.6; maximum 20.3) in the baseline condition and 7.9~s (IQR 6.6--9.7; maximum 14.0) in the AI-assisted condition; the mixed model on log-latency estimated a ratio of 0.65 (95\% CI [0.63, 0.67]). The paired differences in latency are very large relative to their spread, because participants' mean latencies varied little within each condition (SD about 0.8~s) and did not correlate across conditions ($r=-.09$). Because $d_z$ scales with this spread, we interpret the raw difference (about 4~s) rather than the size of $d_z$.
+
+    \textbf{Wrong versus late actions.} In the trial logs, every unsuccessful trial is a wrong-action trial (198 of 520 baseline trials, 38.1\%; 99 of 520 AI-assisted trials, 19.0\%). Within each condition, wrong and correct trials had almost the same mean latency (baseline: 12.6~s vs.\ 12.3~s; AI-assisted: 8.1~s vs.\ 8.1~s), so slow responses do not account for the failures, and no speed--accuracy trade-off is visible. As a sensitivity analysis, we recomputed the AER requiring that a trial be correct \emph{and} completed within a cutoff $T$ (Table~\ref{tab:cutoff}). Because the actual scoring did not apply such a cutoff, these values are hypothetical. The advantage of the AI-assisted condition grows as $T$ becomes stricter, which reflects its shorter latencies.
+
+    \begin{table}[t]
+        \caption{Sensitivity of the AER to a Hypothetical Time Cutoff $T$ (Trial-Level Shares; Paired Difference in Participant-Level AER)}
+        \label{tab:cutoff}
+        \centering
+        \begin{tabular}{cccc}
+            \toprule
+            $T$ (s) & Baseline & AI-assisted & Difference \\
+            \midrule
+            10 & 0.14 & 0.64 & $+0.50$ \\
+            12 & 0.29 & 0.77 & $+0.48$ \\
+            15 & 0.50 & 0.81 & $+0.31$ \\
+            20 (none binding) & 0.62 & 0.81 & $+0.19$ \\
+            \bottomrule
+            \multicolumn{4}{p{0.92\linewidth}}{\footnotesize Share of trials that were correct and completed within $T$. All paired differences: $p<.001$.}
+        \end{tabular}
+    \end{table}
 
     \subsection{Workload, Trust, and Usability}
-    Fig.~\ref{fig:workload_trust_summary} summarizes the subjective measures, and Table~\ref{tab:subscales} gives the subscale scores.
-    The overall NASA--TLX score was 59.8 (SD 10.9) in the baseline condition and 46.2 (SD 9.6) in the AI-assisted condition, a difference of 13.6 points (paired test, $p < .05$; $d_{av} = 1.32$).
-    The overall trust score was 3.4 (SD 0.6) in the baseline condition and 4.2 (SD 0.5) in the AI-assisted condition on the 5-point scale (paired test, $p < .05$; $d_{av} = 1.45$).
-    The SUS score was 68.5 (SD 11.2) in the baseline condition and 81.7 (SD 9.4) in the AI-assisted condition ($d_{av} = 1.28$). No significance test was reported for the SUS.
+    \label{sec:res_sub}
+    Fig.~\ref{fig:workload_trust_summary} summarizes all outcomes, and Table~\ref{tab:subscales} gives the subscale and item results.
+
+    \textbf{H3.} The overall NASA--TLX score was 59.8 (SD 11.5) in the baseline condition and 46.2 (SD 9.3) in the AI-assisted condition, a difference of $-13.6$ points (95\% CI [$-17.8$, $-9.4$]), $t(51)=-6.56$, Holm-adjusted $p<.001$, $d_z=-0.91$ (95\% CI [$-1.30$, $-0.63$]). All six subscales were lower in the AI-assisted condition (Table~\ref{tab:subscales}); the smallest difference was for frustration ($-9.7$ points, $d_z=-0.45$).
+
+    \textbf{H4.} The overall trust score was 3.40 (SD 0.57) in the baseline condition and 4.20 (SD 0.45) in the AI-assisted condition, a difference of $+0.79$ (95\% CI [0.61, 0.98]), $t(51)=8.49$, Holm-adjusted $p<.001$, $d_z=1.18$ (95\% CI [0.96, 1.53]). The paired differences were not normally distributed (Shapiro--Wilk $p=.001$), and the Wilcoxon test gave the same conclusion ($p<.001$). The SUS score was 68.5 (SD 10.5) in the baseline condition and 81.7 (SD 8.6) in the AI-assisted condition, a difference of $+13.2$ points (95\% CI [9.4, 16.9]), $t(51)=7.08$, Holm-adjusted $p<.001$, $d_z=0.98$ (95\% CI [0.74, 1.31]). With the SUS recomputed from the item responses (65.7 vs.\ 77.0), the difference was $+11.3$ points (95\% CI [7.5, 15.0]), $t(51)=6.06$, $p<.001$, $d_z=0.84$.
 
     \begin{figure*}[t]
         \centering
         \includegraphics[width=0.95\linewidth]{fig_outcomes_summary.png}
-        \caption{Primary and secondary outcomes in the baseline and AI-assisted conditions (values from Table~\ref{tab:primary}). Each outcome is shown on its own scale. Error bars show $\pm 1$ SD where SDs are available (not available for AER and response latency).}
+        \caption{Primary and secondary outcomes in the baseline and AI-assisted conditions (values from Table~\ref{tab:primary}). Each outcome is shown on its own scale. Bars show means and error bars $\pm 1$ SD across the 52 participant-level values.}
         \label{fig:workload_trust_summary}
     \end{figure*}
 
-    \begin{table}[t]
-        \caption{Subscale Scores, M (SD)}
+    \begin{table*}[t]
+        \caption{Exploratory Analysis of NASA--TLX Subscales and Trust Items, $n=52$ (Holm-Adjusted Across the Nine Tests)}
         \label{tab:subscales}
         \centering
-        \begin{tabular}{lcc}
+        \begin{tabular}{l c c c c c c}
             \toprule
-            \textbf{Subscale} & \textbf{Baseline} & \textbf{AI-assisted} \\
+            \textbf{Measure} & \textbf{Baseline} & \textbf{AI-assisted} & \textbf{Difference [95\% CI]} & \textbf{$t(51)$} & \textbf{$p$} & \textbf{$d_z$ [95\% CI]} \\
+            & M (SD) & M (SD) & (AI $-$ baseline) & & & \\
             \midrule
-            \multicolumn{3}{l}{\emph{NASA--TLX (0--100)}} \\
-            Mental demand & 63.4 (12.1) & 48.7 (10.5) \\
-            Temporal demand & 58.9 (11.4) & 44.2 (9.8) \\
-            Effort & 61.7 (13.0) & 49.1 (11.2) \\
-            Frustration & 55.3 (14.6) & 41.8 (12.3) \\
+            \multicolumn{7}{l}{\emph{NASA--TLX subscales (0--100)}} \\
+            Mental demand & 59.9 (15.4) & 45.2 (13.8) & $-$14.7 [$-$20.2, $-$9.2] & $-$5.38 & $<.001$ & $-$0.75 [$-$1.16, $-$0.46] \\
+            Physical demand & 60.2 (18.5) & 46.7 (13.0) & $-$13.5 [$-$20.1, $-$7.0] & $-$4.13 & $<.001$ & $-$0.57 [$-$0.88, $-$0.30] \\
+            Temporal demand & 58.8 (16.6) & 47.0 (11.7) & $-$11.8 [$-$17.1, $-$6.6] & $-$4.52 & $<.001$ & $-$0.63 [$-$0.91, $-$0.38] \\
+            Performance & 62.8 (17.1) & 45.4 (14.3) & $-$17.4 [$-$23.4, $-$11.3] & $-$5.74 & $<.001$ & $-$0.80 [$-$1.22, $-$0.50] \\
+            Effort & 61.5 (16.1) & 47.1 (14.2) & $-$14.4 [$-$20.6, $-$8.2] & $-$4.69 & $<.001$ & $-$0.65 [$-$1.02, $-$0.38] \\
+            Frustration & 55.7 (16.9) & 46.0 (12.0) & $-$9.7 [$-$15.7, $-$3.8] & $-$3.28 & $.002$ & $-$0.45 [$-$0.77, $-$0.19] \\
             \midrule
-            \multicolumn{3}{l}{\emph{Trust items (1--5)}} \\
-            Perceived reliability & 3.2 (0.7) & 4.1 (0.6) \\
-            Perceived predictability & 3.5 (0.8) & 4.2 (0.6) \\
-            Perceived appropriateness & 3.4 (0.6) & 4.3 (0.5) \\
+            \multicolumn{7}{l}{\emph{Trust items (1--5)}} \\
+            Perceived reliability & 3.38 (0.69) & 4.17 (0.73) & 0.79 [0.55, 1.02] & 6.70 & $<.001$ & 0.93 [0.62, 1.36] \\
+            Perceived predictability & 3.44 (0.73) & 4.13 (0.66) & 0.69 [0.42, 0.96] & 5.20 & $<.001$ & 0.72 [0.50, 0.99] \\
+            Perceived appropriateness & 3.38 (0.87) & 4.23 (0.55) & 0.85 [0.59, 1.11] & 6.51 & $<.001$ & 0.90 [0.67, 1.24] \\
             \bottomrule
         \end{tabular}
-    \end{table}
+    \end{table*}
+
+    \subsection{Order and Carry-Over Effects}
+    \label{sec:res_order}
+    Neither the treatment-by-order interaction nor the carry-over test was significant for any outcome (all $p \geq .07$). The AER difference was $+0.23$ in participants who used the AI-assisted condition first and $+0.15$ in those who used the baseline first (interaction $t=1.37$, $p=.18$; carry-over $p=.92$). For latency, the differences were $-4.4$~s and $-4.2$~s (interaction $p=.46$), for NASA--TLX $-14.5$ and $-12.5$ points ($p=.62$), for trust $+0.64$ and $+0.98$ ($p=.07$), and for SUS $+10.6$ and $+16.2$ points ($p=.14$). Irrespective of condition, AER was 0.05 lower and latency 0.46~s longer in the second period than in the first. With 28 and 24 participants per sequence, these tests have limited power to detect moderate interactions, so the absence of a significant order effect does not prove that no carry-over occurred.
 
     \subsection{Escalated and Non-Escalated Trials (Descriptive)}
     \label{sec:res_escalation}
-    Table~\ref{tab:escalation} reports, descriptively, the rates of appropriate deferral and inappropriate reliance in escalated and non-escalated trials of the AI-assisted condition. Appropriate deferral denotes deferring the decision for further confirmation when the situation warranted it. Inappropriate reliance denotes following the AI recommendation when this was not appropriate. These two sets of trials are not equivalent conditions. Escalation is triggered by high uncertainty or criticality, and it explicitly prompts human review. The differences in Table~\ref{tab:escalation} therefore cannot be attributed causally to escalation. The number of trials in each set was not available.
+    Escalation was triggered in 150 of the 520 AI-assisted trials (28.8\%); 49 of the 52 participants saw between one and six escalated trials (median 3). Table~\ref{tab:escalation} reports, descriptively, the AER, deferral rate, and latency of non-escalated and escalated AI-assisted trials, with the baseline trials for reference. These sets of trials are not equivalent conditions. Escalation is triggered by high uncertainty or criticality, and it explicitly prompts human review, so differences between them cannot be attributed causally to escalation. Deferral was flagged in 47.3\% of escalated trials and 18.4\% of non-escalated AI-assisted trials; baseline participants flagged deferral in 11.3\% of trials. At the participant level, the deferral rate was higher in the AI-assisted condition (0.27 vs.\ 0.11; difference $+0.15$, 95\% CI [0.11, 0.20], $t(51)=6.92$, $d_z=0.96$). The AER was practically the same in escalated and non-escalated trials (0.81 vs.\ 0.81). The logs do not contain the content or correctness of the AI recommendation, so rates of \emph{appropriate} deferral or \emph{inappropriate} reliance, which were given in the previous version, cannot be derived and have been removed.
 
     \begin{table}[t]
-        \caption{Behavior in Escalated vs.\ Non-Escalated Trials, AI-Assisted Condition (Descriptive)}
+        \caption{Trial-Level Behavior by Escalation Status (Descriptive; Not a Comparison of Equivalent Conditions)}
         \label{tab:escalation}
         \centering
-        \begin{tabular}{lcc}
+        \begin{tabular}{lccc}
             \toprule
-            \textbf{Metric} & \textbf{No escalation} & \textbf{Escalation triggered} \\
+            & \textbf{Baseline} & \multicolumn{2}{c}{\textbf{AI-assisted}} \\
+            \cmidrule(lr){3-4}
+            \textbf{Metric} & & \textbf{No escal.} & \textbf{Escalated} \\
             \midrule
-            Appropriate deferral rate & 0.21 & 0.47 \\
-            Inappropriate reliance rate & 0.18 & 0.09 \\
+            Trials ($n$) & 520 & 370 & 150 \\
+            AER (correct share) & 0.62 & 0.81 & 0.81 \\
+            Deferral flagged & 0.11 & 0.18 & 0.47 \\
+            Mean latency (s) & 12.4 & 8.0 & 8.5 \\
             \bottomrule
         \end{tabular}
     \end{table}
@@ -682,23 +735,23 @@ The architecture was instantiated and evaluated only in disaster response. The d
 This section interprets the results from a human--machine systems perspective. In line with the JCS view \cite{Hollnagel2005JCS,Woods2006JCS}, we interpret the results at the level of the joint human--AI system. Because the AI-assisted condition differed from the baseline in several features at once, the interpretations below about \emph{which} features produced the effects are hypotheses, not demonstrated causal pathways.
 
 \subsection{Action Execution in the Joint Human--AI System}
-In the AI-assisted condition, the AER was higher and response latency shorter than with the dashboard. This is consistent with H1 and H2. Evaluating the system by action execution, rather than by prediction accuracy, follows directly from the JCS perspective. In AI decision-support research, however, evaluation is still dominated by accuracy and information quality \cite{Lai2023FAccT,Muller2022CHIWORK,Yang2022THMSReview}. Because the baseline offered no AI support at all, the comparison shows the benefit of the integrated ACHDF support over a dashboard. It does not show how much of this benefit is due to the way support was structured rather than to the availability of AI support as such; separating the two requires an additional condition with unstructured AI recommendations.
+In the AI-assisted condition, the AER was higher and response latency shorter than with the dashboard, with large paired effects ($d_z=0.96$ for the AER). This is consistent with H1 and H2. Evaluating the system by action execution, rather than by prediction accuracy, follows directly from the JCS perspective. In AI decision-support research, however, evaluation is still dominated by accuracy and information quality \cite{Lai2023FAccT,Muller2022CHIWORK,Yang2022THMSReview}. Because the baseline offered no AI support at all, the comparison shows the benefit of the integrated ACHDF support over a dashboard. It does not show how much of this benefit is due to the way support was structured rather than to the availability of AI support as such; separating the two requires an additional condition with unstructured AI recommendations.
 
-Several features of the AI-assisted condition could explain the improvement: the presence of a recommendation, its action-oriented phrasing, the explicit uncertainty and criticality cues, and escalation. Our design does not separate these features. In particular, we cannot conclude that presenting recommendations in an action format, rather than a risk format, caused the improvement. A factorial design that varies the format while holding the other features constant is needed to test this (Section~\ref{sec:limitations}). Because the AER could not be decomposed, it also remains open whether the improvement came mainly from fewer wrong actions or from fewer late actions (Section~\ref{sec:lim_reporting}).
+Several features of the AI-assisted condition could explain the improvement: the presence of a recommendation, its action-oriented phrasing, the explicit uncertainty and criticality cues, and escalation. Our design does not separate these features. In particular, we cannot conclude that presenting recommendations in an action format, rather than a risk format, caused the improvement. A factorial design that varies the format while holding the other features constant is needed to test this (Section~\ref{sec:limitations}). The logs do show that the AER gain stems from fewer wrong actions, not from fewer late ones: all unsuccessful trials were wrong-action trials, and wrong and correct trials had the same latency within each condition (Section~\ref{sec:res_aer}). The AI-assisted condition was thus both faster and more accurate, with no sign of a speed--accuracy trade-off. Why it was more accurate, however, is not identified by this design.
 
 \subsection{Framework-Based Interpretation of the Results}
 \label{sec:interpretation}
 The following interpretation organizes the observed results along the ACHDF layers. It does not test the proposed mechanisms; it is a framework-based reading of the existing outcomes.
 \emph{Action level:} the higher AER and lower latency (Table~\ref{tab:primary}) are consistent with the idea that uncertainty-aware adaptation of support helps operators move from risk interpretation to action.
-\emph{Error-structure level:} in escalated trials, appropriate deferral was more frequent and inappropriate reliance less frequent than in non-escalated trials (Table~\ref{tab:escalation}). Because escalation is triggered by uncertainty and criticality and itself prompts human review, this pattern is descriptive. It is compatible with, but does not demonstrate, a protective effect of escalation against over-reliance.
+\emph{Error-structure level:} deferral was flagged more often in escalated than in non-escalated AI-assisted trials (47\% vs.\ 18\%), while the AER was the same in both sets (0.81; Table~\ref{tab:escalation}). Because escalation is triggered by uncertainty and criticality and itself prompts human review, this pattern is descriptive. The logs do not record the content or correctness of the AI advice, so the pattern is compatible with, but does not demonstrate, a protective effect of escalation against over-reliance.
 \emph{Process level:} interview themes on reduced context switching (Table~\ref{tab:qualitative}) and lower NASA--TLX scores (Table~\ref{tab:subscales}) suggest that the AI-assisted condition changed the decision process.
 
-\textbf{Workload as a possible explanation.} Lower workload is a plausible contributor to better action execution. The NASA--TLX, however, is a retrospective, subjective, condition-level measure, and we did not test whether the reduction in workload explains the improvement in AER (e.g., with a mediation analysis). This link should therefore be regarded as a possible explanatory mechanism, not a demonstrated pathway.
+\textbf{Workload as a possible explanation.} Lower workload is a plausible contributor to better action execution. The NASA--TLX, however, is a retrospective, subjective, condition-level measure, and we did not test whether the reduction in workload explains the improvement in AER. Workload was measured once per condition, so a participant-level mediation analysis would rest on two observations per person and would not separate the workload effect from the other differences between conditions. This link should therefore be regarded as a possible explanatory mechanism, not a demonstrated pathway.
 
 \subsection{Trust and Automation Bias}
-Perceived trust was higher in the AI-assisted condition. Higher trust is not the same as \emph{calibrated} trust. Calibration requires that reliance matches the actual reliability of the advice \cite{Lee2004}. Showing calibration would require relating trust or reliance to the correctness of the AI's recommendations, trial by trial. The greater deferral in escalated trials is also not evidence of calibration, because escalation itself prompts human review. We therefore make no claim that ACHDF calibrates trust.
+Perceived trust was higher in the AI-assisted condition ($d_z=1.18$), although the three trust items had low internal consistency ($\alpha = .46$--$.61$). Higher trust is not the same as \emph{calibrated} trust. Calibration requires that reliance matches the actual reliability of the advice \cite{Lee2004}. Showing calibration would require relating trust or reliance to the correctness of the AI's recommendations, trial by trial. The greater deferral in escalated trials is also not evidence of calibration, because escalation itself prompts human review. We therefore make no claim that ACHDF calibrates trust.
 
-Similarly, automation bias can be directly assessed only on trials in which the AI's advice is wrong, by measuring how often participants accept it \cite{Parasuraman2010}. The study did not analyze behavior on trials with erroneous AI recommendations, so it cannot show whether ACHDF reduces automation bias. This is an important topic for future work.
+Similarly, automation bias can be directly assessed only on trials in which the AI's advice is wrong, by measuring how often participants accept it \cite{Parasuraman2010}. The trial logs do not record the AI recommendation or whether it was correct, so behavior on trials with erroneous AI recommendations could not be analyzed, and the study cannot show whether ACHDF reduces automation bias. This is an important topic for future work.
 
 \subsection{Ecological Validity of Escalation}
 In the study, participants could defer a decision when the system escalated. In real time-critical emergencies, deferral may not be feasible or may itself be costly: an operator may have to act on uncertain information before an evacuation window closes. The lower inappropriate reliance observed in escalated trials may therefore not carry over to settings where deferral is constrained, and forced action under uncertainty might change both reliance and workload. Future studies should assign explicit costs to deferral and include forced-choice conditions.
@@ -719,7 +772,7 @@ In the study, participants could defer a decision when the system escalated. In 
     \end{table}
 
 \subsection{Design Implications}
-Within the scope of the evaluated task, the results suggest that human--AI decision support systems may benefit from (1) representing uncertainty explicitly, (2) providing action guidance rather than only passive information display, and (3) adapting the level and form of support to uncertainty and criticality through human-in-the-loop escalation, while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Table~\ref{tab:design_implications} lists these candidate implications. Because the components were not manipulated separately, each implication should be tested individually. Whether they transfer to other safety-critical domains, such as healthcare, transportation, and industrial safety \cite{PerezCerrolaza2024CSUR,Farhan2025TCE}, has not been tested here (Table~\ref{tab:achdf_transferability}).
+Within the scope of the evaluated task, the results suggest that human--AI decision support systems may benefit from (1) representing uncertainty explicitly, (2) providing action guidance rather than only passive information display, and (3) adapting the level and form of support to uncertainty and criticality through human-in-the-loop escalation, while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Table~\ref{tab:design_implications} lists these candidate implications. Because the components were not manipulated separately, each implication should be tested individually. The mapping in Table~\ref{tab:design_implications} pairs each finding with the feature that is a candidate explanation; it is not a result. Whether they transfer to other safety-critical domains, such as healthcare, transportation, and industrial safety \cite{PerezCerrolaza2024CSUR,Farhan2025TCE}, has not been tested here (Table~\ref{tab:achdf_transferability}).
 
     %---------------------------------\input{./090-futurework}
     \section{Limitations and Future Work}
@@ -736,22 +789,24 @@ Within the scope of the evaluated task, the results suggest that human--AI decis
 
     \subsection{Reporting and Analysis Limitations}
     \label{sec:lim_reporting}
-    Several analyses and details requested for a complete account of the study could not be provided, because the user study was conducted several months before this revision and its trial-level raw data and some study materials are no longer available for re-analysis. The affected results should be interpreted with corresponding caution:
+    The statistics in this paper were computed from the anonymized study logs, which resolved most reporting gaps of the earlier version. The following limitations remain and should be considered when interpreting the results:
     \begin{itemize}
-        \item \emph{Inferential statistics.} Only the significance thresholds of the original paired tests are available. Exact test statistics, 95\% confidence intervals, assumption diagnostics, the paired effect size $d_z$, order-effect analyses, and multiplicity-corrected $p$-values could not be computed. SDs and distributions for the AER and response latency are not available, and the paired test used for each outcome is not documented. Because both conditions used the same scenarios, carry-over from the first to the second condition cannot be ruled out, and its size could not be estimated without order-effect analyses. No a priori power analysis was reported; the sensitivity analysis (Section~\ref{sec:participants}) indicates adequate power only for effects of about $d_z \geq 0.40$.
-        \item \emph{AER construction.} The procedure for defining the appropriate action and the length of the time window are not documented in detail, and the AER could not be decomposed into action correctness and timeliness. Consequently, it cannot be determined whether execution failures were due to wrong actions or to delays.
-        \item \emph{Task and materials.} The number and composition of scenarios (by uncertainty and criticality), the full set of response options, the per-trial time limit, the matching of scenario difficulty, the training content and any pass criterion, and interface screenshots are not reported. This limits reproducibility.
-        \item \emph{System implementation.} The risk model's estimation and calibration procedure, the criticality scale and thresholds, and the specific guardrail rules are not reported. The evaluation therefore concerns the interaction design as experienced by participants, not the validity of these components.
-        \item \emph{Measures.} The trust items have no published validation and their internal consistency could not be estimated. Only four of the six NASA--TLX subscales are reported, and the overall score cannot be fully reconciled with them: it equals the mean of the four subscales in the baseline condition (59.8) but not in the AI-assisted condition (46.2 vs.\ 46.0), so the scoring procedure could not be verified. The interview data were not systematically coded. The number of escalated trials is not available.
+        \item \emph{Scoring of the primary outcome.} How the reference action of each trial was determined, in particular whether it was fixed independently of the AI recommendation, is not documented in the study records, and no per-trial time limit or time-out flag is recorded. The AER analyzed here is a correct-action rate; the time-cutoff analysis (Table~\ref{tab:cutoff}) is hypothetical.
+        \item \emph{Scenario identity and difficulty.} Trials are labeled S01--S10 in the logs, but the reference action recorded for a label differs across participants, and for the same participant and label it matched between the two conditions in only 18\% of the pairs. The labels therefore cannot be used to verify that identical scenarios were presented in both conditions. The distribution of reference actions differed slightly between conditions (e.g., shelter in place 146 vs.\ 107 trials; $\chi^2(4)=9.2$, $p=.057$). Uncertainty and criticality values per trial were not logged, so the scenario mix could not be described or used as a covariate.
+        \item \emph{Task and materials.} The per-trial time limit, the training content and any pass criterion, the exact item wording of the trust questionnaire, and interface screenshots are not documented in the study records, which limits reproducibility.
+        \item \emph{System implementation.} The risk model's estimation and calibration procedure, the criticality scale and thresholds, and the specific guardrail rules of the study prototype are not reported. The evaluation therefore concerns the interaction design as experienced by participants, not the validity of these components. The open reference implementation distributed with the paper is a synthetic-data demonstration and is not claimed to be the study prototype.
+        \item \emph{Measures.} The trust items have no published validation and low internal consistency ($\alpha = .46$--$.61$). The ten SUS items also had low internal consistency ($\alpha = .44$--$.49$), and the logged overall SUS scores exceed the scores recomputed from the items by 2.8--4.7 points; the conclusion is the same under both (Section~\ref{sec:res_sub}), but the absolute SUS values should not be compared with published benchmarks. The questionnaire responses may also be subject to demand effects, as participants knew which condition was the proposed system. The interview data were not systematically coded.
+        \item \emph{Distributional characteristics.} Participants' mean latencies varied little within a condition and were not correlated across conditions, which makes the latency effect size ($d_z$) extremely large. We therefore interpret the raw latency difference rather than $d_z$.
+        \item \emph{Ethics.} The study did not undergo institutional ethics review (Section~\ref{sec:participants}).
     \end{itemize}
-    Future studies should preregister their analyses and share trial-level data and materials so that these analyses can be reported in full.
+    Future studies should preregister their analyses, log the AI recommendation and its correctness, the scenario content, and the uncertainty and criticality of each trial, and share trial-level data and materials.
 
     \subsection{Long-Term Trust Effects}
     The study captured only short-term effects within a single session. Trust and reliance may change with longer exposure to the system and to its escalation behavior, which calls for longitudinal field studies.
 
     %-------------------------------\input{./092-conclusion}
 \section{Conclusion}
-This paper presented ACHDF, an action-centered human--AI decision framework that instantiates the joint cognitive systems perspective for disaster-response decision support. ACHDF combines uncertainty-aware risk estimation, guardrailed recommendations, and uncertainty- and criticality-triggered escalation, while the human keeps final decision authority. In a within-subjects study with 52 participants, the integrated ACHDF configuration, compared with a conventional dashboard, was associated with a higher action execution rate, shorter response latency, lower self-reported workload, and higher perceived trust; usability scores were also higher, but without a reported significance test. Only significance thresholds were available for the inferential results. The study did not isolate individual components, assess trust calibration or automation bias directly, or test other domains or professional operators. These questions define the next steps toward validated design principles for human--AI decision support under uncertainty.
+This paper presented ACHDF, an action-centered human--AI decision framework that instantiates the joint cognitive systems perspective for disaster-response decision support. ACHDF combines uncertainty-aware risk estimation, guardrailed recommendations, and uncertainty- and criticality-triggered escalation, while the human keeps final decision authority. In a within-subjects study with 52 participants, the integrated ACHDF configuration, compared with a conventional dashboard, was associated with a higher action execution rate (0.81 vs.\ 0.62; $d_z=0.96$), shorter response latency (8.1 vs.\ 12.4~s), lower self-reported workload, and higher perceived trust and usability; the failures were wrong actions rather than slow responses, and no order effect was detected. The study did not isolate individual components, assess trust calibration or automation bias directly, or test other domains or professional operators. These questions define the next steps toward validated design principles for human--AI decision support under uncertainty.
 
 \section*{Acknowledgment}
 The author thanks the study participants for their time and insights, and colleagues in human--machine systems and human-centered AI research for valuable discussions.

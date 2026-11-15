@@ -1,3 +1,5 @@
+> ⚠️ **갱신 안내 (2026-11-15):** 이 한국어본은 원시 로그 재분석 **이전** 버전입니다. 최신 내용은 영문본(`cover_letter_en.md`, `response_to_reviewers.md`)과 `notes/data_audit_ko.md`를 기준으로 하세요.
+
 # 리뷰어 응답서: THMS-26-02-0115 (재제출)
 
 > 이 문서는 `response_to_reviewers.md`(영문)의 한국어 번역본입니다. 저널 제출에는 영문본을 사용하세요.

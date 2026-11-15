@@ -1,3 +1,5 @@
+> ⚠️ **갱신 안내 (2026-11-15):** 이 한국어본은 원시 로그 재분석 **이전** 버전입니다. 최신 내용은 영문본(`cover_letter_en.md`, `response_to_reviewers.md`)과 `notes/data_audit_ko.md`를 기준으로 하세요.
+
 # THMS 재제출 리스크 평가 (엄격한 리뷰어 관점)
 
 > 대상: `manuscript/main.tex` (2026-11-15 제출본), 응답서, 커버레터
