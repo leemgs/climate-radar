@@ -12,7 +12,7 @@ Materials are organized under `paper/thms-2026/` (see `paper/thms-2026/README.md
 |---|---|
 | `submission/` | **Files to upload:** manuscript PDF, marked-up diff PDF, cover letter PDF, response PDF (English) |
 | `manuscript/main.tex` | Revised manuscript source (`main_original.tex`: previous submission) |
-| `letters/` | Markdown sources of the cover letter (EN/KO) and the response to reviewers (English only) |
+| `letters/` | Markdown sources of the cover letter and the response to reviewers (English only) |
 | `notes/reviewer_risk_assessment_ko.md` | Reviewer-perspective risk assessment (Korean) |
 | `Makefile` | `make` rebuilds the manuscript, diff, and letter PDFs |
 

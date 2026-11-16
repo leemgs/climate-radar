@@ -2,7 +2,7 @@
 #   make            -> manuscript, latexdiff, and letter PDFs
 #   make manuscript -> submission/main_revised.pdf
 #   make diff       -> submission/main_diff.pdf (and manuscript/main_diff.tex)
-#   make letters    -> submission/{cover_letter_en,response_to_reviewers}.pdf + Korean cover-letter review copy
+#   make letters    -> submission/{cover_letter_en,response_to_reviewers}.pdf
 #   make clean      -> remove LaTeX build files
 # bibtex exits non-zero because of two known warnings in IEEEtranDOI.bst (name.doi.prefix/postfix); output is unaffected.
 # Requires: pdflatex, bibtex, latexdiff, pandoc, Chromium (see letters/make_letter_pdfs.py), fonts-nanum.

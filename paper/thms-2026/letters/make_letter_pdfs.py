@@ -1,9 +1,9 @@
 # Converts the cover letters and responses to reviewers (Markdown) into PDFs for submission.
 # Internal repository notes (file lists, resubmission checklists, cross-file pointers) are removed.
 # Requires: pandoc, a Chromium/Chrome binary (set CHROME, default /opt/pw-browsers/chromium/chrome-linux64/chrome),
-# and a Korean font (e.g., fonts-nanum).
+
 # Run from anywhere: python3 make_letter_pdfs.py
-# English PDFs (for submission) go to ../submission/, Korean review copies stay in this folder.
+# English PDFs (for submission) go to ../submission/.
 import os
 import re
 import subprocess
@@ -68,7 +68,6 @@ def clean_response(md, lang):
 
 JOBS = [
     ("cover_letter_en.md", SUBMISSION / "cover_letter_en.pdf", "en cover", clean_cover, "Cover Letter"),
-    ("cover_letter_ko.md", HERE / "cover_letter_ko.pdf", "ko cover", clean_cover, "커버레터"),
     ("response_to_reviewers.md", SUBMISSION / "response_to_reviewers.pdf", "en", lambda m: clean_response(m, "en"), "Response to Reviewers"),
 ]
 

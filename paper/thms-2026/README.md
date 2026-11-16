@@ -29,8 +29,8 @@ thms-2026/
 │   ├── reference-data.bib, IEEEtran.cls, IEEEtranDOI.bst, 095_reference.tex
 │   ├── fig_outcomes_summary.png  (+ make_fig_outcomes.py to regenerate it)
 │   └── fig_*.png         # figures used only by main_original.tex
-├── letters/              # Markdown sources of the cover letter (EN/KO) and the response to reviewers (EN only)
-│   └── make_letter_pdfs.py  # Markdown -> PDF (EN to submission/, KO cover-letter copy here)
+├── letters/              # Markdown sources of the cover letter and the response to reviewers (English only)
+│   └── make_letter_pdfs.py  # Markdown -> PDF (English PDFs to submission/)
 └── notes/
     └── reviewer_risk_assessment_ko.md  # reviewer-perspective risk assessment
 ```
@@ -43,7 +43,7 @@ make            # manuscript + latexdiff + letter PDFs into submission/
 make clean      # remove LaTeX build files
 ```
 
-Requires `pdflatex`, `bibtex`, `latexdiff`, `pandoc`, a Chromium/Chrome binary (path via `CHROME`), and a Korean font (`fonts-nanum`) for the Korean copies.
+Requires `pdflatex`, `bibtex`, `latexdiff`, `pandoc`, a Chromium/Chrome binary (path via `CHROME`).
 
 ## ⚠️ Known limitations of this submission
 The anonymized trial-level logs and questionnaire records (`data/`) were re-analyzed with `analysis/analyze.py`, and every reported statistic comes from that script. What the records still do not document (stimulus content, how the reference action was derived, time limit, training, trust-item wording, prototype risk-model/guardrail configuration, interface screenshots) is listed in §VII-D of the manuscript and in the response letter. The records also show properties that readers will notice (a constant, condition-specific offset in the logged SUS totals; very small between-participant latency variance; scenario labels that do not map to reference actions); these are disclosed in §IV-F and §VII-D and analyzed in [`notes/data_audit_ko.md`](./notes/data_audit_ko.md). **The author must confirm before upload that the records are the original study data.** See [`notes/reviewer_risk_assessment_ko.md`](./notes/reviewer_risk_assessment_ko.md) for the expected reviewer concerns.

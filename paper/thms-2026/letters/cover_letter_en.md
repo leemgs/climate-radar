@@ -1,6 +1,5 @@
 # Cover Letter (English)
 
-> Submission version of the cover letter. A Korean version for review is in `cover_letter_ko.md`.
 
 ---
 
