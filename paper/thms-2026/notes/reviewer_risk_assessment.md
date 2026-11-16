@@ -67,7 +67,7 @@ If any of these are provided, the manuscript can be updated directly.
 ---
 
 ## 4. Decisions that rest with the author
-1. **Confirm that the files in `data/` are the original study records** (see `data_audit.md`). Required before upload.
+1. **Confirm that the files in `data/` are the original study records** (see `data_audit.md`). Done: the author confirmed this on 2026-11-16.
 2. **Ask the IRB about an exemption determination.** Open.
 3. **Title:** decided; "Reliable" removed.
 4. **Submission timing:** decided; submit the current package from `submission/`. If rejected, use Section 3B as the follow-up plan.

@@ -30,3 +30,6 @@ On 2026-11-15, the files in `data/` (from the attached `evaluation_result_en.zip
 - Both facts are stated in §IV-F as "not documented".
 - Recording method as described by the author: automatic system logs; response time = difference between the stimulus-display and response-submission timestamps; online survey tool (Qualtrics); condition order managed by the experimenter. This is reflected in §IV-F as "according to the study procedure". **This does not explain the constant SUS offsets (+2.8/+4.7)**, which remain "not documented".
 - Author confirmation: the SUS totals are Qualtrics export values. However, a different constant per condition is not explained by standard scoring or by a single coding scheme (a coding scheme does not vary by condition). Please compare against the Qualtrics survey's scoring settings and the original export file. §IV-F should be replaced once the comparison is available.
+
+## 6. Provenance confirmation
+- 2026-11-16: the author confirmed that the files in `data/` are the original data collected in the study. This confirmation concerns provenance only; the constant SUS offsets and the other anomalies in Section 3 remain undocumented and stay disclosed in §IV-F and §VII-D of the manuscript.

@@ -16,7 +16,7 @@ Materials are organized under `paper/thms-2026/` (see `paper/thms-2026/README.md
 | `notes/reviewer_risk_assessment.md` | Reviewer-perspective risk assessment |
 | `Makefile` | `make` rebuilds the manuscript, diff, and letter PDFs |
 
-> **Before resubmission:** no `\TODO` items remain in the manuscript, and the cover letter is dated. Before upload, the author must confirm that the records in `data/` are the original data collected in the study (see `notes/data_audit.md`); this cannot be verified from the files alone.
+> **Before resubmission:** no `\TODO` items remain in the manuscript, and the cover letter is dated. The author confirmed on 2026-11-16 that the records in `data/` are the original data collected in the study (see `notes/data_audit.md`).
 
 ## Summary of the revision
 
