@@ -13,10 +13,10 @@ Materials are organized under `paper/thms-2026/` (see `paper/thms-2026/README.md
 | `submission/` | **Files to upload:** manuscript PDF, marked-up diff PDF, cover letter PDF, response PDF (English) |
 | `manuscript/main.tex` | Revised manuscript source (`main_original.tex`: previous submission) |
 | `letters/` | Markdown sources of the cover letter and the response to reviewers (English only) |
-| `notes/reviewer_risk_assessment_ko.md` | Reviewer-perspective risk assessment (Korean) |
+| `notes/reviewer_risk_assessment.md` | Reviewer-perspective risk assessment |
 | `Makefile` | `make` rebuilds the manuscript, diff, and letter PDFs |
 
-> **Before resubmission:** no `\TODO` items remain in the manuscript, and the cover letter is dated. Before upload, the author must confirm that the records in `data/` are the original data collected in the study (see `notes/data_audit_ko.md`); this cannot be verified from the files alone.
+> **Before resubmission:** no `\TODO` items remain in the manuscript, and the cover letter is dated. Before upload, the author must confirm that the records in `data/` are the original data collected in the study (see `notes/data_audit.md`); this cannot be verified from the files alone.
 
 ## Summary of the revision
 
