@@ -16,7 +16,7 @@ Materials are organized under `paper/thms-2026/` (see `paper/thms-2026/README.md
 | `notes/reviewer_risk_assessment_ko.md` | Reviewer-perspective risk assessment (Korean) |
 | `Makefile` | `make` rebuilds the manuscript, diff, and letter PDFs |
 
-> **Before resubmission:** no `\TODO` items remain in the manuscript, and the cover letter is dated. The package is ready to submit.
+> **Before resubmission:** no `\TODO` items remain in the manuscript, and the cover letter is dated. Before upload, the author must confirm that the records in `data/` are the original data collected in the study (see `notes/data_audit_ko.md`); this cannot be verified from the files alone.
 
 ### What changed since the previous version of this package
 The anonymized trial-level logs (52 participants × 2 conditions × 10 trials = 1,040 trials) and questionnaire records of the study have now been re-analyzed. They are provided with the paper (`paper/thms-2026/data/`), together with the scripts that produce every reported number (`paper/thms-2026/analysis/analyze.py`). Earlier drafts listed many analyses as "not computable"; these are now reported. Items that the logs still cannot answer remain listed in **§VII-D**.
