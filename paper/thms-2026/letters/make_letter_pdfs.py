@@ -70,7 +70,6 @@ JOBS = [
     ("cover_letter_en.md", SUBMISSION / "cover_letter_en.pdf", "en cover", clean_cover, "Cover Letter"),
     ("cover_letter_ko.md", HERE / "cover_letter_ko.pdf", "ko cover", clean_cover, "커버레터"),
     ("response_to_reviewers.md", SUBMISSION / "response_to_reviewers.pdf", "en", lambda m: clean_response(m, "en"), "Response to Reviewers"),
-    ("response_to_reviewers_ko.md", HERE / "response_to_reviewers_ko.pdf", "ko", lambda m: clean_response(m, "ko"), "리뷰어 응답서"),
 ]
 
 

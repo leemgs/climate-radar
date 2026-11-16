@@ -29,8 +29,8 @@ thms-2026/
 │   ├── reference-data.bib, IEEEtran.cls, IEEEtranDOI.bst, 095_reference.tex
 │   ├── fig_outcomes_summary.png  (+ make_fig_outcomes.py to regenerate it)
 │   └── fig_*.png         # figures used only by main_original.tex
-├── letters/              # Markdown sources of cover letters and responses (EN/KO)
-│   └── make_letter_pdfs.py  # Markdown -> PDF (EN to submission/, KO copies here)
+├── letters/              # Markdown sources of the cover letter (EN/KO) and the response to reviewers (EN only)
+│   └── make_letter_pdfs.py  # Markdown -> PDF (EN to submission/, KO cover-letter copy here)
 └── notes/
     └── reviewer_risk_assessment_ko.md  # reviewer-perspective risk assessment
 ```
