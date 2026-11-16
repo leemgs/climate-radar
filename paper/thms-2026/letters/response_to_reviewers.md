@@ -45,6 +45,9 @@ Recomputing from the logs changed some values that appeared in the previous vers
 - **NASA-TLX overall:** in the logs it equals the mean of all six subscales (the earlier four-subscale inconsistency is resolved).
 - **SUS:** the logged overall score is a constant 2.8 (baseline) or 4.7 (AI-assisted) points above the score recomputed from the ten items in every record; how it was obtained is not documented, so both are reported (§IV-D, §IV-F, §V-B).
 
+### Properties of the study records that readers should know
+Besides the SUS offset above, two properties of the records are disclosed in the manuscript (§IV-F, §VII-D) rather than left for readers to find: (i) participants' mean latencies vary little within a condition (SD about 0.8 s) and are uncorrelated across conditions, which makes the latency d_z (−3.60) extremely large, so we interpret the raw difference (about 4 s); (ii) the scenario labels S01–S10 do not map to a fixed reference action, so identical scenarios across conditions cannot be verified from the logs. The abstract no longer states that failures were "wrong actions rather than slow responses" as a finding; because AER is scored as selection of the reference action, that follows from the definition, and the finding reported is that wrong and correct trials had equal latency.
+
 ### Note on numerical consistency
 The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency 12.3→8.0 s vs. 12.4→8.1 s; trust 3.2→4.0 vs. 3.4→4.2). The logs reproduce the **table values** (0.62/0.81; 12.4/8.1; 3.4/4.2), which are used throughout.
 
@@ -128,7 +131,7 @@ Besides the reviewers' points, we re-examined the manuscript for internal consis
 
 **Methods-8 (power).** No a priori analysis was conducted (stated). Sensitivity analysis: 80% power for d_z ≥ 0.40 with n = 52; observed effects on all primary and secondary outcomes exceed this (§IV-B).
 
-**Methods-9 (statistics).** §IV-E gives the full analysis plan: paired t-tests on participant-level values, Holm adjustment within the secondary family, Shapiro–Wilk diagnostics with Wilcoxon confirmation, bootstrap CIs for d_z, a GEE logistic model for AER, a mixed model for log-latency, and crossover-style order/carry-over tests.
+**Methods-9 (statistics).** §IV-E (effect size per Lakens, 2013) gives the full analysis plan: paired t-tests on participant-level values, Holm adjustment within the secondary family, Shapiro–Wilk diagnostics with Wilcoxon confirmation, bootstrap CIs for d_z, a GEE logistic model for AER, a mixed model for log-latency, and crossover-style order/carry-over tests.
 
 **Methods-10 (IRB).** §IV-B now contains an explicit ethics statement. The study was not submitted to an institutional review board or ethics committee for review. It involved only a simulated decision task and post-task questionnaires and interviews, with no physical or medical intervention. Participation was voluntary, and all participants gave informed consent.
 

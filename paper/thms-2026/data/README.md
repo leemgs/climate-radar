@@ -33,3 +33,7 @@ This folder contains the actual experiment logs reported in the paper. It provid
 
 ## Notice
 - This dataset may not be used for commercial purposes and is strictly restricted to the reproduction of this study and analytical practice.
+
+## Correction note (added 2026-11-16, paper revision)
+- `SUS_overall` in `02_survey_scores.csv` is **not** the standard SUS score of the ten stored items: it is higher by exactly 2.8 points in all 52 Baseline rows and by exactly 4.7 points in all 52 AI rows (recomputed means 65.7 / 77.0). The stored values are the Qualtrics export values; the scoring configuration behind them is not documented. The paper reports both (Section IV-F, V-B).
+- `correct_action` ("reference action") is the scoring key as recorded; how it was derived is not documented. Scenario labels S01–S10 do not map to a fixed reference action.
