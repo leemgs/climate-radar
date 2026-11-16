@@ -55,7 +55,7 @@ def clean_cover(md):
 
 def clean_response(md, lang):
     if lang == "en":
-        md = strip_sections(md, ["Files in this folder", "Cover letter"])
+        md = strip_sections(md, ["Files in this folder"])
         md = re.sub(r"^> \*\*Before resubmission:\*\*.*\n+", "", md, flags=re.M)
         md = re.sub(r" If a check later shows[^\n]*", "", md)
     else:

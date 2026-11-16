@@ -1,7 +1,7 @@
 # Response to Reviewers: THMS-26-02-0115 (Resubmission)
 
-**Original manuscript:** "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk," THMS-26-02-0115
-**Revised title:** "From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response" (the word "Reliable" was removed because reliability of action execution was not measured)
+**Original manuscript:** "From Alerts to Actions: A Human–AI Decision System for Reliable Action Execution Under Disaster Risk," THMS-26-02-0115  
+**Revised title:** "From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response" (the word "Reliable" was removed because reliability of action execution was not measured)  
 **Decision letter:** 12-Nov-2026, Reject and Resubmit (Dr. L. Trajkovic, Editor-in-Chief)
 
 ## Files in this folder
@@ -18,69 +18,16 @@ Materials are organized under `paper/thms-2026/` (see `paper/thms-2026/README.md
 
 > **Before resubmission:** no `\TODO` items remain in the manuscript, and the cover letter is dated. Before upload, the author must confirm that the records in `data/` are the original data collected in the study (see `notes/data_audit_ko.md`); this cannot be verified from the files alone.
 
-### What changed since the previous version of this package
-The anonymized trial-level logs (52 participants × 2 conditions × 10 trials = 1,040 trials) and questionnaire records of the study have now been re-analyzed. They are provided with the paper (`paper/thms-2026/data/`), together with the scripts that produce every reported number (`paper/thms-2026/analysis/analyze.py`). Earlier drafts listed many analyses as "not computable"; these are now reported. Items that the logs still cannot answer remain listed in **§VII-D**.
+## Summary of the revision
 
-| Item | Treatment in the manuscript |
-|---|---|
-| Test statistics, 95% CIs, effect sizes, assumption checks, multiplicity | Table VI: for every outcome, M (SD), difference with 95% CI, paired t(51), Holm-adjusted p, d_z with bootstrap CI. Shapiro–Wilk checks, Wilcoxon confirmation, a trial-level GEE logistic model (AER) and a mixed model on log-latency (§IV-E, §V-A). |
-| Power | No a priori analysis was done (stated). Sensitivity analysis: 80% power for d_z ≥ 0.40 at n = 52 (§IV-B). |
-| AER definition and decomposition | In the logs, AER = share of trials with selected action = reference action; this reproduces 0.62/0.81 exactly with no time criterion. All 198 + 99 unsuccessful trials are wrong-action trials; correct and wrong trials have the same latency. A hypothetical time-cutoff sensitivity analysis is in Table VII (§IV-D, §V-A). |
-| Scenario count, response options, timing | 10 trials per condition, five response options, maximum recorded latency 20.3 s (§IV-C). |
-| Demographics | Age, gender, technical background and disaster experience now reported (Table IV). |
-| Subscales, trust items, SUS | All six NASA-TLX subscales and the three trust items with statistics (Table VIII); Cronbach's α; SUS recomputed from items as a robustness check (§IV-D, §V-B). |
-| Order effects, carry-over | Treatment × order and carry-over tests for all outcomes (§V-C). |
-| Escalation | 150 of 520 AI trials escalated (28.8%); descriptive table with AER, deferral and latency (Table IX, §V-D). |
-| Interface comparison | Table III lists what each interface presented. Screenshots are not available. |
-| Risk-model, criticality, guardrail implementation of the study prototype; training content; trust-item wording | Still not documented; listed in §VII-D. |
-| Qualitative coding | Still informal (§V-E). |
-| Trials with erroneous AI advice | The logs contain no AI recommendation or correctness field, so automation bias and calibration are not assessed (§VI-C, §VII). |
-| Ethics | Still no ethics review; stated as fact (§IV-B). |
+We thank the Editor-in-Chief, the Associate Editor, and the three reviewers for their careful and constructive evaluation. We have revised the manuscript substantially and respond to every comment below. The main changes are:
 
-### Changes in reported values (please read)
-Recomputing from the logs changed some values that appeared in the previous version. The headline results (AER 0.62→0.81; latency 12.4→8.1 s; NASA-TLX 59.8→46.2; trust 3.40→4.20; SUS 68.5→81.7) are unchanged. The following differ:
-- **SDs:** NASA-TLX 11.5/9.3 (previously 10.9/9.6); SUS 10.5/8.6 (previously 11.2/9.4); trust 0.57/0.45.
-- **Subscales:** the previous values for four NASA-TLX subscales and three trust items do not agree with the logs and were replaced by log-based values (Table VIII).
-- **Escalation table:** the previous "appropriate deferral" and "inappropriate reliance" rates cannot be derived from the logs (no AI recommendation or correctness field) and were removed; observed deferral, AER and latency by escalation status are reported instead.
-- **NASA-TLX overall:** in the logs it equals the mean of all six subscales (the earlier four-subscale inconsistency is resolved).
-- **SUS:** the logged overall score is a constant 2.8 (baseline) or 4.7 (AI-assisted) points above the score recomputed from the ten items in every record; how it was obtained is not documented, so both are reported (§IV-D, §IV-F, §V-B).
-
-### Properties of the study records that readers should know
-Besides the SUS offset above, two properties of the records are disclosed in the manuscript (§IV-F, §VII-D) rather than left for readers to find: (i) participants' mean latencies vary little within a condition (SD about 0.8 s) and are uncorrelated across conditions, which makes the latency d_z (−3.60) extremely large, so we interpret the raw difference (about 4 s); (ii) the scenario labels S01–S10 do not map to a fixed reference action, so identical scenarios across conditions cannot be verified from the logs. The abstract no longer states that failures were "wrong actions rather than slow responses" as a finding; because AER is scored as selection of the reference action, that follows from the definition, and the finding reported is that wrong and correct trials had equal latency.
-
-### Note on numerical consistency
-The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency 12.3→8.0 s vs. 12.4→8.1 s; trust 3.2→4.0 vs. 3.4→4.2). The logs reproduce the **table values** (0.62/0.81; 12.4/8.1; 3.4/4.2), which are used throughout.
-
----
-
-## Cover letter
-
-See `cover_letter_en.md`.
-
----
-
-## Requests we could only partially address
-
-For each, the manuscript states the gap explicitly and limits its conclusions accordingly.
-
-- **Reproducibility details (R1 Methods-1–4; R2-2–R2-4).** Interface screenshots, a worked scenario example, training details, scenario composition by uncertainty/criticality, and implementation details of the study prototype's risk model and guardrails are not documented in the study records (§VII-D).
-- **Reference action and time window (R3; R1 Methods-7).** How the reference action was determined is not documented; the logs contain no time-out flag (§IV-D, §VII-D).
-- **Trust measure and qualitative data (R2-7; R1 Results-6).** The item wording is not documented; internal consistency is low (α = .46–.61). The interview data were not coded, so the mixed-method label was withdrawn.
-- **Trust calibration and automation bias (R1 Discussion-2, -3).** The logs contain no record of the AI advice or its correctness, so neither can be assessed.
-- **Ethics (R1 Methods-10).** The study did not undergo ethics-committee review (§IV-B).
-
-We regard these as genuine limitations of the evidence, not as points of disagreement with the reviewers.
-
-## Additional corrections from our own re-examination
-
-Besides the reviewers' points, we re-examined the manuscript for internal consistency and over-claiming and made the following changes:
-
-1. **Latency-distribution figure removed.** It was not reproducible from the earlier summary data and its caption contained interpretation. Trial-level latency quantiles are now reported in the text (§V-A).
-2. **Deferral clarified.** The Methods state that participants could flag deferral in either condition; Algorithm 1 lists "defer" as an operator option, matching Fig. 2.
-3. **Carry-over tested.** Both conditions were designed to use comparable scenarios, so carry-over cannot be ruled out; order and carry-over tests are in §V-C, and the logs cannot verify scenario identity across conditions (§VII-D).
-4. **NASA-TLX scoring.** Resolved by the logs: the overall score is the unweighted mean of the six subscales (§IV-D).
-5. **Abstract and Conclusion.** Now give the main values with effect sizes and state what the study cannot show.
-6. **Over-interpretation removed.** Because the baseline had no AI support, §VI-A no longer claims that the *structure* of support, rather than its availability, explains the improvement.
+1. **Positioning.** Following Reviewer 3, the paper no longer presents action-centered evaluation as a new concept. ACHDF is presented as a domain-specific instantiation of the joint cognitive systems perspective and of adaptive function allocation for AI-generated recommendations in disaster response, with a new related-work subsection (§II-A) and the foundational literature cited.
+2. **Constructs.** A new Table I defines the role and operational definition of uncertainty, criticality, guardrails, bounded autonomy, escalation, trust, workload, and action execution. The manuscript now states consistently that only the level and form of AI support varies; decision authority always remains with the human.
+3. **Methods and statistics.** Hypotheses (H1 primary; H2–H4 secondary), the task, the two interfaces (Table III), all measures, and a complete analysis plan are reported. For every outcome we report means and SDs, the paired difference with its 95% CI, the paired t statistic, the Holm-adjusted p value, and d_z with its CI, together with assumption checks, a trial-level logistic model, a mixed model for latency, order and carry-over tests, and a power sensitivity analysis. These statistics were computed from the anonymized trial-level logs and questionnaire records, which are provided with the paper together with the analysis script.
+4. **Action Execution Rate.** AER is defined from the logs (selected action equals reference action) and separated from timeliness: every unsuccessful trial was a wrong-action trial, and wrong and correct trials had the same latency (§V-A, Table VII).
+5. **Claims.** Claims about mechanism, trust calibration, automation bias, the benefit of the action format, and cross-domain generalizability were removed or reframed as hypotheses. Results now contain only findings; interpretation is in §VI.
+6. **Transparency.** What the study records do not document is stated explicitly in §VII-D rather than omitted. Where recomputation changed values from the previous version, we list the changes below.
 
 ## Associate Editor
 
@@ -187,6 +134,64 @@ Besides the reviewers' points, we re-examined the manuscript for internal consis
 **Contribution 3 / AER clarity.** We agree that the AER needed disentangling. §IV-D defines it from the logs (selected action = reference action) and notes that no time-out flag exists. §V-A answers the reviewer's directionality question: every unsuccessful trial was a *wrong-action* trial (198 of 520 baseline, 99 of 520 AI-assisted), and wrong and correct trials had the same latency (baseline 12.6 vs. 12.3 s; AI-assisted 8.1 vs. 8.1 s), so slowness does not explain the failures. Table VII adds a hypothetical time-cutoff sensitivity analysis. How the reference action was derived is not documented (§VII-D).
 
 **Minor 1 ("On the other hand").** Removed, and the paragraph was rewritten.
+
+## Changes in reported values relative to the previous version
+Recomputing from the logs changed some values that appeared in the previous version. The headline results (AER 0.62→0.81; latency 12.4→8.1 s; NASA-TLX 59.8→46.2; trust 3.40→4.20; SUS 68.5→81.7) are unchanged. The following differ:
+- **SDs:** NASA-TLX 11.5/9.3 (previously 10.9/9.6); SUS 10.5/8.6 (previously 11.2/9.4); trust 0.57/0.45.
+- **Subscales:** the previous values for four NASA-TLX subscales and three trust items do not agree with the logs and were replaced by log-based values (Table VIII).
+- **Escalation table:** the previous "appropriate deferral" and "inappropriate reliance" rates cannot be derived from the logs (no AI recommendation or correctness field) and were removed; observed deferral, AER and latency by escalation status are reported instead.
+- **NASA-TLX overall:** in the logs it equals the mean of all six subscales (the earlier four-subscale inconsistency is resolved).
+- **SUS:** the logged overall score is a constant 2.8 (baseline) or 4.7 (AI-assisted) points above the score recomputed from the ten items in every record; how it was obtained is not documented, so both are reported (§IV-D, §IV-F, §V-B).
+
+## Properties of the study records
+Besides the SUS offset above, two properties of the records are disclosed in the manuscript (§IV-F, §VII-D) rather than left for readers to find: (i) participants' mean latencies vary little within a condition (SD about 0.8 s) and are uncorrelated across conditions, which makes the latency d_z (−3.60) extremely large, so we interpret the raw difference (about 4 s); (ii) the scenario labels S01–S10 do not map to a fixed reference action, so identical scenarios across conditions cannot be verified from the logs. The abstract no longer states that failures were "wrong actions rather than slow responses" as a finding; because AER is scored as selection of the reference action, that follows from the definition, and the finding reported is that wrong and correct trials had equal latency.
+
+## Numerical consistency
+The original text and tables disagreed (AER 0.55→0.74 vs. 0.62→0.81; latency 12.3→8.0 s vs. 12.4→8.1 s; trust 3.2→4.0 vs. 3.4→4.2). The logs reproduce the **table values** (0.62/0.81; 12.4/8.1; 3.4/4.2), which are used throughout.
+
+---
+
+## Requests we could address only partially
+
+For each, the manuscript states the gap explicitly and limits its conclusions accordingly.
+
+- **Reproducibility details (R1 Methods-1–4; R2-2–R2-4).** Interface screenshots, a worked scenario example, training details, scenario composition by uncertainty/criticality, and implementation details of the study prototype's risk model and guardrails are not documented in the study records (§VII-D).
+- **Reference action and time window (R3; R1 Methods-7).** How the reference action was determined is not documented; the logs contain no time-out flag (§IV-D, §VII-D).
+- **Trust measure and qualitative data (R2-7; R1 Results-6).** The item wording is not documented; internal consistency is low (α = .46–.61). The interview data were not coded, so the mixed-method label was withdrawn.
+- **Trust calibration and automation bias (R1 Discussion-2, -3).** The logs contain no record of the AI advice or its correctness, so neither can be assessed.
+- **Ethics (R1 Methods-10).** The study did not undergo ethics-committee review (§IV-B).
+
+We regard these as genuine limitations of the evidence, not as points of disagreement with the reviewers.
+
+## Additional corrections from our own re-examination
+
+Besides the reviewers' points, we re-examined the manuscript for internal consistency and over-claiming and made the following changes:
+
+1. **Latency-distribution figure removed.** It was not reproducible from the earlier summary data and its caption contained interpretation. Trial-level latency quantiles are now reported in the text (§V-A).
+2. **Deferral clarified.** The Methods state that participants could flag deferral in either condition; Algorithm 1 lists "defer" as an operator option, matching Fig. 2.
+3. **Carry-over tested.** Both conditions were designed to use comparable scenarios, so carry-over cannot be ruled out; order and carry-over tests are in §V-C, and the logs cannot verify scenario identity across conditions (§VII-D).
+4. **NASA-TLX scoring.** Resolved by the logs: the overall score is the unweighted mean of the six subscales (§IV-D).
+5. **Abstract and Conclusion.** Now give the main values with effect sizes and state what the study cannot show.
+6. **Over-interpretation removed.** Because the baseline had no AI support, §VI-A no longer claims that the *structure* of support, rather than its availability, explains the improvement.
+
+## Appendix: Where each new analysis is reported
+The anonymized trial-level logs (52 participants × 2 conditions × 10 trials = 1,040 trials) and questionnaire records of the study were re-analyzed with a script that produces every reported number; both are provided with the paper. Earlier drafts listed several analyses as not computable; these are now reported. Items that the records still cannot answer are listed in §VII-D.
+
+| Item | Treatment in the manuscript |
+|---|---|
+| Test statistics, 95% CIs, effect sizes, assumption checks, multiplicity | Table VI: for every outcome, M (SD), difference with 95% CI, paired t(51), Holm-adjusted p, d_z with bootstrap CI. Shapiro–Wilk checks, Wilcoxon confirmation, a trial-level GEE logistic model (AER) and a mixed model on log-latency (§IV-E, §V-A). |
+| Power | No a priori analysis was done (stated). Sensitivity analysis: 80% power for d_z ≥ 0.40 at n = 52 (§IV-B). |
+| AER definition and decomposition | In the logs, AER = share of trials with selected action = reference action; this reproduces 0.62/0.81 exactly with no time criterion. All 198 + 99 unsuccessful trials are wrong-action trials; correct and wrong trials have the same latency. A hypothetical time-cutoff sensitivity analysis is in Table VII (§IV-D, §V-A). |
+| Scenario count, response options, timing | 10 trials per condition, five response options, maximum recorded latency 20.3 s (§IV-C). |
+| Demographics | Age, gender, technical background and disaster experience now reported (Table IV). |
+| Subscales, trust items, SUS | All six NASA-TLX subscales and the three trust items with statistics (Table VIII); Cronbach's α; SUS recomputed from items as a robustness check (§IV-D, §V-B). |
+| Order effects, carry-over | Treatment × order and carry-over tests for all outcomes (§V-C). |
+| Escalation | 150 of 520 AI trials escalated (28.8%); descriptive table with AER, deferral and latency (Table IX, §V-D). |
+| Interface comparison | Table III lists what each interface presented. Screenshots are not available (§VII-D). |
+| Risk-model, criticality, guardrail implementation of the study prototype; training content; trust-item wording | Still not documented; listed in §VII-D. |
+| Qualitative coding | Still informal (§V-E). |
+| Trials with erroneous AI advice | The logs contain no AI recommendation or correctness field, so automation bias and calibration are not assessed (§VI-C, §VII). |
+| Ethics | Still no ethics review; stated as fact (§IV-B). |
 
 ## References added
 Hollnagel & Woods (2005); Woods & Hollnagel (2006); Parasuraman, Sheridan & Wickens (2000); Kaber & Endsley (2004); Scerbo (2007); Lee & See (2004); Parasuraman & Manzey (2010); Jian, Bisantz & Drury (2000); Hart & Staveland (1988); Brooke (1996); Lakens (2013).
