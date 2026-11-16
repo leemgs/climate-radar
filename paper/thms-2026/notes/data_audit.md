@@ -8,7 +8,7 @@ On 2026-11-15, the files in `data/` (from the attached `evaluation_result_en.zip
 
 ## 2. What differed from the previous manuscript (and was corrected)
 - SDs: TLX 11.5/9.3 (previously 10.9/9.6); SUS 10.5/8.6 (previously 11.2/9.4).
-- Four NASA-TLX subscales and the three trust-item means disagreed with the old tables; they were replaced by the log values (Table VIII).
+- Four NASA-TLX subscales and the three trust-item means disagreed with the old tables; they were replaced by the log values (Table IX).
 - The old "appropriate deferral 0.21/0.47, inappropriate reliance 0.18/0.09" cannot be computed from the logs (no AI-recommendation or correctness field) and were removed. In the logs, deferral is 0.18 (non-escalated) and 0.47 (escalated).
 
 ## 3. Anomalies in the data itself (reviewers or a data audit may raise these)
