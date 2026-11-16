@@ -1,11 +1,11 @@
 from __future__ import annotations
+import re
 from typing import List, Dict
 
 def sanitize(text: str, deny_terms: List[str]) -> str:
-    low = text.lower()
     for t in deny_terms:
-        if t.lower() in low:
-            text = text.replace(t, "[REDACTED]")
+        if t:
+            text = re.sub(re.escape(t), "[REDACTED]", text, flags=re.IGNORECASE)
     return text
 
 def glossary_expand(text: str, glossary: List[Dict[str,str]]) -> str:

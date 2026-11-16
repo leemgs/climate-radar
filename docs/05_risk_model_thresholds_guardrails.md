@@ -150,7 +150,7 @@ else:
 ## 6-1. 코드 대조로 확인된 추가 사항
 
 - `policy.yaml`의 `allow_terms`는 코드 어디에서도 사용되지 않는다(`deny_terms`와 `jargon_glossary`만 사용).
-- `sanitize()`는 deny_terms 포함 여부를 대소문자 무시로 검사하지만, 치환(`str.replace`)은 대소문자를 구분한다. 대소문자가 다른 표기(예: "Medical Diagnosis")는 검사에는 걸려도 실제로는 치환되지 않는다.
+- `sanitize()`는 과거 검사는 대소문자 무시, 치환은 대소문자 구분이라 "Medical Diagnosis" 같은 표기가 치환되지 않는 버그가 있었다. 현재는 `re.sub(..., flags=re.IGNORECASE)`로 수정되어 대소문자와 무관하게 `[REDACTED]`로 치환된다.
 - 추천 생성 순서는 문서 기술과 일치한다: 기본 문구 → 하위 그룹(elderly/migrant) 문장 → `glossary_expand` → `sanitize`.
 - 블라스트 반경은 `pipeline.py`의 `cmd_recs`에서 `sent/n <= 0.2`로 검사하므로, 전체의 20%를 넘는 1건까지 발송될 수 있다(예: n=10이면 3건).
 
