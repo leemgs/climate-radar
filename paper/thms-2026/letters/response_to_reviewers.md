@@ -35,7 +35,7 @@ We thank the Editor-in-Chief, the Associate Editor, and the three reviewers for 
 |---|---|---|
 | Difference from JCS and adaptive function allocation | Explicit positioning as an instantiation, plus a new related-work subsection | §I (end), §II-A, §III |
 | Roles and implementation of uncertainty, criticality, guardrails, escalation, trust, workload, bounded autonomy | New construct table; "bounded autonomy" defined as bounded *generation* of recommendations; trust and workload declared design considerations and outcomes, not run-time states. Implementation details that cannot be reported are stated as such. | Table I, §III-A, §III-C–E, §VII-D |
-| Statistical methods: tests, assumptions, CIs, effect sizes, power | Full analysis plan and per-outcome reporting (paired t, 95% CI, d_z with CI, Holm adjustment, Wilcoxon, GEE, mixed model, order effects); sensitivity analysis for power | §IV-B, §IV-E, §V, Tables VI–VIII |
+| Statistical methods: tests, assumptions, CIs, effect sizes, power | Full analysis plan and per-outcome reporting (paired t, 95% CI, d_z with CI, Holm adjustment, Wilcoxon, GEE, mixed model, order effects); sensitivity analysis for power | §IV-B, §IV-E, §V, Tables VII–IX |
 | Numerical inconsistencies, redundant sections and tables | Text unified with the table values; sections and tables consolidated | §V, Tables VII and IX |
 | Qualify mechanism, calibration, automation bias, action format, generalizability | Qualified or reframed as hypotheses; limitations added | §VI, §VII, Abstract, Conclusion |
 | Language, human factors linkage, separation of results and interpretation | Edited; 11 human factors references added; interpretation moved to §VI | throughout |
@@ -90,7 +90,7 @@ We thank the Editor-in-Chief, the Associate Editor, and the three reviewers for 
 
 **Results-5 (escalated vs. non-escalated not equivalent).** §V-D is descriptive and states that the two sets are not equivalent. The previous "appropriate deferral / inappropriate reliance" rates could not be derived from the logs and were replaced by observed AER, deferral and latency (Table X).
 
-**Results-6 (qualitative rigor).** The interview material was not systematically coded, so it is now presented as informal observations (§IV-D, Table IX). The "mixed-method" label was removed.
+**Results-6 (qualitative rigor).** The interview material was not systematically coded, so it is now presented as informal observations (§IV-D, Table XI). The "mixed-method" label was removed.
 
 **Results-7, -8 (mechanism analysis; interpretation in Results).** The former §V-F was renamed "Framework-Based Interpretation of the Results," moved to §VI-B, and explicitly described as not testing mechanisms. The Results section now contains only findings.
 
@@ -122,7 +122,7 @@ We thank the Editor-in-Chief, the Associate Editor, and the three reviewers for 
 8. **Usability questionnaire.** SUS (Brooke, 1996), ten items, 0–100 scoring; the logged overall score is a constant 2.8/4.7 points above the recomputed score in the baseline/AI-assisted condition, and both are reported (§IV-D, §V-B).
 9. **Results intro paragraph and interpretive statements.** The intro was shortened to two sentences. Interpretive sentences (e.g., "helped participants transition quicker…") were removed from the Results. The former latency-distribution figure, whose caption contained an interpretive statement, was removed entirely, because it could not be verified against trial-level data.
 10. **V-A/V-B redundancy.** Merged into §V-A.
-11. **Table redundancy; Table IX not cited.** Consolidated into Table VII (all outcomes) and Table IX (subscales and items); all tables are cited in the text.
+11. **Table redundancy; reviewer's Table VIII not cited.** The reviewer's Tables V and VIII refer to the numbering of the previous version. In the revised manuscript, the overall outcomes are consolidated into Table VII (all primary and secondary outcomes) and Table IX (NASA-TLX subscales and trust items); all tables are cited in the text.
 12. **Ecological validity of deferral.** New §VI-D discusses forced action under uncertainty and deferral costs, and their implications for the over-reliance results.
 
 ## Reviewer 3
