@@ -36,7 +36,7 @@ We thank the Editor-in-Chief, the Associate Editor, and the three reviewers for 
 | Difference from JCS and adaptive function allocation | Explicit positioning as an instantiation, plus a new related-work subsection | §I (end), §II-A, §III |
 | Roles and implementation of uncertainty, criticality, guardrails, escalation, trust, workload, bounded autonomy | New construct table; "bounded autonomy" defined as bounded *generation* of recommendations; trust and workload declared design considerations and outcomes, not run-time states. Implementation details that cannot be reported are stated as such. | Table I, §III-A, §III-C–E, §VII-D |
 | Statistical methods: tests, assumptions, CIs, effect sizes, power | Full analysis plan and per-outcome reporting (paired t, 95% CI, d_z with CI, Holm adjustment, Wilcoxon, GEE, mixed model, order effects); sensitivity analysis for power | §IV-B, §IV-E, §V, Tables VI–VIII |
-| Numerical inconsistencies, redundant sections and tables | Text unified with the table values; sections and tables consolidated | §V, Tables V–VI |
+| Numerical inconsistencies, redundant sections and tables | Text unified with the table values; sections and tables consolidated | §V, Tables VII and IX |
 | Qualify mechanism, calibration, automation bias, action format, generalizability | Qualified or reframed as hypotheses; limitations added | §VI, §VII, Abstract, Conclusion |
 | Language, human factors linkage, separation of results and interpretation | Edited; 11 human factors references added; interpretation moved to §VI | throughout |
 
@@ -82,11 +82,11 @@ We thank the Editor-in-Chief, the Associate Editor, and the three reviewers for 
 
 **Methods-10 (IRB).** §IV-B now contains an explicit ethics statement. The study was not submitted to an institutional review board or ethics committee for review. It involved only a simulated decision task and post-task questionnaires and interviews, with no physical or medical intervention. Participation was voluntary, and all participants gave informed consent.
 
-**Results-1, -2 (inconsistent numbers).** All values now come from one source, the logs (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.40→4.20). Fig. 3 is generated from the analysis output.
+**Results-1, -2 (inconsistent numbers).** All values now come from one source, the logs (AER 0.62→0.81; latency 12.4→8.1 s; trust 3.40→4.20). Fig. 4 is generated from the analysis output.
 
 **Results-3 (statistics per outcome).** Table VII and §V-A/B report, for every outcome, the means and SDs, difference with 95% CI, t(51), Holm-adjusted p, and d_z with 95% CI.
 
-**Results-4 (single Cohen's d).** Removed; effect sizes (d_z) are now given per outcome (Tables VI and VIII).
+**Results-4 (single Cohen's d).** Removed; effect sizes (d_z) are now given per outcome (Tables VII and IX).
 
 **Results-5 (escalated vs. non-escalated not equivalent).** §V-D is descriptive and states that the two sets are not equivalent. The previous "appropriate deferral / inappropriate reliance" rates could not be derived from the logs and were replaced by observed AER, deferral and latency (Table X).
 
