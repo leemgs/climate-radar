@@ -116,9 +116,9 @@ Rating:
 
 ## 6. Update (2026-11-17): author documentation added
 
-The author supplied prototype documentation (`docs/01`–`05`, verified against `code/`). The manuscript now includes: a schematic interface figure (Fig. 3) and interface description (§IV-A); the scenario type, trial information block, example situation descriptions and the meaning of the five options (§IV-C, Table V); the training flow (§IV-C); the trust-item wording (§IV-D); and the risk-model and guardrail configuration (§III-C, §III-D).
+The author supplied prototype documentation (`docs/01`–`05`, verified against `code/`). The manuscript now includes: a reconstructed interface illustration (Fig. 3; not a screenshot) and interface description (§IV-A); the scenario type, trial information block, example situation descriptions and the meaning of the five options (§IV-C, Table V); the training flow (§IV-C); the trust-item wording (§IV-D); and the risk-model and guardrail configuration (§III-C, §III-D).
 
-Rating changes: R1 Methods-1 ○→◐ (schematic, no screenshots); R1 Methods-2 ◐ (structure and example descriptions; per-trial values absent); R1 Methods-3 and Methods-4 ◐ (configuration reported; calibration, τ_u, τ_c and criticality scale not documented); R2-2 ◐; R2-3 ◐; R2-4 ○→◐ (flow and the 5+5 min steps; total length and pass criterion absent); R2-7 ◐→●.
+Rating changes: R1 Methods-1 ○→◐ (reconstructed illustration, no screenshots); R1 Methods-2 ◐ (structure and example descriptions; per-trial values absent); R1 Methods-3 and Methods-4 ◐ (configuration reported; calibration, τ_u, τ_c and criticality scale not documented); R2-2 ◐; R2-3 ◐; R2-4 ○→◐ (flow and the 5+5 min steps; total length and pass criterion absent); R2-7 ◐→●.
 
 New inconsistencies found and disclosed rather than hidden:
 1. **Scenario labels.** The documentation maps S01 to monitoring and S03 to sheltering/evacuation, but the trial logs show a near-uniform reference action for every label (e.g., S01: monitor 26%, shelter in place 27%). The paper therefore shows the example descriptions as design illustrations and states that they cannot be matched to logged trials.

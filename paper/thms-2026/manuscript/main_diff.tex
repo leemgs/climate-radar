@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL main_original.tex   Mon Nov 16 23:13:19 2026
-%DIF ADD main.tex            Tue Nov 17 02:55:21 2026
+%DIF ADD main.tex            Tue Nov 17 08:50:18 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -725,7 +725,7 @@ AI supports sensemaking and constrained recommendations; final decision authorit
 \DIFdelend \DIFaddbegin \DIFadd{\textbf{Baseline condition.} Participants used a conventional dashboard-style interface (Fig.~\ref{fig:interfaces}a): a risk-level summary at the top (numeric value and color coding), a map or time series of risk indicators in the center, and the five response-option buttons below. The dashboard provided no AI-generated action recommendation, uncertainty indicator, criticality cue, or escalation prompt. Participants had to integrate the information themselves and decide on an action.
 }\DIFaddend 
 
-    \DIFdelbegin \DIFdel{The demographics of participants are presented in Table~\ref{tab:participants}}\DIFdelend \DIFaddbegin \DIFadd{\textbf{AI-assisted condition.} Participants used the ACHDF-based interface, which displayed the same underlying information together with the ACHDF features described in Section~\ref{sec:system}: the risk estimate with an explicit uncertainty indicator, a criticality cue, and either a single guardrail-checked action recommendation (``recommend'' mode) or, when escalation was triggered, the evidence and options with a prompt to review them (``escalate'' mode). The decision logic is shown in Fig.~\ref{fig:system_overview} and Algorithm~\ref{alg:escalation}. Table~\ref{tab:conditions} and Fig.~\ref{fig:interfaces} contrast what the two interfaces presented. In recommend mode, the interface showed the risk score, an uncertainty indicator (a confidence interval or variance proxy), a criticality badge, and one guardrail-checked recommendation with a short rationale, for example ``PREPARE: Pack essentials, confirm route to shelter, check on neighbors.'' The five response options remained selectable, so participants could ignore the recommendation. In escalate mode, the single recommendation was replaced by the evidence and the options together with a message stating that human review was required because of uncertainty, criticality, or a policy issue; the participant then chose an action or set a deferral flag. Both interfaces supported the deferral flag. Fig.~\ref{fig:interfaces} is a schematic redrawn from the interface specification, not a screenshot; no screenshots of the study interface are available (Section~\ref{sec:lim_reporting})}\DIFaddend .
+    \DIFdelbegin \DIFdel{The demographics of participants are presented in Table~\ref{tab:participants}}\DIFdelend \DIFaddbegin \DIFadd{\textbf{AI-assisted condition.} Participants used the ACHDF-based interface, which displayed the same underlying information together with the ACHDF features described in Section~\ref{sec:system}: the risk estimate with an explicit uncertainty indicator, a criticality cue, and either a single guardrail-checked action recommendation (``recommend'' mode) or, when escalation was triggered, the evidence and options with a prompt to review them (``escalate'' mode). The decision logic is shown in Fig.~\ref{fig:system_overview} and Algorithm~\ref{alg:escalation}. Table~\ref{tab:conditions} and Fig.~\ref{fig:interfaces} contrast what the two interfaces presented. In recommend mode, the interface showed the risk score, an uncertainty indicator (a confidence interval or variance proxy), a criticality badge, and one guardrail-checked recommendation with a short rationale, for example ``PREPARE: Pack essentials, confirm route to shelter, check on neighbors.'' The five response options remained selectable, so participants could ignore the recommendation. In escalate mode, the single recommendation was replaced by the evidence and the options together with a message stating that human review was required because of uncertainty, criticality, or a policy issue; the participant then chose an action or set a deferral flag. Both interfaces supported the deferral flag. Fig.~\ref{fig:interfaces} is a reconstructed illustration drawn from the interface specification, not a screenshot; no screenshots of the study interface are available (Section~\ref{sec:lim_reporting})}\DIFaddend .
 
     \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD < 
@@ -777,34 +777,47 @@ AI supports sensemaking and constrained recommendations; final decision authorit
 \DIFdelend \DIFaddbegin \begin{figure*}[t]
         \centering
         \begin{tikzpicture}[font=\scriptsize,
-            pan/.style={draw, rounded corners=2pt, text width=#1, inner sep=3pt, align=center},
-            pan/.default=7.6cm,
-            blk/.style={draw, fill=gray!10, rounded corners=1pt, align=center, inner sep=2pt, text width=#1},
-            blk/.default=7.0cm,
-            btn/.style={draw, fill=white, rounded corners=1pt, align=center, inner sep=1.5pt, minimum width=1.25cm}]
-            % (a) baseline
-            \node[font=\footnotesize\bfseries] at (0,0.55) {(a) Baseline: conventional dashboard};
-            \node[blk] (b1) at (0,-0.15) {Risk-level summary (value, color coding)};
-            \node[blk, minimum height=1.5cm] (b2) at (0,-1.45) {Map or time series of hazard and risk indicators\\[1pt] \emph{no uncertainty, criticality, or recommendation}};
-            \node[btn] (a1) at (-2.95,-2.85) {Monitor};
-            \node[btn] (a2) at (-1.5,-2.85) {Standby};
-            \node[btn] (a3) at (-0.05,-2.85) {Issue alert};
-            \node[btn] (a4) at (1.4,-2.85) {Shelter};
-            \node[btn] (a5) at (2.85,-2.85) {Evacuate};
-            % (b) AI-assisted
-            \node[font=\footnotesize\bfseries] at (9.0,0.55) {(b) AI-assisted: ACHDF interface};
-            \node[blk=3.6cm] (c1) at (7.2,-0.15) {Risk score and variance $u$};
-            \node[blk=3.2cm, fill=orange!15] (c1b) at (10.9,-0.15) {Criticality badge};
-            \node[blk=7.0cm, minimum height=1.0cm] (c2) at (9.0,-1.05) {Map or time series (same information as baseline)};
-            \node[blk=3.4cm, fill=green!10, minimum height=0.95cm] (c3) at (7.25,-2.2) {\textbf{Recommend mode:}\\ one guardrail-checked action\\ and a short rationale};
-            \node[blk=3.4cm, fill=red!10, minimum height=0.95cm] (c4) at (10.85,-2.2) {\textbf{Escalate mode:}\\ evidence and options with a\\ prompt for human review};
-            \node[btn] (d1) at (5.95,-3.1) {Monitor};
-            \node[btn] (d2) at (7.4,-3.1) {Standby};
-            \node[btn] (d3) at (8.85,-3.1) {Issue alert};
-            \node[btn] (d4) at (10.3,-3.1) {Shelter};
-            \node[btn] (d5) at (11.75,-3.1) {Evacuate};
+            frame/.style={draw, rounded corners=2pt, line width=0.5pt, fill=white},
+            blk/.style={draw, rounded corners=1pt, align=center, inner sep=2pt, fill=gray!8},
+            btn/.style={draw, rounded corners=1pt, align=center, inner sep=1pt, minimum height=0.42cm, fill=white, font=\tiny},
+            ttl/.style={font=\footnotesize\bfseries}]
+        % ---------- helper: five option buttons + defer flag, drawn at given x-offset and y
+        \newcommand{\optionrow}[2]{%
+          \node[btn, minimum width=0.95cm] at (#1+0.55,#2) {Monitor};
+          \node[btn, minimum width=0.95cm] at (#1+1.57,#2) {Standby};
+          \node[btn, minimum width=0.95cm] at (#1+2.59,#2) {Issue alert};
+          \node[btn, minimum width=0.95cm] at (#1+3.61,#2) {Shelter};
+          \node[btn, minimum width=0.95cm] at (#1+4.63,#2) {Evacuate};
+          \node[anchor=west, font=\tiny] at (#1+0.05,#2-0.5) {$\square$ Flag for further confirmation (defer)};}
+        % ---------- (a) baseline
+        \node[ttl] at (2.6,0.45) {(a) Baseline: conventional dashboard};
+        \node[frame, minimum width=5.4cm, minimum height=5.2cm, anchor=north west] (fa) at (-0.1,0.15) {};
+        \node[blk, fill=yellow!30, minimum width=5.1cm] at (2.6,-0.35) {Risk-level summary: value and color band};
+        \node[blk, minimum width=5.1cm, minimum height=2.1cm] at (2.6,-1.75) {};
+        \draw[gray, thick] (0.4,-2.55) -- (1.2,-2.0) -- (1.9,-2.25) -- (2.7,-1.6) -- (3.4,-1.35) -- (4.2,-1.0);
+        \node[font=\tiny\itshape] at (2.6,-3.0) {Map or time series of hazard and risk indicators};
+        \node[font=\tiny\itshape, align=center] at (2.6,-3.5) {no uncertainty indicator, criticality cue,\\recommendation, or escalation prompt};
+        \optionrow{-0.0}{-4.1}
+        % ---------- (b) AI recommend
+        \node[ttl] at (8.6,0.45) {(b) AI-assisted: recommend mode};
+        \node[frame, minimum width=5.4cm, minimum height=5.2cm, anchor=north west] at (5.9,0.15) {};
+        \node[blk, fill=yellow!30, minimum width=3.2cm] at (7.6,-0.35) {Risk score $r$ and variance $u$};
+        \node[blk, fill=orange!25, minimum width=1.7cm] at (10.2,-0.35) {Criticality badge};
+        \node[blk, minimum width=5.1cm, minimum height=1.15cm] at (8.6,-1.15) {};
+        \draw[gray, thick] (6.3,-1.55) -- (7.0,-1.25) -- (7.7,-1.4) -- (8.5,-0.95) -- (9.4,-0.85) -- (10.5,-0.7);
+        \node[blk, fill=green!12, minimum width=5.1cm, text width=4.9cm, minimum height=1.45cm] at (8.6,-2.55) {\textbf{Recommendation (guardrail-checked)}\\ \textbf{PREPARE:} Pack essentials, confirm route to shelter, check on neighbors.\\ \emph{Short rationale}};
+        \optionrow{5.9}{-4.1}
+        % ---------- (c) AI escalate
+        \node[ttl] at (14.6,0.45) {(c) AI-assisted: escalate mode};
+        \node[frame, minimum width=5.4cm, minimum height=5.2cm, anchor=north west] at (11.9,0.15) {};
+        \node[blk, fill=yellow!30, minimum width=3.2cm] at (13.6,-0.35) {Risk score $r$ and variance $u$};
+        \node[blk, fill=orange!25, minimum width=1.7cm] at (16.2,-0.35) {Criticality badge};
+        \node[blk, minimum width=5.1cm, minimum height=1.15cm] at (14.6,-1.15) {};
+        \draw[gray, thick] (12.3,-1.55) -- (13.0,-1.25) -- (13.7,-1.4) -- (14.5,-0.95) -- (15.4,-0.85) -- (16.5,-0.7);
+        \node[blk, fill=red!12, minimum width=5.1cm, text width=4.9cm, minimum height=1.45cm] at (14.6,-2.55) {\textbf{Human review required}\\ (uncertainty, criticality, or policy issue)\\ Evidence and options shown; no single recommendation};
+        \optionrow{11.9}{-4.1}
         \end{tikzpicture}
-        \caption{Schematic comparison of the two interfaces, redrawn from the interface specification (not screenshots). In the AI-assisted interface, either the recommend-mode or the escalate-mode panel is shown for a given trial. In both conditions, the human selects the final action from the same five options and can flag a deferral.}
+        \caption{Reconstructed illustration of the two study interfaces, drawn from the interface specification. It is \emph{not} a screenshot of the study software: layout, proportions, and colors are approximate, and the values are placeholders. The wording of the recommendation follows the message template of the prototype. In the AI-assisted condition, the recommend-mode panel (b) or the escalate-mode panel (c) is shown for a given trial. In both conditions, the human selects the final action from the same five options and can flag a deferral.}
         \label{fig:interfaces}
     \end{figure*}
 \DIFaddend 
@@ -962,16 +975,16 @@ Three examples of the situation descriptions in the study materials are: a low-r
     \DIFdelbegin \subsection{\DIFdel{Measures and Metrics}}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{These measures and definitions are presented in Table ~\ref{tab:measures}. To measure the effectiveness of }\DIFdelend \DIFaddbegin \DIFadd{Before the experimental trials, all participants received a short training session so that they were equally familiar with the procedures. The session covered (1) the purpose of the system and }\DIFaddend the \DIFdelbegin \DIFdel{system from the perspective of human machine systems, several objective performance measures and subjective evaluation tools were used}\DIFdelend \DIFaddbegin \DIFadd{human-in-the-loop principle (5~min), (2) the meaning of the five response options and the asymmetric costs of errors (5~min), (3) a demonstration of the baseline interface followed by one practice trial, (4) a demonstration of the AI-assisted interface (recommend and escalate modes, the uncertainty indicator, the criticality cue, and the deferral flag) followed by one practice trial, and (5) an introduction to the NASA--TLX, trust, and SUS questionnaires. Participants were told that the AI recommendation is only an aid, that they could disregard it, and that the primary performance measure was the share of trials with the correct action; response time was recorded but speed alone was not the criterion. The durations of steps (3)--(5) and the total session length were not recorded, and no performance or comprehension criterion for proceeding to the experimental trials is documented. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions}\DIFaddend .
+\DIFdel{These measures and definitions are presented in Table ~\ref{tab:measures}. To measure the effectiveness of }\DIFdelend \DIFaddbegin \DIFadd{Before the experimental trials, all participants received a short training session so that they were equally familiar with the procedures. The session covered (1) the purpose of the system and }\DIFaddend the \DIFdelbegin \DIFdel{system from the perspective of human machine systems, several objective performance measures and subjective evaluation tools were used}\DIFdelend \DIFaddbegin \DIFadd{human-in-the-loop principle (5~min), (2) the meaning of the five response options and the asymmetric costs of errors (5~min), (3) a demonstration of the baseline interface followed by one practice trial, (4) a demonstration of the AI-assisted interface (recommend and escalate modes, the uncertainty indicator, the criticality cue, and the deferral flag) followed by one practice trial, and (5) an introduction to the NASA--TLX, trust, and SUS questionnaires. Participants were told that the AI recommendation is only an aid, that they could disregard it, and that the primary performance measure was the share of trials with the correct action; response time was recorded but speed alone was not the criterion. The durations of steps (3)--(5) and the total session length were not recorded, and no performance or comprehension criterion for proceeding to the experimental trials is documented. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions.
+}
+
+    \subsection{\DIFadd{Measures}}
+    \label{sec:measures}
+    \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures}\DIFaddend .
 
     \DIFdelbegin \DIFdel{\textbf{Action Execution Rate.}
     On the other hand, the Action Execution Rate (AER ), which was defined as ``\textit{the proportion of tasks in which the participant performed the appropriate action within a specified time window,}'' was also proposed as an indicator for the quality of support for not only good decision making but also good action execution, which was considered an important factor in the high-risk environment.
-    }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Measures}}
-    \label{sec:measures}
-    \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures.
-}\DIFaddend 
-
-    \DIFaddbegin \begin{table}[t]
+    }\DIFdelend \DIFaddbegin \begin{table}[t]
         \caption{Outcome Measures Used in the Controlled Study}
         \label{tab:measures}
         \centering
@@ -987,8 +1000,9 @@ Three examples of the situation descriptions in the study materials are: a low-r
             \bottomrule
         \end{tabular}
     \end{table}
+\DIFaddend 
 
-    \DIFadd{\textbf{Action Execution Rate.}
+    \DIFaddbegin \DIFadd{\textbf{Action Execution Rate.}
     The AER is the proportion of a participant's trials in a condition in which the selected action equals the reference action for that trial. In the trial logs, this definition reproduces the AER values reported in the original submission exactly (0.62 and 0.81) without any additional time criterion. The logs contain no time-out or late-response flag, and all recorded latencies are at most 20.3~s. Hence, in these data, AER is a correct-action rate, and every unsuccessful trial is a \emph{wrong-action} trial (198 of 520 baseline trials and 99 of 520 AI-assisted trials). Response latency is reported separately and is analyzed as a distinct outcome. To address the question of whether failures arise from wrong or from late actions, Section~\ref{sec:res_aer} also reports the latency of correct and wrong trials and a sensitivity analysis in which a trial counts as a success only if it is correct \emph{and} completed within a hypothetical cutoff. How the reference action was derived, in particular whether it was fixed independently of the AI recommendation, and whether a time window was applied during the original scoring, is not documented in the study records (Section~\ref{sec:lim_reporting}).
     }\DIFaddend \textbf{Response Latency.}
     Response latency \DIFdelbegin \DIFdel{was suggested as “the time it took since actionable information was displayed until a participant performed }\DIFdelend \DIFaddbegin \DIFadd{is the time from the display of actionable information until the participant selected }\DIFaddend an action. \DIFdelbegin \DIFdel{” Less response latency was considered to be more efficient decision support with less hesitation about uncertainty}\DIFdelend \DIFaddbegin \DIFadd{Participant-level latency is the mean over the participant's 10 trials in a condition}\DIFaddend .
