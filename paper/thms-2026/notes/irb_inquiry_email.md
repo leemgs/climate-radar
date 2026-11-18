@@ -16,7 +16,7 @@ IRB 담당자님께,
 **연구 개요**
 - **설계:** 재난 대응을 위한 기존 대시보드와 AI 지원 인터페이스를 비교하는 컴퓨터 기반 모의 의사결정 과제, 이후 설문(NASA-TLX, 신뢰, SUS)과 짧은 면담
 - **참여자:** 성인 자원자 52명, 모두 참여 전 연구참여동의서와 개인정보 수집·이용 동의서 작성
-- **수집 정보:** 연령, 성별, 기술 및 재난 경험 배경, 과제 응답, 반응시간, 설문 점수. 취합한 설문 자료(엑셀)에서 식별정보를 제거해 익명화한 뒤 분석했습니다.
+- **수집 정보:** 연령, 성별, 기술 및 재난 경험 배경, 과제 응답, 반응시간, 설문 점수. 취합한 설문 자료(엑셀)에서 식별정보를 제거해 익명화한 뒤 분석했으며, 시스템 로그에도 식별정보가 없습니다.
 - **위험 수준:** 인체에 대한 실험, 접촉, 시술이 없었고 의약품, 의료기기, 인체유래물, 배아, 유전자를 다루지 않았습니다. 민감정보도 수집하지 않았습니다.
 - **수행 시기 및 장소:** [YYYY년 M월], [장소]
 
@@ -45,7 +45,7 @@ I am a [position] in the Department of Electrical and Computer Engineering. A jo
 **About the study**
 - **Design:** a computer-based simulated decision task comparing a conventional dashboard with an AI-assisted interface for disaster response, followed by questionnaires (NASA-TLX, trust, SUS) and short interviews.
 - **Participants:** 52 adult volunteers, all of whom gave informed consent and consent to personal-information processing before taking part.
-- **Data:** age, gender, technical and disaster-experience background, task responses, response times, and questionnaire scores. Identifying information was removed from the collected survey spreadsheets before analysis.
+- **Data:** age, gender, technical and disaster-experience background, task responses, response times, and questionnaire scores. Identifying information was removed from the collected survey spreadsheets before analysis, and the system logs contain no identifying information.
 - **Risk:** there was no experiment on, contact with, or procedure performed on the human body, and no drugs, medical devices, human-derived materials, embryos, or genes were involved. No sensitive information was collected.
 - **Timing and place:** [month, year], [location].
 
