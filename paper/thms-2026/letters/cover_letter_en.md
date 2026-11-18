@@ -36,6 +36,8 @@ The main changes are as follows.
 
 7. **Structure and language.** The Results section now reports only descriptive and inferential findings. The former "mechanism analysis" has been moved to the Discussion and recast as a framework-based interpretation (Section VI-B). The manuscript has been edited for clarity and flow, inappropriate transitions ("in fact", "on the other hand") have been removed, and eleven references from the human factors literature have been added.
 
+**Ethics.** The study was not submitted to an IRB because our institution's IRB advised that survey-type studies without intervention on the human body are not subject to review; consent and anonymization are described in Section IV-B.
+
 A detailed point-by-point response to the reviewers and a marked-up comparison of the original and revised manuscripts (latexdiff) are enclosed. We believe the revision has made the contribution and its evidential basis considerably clearer, and we would be grateful for your further consideration.
 
 Sincerely,
@@ -48,7 +50,4 @@ Geunsik Lim
 Department of Electrical and Computer Engineering, Sungkyunkwan University
 2066, Seobu-ro, Jangan-gu, Suwon 16419, Republic of Korea
 
-**Enclosures:**
-1. Revised manuscript
-2. Point-by-point response to reviewers
-3. Marked-up comparison of original and revised manuscripts (latexdiff)
+**Enclosures:** (1) Revised manuscript; (2) Point-by-point response to reviewers; (3) Marked-up comparison of original and revised manuscripts (latexdiff)
