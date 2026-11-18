@@ -760,5 +760,90 @@
     "power": 0.8,
     "min_detectable_dz": 0.3960191857967875,
     "observed_dz_AER": 0.9649740781479842
+  },
+  "error_structure": {
+    "reference_action_counts": {
+      "AI": {
+        "Monitor": 116,
+        "Standby": 88,
+        "Issue_Alert": 109,
+        "Shelter_in_Place": 107,
+        "Recommend_Evacuation": 100
+      },
+      "Baseline": {
+        "Monitor": 115,
+        "Standby": 73,
+        "Issue_Alert": 91,
+        "Shelter_in_Place": 146,
+        "Recommend_Evacuation": 95
+      }
+    },
+    "reference_action_share": {
+      "AI": {
+        "Monitor": 0.223,
+        "Standby": 0.169,
+        "Issue_Alert": 0.21,
+        "Shelter_in_Place": 0.206,
+        "Recommend_Evacuation": 0.192
+      },
+      "Baseline": {
+        "Monitor": 0.221,
+        "Standby": 0.14,
+        "Issue_Alert": 0.175,
+        "Shelter_in_Place": 0.281,
+        "Recommend_Evacuation": 0.183
+      }
+    },
+    "reference_action_chi2": {
+      "chi2": 9.161907367994324,
+      "df": 4,
+      "p": 0.0571775459437281,
+      "cramers_v": 0.09385907689392198
+    },
+    "errors_Baseline": {
+      "n": 198,
+      "under_response": 108,
+      "over_response": 90,
+      "mean_abs_gap_steps": 2.0202020202020203,
+      "adjacent_step_share": 0.41414141414141414
+    },
+    "errors_AI": {
+      "n": 99,
+      "under_response": 54,
+      "over_response": 45,
+      "mean_abs_gap_steps": 2.0505050505050506,
+      "adjacent_step_share": 0.31313131313131315
+    },
+    "under_rate": {
+      "base_mean": 0.20769230769230765,
+      "ai_mean": 0.10384615384615384,
+      "diff": -0.10384615384615385,
+      "ci_lo": -0.14545567992705763,
+      "ci_hi": -0.06223662776525007,
+      "t": -5.0103875892722405,
+      "p": 6.897193797715427e-06,
+      "dz": -0.6948157447334411,
+      "wilcoxon_p": 1.869379942011073e-05
+    },
+    "over_rate": {
+      "base_mean": 0.17307692307692307,
+      "ai_mean": 0.08653846153846154,
+      "diff": -0.08653846153846154,
+      "ci_lo": -0.12780592291292608,
+      "ci_hi": -0.04527100016399699,
+      "t": -4.209932113735959,
+      "p": 0.00010376849026262729,
+      "dz": -0.5838125423960575,
+      "wilcoxon_p": 0.0003248878880893482
+    },
+    "chance_AER": 0.2,
+    "vs_chance_Baseline": {
+      "mean": 0.6192307692307691,
+      "t_vs_0.20": 15.826819588028831
+    },
+    "vs_chance_AI": {
+      "mean": 0.809615384615385,
+      "t_vs_0.20": 28.596606734131214
+    }
   }
 }

@@ -262,6 +262,47 @@ def clean(o):
     return o
 
 
+
+# ---------------------------------------------------------------- error structure (exploratory, descriptive)
+# Added for the revision. The five options are listed in the order monitor < standby < issue alert <
+# shelter in place < recommend evacuation (the order used in the task materials), and an error is
+# classed as under-response (selected option lower than the reference) or over-response (higher).
+# The ordering is a working assumption; the two highest options are not strictly ordered.
+ORDER = ["Monitor", "Standby", "Issue_Alert", "Shelter_in_Place", "Recommend_Evacuation"]
+tr["ref_i"] = tr.correct_action.map(ORDER.index)
+tr["sel_i"] = tr.selected_action.map(ORDER.index)
+tr["gap"] = tr.sel_i - tr.ref_i
+ES = {}
+# (a) distribution of reference actions per condition (a check on whether the two conditions had comparable content)
+ct = pd.crosstab(tr.condition, tr.correct_action)[ORDER]
+chi2, pchi, dof, _ = stats.chi2_contingency(ct.values)
+ES["reference_action_counts"] = {c: ct.loc[c].astype(int).to_dict() for c in ct.index}
+ES["reference_action_share"] = {c: (ct.loc[c] / ct.loc[c].sum()).round(3).to_dict() for c in ct.index}
+ES["reference_action_chi2"] = {"chi2": float(chi2), "df": int(dof), "p": float(pchi),
+                               "cramers_v": float(np.sqrt(chi2 / (ct.values.sum() * (min(ct.shape) - 1))))}
+# (b) direction and size of errors, per condition
+for c in ["Baseline", "AI"]:
+    w = tr[(tr.condition == c) & (tr.ok == 0)]
+    ES[f"errors_{c}"] = {"n": int(len(w)), "under_response": int((w.gap < 0).sum()), "over_response": int((w.gap > 0).sum()),
+                         "mean_abs_gap_steps": float(w.gap.abs().mean()), "adjacent_step_share": float((w.gap.abs() == 1).mean())}
+# (c) participant-level under- and over-response rates (share of all 10 trials), paired across conditions
+tr["under"] = (tr.gap < 0).astype(int)
+tr["over"] = (tr.gap > 0).astype(int)
+for col in ["under", "over"]:
+    wd = tr.groupby(["participant", "condition"])[col].mean().unstack()
+    dd = wd["AI"] - wd["Baseline"]
+    tt = stats.ttest_1samp(dd, 0.0)
+    ci = stats.t.interval(0.95, len(dd) - 1, loc=dd.mean(), scale=stats.sem(dd))
+    ES[f"{col}_rate"] = {"base_mean": float(wd["Baseline"].mean()), "ai_mean": float(wd["AI"].mean()), "diff": float(dd.mean()),
+                         "ci_lo": float(ci[0]), "ci_hi": float(ci[1]), "t": float(tt.statistic), "p": float(tt.pvalue),
+                         "dz": float(dd.mean() / dd.std(ddof=1)), "wilcoxon_p": float(stats.wilcoxon(dd).pvalue)}
+# (d) chance level for context: five options, so 0.20 if a participant picked at random
+ES["chance_AER"] = 0.20
+for c in ["Baseline", "AI"]:
+    a = tr[tr.condition == c].groupby("participant").ok.mean()
+    ES[f"vs_chance_{c}"] = {"mean": float(a.mean()), "t_vs_0.20": float(stats.ttest_1samp(a, 0.20).statistic)}
+OUT["error_structure"] = ES
+
 OUT = clean(OUT)
 (HERE / "results.json").write_text(json.dumps(OUT, indent=2, ensure_ascii=False))
 
