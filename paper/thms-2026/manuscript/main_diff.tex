@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL main_original.tex   Mon Nov 16 23:13:19 2026
-%DIF ADD main.tex            Wed Nov 18 22:31:15 2026
+%DIF ADD main.tex            Wed Nov 18 22:36:05 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -850,8 +850,8 @@ AI supports sensemaking and constrained recommendations; final decision authorit
     \DIFadd{Fifty-two participants took part (Table~\ref{tab:participants}). Participants }\DIFaddend were recruited using \DIFdelbegin \DIFdel{the stratified sampling technique in order to create diversity in terms of }\DIFdelend \DIFaddbegin \DIFadd{stratified sampling to obtain diversity in }\DIFaddend age, gender, and technical \DIFdelbegin \DIFdel{know-how. This technique has been selected due to the heterogeneity observed in operators in real-world }\DIFdelend \DIFaddbegin \DIFadd{background, reflecting the heterogeneity of operators in real }\DIFaddend decision environments. \DIFaddbegin \DIFadd{Participants were not required to have prior domain expertise. None reported high prior disaster-response experience (23 none, 21 low, 8 medium), so the sample was not composed of trained emergency-management professionals (Section~\ref{sec:limitations}).
 }\DIFaddend 
 
-    \DIFdelbegin \DIFdel{All participants gave their informed consent prior to }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Ethics.} Participation was voluntary, and all participants gave informed consent before }\DIFaddend the experiment. \DIFdelbegin \DIFdel{Although participants were not required to have prior knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures.
-    }\DIFdelend \DIFaddbegin \DIFadd{The study consisted of a simulated decision task, post-task questionnaires, and short interviews, with no physical or medical intervention. The only personal characteristics recorded were age, gender, and technical and disaster-experience background, and the records used and shared here are anonymized. The study was not submitted to an institutional review board (IRB). Before the study, the author asked the IRB of the author's institution about submitting it and was advised that a survey-type study with no intervention on the human body is not subject to review, and that the IRB does not accept applications for such studies. In the sense used by the review scope (research on human subjects, which involves experiments on or interventions in the human body, and on human-derived materials), the study was therefore not human-subjects research: it involved no experiment on, contact with, or intervention in the human body, and no embryos, genes, human-derived materials, drugs, or medical devices. No approval or exemption number exists for it. We regard the risk to participants as minimal, but this is the author's assessment and not a determination by an ethics body.
+    \DIFdelbegin \DIFdel{All participants gave their informed consent prior to the experiment. Although participants were not required to have prior knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures.
+    }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Ethics.} Participation was voluntary, and all participants gave informed consent and consent to the processing of their personal information before the experiment. The study consisted of a simulated decision task, post-task questionnaires, and short interviews, with no physical or medical intervention. The only personal characteristics recorded were age, gender, and technical and disaster-experience background, and the records used and shared here are anonymized: the author removed identifying information from the collected survey spreadsheets before analysis to protect participants' privacy. The study was not submitted to an institutional review board (IRB). Before the study, the author asked the IRB of the author's institution about submitting it and was advised that a survey-type study with no intervention on the human body is not subject to review, and that the IRB does not accept applications for such studies. In the sense used by the review scope (research on human subjects, which involves experiments on or interventions in the human body, and on human-derived materials), the study was therefore not human-subjects research: it involved no experiment on, contact with, or intervention in the human body, and no embryos, genes, human-derived materials, drugs, or medical devices. No approval or exemption number exists for it. We regard the risk to participants as minimal, but this is the author's assessment and not a determination by an ethics body.
 }
 
     \DIFadd{\textbf{Sample size.} No a priori power analysis was conducted; the sample size of 52 was not derived from an expected effect size. A sensitivity analysis shows that, with $n=52$, a two-sided paired $t$-test at $\alpha=.05$ has 80\% power to detect $d_z \geq 0.40$. The observed effects on the primary outcome ($d_z = 0.96$) and on the secondary outcomes (smallest $|d_z| = 0.91$) are well above this value. Effects smaller than $d_z \approx 0.40$, such as some subscale differences, may not have been detected reliably.
@@ -912,11 +912,11 @@ Three examples of the situation descriptions in the study materials are: a low-r
 %DIFDELCMD <         \caption{Distribution of response latency under baseline and AI-assisted conditions. The distribution under the AI-assisted condition is left-shifted, indicating that the subjects made quicker transitions from risk interpretation to action execution.}
 %DIFDELCMD <         \label{fig:latency_distribution}
 %DIFDELCMD <     \end{figure}
-%DIFDELCMD < 
+%DIFDELCMD < %%%
+\DIFdelend 
 
-%DIFDELCMD <     %%%
-%DIF < ----------------------------------------------
-    %DIFDELCMD < \begin{table}[t]
+    %DIF < ----------------------------------------------
+    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Cognitive workload outcomes measured using NASA--TLX}
 %DIFDELCMD <         \label{tab:workload}
 %DIFDELCMD <         \centering
@@ -933,11 +933,11 @@ Three examples of the situation descriptions in the study materials are: a low-r
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < %%%
-\DIFdelend 
+%DIFDELCMD < 
 
-    %DIF < ---------------------------------------------
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     %%%
+%DIF < ---------------------------------------------
+    %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Trust and usability outcomes (post-task questionnaires)}
 %DIFDELCMD <         \label{tab:trust_usability}
 %DIFDELCMD <         \centering
@@ -976,16 +976,16 @@ Three examples of the situation descriptions in the study materials are: a low-r
     \DIFdelbegin \subsection{\DIFdel{Measures and Metrics}}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{These measures and definitions are presented in Table ~\ref{tab:measures}. To measure the effectiveness of }\DIFdelend \DIFaddbegin \DIFadd{Before the experimental trials, all participants received a short training session so that they were equally familiar with the procedures. The session covered (1) the purpose of the system and }\DIFaddend the \DIFdelbegin \DIFdel{system from the perspective of human machine systems, several objective performance measures and subjective evaluation tools were used}\DIFdelend \DIFaddbegin \DIFadd{human-in-the-loop principle (5~min), (2) the meaning of the five response options and the asymmetric costs of errors (5~min), (3) a demonstration of the baseline interface followed by one practice trial, (4) a demonstration of the AI-assisted interface (recommend and escalate modes, the uncertainty indicator, the criticality cue, and the deferral flag) followed by one practice trial, and (5) an introduction to the NASA--TLX, trust, and SUS questionnaires. Participants were told that the AI recommendation is only an aid, that they could disregard it, and that the primary performance measure was the share of trials with the correct action; response time was recorded but speed alone was not the criterion. The durations of steps (3)--(5) and the total session length were not recorded, and no performance or comprehension criterion for proceeding to the experimental trials is documented. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions.
-}
-
-    \subsection{\DIFadd{Measures}}
-    \label{sec:measures}
-    \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures}\DIFaddend .
+\DIFdel{These measures and definitions are presented in Table ~\ref{tab:measures}. To measure the effectiveness of }\DIFdelend \DIFaddbegin \DIFadd{Before the experimental trials, all participants received a short training session so that they were equally familiar with the procedures. The session covered (1) the purpose of the system and }\DIFaddend the \DIFdelbegin \DIFdel{system from the perspective of human machine systems, several objective performance measures and subjective evaluation tools were used}\DIFdelend \DIFaddbegin \DIFadd{human-in-the-loop principle (5~min), (2) the meaning of the five response options and the asymmetric costs of errors (5~min), (3) a demonstration of the baseline interface followed by one practice trial, (4) a demonstration of the AI-assisted interface (recommend and escalate modes, the uncertainty indicator, the criticality cue, and the deferral flag) followed by one practice trial, and (5) an introduction to the NASA--TLX, trust, and SUS questionnaires. Participants were told that the AI recommendation is only an aid, that they could disregard it, and that the primary performance measure was the share of trials with the correct action; response time was recorded but speed alone was not the criterion. The durations of steps (3)--(5) and the total session length were not recorded, and no performance or comprehension criterion for proceeding to the experimental trials is documented. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions}\DIFaddend .
 
     \DIFdelbegin \DIFdel{\textbf{Action Execution Rate.}
     On the other hand, the Action Execution Rate (AER ), which was defined as ``\textit{the proportion of tasks in which the participant performed the appropriate action within a specified time window,}'' was also proposed as an indicator for the quality of support for not only good decision making but also good action execution, which was considered an important factor in the high-risk environment.
-    }\DIFdelend \DIFaddbegin \begin{table}[t]
+    }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Measures}}
+    \label{sec:measures}
+    \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures.
+}
+
+    \begin{table}[t]
         \caption{Outcome Measures Used in the Controlled Study}
         \label{tab:measures}
         \centering
@@ -1328,7 +1328,8 @@ Differences observed for cognitive workload and trust levels, as measured by the
 }
 
 \subsection{\DIFadd{Action Execution in the Joint Human--AI System}}
-\DIFadd{In }\DIFaddend the \DIFdelbegin \DIFdel{discussion emphasizes generalizable insights for the design and evaluation of human--AI decision systems operating under uncertainty \cite{Bach2024Access,PerezCerrolaza2024CSUR,Lai2023FAccT,Yang2022THMSReview}. In particular, this work contributes to the core concerns of \textit{Human--Machine Systems} by explicitly linking uncertainty-aware function allocation to observable human action execution. By doing so, it extends classic HMS constructs---such as trust calibration, workload, }\DIFdelend \DIFaddbegin \DIFadd{AI-assisted condition, the AER was higher and response latency shorter than with the dashboard, with large paired effects ($d_z=0.96$ for the AER). This is consistent with H1 }\DIFaddend and \DIFdelbegin \DIFdel{authority allocation---from internal cognitive or perceptual states to measurable behavioral outcomes. }%DIFDELCMD < 
+\DIFadd{In }\DIFaddend the \DIFdelbegin \DIFdel{discussion emphasizes generalizable insights for the design and evaluation of human--AI decision systems operating under uncertainty \cite{Bach2024Access,PerezCerrolaza2024CSUR,Lai2023FAccT,Yang2022THMSReview}.
+In particular, this work contributes to the core concerns of \textit{Human--Machine Systems} by explicitly linking uncertainty-aware function allocation to observable human action execution. By doing so, it extends classic HMS constructs---such as trust calibration, workload, }\DIFdelend \DIFaddbegin \DIFadd{AI-assisted condition, the AER was higher and response latency shorter than with the dashboard, with large paired effects ($d_z=0.96$ for the AER). This is consistent with H1 }\DIFaddend and \DIFdelbegin \DIFdel{authority allocation---from internal cognitive or perceptual states to measurable behavioral outcomes. }%DIFDELCMD < 
 
 %DIFDELCMD < %%%
 \subsection{\DIFdel{Implications for Human--AI Decision Systems}}
