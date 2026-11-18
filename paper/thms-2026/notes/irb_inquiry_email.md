@@ -19,6 +19,7 @@ IEEE 학술지에 투고한 논문의 심사 과정에서 연구윤리(IRB) 승�
 - 위험 수준: 신체적·의학적 중재 없음, 민감정보 없음 (연구자의 판단이며 위원회 판단은 아닙니다)
 - 수행 시기: [YYYY년 M월 ~ M월] / 장소: [ ]
 - 심의 이력: 수행 당시 IRB 심의 또는 면제 확인을 받지 않았습니다.
+- 심의를 받지 않은 이유: 인체·배아·유전자·인체유래물·의약품·의료기기를 다루는 연구가 아니라 비의학적 설문 및 행동 실험이라고 이해했기 때문입니다. 다만 이 연구가 생명윤리법상 인간대상연구에 해당하는지, 해당하더라도 면제 대상인지는 위원회가 판단할 사항이라고 알고 있어 확인을 요청드립니다.
 
 **문의 사항**
 1. 위 연구가 「생명윤리 및 안전에 관한 법률」과 본교 IRB 규정상 심의 대상인지, 심의 면제 대상인지 확인받을 수 있는지요?
@@ -42,7 +43,7 @@ Dear IRB Office,
 
 I am [position] in the Department of Electrical and Computer Engineering. The journal reviewing my manuscript has asked for information on ethics approval or an exemption determination for a user study that I had already completed. I am writing to ask how to proceed.
 
-**Study summary.** A computer-based simulated decision task comparing a conventional dashboard with an AI-assisted interface for disaster response. Fifty-two adult volunteers gave informed consent, completed the task, filled in questionnaires (NASA-TLX, trust, SUS) and took part in short interviews. Recorded: age, gender, technical and disaster-experience background, task responses and response times, and questionnaire scores. No direct identifiers are used in the analysis data, which are anonymized. There was no physical or medical intervention and no sensitive information, which is my own assessment and not an IRB determination. The study took place in [month, year] at [location]. It was not submitted to an IRB, and no exemption determination was obtained at the time.
+**Study summary.** A computer-based simulated decision task comparing a conventional dashboard with an AI-assisted interface for disaster response. Fifty-two adult volunteers gave informed consent, completed the task, filled in questionnaires (NASA-TLX, trust, SUS) and took part in short interviews. Recorded: age, gender, technical and disaster-experience background, task responses and response times, and questionnaire scores. No direct identifiers are used in the analysis data, which are anonymized. There was no physical or medical intervention and no sensitive information, which is my own assessment and not an IRB determination. The study took place in [month, year] at [location]. It was not submitted to an IRB, and no exemption determination was obtained at the time. I understood it as a non-biomedical survey and behavioral experiment (no human body, embryos, genes, human-derived materials, drugs or medical devices), but I recognize that whether it falls under the Bioethics and Safety Act, or is exempt, is for the IRB to decide.
 
 **Questions**
 1. Is this study subject to review, or exempt, under the applicable law and the university's IRB regulations?
@@ -58,6 +59,10 @@ Sincerely,
 Geunsik Lim
 Department of Electrical and Computer Engineering, Sungkyunkwan University
 [phone] / leemgs@g.skku.edu
+
+## 신청 서류 작성 시 참고
+
+신청서 양식에 임상시험 실시 경험 항목이 있으면 사실대로 적으세요(없으면 "없음"). 의학·임상 연구가 아니므로 해당 사항이 없다는 점은 연구 개요에 함께 밝히면 됩니다. 이 항목의 정확한 요구 여부는 e-IRB 신청 양식에서 확인해야 합니다.
 
 ## 문의처 (학교 홈페이지에서 확인한 범위)
 

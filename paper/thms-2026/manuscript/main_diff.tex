@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL main_original.tex   Mon Nov 16 23:13:19 2026
-%DIF ADD main.tex            Tue Nov 17 10:20:40 2026
+%DIF ADD main.tex            Wed Nov 18 22:16:25 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -611,7 +611,8 @@ Action execution & Primary outcome & Measured by AER (Section~\ref{sec:measures}
 \DIFaddend 
 
 \subsection{Human Override and Escalation Mechanisms}
-\DIFdelbegin \DIFdel{The escalation process, as described }\DIFdelend \DIFaddbegin \DIFadd{Escalation follows the policy }\DIFaddend in Algorithm~\ref{alg:escalation}\DIFdelbegin \DIFdel{, is linked to an uncertainty-aware policy that is used to dynamically allocate authority depending on the level of uncertainty and the criticality of the actions taken. The human override and escalation mechanism is an important part of the overall system architecture}\DIFdelend . The system \DIFdelbegin \DIFdel{automatically escalates decisions to human operators if the level of uncertainty is above certain thresholds, the potential impact of the recommendation is high, and if certain policy constraints are violated. In fact, escalation }\DIFdelend \DIFaddbegin \DIFadd{escalates a case to the operator if \emph{any} of three conditions holds: the uncertainty exceeds $\tau_u$, the criticality of the action exceeds $\tau_c$, or a guardrail policy check fails ($v=1$). Escalation }\DIFaddend is not a failure mode\DIFdelbegin \DIFdel{but a decision to escalate to ensure accountability under uncertain conditions.
+\DIFdelbegin \DIFdel{The escalation process, as described }\DIFdelend \DIFaddbegin \DIFadd{Escalation follows the policy }\DIFaddend in Algorithm~\ref{alg:escalation}\DIFdelbegin \DIFdel{, is linked to an uncertainty-aware policy that is used to dynamically allocate authority depending on the level of uncertainty and the criticality of the actions taken. The human override and escalation mechanism is an important part of the overall system architecture.
+The system automatically escalates decisions to human operators if the level of uncertainty is above certain thresholds, the potential impact of the recommendation is high, and if certain policy constraints are violated. In fact, escalation }\DIFdelend \DIFaddbegin \DIFadd{. The system escalates a case to the operator if \emph{any} of three conditions holds: the uncertainty exceeds $\tau_u$, the criticality of the action exceeds $\tau_c$, or a guardrail policy check fails ($v=1$). Escalation }\DIFaddend is not a failure mode\DIFdelbegin \DIFdel{but a decision to escalate to ensure accountability under uncertain conditions.
 The operators are free to either }\DIFdelend \DIFaddbegin \DIFadd{. It is a deliberate change in the form of support that keeps the operator accountable under uncertainty.
 In every mode, operators can }\DIFaddend accept, modify, or reject the \DIFdelbegin \DIFdel{decision recommended by the AIsystem}\DIFdelend \DIFaddbegin \DIFadd{AI's recommendation}\DIFaddend , and all of these operations are \DIFdelbegin \DIFdel{recorded for accountabilitypurposes. This minimization of processing of superfluous information is also beneficial for the management of cognitive workload for }\DIFdelend \DIFaddbegin \DIFadd{logged for accountability. Showing a single consolidated recommendation in routine cases is intended to reduce the amount of information operators must process in }\DIFaddend time-critical situations.
 This \DIFdelbegin \DIFdel{dynamic allocation of autonomy allows the system to offer effective assistance in regular situationsand, at the same time, allow human control }\DIFdelend \DIFaddbegin \DIFadd{adaptation of the level of support (a scoped recommendation in routine situations, a full review }\DIFaddend in uncertain or \DIFdelbegin \DIFdel{risky situations, thus striking a proper balance between performance and safety, as per the existing design principles for human--machine systems, which provides a platform for the ACHDF design principles proposed later in the paper}\DIFdelend \DIFaddbegin \DIFadd{critical ones) follows established principles of adaptive automation \cite{Parasuraman2000LOA,Scerbo2007} and does not transfer decision authority to the AI}\DIFaddend .
@@ -850,7 +851,8 @@ AI supports sensemaking and constrained recommendations; final decision authorit
     \DIFadd{Fifty-two participants took part (Table~\ref{tab:participants}). Participants }\DIFaddend were recruited using \DIFdelbegin \DIFdel{the stratified sampling technique in order to create diversity in terms of }\DIFdelend \DIFaddbegin \DIFadd{stratified sampling to obtain diversity in }\DIFaddend age, gender, and technical \DIFdelbegin \DIFdel{know-how. This technique has been selected due to the heterogeneity observed in operators in real-world }\DIFdelend \DIFaddbegin \DIFadd{background, reflecting the heterogeneity of operators in real }\DIFaddend decision environments. \DIFaddbegin \DIFadd{Participants were not required to have prior domain expertise. None reported high prior disaster-response experience (23 none, 21 low, 8 medium), so the sample was not composed of trained emergency-management professionals (Section~\ref{sec:limitations}).
 }\DIFaddend 
 
-    \DIFdelbegin \DIFdel{All participants gave their informed consent prior to }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Ethics.} Participation was voluntary, and all participants gave informed consent before }\DIFaddend the experiment. \DIFdelbegin \DIFdel{Although participants were not required to have prior knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures. }\DIFdelend \DIFaddbegin \DIFadd{The study consisted of a simulated decision task, post-task questionnaires, and short interviews, with no physical or medical intervention. The only personal characteristics recorded were age, gender, and technical and disaster-experience background, and the records used and shared here are anonymized. The study was not submitted to an institutional review board or ethics committee, and no formal exemption determination was obtained when it was conducted. We therefore cannot report an approval or exemption number. We regard the risk to participants as minimal, but this is the author's assessment and not a determination by an ethics body.
+    \DIFdelbegin \DIFdel{All participants gave their informed consent prior to }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Ethics.} Participation was voluntary, and all participants gave informed consent before }\DIFaddend the experiment. \DIFdelbegin \DIFdel{Although participants were not required to have prior knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures.
+    }\DIFdelend \DIFaddbegin \DIFadd{The study consisted of a simulated decision task, post-task questionnaires, and short interviews, with no physical or medical intervention. The only personal characteristics recorded were age, gender, and technical and disaster-experience background, and the records used and shared here are anonymized. The study was not submitted to an institutional review board or ethics committee, and no formal exemption determination was obtained when it was conducted. This was because the author understood the study as a non-biomedical survey and behavioral experiment: it involved no experiment on the human body, embryos, genes, human-derived materials, drugs, or medical devices, which are the main subjects of the Bioethics and Safety Act of Korea. Whether such a study is formally subject to review, or exempt from it, is a decision for the institutional review board, and no such determination has been obtained; we therefore cannot report an approval or exemption number. We regard the risk to participants as minimal, but this is the author's assessment and not a determination by an ethics body.
 }
 
     \DIFadd{\textbf{Sample size.} No a priori power analysis was conducted; the sample size of 52 was not derived from an expected effect size. A sensitivity analysis shows that, with $n=52$, a two-sided paired $t$-test at $\alpha=.05$ has 80\% power to detect $d_z \geq 0.40$. The observed effects on the primary outcome ($d_z = 0.96$) and on the secondary outcomes (smallest $|d_z| = 0.91$) are well above this value. Effects smaller than $d_z \approx 0.40$, such as some subscale differences, may not have been detected reliably.
@@ -903,9 +905,9 @@ Three examples of the situation descriptions in the study materials are: a low-r
 
 %DIFDELCMD <     %%%
 %DIF < ------------------------------------------------------
-\DIFdelend 
+%DIFDELCMD < 
 
-    \DIFdelbegin %DIFDELCMD < \begin{figure}[t]
+%DIFDELCMD <     \begin{figure}[t]
 %DIFDELCMD <         \centering
 %DIFDELCMD <         \includegraphics[width=0.9\linewidth]{fig_latency_distribution.png}
 %DIFDELCMD <         \caption{Distribution of response latency under baseline and AI-assisted conditions. The distribution under the AI-assisted condition is left-shifted, indicating that the subjects made quicker transitions from risk interpretation to action execution.}
@@ -932,11 +934,11 @@ Three examples of the situation descriptions in the study materials are: a low-r
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < 
+%DIFDELCMD < %%%
+\DIFdelend 
 
-%DIFDELCMD <     %%%
-%DIF < ---------------------------------------------
-    %DIFDELCMD < \begin{table}[t]
+    %DIF < ---------------------------------------------
+    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Trust and usability outcomes (post-task questionnaires)}
 %DIFDELCMD <         \label{tab:trust_usability}
 %DIFDELCMD <         \centering
@@ -982,9 +984,9 @@ Three examples of the situation descriptions in the study materials are: a low-r
     }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Measures}}
     \label{sec:measures}
     \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures.
-}\DIFaddend 
+}
 
-    \DIFaddbegin \begin{table}[t]
+    \begin{table}[t]
         \caption{Outcome Measures Used in the Controlled Study}
         \label{tab:measures}
         \centering
@@ -1000,8 +1002,9 @@ Three examples of the situation descriptions in the study materials are: a low-r
             \bottomrule
         \end{tabular}
     \end{table}
+\DIFaddend 
 
-    \DIFadd{\textbf{Action Execution Rate.}
+    \DIFaddbegin \DIFadd{\textbf{Action Execution Rate.}
     The AER is the proportion of a participant's trials in a condition in which the selected action equals the reference action for that trial. In the trial logs, this definition reproduces the AER values reported in the original submission exactly (0.62 and 0.81) without any additional time criterion. The logs contain no time-out or late-response flag, and all recorded latencies are at most 20.3~s. Hence, in these data, AER is a correct-action rate, and every unsuccessful trial is a \emph{wrong-action} trial (198 of 520 baseline trials and 99 of 520 AI-assisted trials). Response latency is reported separately and is analyzed as a distinct outcome. To address the question of whether failures arise from wrong or from late actions, Section~\ref{sec:res_aer} also reports the latency of correct and wrong trials and a sensitivity analysis in which a trial counts as a success only if it is correct \emph{and} completed within a hypothetical cutoff. How the reference action was derived, in particular whether it was fixed independently of the AI recommendation, and whether a time window was applied during the original scoring, is not documented in the study records (Section~\ref{sec:lim_reporting}).
     }\DIFaddend \textbf{Response Latency.}
     Response latency \DIFdelbegin \DIFdel{was suggested as “the time it took since actionable information was displayed until a participant performed }\DIFdelend \DIFaddbegin \DIFadd{is the time from the display of actionable information until the participant selected }\DIFaddend an action. \DIFdelbegin \DIFdel{” Less response latency was considered to be more efficient decision support with less hesitation about uncertainty}\DIFdelend \DIFaddbegin \DIFadd{Participant-level latency is the mean over the participant's 10 trials in a condition}\DIFaddend .
