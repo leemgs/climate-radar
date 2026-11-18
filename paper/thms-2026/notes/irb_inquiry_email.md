@@ -20,11 +20,11 @@ IRB 담당자님께,
 - **위험 수준:** 신체적·의학적 중재와 민감정보가 없었습니다. 이는 연구자의 판단이며 IRB의 판단이 아닙니다.
 - **수행 시기 및 장소:** [YYYY년 M월], [장소]
 
-**심의를 신청하지 않은 이유.** 인체, 배아, 유전자, 인체유래물, 의약품, 의료기기를 다루지 않는 비의학적 설문 및 행동 실험이라고 이해했습니다. 다만 이 연구가 생명윤리법의 적용을 받는지, 면제 대상인지는 IRB가 판단할 사항임을 알고 있습니다. 연구 수행 당시에는 별도의 판정을 받지 않았습니다.
+**심의를 신청하지 않은 이유.** 본교 홈페이지 IRB 안내 페이지(https://www.skku.edu/skku/research/industry/IRB.do)는 조사와 일반 연구를 심의 비대상으로, 인간대상·인체유래물 연구와 중대한 연구(최소위험 이상)를 심의 대상으로 구분하고 있습니다. 이 연구는 인체, 배아, 유전자, 인체유래물, 의약품, 의료기기를 다루지 않는 설문형 비의학적 연구이므로 심의 비대상이라고 이해하여 신청하지 않았습니다. 다만 이는 연구자의 해석이며 연구의 분류는 IRB가 판단할 사항임을 알고 있습니다. 수행 당시에는 별도의 확인을 받지 않았습니다.
 
 **문의 사항**
-1. 이 연구가 현행 법령과 본교 IRB 규정에 따라 심의 대상인지, 면제 대상인지 확인해 주실 수 있는지요?
-2. 이미 완료된 연구에 대해 사후(소급) 면제 확인서 또는 심의 비대상 확인서를 발급받을 수 있는지요? 불가능하다면 학술지에 제출할 수 있는 다른 공식 확인 방법은 무엇인지요?
+1. 이 연구가 현행 법령과 본교 IRB 규정에 따라 심의 비대상에 해당하는지(달리 보신다면 심의 대상인지, 면제 대상인지) 확인해 주실 수 있는지요?
+2. 이미 완료된 연구에 대해 심의 비대상(또는 면제) 확인서를 서면으로 발급받을 수 있는지요? 불가능하다면 학술지에 제출할 수 있는 다른 공식 확인 방법은 무엇인지요?
 3. 신청이 필요하다면 필요한 서류, 제출 경로(e-IRB), 소요 기간은 어떻게 되는지요?
 4. 익명화된 데이터를 논문과 함께 공개할 때 추가로 필요한 절차가 있는지요?
 
@@ -51,11 +51,11 @@ I am a [position] in the Department of Electrical and Computer Engineering. A jo
 - **Risk:** the study involved no physical or medical intervention and no sensitive information. This is my own assessment, not an IRB determination.
 - **Timing and place:** [month, year], [location].
 
-**Why it was not submitted.** I understood the study to be a non-biomedical survey and behavioral experiment, involving no human body, embryos, genes, human-derived materials, drugs, or medical devices. I recognize, however, that whether it falls under the Bioethics and Safety Act, and whether it qualifies for exemption, is for the IRB to decide. No determination was obtained when the study was conducted.
+**Why it was not submitted.** The IRB page on the university website (https://www.skku.edu/skku/research/industry/IRB.do) separates surveys and general research (not subject to review) from research on human subjects or human-derived materials and research involving more than minimal risk (subject to review). I understood this study to be a survey-type, non-biomedical study, involving no human body, embryos, genes, human-derived materials, drugs, or medical devices, and therefore outside the review scope. I recognize that this is my own reading and that the IRB decides how a study is classified. No determination was obtained when the study was conducted.
 
 **My questions**
-1. Is this study subject to review or exempt, under the applicable law and the university's IRB regulations?
-2. Can a retrospective exemption or "not subject to review" confirmation be issued for a completed study? If not, what other official confirmation can I provide to the journal?
+1. Can you confirm whether this study is not subject to review (or, if the IRB sees it differently, subject to review or exempt) under the applicable law and the university's IRB regulations?
+2. Can a written "not subject to review" (or exemption) confirmation be issued for a completed study? If not, what other official confirmation can I provide to the journal?
 3. If an application is required, what documents, submission route (e-IRB), and timeline apply?
 4. Does sharing the anonymized data alongside the paper require any additional step?
 
