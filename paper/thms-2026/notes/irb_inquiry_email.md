@@ -37,28 +37,35 @@ IEEE 학술지에 투고한 논문의 심사 과정에서 연구윤리(IRB) 승�
 
 ## English
 
-**Subject:** Inquiry: IRB exemption determination for a completed user study, and procedure for retrospective handling
+**Subject:** Request for IRB guidance on a completed, non-biomedical user study (exemption determination)
 
 Dear IRB Office,
 
-I am [position] in the Department of Electrical and Computer Engineering. The journal reviewing my manuscript has asked for information on ethics approval or an exemption determination for a user study that I had already completed. I am writing to ask how to proceed.
+I am a [position] in the Department of Electrical and Computer Engineering. A journal that is reviewing my manuscript has asked me to report ethics approval or an exemption determination for a user study I have already completed. The study was not submitted for IRB review, so I would like to ask how best to proceed.
 
-**Study summary.** A computer-based simulated decision task comparing a conventional dashboard with an AI-assisted interface for disaster response. Fifty-two adult volunteers gave informed consent, completed the task, filled in questionnaires (NASA-TLX, trust, SUS) and took part in short interviews. Recorded: age, gender, technical and disaster-experience background, task responses and response times, and questionnaire scores. No direct identifiers are used in the analysis data, which are anonymized. There was no physical or medical intervention and no sensitive information, which is my own assessment and not an IRB determination. The study took place in [month, year] at [location]. It was not submitted to an IRB, and no exemption determination was obtained at the time. I understood it as a non-biomedical survey and behavioral experiment (no human body, embryos, genes, human-derived materials, drugs or medical devices), but I recognize that whether it falls under the Bioethics and Safety Act, or is exempt, is for the IRB to decide.
+**About the study**
+- **Design:** a computer-based simulated decision task comparing a conventional dashboard with an AI-assisted interface for disaster response, followed by questionnaires (NASA-TLX, trust, SUS) and short interviews.
+- **Participants:** 52 adult volunteers, all of whom gave informed consent before taking part.
+- **Data:** age, gender, technical and disaster-experience background, task responses, response times, and questionnaire scores. The analysis data contain no direct identifiers and are anonymized.
+- **Risk:** the study involved no physical or medical intervention and no sensitive information. This is my own assessment, not an IRB determination.
+- **Timing and place:** [month, year], [location].
 
-**Questions**
-1. Is this study subject to review, or exempt, under the applicable law and the university's IRB regulations?
-2. Can a retrospective exemption or "not subject to review" confirmation be issued for a completed study? If not, is there another official form of confirmation I can give to the journal?
-3. If an application is needed, what documents, submission route (e-IRB) and timeline apply?
-4. Does sharing the anonymized data with the paper require any additional step?
+**Why it was not submitted.** I understood the study to be a non-biomedical survey and behavioral experiment, involving no human body, embryos, genes, human-derived materials, drugs, or medical devices. I recognize, however, that whether it falls under the Bioethics and Safety Act, and whether it qualifies for exemption, is for the IRB to decide. No determination was obtained when the study was conducted.
 
-I am preparing a resubmission, so a reply at your earliest convenience would help. I can send the protocol, consent form, questionnaires and scenario description immediately.
+**My questions**
+1. Is this study subject to review or exempt, under the applicable law and the university's IRB regulations?
+2. Can a retrospective exemption or "not subject to review" confirmation be issued for a completed study? If not, what other official confirmation can I provide to the journal?
+3. If an application is required, what documents, submission route (e-IRB), and timeline apply?
+4. Does sharing the anonymized data alongside the paper require any additional step?
 
-Thank you for your help.
+Because the journal resubmission is pending, a reply at your earliest convenience would be much appreciated. I can send the protocol, consent form, questionnaires, and scenario description right away.
+
+Thank you for your time and guidance.
 
 Sincerely,
 Geunsik Lim
 Department of Electrical and Computer Engineering, Sungkyunkwan University
-[phone] / leemgs@g.skku.edu
+[phone] | leemgs@g.skku.edu
 
 ## 신청 서류 작성 시 참고
 
