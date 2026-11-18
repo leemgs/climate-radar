@@ -5,27 +5,25 @@
 
 ## 한국어
 
-**제목:** [문의] 완료된 비의학적 사용자 실험 연구의 IRB 면제 확인 요청
+**제목:** [문의] 완료된 설문형 사용자 실험 연구에 대한 IRB 심의 비대상 확인서 발급 요청
 
 IRB 담당자님께,
 
 안녕하세요. 전기전자컴퓨터공학과 [직위/학번] 임근식입니다.
 
-현재 심사 중인 학술지로부터, 이미 수행을 마친 사용자 실험에 대해 연구윤리 승인 또는 면제 확인 정보를 제출하라는 요청을 받았습니다. 해당 연구는 IRB 심의를 신청하지 않았기에, 어떻게 처리하는 것이 좋을지 문의드립니다.
+현재 심사 중인 학술지로부터 연구윤리 승인 또는 면제 확인 정보를 제출하라는 요청을 받았습니다. 해당 연구는 수행 전에 [YYYY년 M월경, 문의 방법: 전화/메일, 답변자: ] 심의 신청 가능 여부를 문의했고, 인체에 대한 개입이 없는 설문형 연구는 심의 대상이 아니어서 신청 대상이 아니라는 안내를 받았습니다. 이에 따라 신청하지 않았습니다. 학술지 제출을 위해 이 안내를 서면으로 확인받고자 합니다.
 
 **연구 개요**
 - **설계:** 재난 대응을 위한 기존 대시보드와 AI 지원 인터페이스를 비교하는 컴퓨터 기반 모의 의사결정 과제, 이후 설문(NASA-TLX, 신뢰, SUS)과 짧은 면담
 - **참여자:** 성인 자원자 52명, 모두 참여 전 동의서 작성
 - **수집 정보:** 연령, 성별, 기술 및 재난 경험 배경, 과제 응답, 반응시간, 설문 점수. 분석 데이터에는 직접 식별정보가 없고 익명화되어 있습니다.
-- **위험 수준:** 신체적·의학적 중재와 민감정보가 없었습니다. 이는 연구자의 판단이며 IRB의 판단이 아닙니다.
+- **위험 수준:** 인체에 대한 실험, 접촉, 시술이 없었고 의약품, 의료기기, 인체유래물, 배아, 유전자를 다루지 않았습니다. 민감정보도 수집하지 않았습니다.
 - **수행 시기 및 장소:** [YYYY년 M월], [장소]
 
-**심의를 신청하지 않은 이유.** 본교 홈페이지 IRB 안내 페이지(https://www.skku.edu/skku/research/industry/IRB.do)는 조사와 일반 연구를 심의 비대상으로, 인간대상·인체유래물 연구와 중대한 연구(최소위험 이상)를 심의 대상으로 구분하고 있습니다. 이 연구는 인체, 배아, 유전자, 인체유래물, 의약품, 의료기기를 다루지 않는 설문형 비의학적 연구이므로 심의 비대상이라고 이해하여 신청하지 않았습니다. 다만 이는 연구자의 해석이며 연구의 분류는 IRB가 판단할 사항임을 알고 있습니다. 수행 당시에는 별도의 확인을 받지 않았습니다.
-
 **문의 사항**
-1. 이 연구가 현행 법령과 본교 IRB 규정에 따라 심의 비대상에 해당하는지(달리 보신다면 심의 대상인지, 면제 대상인지) 확인해 주실 수 있는지요?
-2. 이미 완료된 연구에 대해 심의 비대상(또는 면제) 확인서를 서면으로 발급받을 수 있는지요? 불가능하다면 학술지에 제출할 수 있는 다른 공식 확인 방법은 무엇인지요?
-3. 신청이 필요하다면 필요한 서류, 제출 경로(e-IRB), 소요 기간은 어떻게 되는지요?
+1. 위 연구가 본교 IRB 규정상 심의 비대상임을 서면(공문 또는 메일)으로 확인해 주실 수 있는지요?
+2. 서면 확인이 어렵다면 학술지에 제출할 수 있는 다른 공식 확인 방법은 무엇인지요?
+3. 이 연구가 심의 대상으로 판단된다면 필요한 서류, 제출 경로(e-IRB), 소요 기간을 알려 주시기 바랍니다.
 4. 익명화된 데이터를 논문과 함께 공개할 때 추가로 필요한 절차가 있는지요?
 
 학술지 재투고를 앞두고 있어 가능한 한 빠른 회신을 부탁드립니다. 연구계획서, 동의서, 설문지, 시나리오 설명서는 요청하시면 바로 보내드리겠습니다.
@@ -38,25 +36,23 @@ IRB 담당자님께,
 
 ## English
 
-**Subject:** Request for IRB guidance on a completed, non-biomedical user study (exemption determination)
+**Subject:** Request for written confirmation that a completed survey-type user study is not subject to IRB review
 
 Dear IRB Office,
 
-I am a [position] in the Department of Electrical and Computer Engineering. A journal that is reviewing my manuscript has asked me to report ethics approval or an exemption determination for a user study I have already completed. The study was not submitted for IRB review, so I would like to ask how best to proceed.
+I am a [position] in the Department of Electrical and Computer Engineering. A journal that is reviewing my manuscript has asked me to report ethics approval or an exemption determination for a user study I have completed. Before the study, I asked about submitting it [month, year; by phone/email; to whom] and was advised that a survey-type study with no intervention on the human body is not subject to review, so no application was made. For the journal, I would like to obtain written confirmation of this guidance.
 
 **About the study**
 - **Design:** a computer-based simulated decision task comparing a conventional dashboard with an AI-assisted interface for disaster response, followed by questionnaires (NASA-TLX, trust, SUS) and short interviews.
 - **Participants:** 52 adult volunteers, all of whom gave informed consent before taking part.
 - **Data:** age, gender, technical and disaster-experience background, task responses, response times, and questionnaire scores. The analysis data contain no direct identifiers and are anonymized.
-- **Risk:** the study involved no physical or medical intervention and no sensitive information. This is my own assessment, not an IRB determination.
+- **Risk:** there was no experiment on, contact with, or procedure performed on the human body, and no drugs, medical devices, human-derived materials, embryos, or genes were involved. No sensitive information was collected.
 - **Timing and place:** [month, year], [location].
 
-**Why it was not submitted.** The IRB page on the university website (https://www.skku.edu/skku/research/industry/IRB.do) separates surveys and general research (not subject to review) from research on human subjects or human-derived materials and research involving more than minimal risk (subject to review). I understood this study to be a survey-type, non-biomedical study, involving no human body, embryos, genes, human-derived materials, drugs, or medical devices, and therefore outside the review scope. I recognize that this is my own reading and that the IRB decides how a study is classified. No determination was obtained when the study was conducted.
-
 **My questions**
-1. Can you confirm whether this study is not subject to review (or, if the IRB sees it differently, subject to review or exempt) under the applicable law and the university's IRB regulations?
-2. Can a written "not subject to review" (or exemption) confirmation be issued for a completed study? If not, what other official confirmation can I provide to the journal?
-3. If an application is required, what documents, submission route (e-IRB), and timeline apply?
+1. Can you confirm in writing (official letter or email) that this study is not subject to review under the university's IRB regulations?
+2. If written confirmation is not possible, what other official confirmation can I provide to the journal?
+3. If the IRB considers the study subject to review, what documents, submission route (e-IRB), and timeline apply?
 4. Does sharing the anonymized data alongside the paper require any additional step?
 
 Because the journal resubmission is pending, a reply at your earliest convenience would be much appreciated. I can send the protocol, consent form, questionnaires, and scenario description right away.
