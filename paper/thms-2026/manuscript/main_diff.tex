@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL main_original.tex   Mon Nov 16 23:13:19 2026
-%DIF ADD main.tex            Wed Nov 18 22:45:35 2026
+%DIF ADD main.tex            Thu Nov 19 09:56:37 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -316,7 +316,7 @@ literate=
     \begin{abstract}
         \DIFdelbegin \DIFdel{Decision systems involving human and AI are being used in critical situations where inappropriate actions on the part of the human could result in }\DIFdelend \DIFaddbegin \DIFadd{Human--AI decision systems are increasingly used in situations where an inappropriate or delayed human action can have }\DIFaddend serious consequences. \DIFdelbegin \DIFdel{Even though there has been an improvement }\DIFdelend \DIFaddbegin \DIFadd{Improvements }\DIFaddend in the predictive \DIFdelbegin \DIFdel{capabilities of AI , it does notautomatically translate to appropriate actions on the part of the human . The focus of this paper is to understand how the structure of a human--AI decision systemaffects action execution, trust, and cognitive workload in uncertain situations.
         We introduce a new concept for human--AI decision system design: \emph{Action-Centered Human--AI Decision Framework (ACHDF)}, which focuses on action execution rather than on the performance of the algorithm.
-        Our mixed-method evaluation strategy using controlled user studies }\DIFdelend \DIFaddbegin \DIFadd{accuracy of AI do not, by themselves, translate into appropriate human action. Drawing on the joint cognitive systems perspective, which evaluates the human and the machine as a single system, we present the \emph{Action-Centered Human--AI Decision Framework (ACHDF)}. ACHDF instantiates uncertainty-aware risk estimation, guardrailed AI recommendations, and human-in-the-loop escalation for disaster-response decision support, and it treats human action execution as the primary evaluation outcome. In a counterbalanced within-subjects study }\DIFaddend ($n=52$\DIFdelbegin \DIFdel{), simulations of past disasters, and a pilot deployment in a municipality empirically shows the efficacy of }\DIFdelend \DIFaddbegin \DIFadd{, 20 trials per participant), we compared an }\DIFaddend ACHDF-based \DIFdelbegin \DIFdel{human--AI decision support systems in significantly outperforming a dashboard-based system in terms of action execution rates, response times, cognitive workload }\DIFdelend \DIFaddbegin \DIFadd{prototype with a conventional dashboard in a simulated disaster-response decision task. Compared with the dashboard, the ACHDF condition was associated with a higher action execution rate (0.81 vs.\ 0.62; paired difference $+0.19$}\DIFaddend , \DIFdelbegin \DIFdel{trust, while avoiding technology overdependence. Our decision problems are not limited to disaster response but include a broader set of decision problems characterized by high levels of uncertainty, asymmetry in error costs, time pressure, and human accountability. Our workthus generalizes the human--machine system literature on human--AI decision support for reliable action execution}\DIFdelend \DIFaddbegin \DIFadd{95\% CI }[\DIFadd{0.14, 0.25}]\DIFadd{, $d_z = 0.96$), shorter response latency (8.1 vs.\ 12.4~s), lower self-reported workload (NASA--TLX), and higher perceived trust and usability (all Holm-adjusted $p < .001$). Because the action execution rate was scored as selection of the reference action, all failed trials were wrong selections, and wrong and correct trials had the same latency; no order or carry-over effect was detected. Because the two conditions differed in several features at once, the results describe the effect of the integrated ACHDF configuration rather than of individual components, and the study cannot assess trust calibration or automation bias. Validation in other domains and with professional operators remains future work}\DIFaddend .
+        Our mixed-method evaluation strategy using controlled user studies }\DIFdelend \DIFaddbegin \DIFadd{accuracy of AI do not, by themselves, translate into appropriate human action. Drawing on the joint cognitive systems perspective, which evaluates the human and the machine as a single system, we present the \emph{Action-Centered Human--AI Decision Framework (ACHDF)}. ACHDF instantiates uncertainty-aware risk estimation, guardrailed AI recommendations, and human-in-the-loop escalation for disaster-response decision support, and it treats human action execution as the primary evaluation outcome. In a counterbalanced within-subjects study }\DIFaddend ($n=52$\DIFdelbegin \DIFdel{), simulations of past disasters, and a pilot deployment in a municipality empirically shows the efficacy of }\DIFdelend \DIFaddbegin \DIFadd{, 20 trials per participant), we compared an }\DIFaddend ACHDF-based \DIFdelbegin \DIFdel{human--AI decision support systems in significantly outperforming a dashboard-based system in terms of action execution rates, response times, cognitive workload }\DIFdelend \DIFaddbegin \DIFadd{prototype with a conventional dashboard in a simulated disaster-response decision task. Compared with the dashboard, the ACHDF condition was associated with a higher action execution rate (0.81 vs.\ 0.62; paired difference $+0.19$}\DIFaddend , \DIFdelbegin \DIFdel{trust, while avoiding technology overdependence. Our decision problems are not limited to disaster response but include a broader set of decision problems characterized by high levels of uncertainty, asymmetry in error costs, time pressure, and human accountability. Our workthus generalizes the human--machine system literature on human--AI decision support for reliable action execution}\DIFdelend \DIFaddbegin \DIFadd{95\% CI }[\DIFadd{0.14, 0.25}]\DIFadd{, $d_z = 0.96$), shorter response latency (8.1 vs.\ 12.4~s), lower self-reported workload (NASA--TLX), and higher perceived trust and usability (all $p < .001$; Holm-adjusted for the secondary outcomes). Because the action execution rate was scored as selection of the reference action, all failed trials were wrong selections, and wrong and correct trials had the same latency; no order or carry-over effect was detected. Because the two conditions differed in several features at once, the results describe the effect of the integrated ACHDF configuration rather than of individual components, and the study cannot assess trust calibration or automation bias. Validation in other domains and with professional operators remains future work}\DIFaddend .
     \end{abstract}
 
     \begin{IEEEkeywords}
@@ -850,7 +850,8 @@ AI supports sensemaking and constrained recommendations; final decision authorit
     \DIFadd{Fifty-two participants took part (Table~\ref{tab:participants}). Participants }\DIFaddend were recruited using \DIFdelbegin \DIFdel{the stratified sampling technique in order to create diversity in terms of }\DIFdelend \DIFaddbegin \DIFadd{stratified sampling to obtain diversity in }\DIFaddend age, gender, and technical \DIFdelbegin \DIFdel{know-how. This technique has been selected due to the heterogeneity observed in operators in real-world }\DIFdelend \DIFaddbegin \DIFadd{background, reflecting the heterogeneity of operators in real }\DIFaddend decision environments. \DIFaddbegin \DIFadd{Participants were not required to have prior domain expertise. None reported high prior disaster-response experience (23 none, 21 low, 8 medium), so the sample was not composed of trained emergency-management professionals (Section~\ref{sec:limitations}).
 }\DIFaddend 
 
-    \DIFdelbegin \DIFdel{All participants gave their informed consent prior to the experiment. Although participants were not required to have prior knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures. }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Ethics.} Participation was voluntary, and all participants gave informed consent and consent to the processing of their personal information before the experiment. The study consisted of a simulated decision task, post-task questionnaires, and short interviews, with no physical or medical intervention. The only personal characteristics recorded were age, gender, and technical and disaster-experience background, and the records used and shared here are anonymized: the author removed identifying information from the collected survey spreadsheets before analysis to protect participants' privacy, and the system logs of the task (selections, escalation and deferral flags, and response times) contain no identifying information. The study was not submitted to an institutional review board (IRB). Before the study, the author asked the IRB of the author's institution about submitting it and was advised that a survey-type study with no intervention on the human body is not subject to review, and that the IRB does not accept applications for such studies. In the sense used by the review scope (research on human subjects, which involves experiments on or interventions in the human body, and on human-derived materials), the study was therefore not human-subjects research: it involved no experiment on, contact with, or intervention in the human body, and no embryos, genes, human-derived materials, drugs, or medical devices. No approval or exemption number exists for it. We regard the risk to participants as minimal, but this is the author's assessment and not a determination by an ethics body.
+    \DIFdelbegin \DIFdel{All participants gave their informed consent prior to the experiment. Although participants were not required to have prior knowledge in the domain area, training on the task interface was provided to all participants to create uniformity in terms of familiarity with the procedures.
+    }\DIFdelend \DIFaddbegin \DIFadd{\textbf{Ethics.} Participation was voluntary, and all participants gave informed consent and consent to the processing of their personal information before the experiment. The study consisted of a simulated decision task, post-task questionnaires, and short interviews, with no physical or medical intervention. The only personal characteristics recorded were age, gender, and technical and disaster-experience background, and the records used and shared here are anonymized: the author removed identifying information from the collected survey spreadsheets before analysis to protect participants' privacy, and the system logs of the task (selections, escalation and deferral flags, and response times) contain no identifying information. The study was not submitted to an institutional review board (IRB). Before the study, the author asked the IRB of the author's institution about submitting it and was advised that a survey-type study with no intervention on the human body is not subject to review, and that the IRB does not accept applications for such studies. In the sense used by the review scope (research on human subjects, which involves experiments on or interventions in the human body, and on human-derived materials), the study was therefore not human-subjects research: it involved no experiment on, contact with, or intervention in the human body, and no embryos, genes, human-derived materials, drugs, or medical devices. No approval or exemption number exists for it. We regard the risk to participants as minimal, but this is the author's assessment and not a determination by an ethics body.
 }
 
     \DIFadd{\textbf{Sample size.} No a priori power analysis was conducted; the sample size of 52 was not derived from an expected effect size. A sensitivity analysis shows that, with $n=52$, a two-sided paired $t$-test at $\alpha=.05$ has 80\% power to detect $d_z \geq 0.40$. The observed effects on the primary outcome ($d_z = 0.96$) and on the secondary outcomes (smallest $|d_z| = 0.91$) are well above this value. Effects smaller than $d_z \approx 0.40$, such as some subscale differences, may not have been detected reliably.
@@ -899,11 +900,11 @@ Three examples of the situation descriptions in the study materials are: a low-r
 %DIFDELCMD <             \bottomrule
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
-%DIFDELCMD < %%%
-\DIFdelend 
+%DIFDELCMD < 
 
-    %DIF < ------------------------------------------------------
-\DIFdelbegin %DIFDELCMD < 
+%DIFDELCMD <     %%%
+%DIF < ------------------------------------------------------
+%DIFDELCMD < 
 
 %DIFDELCMD <     \begin{figure}[t]
 %DIFDELCMD <         \centering
@@ -911,27 +912,11 @@ Three examples of the situation descriptions in the study materials are: a low-r
 %DIFDELCMD <         \caption{Distribution of response latency under baseline and AI-assisted conditions. The distribution under the AI-assisted condition is left-shifted, indicating that the subjects made quicker transitions from risk interpretation to action execution.}
 %DIFDELCMD <         \label{fig:latency_distribution}
 %DIFDELCMD <     \end{figure}
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \begin{table}[t]
-        \caption{Response Options and Their Explained Meaning}
-        \label{tab:options}
-        \centering
-        \begin{tabular}{p{0.26\linewidth}p{0.66\linewidth}}
-            \toprule
-            \textbf{Option} & \textbf{Meaning and example use} \\
-            \midrule
-            Monitor & Continue observing; risk is low and more information is needed. \\
-            Standby & Prepare; risk is rising, but it is not yet time to act. \\
-            Issue alert & Alert residents; attention needs to be drawn to the situation. \\
-            Shelter in place & Stay indoors; moving immediately is difficult or dangerous. \\
-            Recommend evacuation & Advise leaving; risk is high and evacuation is required. \\
-            \bottomrule
-        \end{tabular}
-    \end{table}
-\DIFaddend 
+%DIFDELCMD < 
 
-    %DIF < ----------------------------------------------
-    \DIFdelbegin %DIFDELCMD < \begin{table}[t]
+%DIFDELCMD <     %%%
+%DIF < ----------------------------------------------
+    %DIFDELCMD < \begin{table}[t]
 %DIFDELCMD <         \caption{Cognitive workload outcomes measured using NASA--TLX}
 %DIFDELCMD <         \label{tab:workload}
 %DIFDELCMD <         \centering
@@ -949,8 +934,7 @@ Three examples of the situation descriptions in the study materials are: a low-r
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
 %DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \DIFadd{Before the experimental trials, all participants received a short training session so that they were equally familiar with the procedures. The session covered (1) the purpose of the system and the human-in-the-loop principle (5~min), (2) the meaning of the five response options and the asymmetric costs of errors (5~min), (3) a demonstration of the baseline interface followed by one practice trial, (4) a demonstration of the AI-assisted interface (recommend and escalate modes, the uncertainty indicator, the criticality cue, and the deferral flag) followed by one practice trial, and (5) an introduction to the NASA--TLX, trust, and SUS questionnaires. Participants were told that the AI recommendation is only an aid, that they could disregard it, and that the primary performance measure was the share of trials with the correct action; response time was recorded but speed alone was not the criterion. The durations of steps (3)--(5) and the total session length were not recorded, and no performance or comprehension criterion for proceeding to the experimental trials is documented. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions.
-}\DIFaddend 
+\DIFdelend 
 
     %DIF < ---------------------------------------------
     \DIFdelbegin %DIFDELCMD < \begin{table}[t]
@@ -971,15 +955,37 @@ Three examples of the situation descriptions in the study materials are: a low-r
 %DIFDELCMD <         \end{tabular}
 %DIFDELCMD <     \end{table}
 %DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \subsection{\DIFadd{Measures}}
-    \label{sec:measures}
-    \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures.
-}\DIFaddend 
+\DIFdelend \DIFaddbegin \begin{table}[t]
+        \caption{Response Options and Their Explained Meaning}
+        \label{tab:options}
+        \centering
+        \begin{tabular}{p{0.26\linewidth}p{0.66\linewidth}}
+            \toprule
+            \textbf{Option} & \textbf{Meaning and example use} \\
+            \midrule
+            Monitor & Continue observing; risk is low and more information is needed. \\
+            Standby & Prepare; risk is rising, but it is not yet time to act. \\
+            Issue alert & Alert residents; attention needs to be drawn to the situation. \\
+            Shelter in place & Stay indoors; moving immediately is difficult or dangerous. \\
+            Recommend evacuation & Advise leaving; risk is high and evacuation is required. \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\DIFaddend 
 
     \DIFdelbegin \subsection{\DIFdel{Measures and Metrics}}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{These measures and definitions are presented in Table ~\ref{tab:measures}. To measure the effectiveness of the system from the perspective of human machine systems, several objective performance measures and subjective evaluation tools were used. }\DIFdelend \DIFaddbegin \begin{table}[t]
+\DIFdel{These measures and definitions are presented in Table ~\ref{tab:measures}. To measure the effectiveness of }\DIFdelend \DIFaddbegin \DIFadd{Before the experimental trials, all participants received a short training session so that they were equally familiar with the procedures. The session covered (1) the purpose of the system and }\DIFaddend the \DIFdelbegin \DIFdel{system from the perspective of human machine systems, several objective performance measures and subjective evaluation tools were used}\DIFdelend \DIFaddbegin \DIFadd{human-in-the-loop principle (5~min), (2) the meaning of the five response options and the asymmetric costs of errors (5~min), (3) a demonstration of the baseline interface followed by one practice trial, (4) a demonstration of the AI-assisted interface (recommend and escalate modes, the uncertainty indicator, the criticality cue, and the deferral flag) followed by one practice trial, and (5) an introduction to the NASA--TLX, trust, and SUS questionnaires. Participants were told that the AI recommendation is only an aid, that they could disregard it, and that the primary performance measure was the share of trials with the correct action; response time was recorded but speed alone was not the criterion. The durations of steps (3)--(5) and the total session length were not recorded, and no performance or comprehension criterion for proceeding to the experimental trials is documented. Participants then completed both conditions in counterbalanced order and completed the NASA--TLX, trust, and usability questionnaires after each condition. Short post-task interviews were held at the end of the session. The system logged all decisions, response times, and interactions}\DIFaddend .
+
+    \DIFdelbegin \DIFdel{\textbf{Action Execution Rate.}
+    On the other hand, the Action Execution Rate (AER ), which was defined as ``\textit{the proportion of tasks in which the participant performed the appropriate action within a specified time window,}'' was also proposed as an indicator for the quality of support for not only good decision making but also good action execution, which was considered an important factor in the high-risk environment.
+    }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Measures}}
+    \label{sec:measures}
+    \DIFadd{Table~\ref{tab:measures} summarizes the outcome measures.
+}
+
+    \begin{table}[t]
         \caption{Outcome Measures Used in the Controlled Study}
         \label{tab:measures}
         \centering
@@ -997,12 +1003,8 @@ Three examples of the situation descriptions in the study materials are: a low-r
     \end{table}
 \DIFaddend 
 
-    \textbf{Action Execution Rate.}
-    \DIFdelbegin \DIFdel{On the other hand, the Action Execution Rate (AER ), which was defined as ``\textit{the proportion of tasks in which the participant performed the appropriate action within a specified time window,}'' was also proposed as an indicator for the quality of support for not only good decision making but also good action execution, which was considered an important factor in the high-risk environment.
-    }%DIFDELCMD < 
-
-%DIFDELCMD <     %%%
-\DIFdelend \DIFaddbegin \DIFadd{The AER is the proportion of a participant's trials in a condition in which the selected action equals the reference action for that trial. In the trial logs, this definition reproduces the AER values reported in the original submission exactly (0.62 and 0.81) without any additional time criterion. The logs contain no time-out or late-response flag, and all recorded latencies are at most 20.3~s. Hence, in these data, AER is a correct-action rate, and every unsuccessful trial is a \emph{wrong-action} trial (198 of 520 baseline trials and 99 of 520 AI-assisted trials). Response latency is reported separately and is analyzed as a distinct outcome. To address the question of whether failures arise from wrong or from late actions, Section~\ref{sec:res_aer} also reports the latency of correct and wrong trials and a sensitivity analysis in which a trial counts as a success only if it is correct \emph{and} completed within a hypothetical cutoff. How the reference action was derived, in particular whether it was fixed independently of the AI recommendation, and whether a time window was applied during the original scoring, is not documented in the study records (Section~\ref{sec:lim_reporting}).
+    \DIFaddbegin \DIFadd{\textbf{Action Execution Rate.}
+    The AER is the proportion of a participant's trials in a condition in which the selected action equals the reference action for that trial. In the trial logs, this definition reproduces the AER values reported in the original submission exactly (0.62 and 0.81) without any additional time criterion. The logs contain no time-out or late-response flag, and all recorded latencies are at most 20.3~s. Hence, in these data, AER is a correct-action rate, and every unsuccessful trial is a \emph{wrong-action} trial (198 of 520 baseline trials and 99 of 520 AI-assisted trials). Response latency is reported separately and is analyzed as a distinct outcome. To address the question of whether failures arise from wrong or from late actions, Section~\ref{sec:res_aer} also reports the latency of correct and wrong trials and a sensitivity analysis in which a trial counts as a success only if it is correct \emph{and} completed within a hypothetical cutoff. How the reference action was derived, in particular whether it was fixed independently of the AI recommendation, and whether a time window was applied during the original scoring, is not documented in the study records (Section~\ref{sec:lim_reporting}).
     }\DIFaddend \textbf{Response Latency.}
     Response latency \DIFdelbegin \DIFdel{was suggested as “the time it took since actionable information was displayed until a participant performed }\DIFdelend \DIFaddbegin \DIFadd{is the time from the display of actionable information until the participant selected }\DIFaddend an action. \DIFdelbegin \DIFdel{” Less response latency was considered to be more efficient decision support with less hesitation about uncertainty}\DIFdelend \DIFaddbegin \DIFadd{Participant-level latency is the mean over the participant's 10 trials in a condition}\DIFaddend .
 
