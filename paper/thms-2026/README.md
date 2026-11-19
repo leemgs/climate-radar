@@ -8,12 +8,12 @@
 
 | File | Upload as |
 |---|---|
-| [`submission/main_revised.pdf`](./submission/main_revised.pdf) | Manuscript (15 pages) |
+| [`submission/main_revised.pdf`](./submission/main_revised.pdf) | Manuscript (10 pages, incl. references; THMS regular-paper limit) |
 | [`submission/cover_letter_en.pdf`](./submission/cover_letter_en.pdf) | Cover letter (references the decision letter) |
 | [`submission/response_to_reviewers.pdf`](./submission/response_to_reviewers.pdf) | Point-by-point response to the AE and reviewers |
 | [`submission/main_diff.pdf`](./submission/main_diff.pdf) | Marked-up comparison with the previous submission (supplementary) |
 
-LaTeX source for upload (if requested): the contents of `manuscript/`. `main.tex` is the main file; it needs the `.bib`, `.bst`, `.cls`, the `095_reference.tex` input, and the figures `fig_outcomes_summary.png`. Figs. 1–2 are drawn in TikZ inside `main.tex`.
+LaTeX source for upload (if requested): the contents of `manuscript/`. `main.tex` is the main file; it needs the `.bib`, `.bst`, `.cls`, the `095_reference.tex` input, `main.tex` has no external figures: Figs. 1–2 are drawn in TikZ inside it.
 
 ## 📁 Layout
 
@@ -27,7 +27,7 @@ thms-2026/
 │   ├── main_original.tex # previous submission (for latexdiff)
 │   ├── main_diff.tex     # latexdiff output (generated)
 │   ├── reference-data.bib, IEEEtran.cls, IEEEtranDOI.bst, 095_reference.tex
-│   ├── fig_outcomes_summary.png  (+ make_fig_outcomes.py to regenerate it)
+│   ├── fig_outcomes_summary.png  (+ make_fig_outcomes.py; no longer used by main.tex)
 │   └── fig_*.png         # figures used only by main_original.tex
 ├── letters/              # Markdown sources of the cover letter and the response to reviewers (English only)
 │   └── make_letter_pdfs.py  # Markdown -> PDF (English PDFs to submission/)
