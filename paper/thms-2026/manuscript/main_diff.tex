@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL main_original.tex   Mon Nov 16 23:13:19 2026
-%DIF ADD main.tex            Thu Nov 19 10:25:36 2026
+%DIF ADD main.tex            Thu Nov 19 10:27:23 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -326,7 +326,7 @@ literate=
     %--------------------------------------- \input{./010-introduction}
 \section{Introduction}
 \DIFdelbegin %DIFDELCMD < \IEEEPARstart{I}{n} %%%
-\DIFdel{fact, human--AI }\DIFdelend \DIFaddbegin \IEEEPARstart{H}{uman}\DIFadd{--AI }\DIFaddend decision systems are \DIFdelbegin \DIFdel{being }\DIFdelend \DIFaddbegin \DIFadd{increasingly }\DIFaddend used in situations \DIFdelbegin \DIFdel{where there is }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend high uncertainty, high \DIFdelbegin \DIFdel{consequence, and high speed \cite{Bach2024Access,PerezCerrolaza2024CSUR,Yang2022THMSReview}. These situations include }\DIFdelend \DIFaddbegin \DIFadd{stakes, and severe time pressure \cite{Bach2024Access,PerezCerrolaza2024CSUR,Yang2022THMSReview}, for example in }\DIFaddend healthcare triage, supervision of autonomous \DIFdelbegin \DIFdel{transportation systems}\DIFdelend \DIFaddbegin \DIFadd{vehicles}\DIFaddend , industrial safety\DIFdelbegin \DIFdel{systems}\DIFdelend , and emergency response \DIFdelbegin \DIFdel{systems \cite{Birkmann2013NatHazards,Sandoval2023IJDRS,Rokhideh2025IJDRS,Rao2024IJDRS,Charan2024,lim2026generativeaidrivenreliabilitylayer}. In these situations, artificial intelligence is being used to enhance the ability to predict situations accurately. However, }\DIFdelend \DIFaddbegin \DIFadd{\cite{Rokhideh2025IJDRS,Rao2024IJDRS,lim2026generativeaidrivenreliabilitylayer}. AI is mainly used there to improve prediction, but }\DIFaddend human--machine systems research has \DIFdelbegin \DIFdel{consistently demonstrated that }\DIFdelend \DIFaddbegin \DIFadd{repeatedly shown that better }\DIFaddend predictions do not \DIFdelbegin \DIFdel{always lead to }\DIFdelend \DIFaddbegin \DIFadd{necessarily lead to appropriate }\DIFaddend human action \cite{Lai2023FAccT,Muller2022CHIWORK,Hodgson2013THMS}.
+\DIFdel{fact, human--AI }\DIFdelend \DIFaddbegin \IEEEPARstart{H}{uman}\DIFadd{--AI }\DIFaddend decision systems are \DIFdelbegin \DIFdel{being }\DIFdelend \DIFaddbegin \DIFadd{increasingly }\DIFaddend used in situations \DIFdelbegin \DIFdel{where there is }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend high uncertainty, high \DIFdelbegin \DIFdel{consequence, and high speed \cite{Bach2024Access,PerezCerrolaza2024CSUR,Yang2022THMSReview}. These situations include healthcare triage, supervision of autonomous transportation systems, industrial safety systems , and emergency response systems \cite{Birkmann2013NatHazards,Sandoval2023IJDRS,Rokhideh2025IJDRS,Rao2024IJDRS,Charan2024,lim2026generativeaidrivenreliabilitylayer}. In these situations, artificial intelligence is being used to enhance the ability to predict situations accurately. However, }\DIFdelend \DIFaddbegin \DIFadd{stakes, and severe time pressure \cite{Bach2024Access,PerezCerrolaza2024CSUR,Yang2022THMSReview}. Examples include safety-critical industrial and transportation systems \cite{Bach2024Access,PerezCerrolaza2024CSUR} and disaster early warning and emergency preparedness \cite{Rokhideh2025IJDRS,Rao2024IJDRS,lim2026generativeaidrivenreliabilitylayer}. AI is mainly used there to improve prediction, but }\DIFaddend human--machine systems research has \DIFdelbegin \DIFdel{consistently demonstrated that }\DIFdelend \DIFaddbegin \DIFadd{repeatedly shown that better }\DIFaddend predictions do not \DIFdelbegin \DIFdel{always lead to }\DIFdelend \DIFaddbegin \DIFadd{necessarily lead to appropriate }\DIFaddend human action \cite{Lai2023FAccT,Muller2022CHIWORK,Hodgson2013THMS}.
 \DIFdelbegin \DIFdel{In disaster contexts, effective response further depends on community-level coordination, resilient communications, and distributed sensing and reporting pipelines \cite{Stephens2022SIGDOC,Longo2025PMC,Yang2005MobiHoc}.
 Decision making under conditions of uncertainty is an important aspect of human--machine systems research \cite{Yang2022THMSReview,Bach2024Access,lim2026generativeaidrivenreliabilitylayer}. When there is incomplete or uncertain information, human operators are required to consider risk, confidence, and responsibility in situations where they interact with machines. Previous research has demonstrated the fundamental influence of conditions of uncertainty on human action. In the context of AI systems, conditions of uncertainty are often not well communicated or are implicit \cite{McAllister2017IJCAI,Weidinger2022FAccT,Miller2019XRDS}.
 }\DIFdelend 
@@ -470,9 +470,9 @@ This workflow view emphasizes how uncertainty-aware function allocation governs 
     \subsection{\DIFdelbegin \DIFdel{Design Goals }\DIFdelend \DIFaddbegin \DIFadd{Constructs }\DIFaddend and \DIFdelbegin \DIFdel{Human-in-the-Loop Principles}\DIFdelend \DIFaddbegin \DIFadd{Their Roles}\DIFaddend }
     \DIFdelbegin \DIFdel{The design of the proposed systemis informed by three key goals that are derived from the fundamental principles of ACHDF. }\DIFdelend \DIFaddbegin \label{sec:constructs}
     \DIFadd{Table~\ref{tab:constructs} summarizes the role of each ACHDF construct, i.e., whether it is a design input, a system state, a design consideration, or an evaluation outcome, together with its operational definition in the implemented system.
-}\DIFaddend 
+}
 
-\DIFaddbegin \begin{table*}[t]
+\begin{table*}[t]
 \centering
 \caption{ACHDF Constructs: Role, Operational Definition, and Implementation}
 \label{tab:constructs}
@@ -491,8 +491,9 @@ Action execution & Primary outcome & Measured by AER (Section~\ref{sec:measures}
 \bottomrule
 \end{tabular}
 \end{table*}
+\DIFaddend 
 
-    \subsection{\DIFadd{Design Goals}}
+    \DIFaddbegin \subsection{\DIFadd{Design Goals}}
     \DIFadd{Three goals follow from ACHDF. }\DIFaddend \textbf{Goal 1\DIFdelbegin \DIFdel{— Enabling Human Action Execution.}\DIFdelend \DIFaddbegin \DIFadd{:}\DIFaddend } \DIFdelbegin \DIFdel{The proposed system must be able to support }\DIFdelend \DIFaddbegin \DIFadd{enable human }\DIFaddend \emph{\DIFdelbegin \DIFdel{human }\DIFdelend action execution\DIFdelbegin %DIFDELCMD < \MBLOCKRIGHTBRACE %%%
 \DIFdel{effectively, as opposed to simply improving }\DIFdelend \DIFaddbegin }\DIFadd{, not only }\DIFaddend situational awareness and prediction accuracy. \DIFdelbegin \DIFdel{The key goal of the proposed system is therefore to enable effective human decision-making and action in operational settings.
 }%DIFDELCMD < 
