@@ -112,7 +112,7 @@ The anonymized participant, questionnaire, and trial-level records (52 participa
 | S09 | 0.30 | 0.09 | 0.30 | no | Monitor | Monitor |
 | S10 | 0.58 | 0.14 | 0.72 | yes | Shelter | Shelter |
 
-Conflict with the primary log: four escalated scenarios shown to 52 participants give 208 escalated trials, but the primary log has 150. Which of the two reflects the study is unresolved.
+Conflict with the primary log: four escalated scenarios shown to 52 participants give 208 escalated trials, but the primary log has 150. The primary log supports 150: it records escalation in 8 to 20 of the 52 participants for every scenario label (none is escalated for all or for none), which does not fit a design in which four labels are always escalated. The manuscript therefore keeps 150 (28.8%), and the 208 of this table is not used.
 
 **S8.2 Reference actions (expert ratings as recovered).** Four experts (7–15 years of experience; government agency, university, local government, NGO) rated each scenario independently, then discussed disagreements. Initial agreement was 4/4 in five scenarios (S01, S04, S05, S06, S09) and 3/4 in five (S02, S03, S07, S08, S10); discussion resolved all ten. The recovered file also states that the reference actions were fixed before the AI recommendations were produced and a "consensus rate of 92%", which does not match its own table. The file is a re-organized record, not a contemporaneous one, so independence from the AI recommendation is stated by the author but not verifiable from the files.
 
