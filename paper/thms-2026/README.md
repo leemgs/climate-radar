@@ -12,6 +12,7 @@
 | [`submission/cover_letter_en.pdf`](./submission/cover_letter_en.pdf) | Cover letter (references the decision letter) |
 | [`submission/response_to_reviewers.pdf`](./submission/response_to_reviewers.pdf) | Point-by-point response to the AE and reviewers |
 | [`submission/main_diff.pdf`](./submission/main_diff.pdf) | Marked-up comparison with the previous submission (supplementary) |
+| [`submission/supplementary_material.pdf`](./submission/supplementary_material.pdf) | Optional supplementary material (interface spec, scenarios, training, questionnaires, prototype configuration; built from the author's documentation, no new results) |
 
 LaTeX source for upload (if requested): the contents of `manuscript/`. `main.tex` is the main file; it needs the `.bib`, `.bst`, `.cls`, the `095_reference.tex` input, `main.tex` has no external figures: Figs. 1–2 are drawn in TikZ inside it.
 

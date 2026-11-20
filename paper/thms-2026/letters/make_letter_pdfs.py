@@ -69,6 +69,7 @@ def clean_response(md, lang):
 JOBS = [
     ("cover_letter_en.md", SUBMISSION / "cover_letter_en.pdf", "en cover", clean_cover, "Cover Letter"),
     ("response_to_reviewers.md", SUBMISSION / "response_to_reviewers.pdf", "en", lambda m: clean_response(m, "en"), "Response to Reviewers"),
+    ("supplementary_material.md", SUBMISSION / "supplementary_material.pdf", "en", lambda m: m, "Supplementary Material"),
 ]
 
 
