@@ -1,0 +1,521 @@
+participant_id,scenario,condition,selected_action,reference_action,ai_recommendation,ai_correct,escalation_flag,deferral_flag,latency_s,followed_ai,automation_bias_error
+P01,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,5.9,True,False
+P01,S02,AI-assisted,Standby,Standby,Standby,True,0,1,10.0,True,False
+P01,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.0,True,False
+P01,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,7.2,True,False
+P01,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,5.5,True,True
+P01,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,9.2,True,False
+P01,S07,AI-assisted,Standby,Standby,Standby,True,0,0,7.7,True,False
+P01,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,7.1,True,True
+P01,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,10.1,True,False
+P01,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.3,True,False
+P02,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.5,True,False
+P02,S02,AI-assisted,Standby,Standby,Standby,True,0,0,8.1,True,False
+P02,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.3,True,False
+P02,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.9,True,False
+P02,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,10.0,False,False
+P02,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,8.2,True,False
+P02,S07,AI-assisted,Standby,Standby,Standby,True,0,0,6.4,True,False
+P02,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,9.5,False,False
+P02,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,1,7.5,True,False
+P02,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.1,True,False
+P03,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,5.9,True,False
+P03,S02,AI-assisted,Standby,Standby,Standby,True,0,0,7.3,True,False
+P03,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.8,True,False
+P03,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,10.5,True,False
+P03,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,6.7,False,False
+P03,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,11.0,True,False
+P03,S07,AI-assisted,Standby,Standby,Standby,True,0,1,5.7,True,False
+P03,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,7.7,True,True
+P03,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.7,True,False
+P03,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,6.8,True,False
+P04,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,7.7,True,False
+P04,S02,AI-assisted,Standby,Standby,Standby,True,0,0,5.9,True,False
+P04,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.9,True,False
+P04,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.3,True,False
+P04,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,8.7,True,True
+P04,S06,AI-assisted,Shelter,Evacuate,Evacuate,True,1,0,6.8,False,False
+P04,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.8,True,False
+P04,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,9.3,False,False
+P04,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.0,True,False
+P04,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,7.8,True,False
+P05,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.2,True,False
+P05,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.3,True,False
+P05,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.8,True,False
+P05,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,7.7,True,False
+P05,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,9.1,False,False
+P05,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,10.0,True,False
+P05,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.1,True,False
+P05,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,7.0,True,True
+P05,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,1,8.4,True,False
+P05,S10,AI-assisted,Standby,Shelter,Shelter,True,1,1,7.4,False,False
+P06,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,10.2,True,False
+P06,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.5,True,False
+P06,S03,AI-assisted,Standby,Shelter,Shelter,True,1,1,7.7,False,False
+P06,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,5.9,True,False
+P06,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,10.0,True,True
+P06,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,10.6,True,False
+P06,S07,AI-assisted,Standby,Standby,Standby,True,0,0,5.6,True,False
+P06,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,10.4,False,False
+P06,S09,AI-assisted,Issue alert,Monitor,Monitor,True,0,1,8.5,False,False
+P06,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.2,True,False
+P07,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.4,True,False
+P07,S02,AI-assisted,Standby,Standby,Standby,True,0,0,7.8,True,False
+P07,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.9,True,False
+P07,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.6,True,False
+P07,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.4,False,False
+P07,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,8.2,True,False
+P07,S07,AI-assisted,Evacuate,Standby,Standby,True,0,0,7.3,False,False
+P07,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,7.7,True,True
+P07,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,1,10.2,True,False
+P07,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,7.0,True,False
+P08,S01,AI-assisted,Shelter,Monitor,Monitor,True,0,0,6.7,False,False
+P08,S02,AI-assisted,Standby,Standby,Standby,True,0,0,8.3,True,False
+P08,S03,AI-assisted,Evacuate,Shelter,Shelter,True,1,0,8.8,False,False
+P08,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,10.3,True,False
+P08,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,8.8,True,True
+P08,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,6.7,True,False
+P08,S07,AI-assisted,Standby,Standby,Standby,True,0,0,9.9,True,False
+P08,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,10.4,True,True
+P08,S09,AI-assisted,Shelter,Monitor,Monitor,True,0,0,9.0,False,False
+P08,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.8,True,False
+P09,S01,AI-assisted,Shelter,Monitor,Monitor,True,0,0,6.9,False,False
+P09,S02,AI-assisted,Standby,Standby,Standby,True,0,1,5.7,True,False
+P09,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.4,True,False
+P09,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.2,True,False
+P09,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,8.0,True,True
+P09,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,8.9,True,False
+P09,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.3,True,False
+P09,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,10.6,False,False
+P09,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.5,True,False
+P09,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.4,True,False
+P10,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,6.3,True,False
+P10,S02,AI-assisted,Issue alert,Standby,Standby,True,0,0,10.4,False,False
+P10,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.3,True,False
+P10,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,7.1,True,False
+P10,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,6.7,False,False
+P10,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,9.6,True,False
+P10,S07,AI-assisted,Standby,Standby,Standby,True,0,0,6.9,True,False
+P10,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,8.8,True,True
+P10,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.8,True,False
+P10,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.6,True,False
+P11,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,5.9,True,False
+P11,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.9,True,False
+P11,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.0,True,False
+P11,S04,AI-assisted,Shelter,Issue alert,Issue alert,True,0,1,8.3,False,False
+P11,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,6.9,False,False
+P11,S06,AI-assisted,Monitor,Evacuate,Evacuate,True,1,0,8.8,False,False
+P11,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.8,True,False
+P11,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,7.4,False,False
+P11,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,1,9.9,True,False
+P11,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,7.2,True,False
+P12,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.0,True,False
+P12,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.5,True,False
+P12,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,7.0,True,False
+P12,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,5.7,True,False
+P12,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,6.5,False,False
+P12,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,8.0,True,False
+P12,S07,AI-assisted,Standby,Standby,Standby,True,0,0,7.0,True,False
+P12,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,7.5,True,True
+P12,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.1,True,False
+P12,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.0,True,False
+P13,S01,AI-assisted,Shelter,Monitor,Monitor,True,0,0,10.1,False,False
+P13,S02,AI-assisted,Standby,Standby,Standby,True,0,1,7.4,True,False
+P13,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,6.6,True,False
+P13,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.7,True,False
+P13,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,5.5,False,False
+P13,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,7.3,True,False
+P13,S07,AI-assisted,Standby,Standby,Standby,True,0,0,9.2,True,False
+P13,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,8.3,False,False
+P13,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.1,True,False
+P13,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.4,True,False
+P14,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.4,True,False
+P14,S02,AI-assisted,Standby,Standby,Standby,True,0,0,10.1,True,False
+P14,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.4,True,False
+P14,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,9.1,True,False
+P14,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,10.1,True,True
+P14,S06,AI-assisted,Issue alert,Evacuate,Evacuate,True,1,1,7.1,False,False
+P14,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.1,True,False
+P14,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,8.9,True,True
+P14,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.5,True,False
+P14,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.5,True,False
+P15,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,6.0,True,False
+P15,S02,AI-assisted,Standby,Standby,Standby,True,0,0,9.3,True,False
+P15,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.5,True,False
+P15,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,9.6,True,False
+P15,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,6.5,True,True
+P15,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,7.1,True,False
+P15,S07,AI-assisted,Standby,Standby,Standby,True,0,1,6.8,True,False
+P15,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,10.2,False,False
+P15,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.5,True,False
+P15,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.4,True,False
+P16,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.1,True,False
+P16,S02,AI-assisted,Standby,Standby,Standby,True,0,1,7.2,True,False
+P16,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,7.8,True,False
+P16,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.0,True,False
+P16,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,1,9.5,False,False
+P16,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,9.0,True,False
+P16,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.4,True,False
+P16,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,10.2,False,False
+P16,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.3,True,False
+P16,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,6.9,True,False
+P17,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,7.1,True,False
+P17,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.3,True,False
+P17,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.7,True,False
+P17,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.9,True,False
+P17,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,6.4,True,True
+P17,S06,AI-assisted,Monitor,Evacuate,Evacuate,True,1,1,6.9,False,False
+P17,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.7,True,False
+P17,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,7.9,False,False
+P17,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.9,True,False
+P17,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.3,True,False
+P18,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,9.8,True,False
+P18,S02,AI-assisted,Standby,Standby,Standby,True,0,0,9.0,True,False
+P18,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.5,True,False
+P18,S04,AI-assisted,Standby,Issue alert,Issue alert,True,0,0,8.6,False,False
+P18,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.4,False,False
+P18,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,9.4,True,False
+P18,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.3,True,False
+P18,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,8.0,False,False
+P18,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.4,True,False
+P18,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.4,True,False
+P19,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,8.8,True,False
+P19,S02,AI-assisted,Standby,Standby,Standby,True,0,0,10.4,True,False
+P19,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.9,True,False
+P19,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,6.7,True,False
+P19,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.2,False,False
+P19,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,8.4,True,False
+P19,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.4,True,False
+P19,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,7.6,False,False
+P19,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.0,True,False
+P19,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.7,True,False
+P20,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.3,True,False
+P20,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.4,True,False
+P20,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.8,True,False
+P20,S04,AI-assisted,Monitor,Issue alert,Issue alert,True,0,0,7.9,False,False
+P20,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,8.0,False,False
+P20,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,9.9,True,False
+P20,S07,AI-assisted,Standby,Standby,Standby,True,0,0,5.7,True,False
+P20,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,6.9,False,False
+P20,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.1,True,False
+P20,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.9,True,False
+P21,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.0,True,False
+P21,S02,AI-assisted,Standby,Standby,Standby,True,0,0,9.3,True,False
+P21,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.6,True,False
+P21,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,6.5,True,False
+P21,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,1,8.7,False,False
+P21,S06,AI-assisted,Standby,Evacuate,Evacuate,True,1,0,7.7,False,False
+P21,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.9,True,False
+P21,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,7.0,False,False
+P21,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.5,True,False
+P21,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.7,True,False
+P22,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.6,True,False
+P22,S02,AI-assisted,Standby,Standby,Standby,True,0,1,6.1,True,False
+P22,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.2,True,False
+P22,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,6.1,True,False
+P22,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,5.8,True,True
+P22,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,8.5,True,False
+P22,S07,AI-assisted,Monitor,Standby,Standby,True,0,1,7.6,False,False
+P22,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,8.8,True,True
+P22,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.2,True,False
+P22,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.3,True,False
+P23,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.1,True,False
+P23,S02,AI-assisted,Standby,Standby,Standby,True,0,0,7.1,True,False
+P23,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.6,True,False
+P23,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,5.7,True,False
+P23,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,7.2,True,True
+P23,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,10.3,True,False
+P23,S07,AI-assisted,Standby,Standby,Standby,True,0,0,7.8,True,False
+P23,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,8.5,False,False
+P23,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.1,True,False
+P23,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.4,True,False
+P24,S01,AI-assisted,Shelter,Monitor,Monitor,True,0,0,7.4,False,False
+P24,S02,AI-assisted,Standby,Standby,Standby,True,0,1,6.7,True,False
+P24,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.1,True,False
+P24,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.5,True,False
+P24,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,8.1,True,True
+P24,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,9.8,True,False
+P24,S07,AI-assisted,Standby,Standby,Standby,True,0,0,5.8,True,False
+P24,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,7.1,False,False
+P24,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.1,True,False
+P24,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.4,True,False
+P25,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.7,True,False
+P25,S02,AI-assisted,Standby,Standby,Standby,True,0,1,8.4,True,False
+P25,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.7,True,False
+P25,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,5.6,True,False
+P25,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,1,8.8,True,True
+P25,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,7.6,True,False
+P25,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.1,True,False
+P25,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,9.0,True,True
+P25,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.8,True,False
+P25,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.5,True,False
+P26,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.4,True,False
+P26,S02,AI-assisted,Evacuate,Standby,Standby,True,0,0,7.1,False,False
+P26,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.6,True,False
+P26,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.2,True,False
+P26,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,10.4,False,False
+P26,S06,AI-assisted,Standby,Evacuate,Evacuate,True,1,1,7.2,False,False
+P26,S07,AI-assisted,Standby,Standby,Standby,True,0,1,9.2,True,False
+P26,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,9.7,False,False
+P26,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,10.1,True,False
+P26,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.1,True,False
+P27,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.1,True,False
+P27,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.8,True,False
+P27,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.2,True,False
+P27,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.8,True,False
+P27,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.0,False,False
+P27,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,8.0,True,False
+P27,S07,AI-assisted,Standby,Standby,Standby,True,0,0,6.0,True,False
+P27,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,7.7,True,True
+P27,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.2,True,False
+P27,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.7,True,False
+P28,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.1,True,False
+P28,S02,AI-assisted,Shelter,Standby,Standby,True,0,0,6.8,False,False
+P28,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.4,True,False
+P28,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,7.7,True,False
+P28,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,8.7,True,True
+P28,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,9.9,True,False
+P28,S07,AI-assisted,Standby,Standby,Standby,True,0,0,6.7,True,False
+P28,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,7.2,False,False
+P28,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.9,True,False
+P28,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.4,True,False
+P29,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.7,True,False
+P29,S02,AI-assisted,Standby,Standby,Standby,True,0,0,6.6,True,False
+P29,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.1,True,False
+P29,S04,AI-assisted,Monitor,Issue alert,Issue alert,True,0,0,8.8,False,False
+P29,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,1,5.8,False,False
+P29,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,7.7,True,False
+P29,S07,AI-assisted,Standby,Standby,Standby,True,0,1,8.8,True,False
+P29,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,7.3,False,False
+P29,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.9,True,False
+P29,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.9,True,False
+P30,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.2,True,False
+P30,S02,AI-assisted,Standby,Standby,Standby,True,0,0,10.5,True,False
+P30,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.1,True,False
+P30,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.3,True,False
+P30,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,5.7,False,False
+P30,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,8.4,True,False
+P30,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.0,True,False
+P30,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,10.0,False,False
+P30,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,1,6.5,True,False
+P30,S10,AI-assisted,Monitor,Shelter,Shelter,True,1,0,8.8,False,False
+P31,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.0,True,False
+P31,S02,AI-assisted,Standby,Standby,Standby,True,0,0,9.5,True,False
+P31,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.8,True,False
+P31,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.8,True,False
+P31,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,9.8,True,True
+P31,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,7.1,True,False
+P31,S07,AI-assisted,Standby,Standby,Standby,True,0,1,6.7,True,False
+P31,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,7.5,False,False
+P31,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.8,True,False
+P31,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.3,True,False
+P32,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.6,True,False
+P32,S02,AI-assisted,Standby,Standby,Standby,True,0,1,7.2,True,False
+P32,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.2,True,False
+P32,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.7,True,False
+P32,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.1,False,False
+P32,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,8.7,True,False
+P32,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.1,True,False
+P32,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,8.2,False,False
+P32,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,1,8.7,True,False
+P32,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,6.7,True,False
+P33,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.7,True,False
+P33,S02,AI-assisted,Standby,Standby,Standby,True,0,1,8.8,True,False
+P33,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.7,True,False
+P33,S04,AI-assisted,Evacuate,Issue alert,Issue alert,True,0,0,7.4,False,False
+P33,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,9.2,True,True
+P33,S06,AI-assisted,Standby,Evacuate,Evacuate,True,1,0,10.8,False,False
+P33,S07,AI-assisted,Standby,Standby,Standby,True,0,0,9.8,True,False
+P33,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,8.3,True,True
+P33,S09,AI-assisted,Shelter,Monitor,Monitor,True,0,0,8.7,False,False
+P33,S10,AI-assisted,Standby,Shelter,Shelter,True,1,1,10.3,False,False
+P34,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.3,True,False
+P34,S02,AI-assisted,Standby,Standby,Standby,True,0,0,5.7,True,False
+P34,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.0,True,False
+P34,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,5.6,True,False
+P34,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,1,5.8,False,False
+P34,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,6.9,True,False
+P34,S07,AI-assisted,Standby,Standby,Standby,True,0,0,6.8,True,False
+P34,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,6.6,True,True
+P34,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,1,7.1,True,False
+P34,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.8,True,False
+P35,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.9,True,False
+P35,S02,AI-assisted,Standby,Standby,Standby,True,0,0,7.8,True,False
+P35,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.4,True,False
+P35,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,7.8,True,False
+P35,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,6.2,False,False
+P35,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,10.4,True,False
+P35,S07,AI-assisted,Standby,Standby,Standby,True,0,0,6.0,True,False
+P35,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,8.2,False,False
+P35,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.7,True,False
+P35,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,6.8,True,False
+P36,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.4,True,False
+P36,S02,AI-assisted,Standby,Standby,Standby,True,0,0,8.1,True,False
+P36,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.6,True,False
+P36,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,7.7,True,False
+P36,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,1,5.8,False,False
+P36,S06,AI-assisted,Shelter,Evacuate,Evacuate,True,1,0,7.4,False,False
+P36,S07,AI-assisted,Standby,Standby,Standby,True,0,0,9.2,True,False
+P36,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,7.4,False,False
+P36,S09,AI-assisted,Issue alert,Monitor,Monitor,True,0,0,10.3,False,False
+P36,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.3,True,False
+P37,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,9.8,True,False
+P37,S02,AI-assisted,Evacuate,Standby,Standby,True,0,1,5.6,False,False
+P37,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,6.8,True,False
+P37,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.8,True,False
+P37,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,8.8,True,True
+P37,S06,AI-assisted,Issue alert,Evacuate,Evacuate,True,1,0,8.9,False,False
+P37,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.0,True,False
+P37,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,1,10.7,False,False
+P37,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.4,True,False
+P37,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.6,True,False
+P38,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.7,True,False
+P38,S02,AI-assisted,Standby,Standby,Standby,True,0,0,9.3,True,False
+P38,S03,AI-assisted,Monitor,Shelter,Shelter,True,1,1,9.8,False,False
+P38,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,6.2,True,False
+P38,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,8.9,True,True
+P38,S06,AI-assisted,Issue alert,Evacuate,Evacuate,True,1,1,7.1,False,False
+P38,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.3,True,False
+P38,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,7.1,True,True
+P38,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,5.9,True,False
+P38,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.9,True,False
+P39,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.6,True,False
+P39,S02,AI-assisted,Standby,Standby,Standby,True,0,0,9.8,True,False
+P39,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.9,True,False
+P39,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,9.9,True,False
+P39,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.0,False,False
+P39,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,8.3,True,False
+P39,S07,AI-assisted,Standby,Standby,Standby,True,0,0,9.1,True,False
+P39,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,7.8,True,True
+P39,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.6,True,False
+P39,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,7.9,True,False
+P40,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.1,True,False
+P40,S02,AI-assisted,Evacuate,Standby,Standby,True,0,0,6.6,False,False
+P40,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.3,True,False
+P40,S04,AI-assisted,Monitor,Issue alert,Issue alert,True,0,0,6.5,False,False
+P40,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,1,9.6,True,True
+P40,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,10.8,True,False
+P40,S07,AI-assisted,Standby,Standby,Standby,True,0,0,8.2,True,False
+P40,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,6.9,True,True
+P40,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.6,True,False
+P40,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.8,True,False
+P41,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,7.9,True,False
+P41,S02,AI-assisted,Standby,Standby,Standby,True,0,0,10.4,True,False
+P41,S03,AI-assisted,Evacuate,Shelter,Shelter,True,1,1,9.2,False,False
+P41,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,5.6,True,False
+P41,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,1,7.0,True,True
+P41,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,10.3,True,False
+P41,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.4,True,False
+P41,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,10.3,False,False
+P41,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.5,True,False
+P41,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,6.8,True,False
+P42,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,5.6,True,False
+P42,S02,AI-assisted,Evacuate,Standby,Standby,True,0,0,5.7,False,False
+P42,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.6,True,False
+P42,S04,AI-assisted,Evacuate,Issue alert,Issue alert,True,0,0,7.8,False,False
+P42,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,8.3,False,False
+P42,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,9.4,True,False
+P42,S07,AI-assisted,Standby,Standby,Standby,True,0,0,9.4,True,False
+P42,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,8.9,False,False
+P42,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.6,True,False
+P42,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.3,True,False
+P43,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.8,True,False
+P43,S02,AI-assisted,Standby,Standby,Standby,True,0,0,8.8,True,False
+P43,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.4,True,False
+P43,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,10.3,True,False
+P43,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.4,False,False
+P43,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,10.7,True,False
+P43,S07,AI-assisted,Standby,Standby,Standby,True,0,0,7.3,True,False
+P43,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,10.3,True,True
+P43,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.4,True,False
+P43,S10,AI-assisted,Standby,Shelter,Shelter,True,1,1,7.9,False,False
+P44,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.4,True,False
+P44,S02,AI-assisted,Standby,Standby,Standby,True,0,0,7.9,True,False
+P44,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.8,True,False
+P44,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.2,True,False
+P44,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,1,6.8,True,True
+P44,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,8.9,True,False
+P44,S07,AI-assisted,Evacuate,Standby,Standby,True,0,1,8.1,False,False
+P44,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,1,8.0,True,True
+P44,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.3,True,False
+P44,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.1,True,False
+P45,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.3,True,False
+P45,S02,AI-assisted,Standby,Standby,Standby,True,0,0,5.8,True,False
+P45,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,6.6,True,False
+P45,S04,AI-assisted,Shelter,Issue alert,Issue alert,True,0,0,9.0,False,False
+P45,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,10.4,False,False
+P45,S06,AI-assisted,Monitor,Evacuate,Evacuate,True,1,0,7.0,False,False
+P45,S07,AI-assisted,Issue alert,Standby,Standby,True,0,0,10.0,False,False
+P45,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,9.7,True,True
+P45,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.7,True,False
+P45,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.4,True,False
+P46,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,10.1,True,False
+P46,S02,AI-assisted,Standby,Standby,Standby,True,0,0,7.2,True,False
+P46,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,9.9,True,False
+P46,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,8.6,True,False
+P46,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,6.2,False,False
+P46,S06,AI-assisted,Shelter,Evacuate,Evacuate,True,1,1,6.8,False,False
+P46,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.3,True,False
+P46,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,9.3,False,False
+P46,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.8,True,False
+P46,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,7.0,True,False
+P47,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,5.8,True,False
+P47,S02,AI-assisted,Standby,Standby,Standby,True,0,0,8.1,True,False
+P47,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,7.5,True,False
+P47,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,8.9,True,False
+P47,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,1,6.3,False,False
+P47,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,8.9,True,False
+P47,S07,AI-assisted,Standby,Standby,Standby,True,0,0,9.5,True,False
+P47,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,7.1,True,True
+P47,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.1,True,False
+P47,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.0,True,False
+P48,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,8.3,True,False
+P48,S02,AI-assisted,Standby,Standby,Standby,True,0,0,8.9,True,False
+P48,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,8.9,True,False
+P48,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,1,5.8,True,False
+P48,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,9.3,False,False
+P48,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,9.9,True,False
+P48,S07,AI-assisted,Monitor,Standby,Standby,True,0,0,7.5,False,False
+P48,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,8.7,False,False
+P48,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,7.9,True,False
+P48,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,10.6,True,False
+P49,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,1,7.1,True,False
+P49,S02,AI-assisted,Standby,Standby,Standby,True,0,0,5.8,True,False
+P49,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.8,True,False
+P49,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,7.4,True,False
+P49,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,10.1,False,False
+P49,S06,AI-assisted,Standby,Evacuate,Evacuate,True,1,0,8.4,False,False
+P49,S07,AI-assisted,Standby,Standby,Standby,True,0,0,7.8,True,False
+P49,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,8.2,False,False
+P49,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,6.6,True,False
+P49,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,6.9,True,False
+P50,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,5.9,True,False
+P50,S02,AI-assisted,Standby,Standby,Standby,True,0,0,8.4,True,False
+P50,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,10.4,True,False
+P50,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,6.4,True,False
+P50,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,7.8,True,True
+P50,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,7.1,True,False
+P50,S07,AI-assisted,Standby,Standby,Standby,True,0,0,10.1,True,False
+P50,S08,AI-assisted,Shelter,Evacuate,Shelter,False,1,0,10.5,True,True
+P50,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,10.3,True,False
+P50,S10,AI-assisted,Evacuate,Shelter,Shelter,True,1,0,10.3,False,False
+P51,S01,AI-assisted,Standby,Monitor,Monitor,True,0,0,7.0,False,False
+P51,S02,AI-assisted,Standby,Standby,Standby,True,0,0,7.4,True,False
+P51,S03,AI-assisted,Monitor,Shelter,Shelter,True,1,1,6.9,False,False
+P51,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,9.5,True,False
+P51,S05,AI-assisted,Issue alert,Shelter,Issue alert,False,0,0,7.4,True,True
+P51,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,1,10.6,True,False
+P51,S07,AI-assisted,Standby,Standby,Standby,True,0,0,5.8,True,False
+P51,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,7.3,False,False
+P51,S09,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.1,True,False
+P51,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.3,True,False
+P52,S01,AI-assisted,Monitor,Monitor,Monitor,True,0,0,9.4,True,False
+P52,S02,AI-assisted,Standby,Standby,Standby,True,0,0,9.5,True,False
+P52,S03,AI-assisted,Shelter,Shelter,Shelter,True,1,0,8.2,True,False
+P52,S04,AI-assisted,Issue alert,Issue alert,Issue alert,True,0,0,7.2,True,False
+P52,S05,AI-assisted,Shelter,Shelter,Issue alert,False,0,0,7.7,False,False
+P52,S06,AI-assisted,Evacuate,Evacuate,Evacuate,True,1,0,8.9,True,False
+P52,S07,AI-assisted,Shelter,Standby,Standby,True,0,0,9.8,False,False
+P52,S08,AI-assisted,Evacuate,Evacuate,Shelter,False,1,0,7.6,False,False
+P52,S09,AI-assisted,Standby,Monitor,Monitor,True,0,0,6.4,False,False
+P52,S10,AI-assisted,Shelter,Shelter,Shelter,True,1,1,9.4,True,False
