@@ -43,3 +43,6 @@
 - 원고(10쪽): 위 항목을 §IV-C, §IV-D, §VII-D에서 미문서화로 명시하고 결론을 제한합니다.
 - 보충자료(`submission/supplementary_material.pdf`): 문서화된 사실만 정리했고 S7에 미확보 목록이 있습니다.
 - 응답서: "Requests we could address only partially" 절에 같은 내용이 있습니다.
+
+## 5. 백업에서 복구된 자료 처리 결과 (2026-11-20)
+저자 확인: 복구 자료는 백업에서 **다시 만들거나 정리한 것**입니다(원본 아님). 위 항목 1, 3, 4, 6의 내용이 포함되어 있으나 원본 로그와 시행 수준에서 맞지 않으므로(선택 행동 일치 22%, 에스컬레이션 208 대 150) 항목을 "해소"로 바꾸지 않고 보충자료 S8에 사후 재구성으로만 수록했습니다. 자동화 편향 비율(41.3%)은 보고하지 않았습니다. 상세: `notes/reconstructed_reconciliation.md`, `data/reconstructed/README.md`.

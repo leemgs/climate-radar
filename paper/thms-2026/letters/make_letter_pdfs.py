@@ -31,6 +31,7 @@ th { background: #eee; }
 blockquote { margin: 6pt 0; padding: 4pt 10pt; border-left: 3px solid #999; color: #333; }
 hr { border: none; border-top: 1px solid #bbb; margin: 12pt 0; }
 code { font-size: 9.5pt; }
+img { max-width: 100%; }
 """
 
 
@@ -81,7 +82,7 @@ def main():
             mdfile.write_text(md, encoding="utf-8")
             html = subprocess.run(
                 ["pandoc", str(mdfile), "-f", "gfm+hard_line_breaks" if "cover" in lang else "gfm",
-                 "-t", "html5", "--standalone",
+                 "-t", "html5", "--standalone", "--embed-resources", f"--resource-path={HERE}",
                  "--metadata", f"pagetitle={title}"],
                 check=True, capture_output=True, text=True).stdout
             html = html.replace("<body>", f'<body class="{lang}">').replace("</head>", f"<style>{CSS}</style></head>")

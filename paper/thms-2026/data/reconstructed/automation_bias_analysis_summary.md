@@ -1,3 +1,5 @@
+> **WARNING (2026-11-20):** computed from a log that was re-created from backup and does not match the primary trial log (see `README.md` and `../../notes/reconstructed_reconciliation.md`). Do **not** cite these rates as study results.
+
 # Automation Bias Analysis Summary
 ## Enabled by AI Recommendation Correctness Labels
 
