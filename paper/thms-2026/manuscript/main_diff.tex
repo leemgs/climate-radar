@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL main_original.tex   Mon Nov 16 23:13:19 2026
-%DIF ADD main.tex            Fri Nov 20 10:30:48 2026
+%DIF DEL main_original.tex   Fri Nov 20 11:03:51 2026
+%DIF ADD main.tex            Fri Nov 20 11:14:10 2026
 % IEEE Submission Dashboard - https://ieee.atyponrex.com/submission/dashboard
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1200,53 +1200,49 @@ The findings of the study indicate that human--AI decision-making systems should
 \DIFadd{Within the evaluated task, the results suggest that decision support may benefit from }\DIFaddend (1) \DIFdelbegin \DIFdel{model }\DIFdelend \DIFaddbegin \DIFadd{representing }\DIFaddend uncertainty explicitly, (2) \DIFdelbegin \DIFdel{provide }\DIFdelend \DIFaddbegin \DIFadd{providing }\DIFaddend action guidance rather than \DIFaddbegin \DIFadd{only }\DIFaddend passive information display, and (3) \DIFdelbegin \DIFdel{allocate decision authority dynamically }\DIFdelend \DIFaddbegin \DIFadd{adapting the level and form of support to uncertainty and criticality }\DIFaddend through human-in-the-loop escalation \DIFdelbegin \DIFdel{\cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access}.
 Based on the Human--Machine Systems model, the results of the current study imply that effective decision systems with AI assistance need to be based on the concepts of bounded autonomy and decision authority allocation, as well as uncertainty-aware interaction.
 These concepts are not limited to the disaster response domain and are generally applicable to a wide variety of safety-critical human--machine systems with AI assistance \cite{Yang2022THMSReview,PerezCerrolaza2024CSUR}.
-The observed effects of the described phenomenon are not domain-specific but rather general mechanisms of human--machine interaction, which are relevant to any }\DIFdelend \DIFaddbegin \DIFadd{while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Each finding has several candidate explanations (e.g., higher AER: action-oriented recommendations; lower NASA--TLX: consolidated information structuring; higher trust: explicit uncertainty and criticality cues), so each implication should be tested individually, and transfer to other }\DIFaddend safety-critical \DIFdelbegin \DIFdel{decision system \cite{Bach2024Access,Hodgson2013THMS}.
-In general, the current study contributes to the broader area of human--machine systems by showing the benefits of the application of human-centered AI decision systems with awareness of uncertainty for the execution of actions without compromising safety and accountability \cite{Lai2023FAccT,Yang2022THMSReview}. The design implications that are critical based on the findings are presented in Table~\ref{tab:design_implications}.
-        In providing insight into the manner in which architectural design translates into behavioral outcomes, the results contribute to the domain of human machine systems with respect to trust calibration and cognitive ergonomics. }\DIFdelend \DIFaddbegin \DIFadd{domains \cite{PerezCerrolaza2024CSUR} has not been tested here.
+The observed effects of the described phenomenon are not domain-specific but rather general mechanisms of human--machine interaction, which are relevant to any }\DIFdelend \DIFaddbegin \DIFadd{while leaving final authority with the human \cite{Assaad2023TAS,Zhang2022THMS,Bach2024Access,Parasuraman2000LOA}. Each finding has several candidate explanations (e.g., higher AER: action-oriented recommendations; lower NASA--TLX: consolidated information structuring; higher trust: explicit uncertainty and criticality cues), so each implication should be tested individually, and transfer to other }\DIFaddend safety-critical \DIFdelbegin \DIFdel{decision system \cite{Bach2024Access,Hodgson2013THMS}.In general, the current study contributes to the broader area of human--machine systems by showing the benefits of the application of human-centered AI decision systems with awareness of uncertaintyfor the execution of actions without compromising safety and accountability \cite{Lai2023FAccT,Yang2022THMSReview}.
+The design implications that are critical based on the findings are presented in Table~\ref{tab:design_implications}.
+In providing insight into the manner in which architectural design translates into behavioral outcomes, the results contribute to the domain of human machine systems with respect to trust calibration and cognitive ergonomics. }\DIFdelend \DIFaddbegin \DIFadd{domains \cite{PerezCerrolaza2024CSUR} has not been tested here.
 }\DIFaddend 
 
     %---------------------------------\input{./090-futurework}
     \DIFdelbegin \section{\DIFdel{Limitations and Future Work}}
     %DIFAUXCMD
 \addtocounter{section}{-1}%DIFAUXCMD
-\DIFdel{The research has several limitations, which also point to potential directions for future research in similar studies. Although the research provides valuable data in terms of the effectiveness of the human--AI system in decision-making, it must be considered in relation to the limitations of this research.
-        }%DIFDELCMD < 
-
-%DIFDELCMD <     %%%
-\subsection{\DIFdel{Generalization}}
-    %DIFAUXCMD
-\addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{The study has conducted an empirical evaluation using a set of decision scenarios in relation to a disaster response scenario. Although this scenario is representative of a high-stakes decision-making scenario in which there is considerable uncertainty, future research can be conducted to evaluate the generalization of the proposed design principles across diverse domains and professionals in which there is considerable expertise. }\DIFdelend \DIFaddbegin \section{\DIFadd{Limitations and Future Work}}
+\DIFdel{The research has several limitations, which also point to potential directions for future research in similar studies.
+        Although the research provides valuable data in terms of the effectiveness of the human--AI system in decision-making, it must be considered in relation to the limitations of this research. }\DIFdelend \DIFaddbegin \section{\DIFadd{Limitations and Future Work}}
     \label{sec:limitations}
 \DIFaddend 
+
+    \DIFdelbegin \subsection{\DIFdel{Generalization}}
+    %DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+\DIFdel{The study has conducted an empirical evaluation using a set of decision scenarios in relation to a disaster response scenario. Although this scenario is representative of a high-stakes decision-making scenario in which there is considerable uncertainty, future research can be conducted to evaluate the generalization of the proposed design principles across diverse domains and professionals in which there is considerable expertise.}\DIFdelend \DIFaddbegin \subsection{\DIFadd{Bundled Intervention}}
+    \DIFadd{The study estimates the effect of the integrated ACHDF configuration and cannot attribute effects to individual components (uncertainty display, action format, escalation, guardrails); future work should use factorial or ablation designs.
+}\DIFaddend 
 
     \DIFdelbegin \subsection{\DIFdel{Long-Term Trust Effects}}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{The research has focused on the short-term effects of human--AI systems.
-        Although it is recognized that the study has focused on the short term, it is anticipated that the long-term effects of trust will be considerable in relation to operators' exposure to the system and its behavior in relation to uncertainty escalation.
-}\DIFdelend \DIFaddbegin \subsection{\DIFadd{Bundled Intervention}}
-    \DIFadd{The study estimates the effect of the integrated ACHDF configuration and cannot attribute effects to individual components (uncertainty display, action format, escalation, guardrails); future work should use factorial or ablation designs.
+\DIFdel{The research has focused on the short-term effects of human--AI systems. Although it is recognized that the study has focused on the short term, it is anticipated that the long-term effects of trust will be considerable in relation to operators' exposure to the system and its behavior in relation to uncertainty escalation. }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Trust Calibration and Automation Bias}}
+    \DIFadd{Trust was measured as a condition-level attitude, and behavior on erroneous AI recommendations was not analyzed, so neither calibration nor automation bias could be assessed; future studies should include incorrect advice and measure reliance trial by trial.
 }\DIFaddend 
 
     \DIFdelbegin \subsection{\DIFdel{Extension of the Research Beyond Disaster Response}}
     %DIFAUXCMD
 \addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdel{The research has focused on the domain of disaster response and has recognized this domain as effective in relation to testing systems in a high-stakes scenario . Although the domain is recognized as effective in relation to testing systems in }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Trust Calibration and Automation Bias}}
-    \DIFadd{Trust was measured as }\DIFaddend a \DIFdelbegin \DIFdel{high-stakes scenario, future research can be conducted to extend the system beyond this domain to other high-stakes domains such as medical systems and traffic management systems}\DIFdelend \DIFaddbegin \DIFadd{condition-level attitude, and behavior on erroneous AI recommendations was not analyzed, so neither calibration nor automation bias could be assessed; future studies should include incorrect advice and measure reliance trial by trial.
-}
-
-    \subsection{\DIFadd{Domain and Population Generalizability}}
-    \DIFadd{The evaluation used only simulated disaster-response scenarios. Participants were not required to have domain expertise and were not specifically emergency-management professionals; trained operators may rely less on recommendations, use different heuristics, or experience different workload. Generalization to other domains (e.g., medical triage, autonomous driving supervision, traffic management) and to professional operators remains future work: ACHDF addresses a class of decision ecologies with high uncertainty, asymmetric error costs, time pressure, and human accountability, but time scales, operator expertise, and regulatory constraints differ substantially across domains, and any transfer is a hypothesis.
+\DIFdel{The research has focused on the domain of disaster response and has recognized this domain as effective in relation to testing systems in a high-stakes scenario.
+    Although the domain is recognized as effective in relation to testing systems in a high-stakes scenario }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Domain and Population Generalizability}}
+    \DIFadd{The evaluation used only simulated disaster-response scenarios. Participants were not required to have domain expertise and were not specifically emergency-management professionals; trained operators may rely less on recommendations, use different heuristics, or experience different workload. Generalization to other domains (e.g.}\DIFaddend , \DIFdelbegin \DIFdel{future research can be conducted to extend the system beyond this domain to other high-stakes domains such as medical systems and traffic management systems}\DIFdelend \DIFaddbegin \DIFadd{medical triage, autonomous driving supervision, traffic management) and to professional operators remains future work: ACHDF addresses a class of decision ecologies with high uncertainty, asymmetric error costs, time pressure, and human accountability, but time scales, operator expertise, and regulatory constraints differ substantially across domains, and any transfer is a hypothesis.
 }
 
     \subsection{\DIFadd{Reporting and Analysis Limitations}}
     \label{sec:lim_reporting}
-    \DIFadd{The statistics were computed from the anonymized study logs, which resolved most reporting gaps of the earlier version. The following limitations remain:
+    \DIFadd{These limitations remain:
     }\begin{itemize}
         \item \DIFadd{\emph{Scoring of the primary outcome.} How the reference action of each trial was determined, in particular whether it was fixed independently of the AI recommendation, is not documented, and no per-trial time limit or time-out flag is recorded. The AER is a correct-action rate, and the time-cutoff analysis is hypothetical.
         }\item \DIFadd{\emph{Scenario identity and difficulty.} The reference action recorded for a label S01--S10 differs across participants, and for the same participant and label it matched between conditions in only 18\% of the pairs, so identical scenarios across conditions cannot be verified. The reference-action distribution differed slightly between conditions ($\chi^2(4)=9.2$, $p=.057$), and per-trial uncertainty and criticality were not logged, so the scenario mix could not be used as a covariate.
-        }\item \DIFadd{\emph{Task and materials.} Per-trial stimulus values, the per-trial time limit, the total training duration and any pass criterion, and screenshots of the study interface are not documented; the interface figure is a reconstructed illustration. This limits reproducibility.
+        }\item \DIFadd{\emph{Task and materials.} Per-trial stimulus values, the per-trial time limit, the total training duration and any pass criterion, and screenshots of the study interface are not documented; the interface figure is a reconstructed illustration. Thresholds ($\tau_u = 0.25$, $\tau_c = 0.70$), a scenario table, and interface images, re-created from backup after the study, are post hoc reconstructions (supplement S8) that do not match the trial log (same action in 22\% of matched trials; 208 vs.\ 150 escalated trials); no result here uses them. This limits reproducibility.
         }\item \DIFadd{\emph{System implementation.} The risk model, thresholds, and guardrails are described in Sections~\ref{sec:risk} and~\ref{sec:guardrails} for the study prototype (the open reference implementation). The model's calibration was not evaluated; $\tau_u$, $\tau_c$, and the criticality scale are not documented; and the prototype has no escalation branch. Escalation was pre-assigned in the scenario design (the values used are not documented), so the study evaluates the escalate presentation but not the run-time threshold logic of Algorithm~\ref{alg:escalation}.
         }\item \DIFadd{\emph{Measures.} The trust items have no published validation and low internal consistency ($\alpha = .46$--$.61$); the ten SUS items also had low consistency ($\alpha = .44$--$.49$), and the logged SUS scores exceed the recomputed scores by a constant 2.8 (baseline) and 4.7 (AI-assisted) points with an undocumented scoring configuration. The conclusion is the same under both scores, but absolute SUS values should not be compared with benchmarks. Questionnaire responses may reflect demand effects, as participants knew which condition was the proposed system. The interviews were not systematically coded.
         }\item \DIFadd{\emph{Ethics.} The study has no IRB approval or exemption number, because the author's institutional IRB advised that it is outside the scope of review (Section~\ref{sec:participants}); informed consent and anonymization are the safeguards that can be reported.
