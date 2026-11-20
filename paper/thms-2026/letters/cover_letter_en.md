@@ -3,7 +3,7 @@
 
 ---
 
-November 19, 2026
+November 20, 2026
 
 **To:** Dr. Ljiljana Trajkovic, Editor-in-Chief
 IEEE Transactions on Human-Machine Systems
