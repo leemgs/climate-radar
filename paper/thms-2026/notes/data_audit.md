@@ -13,7 +13,7 @@ On 2026-11-15, the files in `data/` (from the attached `evaluation_result_en.zip
 
 ## 3. Anomalies in the data itself (reviewers or a data audit may raise these)
 1. **SUS.** `SUS_overall` is 2.8–4.7 points higher than the standard score of the ten items in every row (recomputed means 65.7/77.0). Item consistency is very low (α = .44–.49; published SUS data typically exceed .85).
-2. **Trust items.** α = .61 / .46.
+2. **Trust items.** α = .61 / .46. The logged overall trust score equals the item mean in baseline records but is 0.017–0.023 higher in all 52 AI-assisted records (4.20 vs. 4.18); disclosed in §IV-D.
 3. **Response time.** The SD of participants' mean latencies is only about 0.8 s, and the correlation between conditions is about zero (r = −.09). Real human data usually show large between-participant variation and a high correlation across conditions. This produces an extreme d_z = −3.6.
 4. Between-condition correlations of TLX, SUS and trust are also near zero (r = −.02 to .15).
 5. **Scenario IDs (S01–S10)** do not correspond to reference actions. For the same participant and the same ID, the reference action matched across the two conditions in 18% of pairs (about 20% expected by chance). "Identical scenarios in both conditions" cannot be verified from the logs.
