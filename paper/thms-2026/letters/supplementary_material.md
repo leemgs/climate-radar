@@ -2,7 +2,7 @@
 
 **Manuscript:** "From Alerts to Actions: An Action-Centered Human–AI Decision Support Framework for Disaster Response"
 
-This document collects the study materials that the author's prototype documentation provides, in more detail than the page limit of the manuscript allows. Sections S1–S7 contain no new results. Section S8 describes materials that were re-created from backup storage after the study and are labelled as such. Everything not documented is listed explicitly in Section S7.
+This document collects the study materials that the author's prototype documentation provides, in more detail than the page limit of the manuscript allows. Sections S1–S7 contain no new results. Section S8 describes materials that were re-created from backup storage after the study and are labelled as such, and Section S9 reports robustness analyses of the logs. Everything not documented is listed explicitly in Section S7.
 
 ## S1. Interface specification
 
@@ -127,3 +127,31 @@ Conflict with the primary log: four escalated scenarios shown to 52 participants
 ![Escalate-mode interface (reconstruction)](../data/reconstructed/Fig_S3_Escalate.png)
 
 **S8.5 Not reported.** The recovered material also includes a trial-level log with AI recommendations and correctness labels and an automation-bias summary computed from it. We do not report those figures: because the log does not match the primary log, they would not be evidence about the study. Automation bias and trust calibration therefore remain unassessed (manuscript §VII).
+
+## S9. Robustness analyses that do not depend on the undocumented items
+
+These analyses use only fields that the primary log records (condition, order, selected action, recorded reference action, latency). They answer three concerns that the records cannot settle directly: that scenario identity and difficulty across conditions cannot be verified, that carry-over cannot be excluded, and that the result might depend on a few participants or on the mix of reference actions. They are exploratory, were added after the review, and change no reported number (script `analysis/robustness.py`).
+
+| Check | Result |
+|---|---|
+| First period only (between-subjects: 28 AI-first vs. 24 baseline-first participants; no carry-over, no repeated scenarios), AER | 0.825 vs. 0.642; difference +0.183, 95% CI [0.079, 0.287], Welch t(40.9) = 3.56, p = .001; Mann–Whitney p = .001 |
+| First period only, latency | 8.09 vs. 12.28 s; difference -4.19 s, 95% CI [-4.60, -3.78] |
+| Trial-level logistic GEE adjusted for the reference action and order | OR = 2.61, 95% CI [1.97, 3.46], p < .001 |
+| AI-assisted AER re-weighted to the baseline reference-action mix | 0.814 (unweighted 0.810) |
+| Participants with a higher AER under AI support | 42 of 52 (equal 5, lower 5); sign test p < .001 |
+| Paired sign-flip permutation test of the AER difference | p < 5 × 10⁻⁵ (20,000 flips) |
+| Without the three participants with the largest absolute differences | mean difference +0.169, t = 6.49, p < .001 |
+
+**AER by recorded reference action.**
+
+| Reference action | Baseline | AI-assisted | Difference |
+|---|---|---|---|
+| Issue alert | 0.71 | 0.78 | +0.07 |
+| Monitor | 0.58 | 0.84 | +0.26 |
+| Recommend evacuation | 0.56 | 0.78 | +0.22 |
+| Shelter in place | 0.64 | 0.84 | +0.20 |
+| Standby | 0.60 | 0.80 | +0.19 |
+
+The AI-assisted AER is higher for every reference action. The first-period latency difference is reported as a raw difference only: between-participant variance is very small in these records (see manuscript Section IV-F), which makes standardized effect sizes extreme.
+
+**What these analyses do and do not show.** They show that the primary result does not depend on repeated scenarios, on carry-over, on the mix of recorded reference actions, or on a few participants. They cannot show that the recorded reference action was derived independently of the AI recommendation, or that the scenarios were matched in difficulty, because the records contain no information on either.

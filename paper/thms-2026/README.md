@@ -51,3 +51,6 @@ The anonymized trial-level logs and questionnaire records (`data/`) were re-anal
 
 ## 🗂️ Materials recovered from backup (added 2026-11-20)
 The author recovered and re-created experiment materials from backup storage. They are in [`data/reconstructed/`](./data/reconstructed/README.md) and appear only in Supplementary S8 as **post hoc reconstruction**. They do not match the primary trial log at trial level (same selected action in 22% of matched trials; 208 vs. 150 escalated trials), so no manuscript result uses them; see [`notes/reconstructed_reconciliation.md`](./notes/reconstructed_reconciliation.md). The limitation is disclosed in §VII-D (Task and materials) of the manuscript (rebuilt, 10 pages).
+
+## 🔬 Robustness analyses (added 2026-11-24)
+`analysis/robustness.py` (outputs `robustness.json`/`.md`) tests whether the primary result depends on the items the records cannot document: first-period-only comparison (no carry-over), GEE adjusted for the reference action, within-stratum differences, sign/permutation tests, trimmed analysis. Result: the AER advantage holds in all of them (e.g., first period 0.83 vs. 0.64; adjusted OR 2.61). They do not show that the reference action was independent of the AI recommendation. Reported in §V-C, Supplementary S9 and the response letter.
